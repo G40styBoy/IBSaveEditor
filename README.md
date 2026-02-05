@@ -1,6 +1,6 @@
 # Infinity Blade Save Dumper
 
-**IBSaveDumper** is a simple tool for handling save file packages for the Infinity Blade Trilogy. It allows you to extract, modify, and repackage save data with ease. The tool supports all `IBI, IBII, IBIII (Unencrypted), and VOTE: The Game` packages.
+**IBSaveDumper** is a simple tool for handling save file packages for the Infinity Blade Trilogy. It allows you to extract, modify, and repackage save data with ease.
 
 ---
 
@@ -21,10 +21,16 @@
 
 ---
 
+## ❓ Not sure what save files are supported? Check here!
+- Unencrypted IB3 ✅
+- Unencrypted/Encrypted IB2 ✅
+- Unencrypted/Encrypted IB1 ❌
+
+---
+
 ## ⚠️ Notes
 - Tool is still in early stages of development. If bugs are encountered please create an issue. This will be released whenever im satisfied with the build quality.
-- For now, this tool is ***Windows only***. There are plans to support linux in the future.
 
 ---
 ## Credits
-- Hox8 for sending me all AES game keys.
+- Hox8 for sending me all AES keys for each game.

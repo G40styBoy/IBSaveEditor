@@ -1,0 +1,5414 @@
+[Sword_1 SwordInventoryItem]
+FriendlyName=Steel Sword
+
+[Sword_2 SwordInventoryItem]
+FriendlyName=Talon
+
+[Sword_3 SwordInventoryItem]
+FriendlyName=Bronze Axe
+
+[Sword_4 SwordInventoryItem]
+FriendlyName=Dawn Blade
+
+[Sword_5 SwordInventoryItem]
+FriendlyName=Wormwood
+
+[Sword_6 SwordInventoryItem]
+FriendlyName=Gemini
+
+[Sword_7 SwordInventoryItem]
+FriendlyName=Sword of Storms
+
+[Sword_8 SwordInventoryItem]
+FriendlyName=Slither
+
+[Sword_9 SwordInventoryItem]
+FriendlyName=Oathborn
+
+[Sword_10 SwordInventoryItem]
+FriendlyName=Saw Tooth
+
+[Sword_11 SwordInventoryItem]
+FriendlyName=FireBrand
+
+[Sword_12 SwordInventoryItem]
+FriendlyName=Kludd
+
+[Sword_13 SwordInventoryItem]
+FriendlyName=Marrow
+
+[Sword_14 SwordInventoryItem]
+FriendlyName=Riptide
+
+[Sword_15 SwordInventoryItem]
+FriendlyName=Incubus
+
+[Sword_16 SwordInventoryItem]
+FriendlyName=Fang
+
+[Sword_17 SwordInventoryItem]
+FriendlyName=Thorneblade
+
+[Sword_18 SwordInventoryItem]
+FriendlyName=Glimmer
+
+[Sword_19 SwordInventoryItem]
+FriendlyName=Iron Claw
+
+[Sword_20 SwordInventoryItem]
+FriendlyName=Ruin
+
+[Sword_21 SwordInventoryItem]
+FriendlyName=Ellorium
+
+[Sword_22 SwordInventoryItem]
+FriendlyName=Kraken
+
+[Sword_23 SwordInventoryItem]
+FriendlyName=Brunt
+
+[Sword_24 SwordInventoryItem]
+FriendlyName=Aeternum
+
+[Sword_25 SwordInventoryItem]
+FriendlyName=Nerrix
+
+[Sword_26 SwordInventoryItem]
+FriendlyName=Infinity Blade
+
+[Sword_27 SwordInventoryItem]
+FriendlyName=Lady Finger
+
+[Sword_28 SwordInventoryItem]
+FriendlyName=Claymourn
+
+[Sword_29 SwordInventoryItem]
+FriendlyName=Bolt
+
+[Sword_30 SwordInventoryItem]
+FriendlyName=Frostbite
+
+[Sword_31 SwordInventoryItem]
+FriendlyName=Ember
+
+[Sword_32 SwordInventoryItem]
+FriendlyName=Khill
+
+[Sword_33 SwordInventoryItem]
+FriendlyName=Unfaithful
+
+[Sword_34 SwordInventoryItem]
+FriendlyName=Touch of Death
+
+[Sword_35 SwordInventoryItem]
+FriendlyName=Balloon of War
+
+[Sword_36 SwordInventoryItem]
+FriendlyName=The Dragoor Blade
+
+[Sword_37 SwordInventoryItem]
+FriendlyName=X-SC2
+
+[Sword_38 SwordInventoryItem]
+FriendlyName=Silver
+
+[Sword_39 SwordInventoryItem]
+FriendlyName=Nexus
+
+[Sword_40 SwordInventoryItem]
+FriendlyName=Randor
+
+[Sword_41 SwordInventoryItem]
+FriendlyName=Forge
+
+[Sword_42 SwordInventoryItem]
+FriendlyName=Shard
+
+[Sword_43 SwordInventoryItem]
+FriendlyName=Echo
+
+[Sword_44 SwordInventoryItem]
+FriendlyName=Jawbreaker
+
+[Sword_45 SwordInventoryItem]
+FriendlyName=Enslaver
+
+[Sword_46 SwordInventoryItem]
+FriendlyName=Obsidian
+
+[Sword_47 SwordInventoryItem]
+FriendlyName=Bobi
+
+[Sword_48 SwordInventoryItem]
+FriendlyName=Gnarl
+
+[Sword_49 SwordInventoryItem]
+FriendlyName=Poison Scythe
+
+[Sword_50 SwordInventoryItem]
+FriendlyName=Gem Shard
+
+[Sword_51 SwordInventoryItem]
+FriendlyName=Luminix
+
+[Sword_52 SwordInventoryItem]
+FriendlyName=Dark X-SC2
+
+[Sword_101 SwordInventoryItem]
+FriendlyName=Nahte
+
+[Sword_102 SwordInventoryItem]
+FriendlyName=Etak
+
+[Sword_103 SwordInventoryItem]
+FriendlyName=Buckland
+
+[Sword_104 SwordInventoryItem]
+FriendlyName=Frigid
+
+[Sword_105 SwordInventoryItem]
+FriendlyName=Woad
+
+[Sword_106 SwordInventoryItem]
+FriendlyName=Pinion
+
+[Sword_107 SwordInventoryItem]
+FriendlyName=Slint
+
+[Sword_108 SwordInventoryItem]
+FriendlyName=Sword of Man
+
+[Sword_109 SwordInventoryItem]
+FriendlyName=Arual
+
+[Sword_110 SwordInventoryItem]
+FriendlyName=Grayson
+
+[Sword_111 SwordInventoryItem]
+FriendlyName=The Ancient
+
+[Sword_112 SwordInventoryItem]
+FriendlyName=Voak Grinder
+
+[Sword_113 SwordInventoryItem]
+FriendlyName=Hadouken
+
+[Sword_114 SwordInventoryItem]
+FriendlyName=Kurganic
+
+[Sword_115 SwordInventoryItem]
+FriendlyName=Balak
+
+[Sword_116 SwordInventoryItem]
+FriendlyName=Thistle
+
+[Sword_117 SwordInventoryItem]
+FriendlyName=Sheen
+
+[Sword_118 SwordInventoryItem]
+FriendlyName=Orcan
+
+[Sword_119 SwordInventoryItem]
+FriendlyName=Bauxite
+
+[Sword_120 SwordInventoryItem]
+FriendlyName=Blade of Eradoom
+
+[Sword_121 SwordInventoryItem]
+FriendlyName=Xiv
+
+[Sword_122 SwordInventoryItem]
+FriendlyName=Infinity Sword
+
+[Sword_123 SwordInventoryItem]
+FriendlyName=Red Star
+
+[Sword_124 SwordInventoryItem]
+FriendlyName=Le Pain de Mort
+
+[Sword_125 SwordInventoryItem]
+FriendlyName=Flak
+
+[Sword_126 SwordInventoryItem]
+FriendlyName=Handlebar
+
+[Sword_127 SwordInventoryItem]
+FriendlyName=Ash
+
+[Sword_128 SwordInventoryItem]
+FriendlyName=Corruption
+
+[Sword_129 SwordInventoryItem]
+FriendlyName=Ra'ul
+
+[Sword_130 SwordInventoryItem]
+FriendlyName=Mada
+
+[Sword_131 SwordInventoryItem]
+FriendlyName=The Herring
+
+[Sword_132 SwordInventoryItem]
+FriendlyName=Paper Cut
+
+[Sword_133 SwordInventoryItem]
+FriendlyName=The Contessa
+
+[Sword_134 SwordInventoryItem]
+FriendlyName=Flynn
+
+[Sword_135 SwordInventoryItem]
+FriendlyName=Harmony
+
+[Sword_136 SwordInventoryItem]
+FriendlyName=Lockjaw
+
+[Sword_137 SwordInventoryItem]
+FriendlyName=Wedge
+
+[Sword_138 SwordInventoryItem]
+FriendlyName=Wrench
+
+[Sword_139 SwordInventoryItem]
+FriendlyName=The Vile Blade
+
+[Sword_140 SwordInventoryItem]
+FriendlyName=Solar Trans-LX
+
+[Sword_141 SwordInventoryItem]
+FriendlyName=Starsh
+
+[Sword_142 SwordInventoryItem]
+FriendlyName=Xwiss
+
+[Sword_143 SwordInventoryItem]
+FriendlyName=Bone Saw
+
+[Sword_144 SwordInventoryItem]
+FriendlyName=Pharoe
+
+[Sword_145 SwordInventoryItem]
+FriendlyName=Ruene
+
+[Sword_146 SwordInventoryItem]
+FriendlyName=Integrite
+
+[Sword_147 SwordInventoryItem]
+FriendlyName=Saphirine
+
+[Sword_148 SwordInventoryItem]
+FriendlyName=Decay
+
+[Sword_149 SwordInventoryItem]
+FriendlyName=Willok
+
+[Sword_150 SwordInventoryItem]
+FriendlyName=Ribbon
+
+[Sword_151 SwordInventoryItem]
+FriendlyName=The Infinity Blade
+
+[Sword_201 SwordInventoryItem]
+FriendlyName=Worn Axe
+
+[Sword_202 SwordInventoryItem]
+FriendlyName=Sovereign
+
+[Sword_203 SwordInventoryItem]
+FriendlyName=Orok
+
+[Sword_204 SwordInventoryItem]
+FriendlyName=Molnaar
+
+[Sword_205 SwordInventoryItem]
+FriendlyName=Lost Axe of Galath
+
+[Sword_206 SwordInventoryItem]
+FriendlyName=The Judge
+
+[Sword_207 SwordInventoryItem]
+FriendlyName=Imperial
+
+[Sword_208 SwordInventoryItem]
+FriendlyName=Anodim
+
+[Sword_209 SwordInventoryItem]
+FriendlyName=Hurricane
+
+[Sword_210 SwordInventoryItem]
+FriendlyName=Dalid
+
+[Sword_211 SwordInventoryItem]
+FriendlyName=Retribution
+
+[Sword_212 SwordInventoryItem]
+FriendlyName=Rixyx
+
+[Sword_213 SwordInventoryItem]
+FriendlyName=Halfstar
+
+[Sword_214 SwordInventoryItem]
+FriendlyName=Punisher
+
+[Sword_215 SwordInventoryItem]
+FriendlyName=Tetrach
+
+[Sword_216 SwordInventoryItem]
+FriendlyName=Bramble
+
+[Sword_217 SwordInventoryItem]
+FriendlyName=Reaper
+
+[Sword_218 SwordInventoryItem]
+FriendlyName=Granite Hammer
+
+[Sword_219 SwordInventoryItem]
+FriendlyName=Iron Stone
+
+[Sword_220 SwordInventoryItem]
+FriendlyName=Cleaver Grinder
+
+[Sword_221 SwordInventoryItem]
+FriendlyName=Imagine Dragon
+
+[Sword_222 SwordInventoryItem]
+FriendlyName=Anarchax
+
+[Sword_223 SwordInventoryItem]
+FriendlyName=Mullinax
+
+[Sword_224 SwordInventoryItem]
+FriendlyName=Mulligan
+
+[Sword_225 SwordInventoryItem]
+FriendlyName=Block Head
+
+[Sword_226 SwordInventoryItem]
+FriendlyName=Kudgel
+
+[Sword_227 SwordInventoryItem]
+FriendlyName=The Widow Shriek
+
+[Sword_228 SwordInventoryItem]
+FriendlyName=Death Metal
+
+[Sword_229 SwordInventoryItem]
+FriendlyName=Rift
+
+[Sword_230 SwordInventoryItem]
+FriendlyName=Drofa
+
+[Sword_231 SwordInventoryItem]
+FriendlyName=Warth
+
+[Sword_232 SwordInventoryItem]
+FriendlyName=The Vile Mace
+
+[Sword_233 SwordInventoryItem]
+FriendlyName=Solar Trans-JX
+
+[Sword_234 SwordInventoryItem]
+FriendlyName=Torrens Legacy
+
+[Sword_235 SwordInventoryItem]
+FriendlyName=Kaen
+
+[Sword_236 SwordInventoryItem]
+FriendlyName=Stump Maker
+
+[Sword_237 SwordInventoryItem]
+FriendlyName=Pythonic
+
+[Sword_238 SwordInventoryItem]
+FriendlyName=Phoenix
+
+[Sword_239 SwordInventoryItem]
+FriendlyName=Scalpel
+
+[Sword_240 SwordInventoryItem]
+FriendlyName=Raptor
+
+[Sword_241 SwordInventoryItem]
+FriendlyName=Pressure
+
+[Sword_242 SwordInventoryItem]
+FriendlyName=Iron Axe
+
+[Sword_243 SwordInventoryItem]
+FriendlyName=Herribone
+
+[Sword_244 SwordInventoryItem]
+FriendlyName=Sceptre
+
+[Sword_245 SwordInventoryItem]
+FriendlyName=Mortar
+
+[Sword_246 SwordInventoryItem]
+FriendlyName=Equator
+
+[Sword_247 SwordInventoryItem]
+FriendlyName=Kuritor
+
+[Sword_248 SwordInventoryItem]
+FriendlyName=Scalpel
+
+[Sword_250 SwordInventoryItem]
+FriendlyName=Gem Axe
+
+[Sword_251 SwordInventoryItem]
+FriendlyName=The Infinity Cleaver
+
+[Sword_301 SwordInventoryItem]
+FriendlyName=Richochet
+
+[Sword_302 SwordInventoryItem]
+FriendlyName=Bone Saw
+
+[Sword_303 SwordInventoryItem]
+FriendlyName=Gelder
+
+[Sword_304 SwordInventoryItem]
+FriendlyName=Eavet
+
+[Sword_305 SwordInventoryItem]
+FriendlyName=Dice
+
+[Sword_306 SwordInventoryItem]
+FriendlyName=Odnal
+
+[Sword_307 SwordInventoryItem]
+FriendlyName=Turq
+
+[Sword_308 SwordInventoryItem]
+FriendlyName=Rednas
+
+[Sword_309 SwordInventoryItem]
+FriendlyName=Rodayne
+
+[Sword_310 SwordInventoryItem]
+FriendlyName=Steel Hatchet
+
+[Sword_311 SwordInventoryItem]
+FriendlyName=Sinkhook
+
+[Sword_312 SwordInventoryItem]
+FriendlyName=Hess
+
+[Sword_313 SwordInventoryItem]
+FriendlyName=Nero
+
+[Sword_314 SwordInventoryItem]
+FriendlyName=Sacrum
+
+[Sword_315 SwordInventoryItem]
+FriendlyName=Splice
+
+[Sword_316 SwordInventoryItem]
+FriendlyName=Rohan's Fin
+
+[Sword_317 SwordInventoryItem]
+FriendlyName=The Iron Rod
+
+[Sword_318 SwordInventoryItem]
+FriendlyName=Baneer
+
+[Sword_319 SwordInventoryItem]
+FriendlyName=Serat
+
+[Sword_320 SwordInventoryItem]
+FriendlyName=Infinity Sabre
+
+[Sword_321 SwordInventoryItem]
+FriendlyName=Nobel
+
+[Sword_322 SwordInventoryItem]
+FriendlyName=Nova Grinder
+
+[Sword_323 SwordInventoryItem]
+FriendlyName=Deeg
+
+[Sword_324 SwordInventoryItem]
+FriendlyName=Sword of Kayser
+
+[Sword_325 SwordInventoryItem]
+FriendlyName=Needle
+
+[Sword_326 SwordInventoryItem]
+FriendlyName=Bok Bok
+
+[Sword_327 SwordInventoryItem]
+FriendlyName=Hanger
+
+[Sword_328 SwordInventoryItem]
+FriendlyName=Kurtz
+
+[Sword_329 SwordInventoryItem]
+FriendlyName=Pork Chop
+
+[Sword_330 SwordInventoryItem]
+FriendlyName=Orci
+
+[Sword_331 SwordInventoryItem]
+FriendlyName=Lisran
+
+[Sword_332 SwordInventoryItem]
+FriendlyName=Keldrew
+
+[Sword_333 SwordInventoryItem]
+FriendlyName=The Vile Thorn
+
+[Sword_334 SwordInventoryItem]
+FriendlyName=Solar Trans-OX
+
+[Sword_335 SwordInventoryItem]
+FriendlyName=Chisel
+
+[Sword_336 SwordInventoryItem]
+FriendlyName=Skinner
+
+[Sword_337 SwordInventoryItem]
+FriendlyName=Dratsum
+
+[Sword_338 SwordInventoryItem]
+FriendlyName=Jack Jaw
+
+[Sword_339 SwordInventoryItem]
+FriendlyName=Trench
+
+[Sword_340 SwordInventoryItem]
+FriendlyName=Gemini
+
+[Sword_341 SwordInventoryItem]
+FriendlyName=Tunnep
+
+[Sword_342 SwordInventoryItem]
+FriendlyName=Virgil
+
+[Sword_343 SwordInventoryItem]
+FriendlyName=Skullcrusher
+
+[Sword_344 SwordInventoryItem]
+FriendlyName=Lampblack
+
+[Sword_350 SwordInventoryItem]
+FriendlyName=Gem Blades
+
+[Sword_351 SwordInventoryItem]
+FriendlyName=Berator
+
+[Sword_352 SwordInventoryItem]
+FriendlyName=Misanthrope
+
+[Sword_353 SwordInventoryItem]
+FriendlyName=The Infinity Swords
+
+[Sword_400 SwordInventoryItem]
+FriendlyName=Isa Sword
+
+[Sword_401 SwordInventoryItem]
+FriendlyName=Isa Sword2
+
+[Sword_402 SwordInventoryItem]
+FriendlyName=Halogen
+
+[Sword_403 SwordInventoryItem]
+FriendlyName=Forebear
+
+[Sword_404 SwordInventoryItem]
+FriendlyName=Javel
+
+[Sword_405 SwordInventoryItem]
+FriendlyName=Dark Infinity Sword
+
+[Sword_406 SwordInventoryItem]
+FriendlyName=Barrinov
+
+[Sword_407 SwordInventoryItem]
+FriendlyName=Royal Katana
+
+[Sword_408 SwordInventoryItem]
+FriendlyName=Rubitas
+
+[Sword_409 SwordInventoryItem]
+FriendlyName=Slicer
+
+[Sword_410 SwordInventoryItem]
+FriendlyName=Phage
+
+[Sword_411 SwordInventoryItem]
+FriendlyName=MoulBage
+
+[Sword_412 SwordInventoryItem]
+FriendlyName=Arual
+
+[Sword_413 SwordInventoryItem]
+FriendlyName=Balak
+
+[Sword_414 SwordInventoryItem]
+FriendlyName=Blade of Eradoom
+
+[Sword_415 SwordInventoryItem]
+FriendlyName=Claymourn
+
+[Sword_416 SwordInventoryItem]
+FriendlyName=Clever Grinder
+
+[Sword_417 SwordInventoryItem]
+FriendlyName=Corruption
+
+[Sword_418 SwordInventoryItem]
+FriendlyName=Eavet
+
+[Sword_419 SwordInventoryItem]
+FriendlyName=Ember
+
+[Sword_420 SwordInventoryItem]
+FriendlyName=Fang
+
+[Sword_421 SwordInventoryItem]
+FriendlyName=Frigid
+
+[Sword_422 SwordInventoryItem]
+FriendlyName=Hadouken
+
+[Sword_423 SwordInventoryItem]
+FriendlyName=The Infinity Edge
+
+[Sword_424 SwordInventoryItem]
+FriendlyName=Illorium
+
+[Sword_425 SwordInventoryItem]
+FriendlyName=Iron Claw
+
+[Sword_426 SwordInventoryItem]
+FriendlyName=Kurtz
+
+[Sword_427 SwordInventoryItem]
+FriendlyName=Lockjaw
+
+[Sword_428 SwordInventoryItem]
+FriendlyName=Mulligan
+
+[Sword_429 SwordInventoryItem]
+FriendlyName=Nahte
+
+[Sword_430 SwordInventoryItem]
+FriendlyName=Oathborn
+
+[Sword_431 SwordInventoryItem]
+FriendlyName=Obsidian
+
+[Sword_432 SwordInventoryItem]
+FriendlyName=Odnal
+
+[Sword_433 SwordInventoryItem]
+FriendlyName=Pinion
+
+[Sword_434 SwordInventoryItem]
+FriendlyName=Ra'ul
+
+[Sword_435 SwordInventoryItem]
+FriendlyName=Ruin
+
+[Sword_436 SwordInventoryItem]
+FriendlyName=Saw Tooth
+
+[Sword_437 SwordInventoryItem]
+FriendlyName=Silver
+
+[Sword_438 SwordInventoryItem]
+FriendlyName=Sword of Storms
+
+[Sword_439 SwordInventoryItem]
+FriendlyName=Thistle
+
+[Sword_440 SwordInventoryItem]
+FriendlyName=Unfaithful
+
+[Sword_441 SwordInventoryItem]
+FriendlyName=Woad
+
+[Sword_500 SwordInventoryItem]
+FriendlyName=Isa Staff1
+
+[Sword_501 SwordInventoryItem]
+FriendlyName=Isa Staff2
+
+[Sword_502 SwordInventoryItem]
+FriendlyName=Aquila
+
+[Sword_503 SwordInventoryItem]
+FriendlyName=Crowspike
+
+[Sword_504 SwordInventoryItem]
+FriendlyName=Daina
+
+[Sword_505 SwordInventoryItem]
+FriendlyName=Dias
+
+[Sword_506 SwordInventoryItem]
+FriendlyName=Spear of Teth
+
+[Sword_507 SwordInventoryItem]
+FriendlyName=Entrapment
+
+[Sword_508 SwordInventoryItem]
+FriendlyName=Ouroboros
+
+[Sword_509 SwordInventoryItem]
+FriendlyName=Thresher
+
+[Sword_510 SwordInventoryItem]
+FriendlyName=Yeoh
+
+[Sword_511 SwordInventoryItem]
+FriendlyName=Double Mace
+
+[Sword_512 SwordInventoryItem]
+FriendlyName=Abner
+
+[Sword_513 SwordInventoryItem]
+FriendlyName=The Master Stick
+
+[Sword_514 SwordInventoryItem]
+FriendlyName=Chopper
+
+[Sword_515 SwordInventoryItem]
+FriendlyName=Cobra
+
+[Sword_516 SwordInventoryItem]
+FriendlyName=Dalid
+
+[Sword_517 SwordInventoryItem]
+FriendlyName=The Infinity Spear
+
+[Sword_518 SwordInventoryItem]
+FriendlyName=Ziyi
+
+[Sword_519 SwordInventoryItem]
+FriendlyName=Phelanger
+
+[Sword_520 SwordInventoryItem]
+FriendlyName=Forge
+
+[Sword_521 SwordInventoryItem]
+FriendlyName=Hurricane
+
+[Sword_522 SwordInventoryItem]
+FriendlyName=Imperial
+
+[Sword_523 SwordInventoryItem]
+FriendlyName=Kaen
+
+[Sword_524 SwordInventoryItem]
+FriendlyName=Kludd
+
+[Sword_525 SwordInventoryItem]
+FriendlyName=Kraken
+
+[Sword_526 SwordInventoryItem]
+FriendlyName=Mace
+
+[Sword_527 SwordInventoryItem]
+FriendlyName=Mullinax
+
+[Sword_528 SwordInventoryItem]
+FriendlyName=Orok
+
+[Sword_529 SwordInventoryItem]
+FriendlyName=Poker
+
+[Sword_530 SwordInventoryItem]
+FriendlyName=Punisher
+
+[Sword_531 SwordInventoryItem]
+FriendlyName=Raam
+
+[Sword_532 SwordInventoryItem]
+FriendlyName=Retribution
+
+[Sword_533 SwordInventoryItem]
+FriendlyName=Sovereign
+
+[Sword_534 SwordInventoryItem]
+FriendlyName=Spindle
+
+[Sword_535 SwordInventoryItem]
+FriendlyName=Switch
+
+[Sword_536 SwordInventoryItem]
+FriendlyName=Thorn
+
+[Sword_600 SwordInventoryItem]
+FriendlyName=Drestle
+
+[Sword_601 SwordInventoryItem]
+FriendlyName=Equinox
+
+[Sword_615 SwordInventoryItem]
+FriendlyName=Sinestra
+
+[Sword_602 SwordInventoryItem]
+FriendlyName=Taleth
+
+[Sword_603 SwordInventoryItem]
+FriendlyName=Claw
+
+[Sword_604 SwordInventoryItem]
+FriendlyName=Tectonic
+
+[Sword_605 SwordInventoryItem]
+FriendlyName=Scorne
+
+[Sword_606 SwordInventoryItem]
+FriendlyName=Daybreaker
+
+[Sword_607 SwordInventoryItem]
+FriendlyName=Santone
+
+[Sword_608 SwordInventoryItem]
+FriendlyName=Duster
+
+[Sword_609 SwordInventoryItem]
+FriendlyName=Riisling
+
+[Sword_610 SwordInventoryItem]
+FriendlyName=Talon Knives
+
+[Sword_611 SwordInventoryItem]
+FriendlyName=Winterborn
+
+[Sword_612 SwordInventoryItem]
+FriendlyName=Hunter
+
+[Sword_613 SwordInventoryItem]
+FriendlyName=Shiv
+
+[Sword_614 SwordInventoryItem]
+FriendlyName=Cuttle
+
+[Sword_616 SwordInventoryItem]
+FriendlyName=Tangle
+
+[Sword_617 SwordInventoryItem]
+FriendlyName=BoneSaw
+
+[Sword_618 SwordInventoryItem]
+FriendlyName=Dice
+
+[Sword_619 SwordInventoryItem]
+FriendlyName=FireBrand
+
+[Sword_620 SwordInventoryItem]
+FriendlyName=Flynn
+
+[Sword_621 SwordInventoryItem]
+FriendlyName=The Infinity Daggers
+
+[Sword_622 SwordInventoryItem]
+FriendlyName=Incubus
+
+[Sword_623 SwordInventoryItem]
+FriendlyName=Knives of Kayser
+
+[Sword_624 SwordInventoryItem]
+FriendlyName=Mada
+
+[Sword_625 SwordInventoryItem]
+FriendlyName=Narsil
+
+[Sword_626 SwordInventoryItem]
+FriendlyName=Nexus
+
+[Sword_627 SwordInventoryItem]
+FriendlyName=Sacrum
+
+[Sword_628 SwordInventoryItem]
+FriendlyName=Serat
+
+[Sword_629 SwordInventoryItem]
+FriendlyName=Shard
+
+[Sword_630 SwordInventoryItem]
+FriendlyName=Shiver
+
+[Sword_631 SwordInventoryItem]
+FriendlyName=Slint
+
+[Sword_632 SwordInventoryItem]
+FriendlyName=Phlege
+
+[Sword_633 SwordInventoryItem]
+FriendlyName=Snikt
+
+[Shield_1 SwordInventoryItem]
+FriendlyName=Wooden Shield
+
+[Shield_2 SwordInventoryItem]
+FriendlyName=Iron Guard
+
+[Shield_3 SwordInventoryItem]
+FriendlyName=Grummun
+
+[Shield_4 SwordInventoryItem]
+FriendlyName=Aegis
+
+[Shield_5 SwordInventoryItem]
+FriendlyName=Osseous
+
+[Shield_6 SwordInventoryItem]
+FriendlyName=Odin Guard
+
+[Shield_7 SwordInventoryItem]
+FriendlyName=Supreme Shield
+
+[Shield_8 SwordInventoryItem]
+FriendlyName=Silverlight
+
+[Shield_9 SwordInventoryItem]
+FriendlyName=Sunstorm
+
+[Shield_10 SwordInventoryItem]
+FriendlyName=The Wall
+
+[Shield_11 SwordInventoryItem]
+FriendlyName=Elith
+
+[Shield_12 SwordInventoryItem]
+FriendlyName=Prime
+
+[Shield_13 SwordInventoryItem]
+FriendlyName=Dorn
+
+[Shield_14 SwordInventoryItem]
+FriendlyName=Ruby Shield
+
+[Shield_15 SwordInventoryItem]
+FriendlyName=Hailstone
+
+[Shield_16 SwordInventoryItem]
+FriendlyName=Norsal
+
+[Shield_17 SwordInventoryItem]
+FriendlyName=The Patriot
+
+[Shield_18 SwordInventoryItem]
+FriendlyName=Dragoor Bone
+
+[Shield_19 SwordInventoryItem]
+FriendlyName=Hexan
+
+[Shield_20 SwordInventoryItem]
+FriendlyName=The Maiden
+
+[Shield_21 SwordInventoryItem]
+FriendlyName=Tempest
+
+[Shield_22 SwordInventoryItem]
+FriendlyName=Gnash
+
+[Shield_23 SwordInventoryItem]
+FriendlyName=Cloven
+
+[Shield_24 SwordInventoryItem]
+FriendlyName=Vulcanis
+
+[Shield_25 SwordInventoryItem]
+FriendlyName=Terrapin
+
+[Shield_26 SwordInventoryItem]
+FriendlyName=Phoenix Guard
+
+[Shield_27 SwordInventoryItem]
+FriendlyName=Dark Tempest
+
+[Shield_50 SwordInventoryItem]
+FriendlyName=Gem Shield
+
+[Shield_100 SwordInventoryItem]
+FriendlyName=Darksheer
+
+[Shield_101 SwordInventoryItem]
+FriendlyName=Byzanti
+
+[Shield_102 SwordInventoryItem]
+FriendlyName=Oaken
+
+[Shield_103 SwordInventoryItem]
+FriendlyName=Dynasty
+
+[Shield_104 SwordInventoryItem]
+FriendlyName=Tusken
+
+[Shield_105 SwordInventoryItem]
+FriendlyName=Herringbone
+
+[Shield_106 SwordInventoryItem]
+FriendlyName=Jade Shield
+
+[Shield_107 SwordInventoryItem]
+FriendlyName=Kreiger
+
+[Shield_108 SwordInventoryItem]
+FriendlyName=Zodrian
+
+[Shield_109 SwordInventoryItem]
+FriendlyName=Maximus
+
+[Shield_110 SwordInventoryItem]
+FriendlyName=Epsilon
+
+[Shield_111 SwordInventoryItem]
+FriendlyName=Cyclone
+
+[Shield_112 SwordInventoryItem]
+FriendlyName=Straw Shield
+
+[Shield_113 SwordInventoryItem]
+FriendlyName=Oceanic
+
+[Shield_114 SwordInventoryItem]
+FriendlyName=Vampirum
+
+[Shield_115 SwordInventoryItem]
+FriendlyName=Foundry
+
+[Shield_116 SwordInventoryItem]
+FriendlyName=Shockwave
+
+[Shield_117 SwordInventoryItem]
+FriendlyName=The Hole
+
+[Shield_118 SwordInventoryItem]
+FriendlyName=Patriarch
+
+[Shield_119 SwordInventoryItem]
+FriendlyName=Halidon
+
+[Shield_120 SwordInventoryItem]
+FriendlyName=Knox
+
+[Shield_121 SwordInventoryItem]
+FriendlyName=Splinter
+
+[Shield_122 SwordInventoryItem]
+FriendlyName=Trifecta
+
+[Shield_123 SwordInventoryItem]
+FriendlyName=Crusader
+
+[Shield_124 SwordInventoryItem]
+FriendlyName=Undertow Tank
+
+[Shield_125 SwordInventoryItem]
+FriendlyName=Nodus
+
+[Shield_126 SwordInventoryItem]
+FriendlyName=Tordan
+
+[Shield_127 SwordInventoryItem]
+FriendlyName=The Gate
+
+[Shield_128 SwordInventoryItem]
+FriendlyName=Chasten
+
+[Shield_129 SwordInventoryItem]
+FriendlyName=Bike
+
+[Shield_130 SwordInventoryItem]
+FriendlyName=Stodd
+
+[Shield_131 SwordInventoryItem]
+FriendlyName=End
+
+[Shield_132 SwordInventoryItem]
+FriendlyName=Sweet Lid
+
+[Shield_133 SwordInventoryItem]
+FriendlyName=The Sovereign
+
+[Shield_134 SwordInventoryItem]
+FriendlyName=The Vile Shield
+
+[Shield_135 SwordInventoryItem]
+FriendlyName=Everlong
+
+[Shield_136 SwordInventoryItem]
+FriendlyName=Riverdam
+
+[Shield_137 SwordInventoryItem]
+FriendlyName=Cordite
+
+[Shield_138 SwordInventoryItem]
+FriendlyName=Copper Shield
+
+[Shield_139 SwordInventoryItem]
+FriendlyName=Gearcutter
+
+[Shield_140 SwordInventoryItem]
+FriendlyName=Sundial
+
+[Shield_141 SwordInventoryItem]
+FriendlyName=Jaggertine
+
+[Shield_142 SwordInventoryItem]
+FriendlyName=Tradit
+
+[Shield_143 SwordInventoryItem]
+FriendlyName=Turepro
+
+[Shield_300 SwordInventoryItem]
+FriendlyName=Isa Shield
+
+[Shield_301 SwordInventoryItem]
+FriendlyName=Isa Shield2
+
+[Shield_302 SwordInventoryItem]
+FriendlyName=Felidae
+
+[Shield_303 SwordInventoryItem]
+FriendlyName=Energy Shield
+
+[Shield_304 SwordInventoryItem]
+FriendlyName=Wayne
+
+[Shield_305 SwordInventoryItem]
+FriendlyName=Eagle
+
+[Shield_306 SwordInventoryItem]
+FriendlyName=Gold Arrow
+
+[Shield_307 SwordInventoryItem]
+FriendlyName=Spike Wheel
+
+[Shield_308 SwordInventoryItem]
+FriendlyName=Leather Brace
+
+[Shield_309 SwordInventoryItem]
+FriendlyName=T-7 AGB
+
+[Shield_310 SwordInventoryItem]
+FriendlyName=Frisbee
+
+[Shield_311 SwordInventoryItem]
+FriendlyName=Politic
+
+[Shield_312 SwordInventoryItem]
+FriendlyName=Akkash
+
+[Shield_313 SwordInventoryItem]
+FriendlyName=Rust Brace
+
+[Shield_317 SwordInventoryItem]
+FriendlyName=Byzanti
+
+[Shield_318 SwordInventoryItem]
+FriendlyName=Crusader
+
+[Shield_319 SwordInventoryItem]
+FriendlyName=Dorn
+
+[Shield_321 SwordInventoryItem]
+FriendlyName=Hexan
+
+[Shield_322 SwordInventoryItem]
+FriendlyName=Knox
+
+[Shield_323 SwordInventoryItem]
+FriendlyName=Odin Guard
+
+[Shield_324 SwordInventoryItem]
+FriendlyName=Patriarch
+
+[Shield_325 SwordInventoryItem]
+FriendlyName=Ruby Shield
+
+[Shield_326 SwordInventoryItem]
+FriendlyName=Terrapin
+
+[Shield_327 SwordInventoryItem]
+FriendlyName=Tordan
+
+[Shield_328 SwordInventoryItem]
+FriendlyName=Tusken
+
+[Shield_329 SwordInventoryItem]
+FriendlyName=Undertow
+
+[Shield_330 SwordInventoryItem]
+FriendlyName=Herringbone
+
+[Shield_331 SwordInventoryItem]
+FriendlyName=Knox
+
+[Shield_332 SwordInventoryItem]
+FriendlyName=Iron Vambrace
+
+[Shield_333 SwordInventoryItem]
+FriendlyName=Honor Guard
+
+[Shield_334 SwordInventoryItem]
+FriendlyName=Bone
+
+[Shield_335 SwordInventoryItem]
+FriendlyName=Sentinel Wrap
+
+[Shield_336 SwordInventoryItem]
+FriendlyName=Steel Guard
+
+[Shield_337 SwordInventoryItem]
+FriendlyName=Bolt Brace
+
+[Armor_1 SwordInventoryItem]
+FriendlyName=Leather Armor
+
+[Armor_2 SwordInventoryItem]
+FriendlyName=Bronze Armor
+
+[Armor_3 SwordInventoryItem]
+FriendlyName=Iron Armor
+
+[Armor_4 SwordInventoryItem]
+FriendlyName=Plate Armor
+
+[Armor_5 SwordInventoryItem]
+FriendlyName=Adamant Armor
+
+[Armor_6 SwordInventoryItem]
+FriendlyName=Omega Armor XOS-7
+
+[Armor_7 SwordInventoryItem]
+FriendlyName=Helio Armor
+
+[Armor_8 SwordInventoryItem]
+FriendlyName=Night Armor
+
+[Armor_9 SwordInventoryItem]
+FriendlyName=Dark Omega XOS-7
+
+[Armor_50 SwordInventoryItem]
+FriendlyName=Gem Armor
+
+[Armor_100 SwordInventoryItem]
+FriendlyName=Seratic Armor
+
+[Armor_101 SwordInventoryItem]
+FriendlyName=Boron Armor
+
+[Armor_102 SwordInventoryItem]
+FriendlyName=Thark Armor
+
+[Armor_103 SwordInventoryItem]
+FriendlyName=Aegis Armor
+
+[Armor_104 SwordInventoryItem]
+FriendlyName=Avrian Plate
+
+[Armor_105 SwordInventoryItem]
+FriendlyName=Disk Armor
+
+[Armor_106 SwordInventoryItem]
+FriendlyName=Titan Mail
+
+[Armor_107 SwordInventoryItem]
+FriendlyName=Ronin Plate
+
+[Armor_108 SwordInventoryItem]
+FriendlyName=Steel Plate Armor
+
+[Armor_109 SwordInventoryItem]
+FriendlyName=Hunter Mail
+
+[Armor_110 SwordInventoryItem]
+FriendlyName=Dark Plate
+
+[Armor_111 SwordInventoryItem]
+FriendlyName=Helio Plate
+
+[Armor_112 SwordInventoryItem]
+FriendlyName=EXO Armor
+
+[Armor_113 SwordInventoryItem]
+FriendlyName=Cardboard Armor
+
+[Armor_114 SwordInventoryItem]
+FriendlyName=The Vile Armor
+
+[Armor_115 SwordInventoryItem]
+FriendlyName=Undertow Wetsuit
+
+[Armor_116 SwordInventoryItem]
+FriendlyName=Still Plate
+
+[Armor_117 SwordInventoryItem]
+FriendlyName=Iron Plate Armor
+
+[Armor_118 SwordInventoryItem]
+FriendlyName=Kuro Plate
+
+[Armor_119 SwordInventoryItem]
+FriendlyName=Armor of Kings
+
+[Armor_120 SwordInventoryItem]
+FriendlyName=Woven Cloth
+
+[Armor_121 SwordInventoryItem]
+FriendlyName=Hibon Plate
+
+[Armor_300 SwordInventoryItem]
+FriendlyName=Thief Armor
+
+[Armor_301 SwordInventoryItem]
+FriendlyName=Reinforced Armor
+
+[Armor_302 SwordInventoryItem]
+FriendlyName=Noc Leather Mail
+
+[Armor_303 SwordInventoryItem]
+FriendlyName=Fuhsa Plate
+
+[Armor_304 SwordInventoryItem]
+FriendlyName=Machined Armor
+
+[Armor_305 SwordInventoryItem]
+FriendlyName=Ivory Mail
+
+[Armor_306 SwordInventoryItem]
+FriendlyName=Shard Plate
+
+[Armor_307 SwordInventoryItem]
+FriendlyName=Armor of Grace
+
+[Armor_308 SwordInventoryItem]
+FriendlyName=Forbiden Armor
+
+[Armor_309 SwordInventoryItem]
+FriendlyName=Saburai Armor
+
+[Armor_310 SwordInventoryItem]
+FriendlyName=Woven Cloth
+
+[Armor_311 SwordInventoryItem]
+FriendlyName=Dark Stripe
+
+[Helmet_1 SwordInventoryItem]
+FriendlyName=Steel Helm
+
+[Helmet_2 SwordInventoryItem]
+FriendlyName=Gold Fury
+
+[Helmet_3 SwordInventoryItem]
+FriendlyName=Plated Crown
+
+[Helmet_4 SwordInventoryItem]
+FriendlyName=Titanium Horn
+
+[Helmet_5 SwordInventoryItem]
+FriendlyName=Phoenix Helm
+
+[Helmet_6 SwordInventoryItem]
+FriendlyName=Mighty Helm
+
+[Helmet_7 SwordInventoryItem]
+FriendlyName=Midas Helm
+
+[Helmet_8 SwordInventoryItem]
+FriendlyName=Dark Helm
+
+[Helmet_9 SwordInventoryItem]
+FriendlyName=Gladius
+
+[Helmet_10 SwordInventoryItem]
+FriendlyName=Iron Skull
+
+[Helmet_11 SwordInventoryItem]
+FriendlyName=Odin's Wisdom
+
+[Helmet_12 SwordInventoryItem]
+FriendlyName=Adamantine
+
+[Helmet_13 SwordInventoryItem]
+FriendlyName=Fusion Helmet
+
+[Helmet_14 SwordInventoryItem]
+FriendlyName=Raulum
+
+[Helmet_15 SwordInventoryItem]
+FriendlyName=Blue Steel
+
+[Helmet_16 SwordInventoryItem]
+FriendlyName=Legion
+
+[Helmet_17 SwordInventoryItem]
+FriendlyName=Mana Crown
+
+[Helmet_18 SwordInventoryItem]
+FriendlyName=Trajan
+
+[Helmet_19 SwordInventoryItem]
+FriendlyName=Kaldan
+
+[Helmet_20 SwordInventoryItem]
+FriendlyName=Oroku
+
+[Helmet_21 SwordInventoryItem]
+FriendlyName=Holiday Helm
+
+[Helmet_22 SwordInventoryItem]
+FriendlyName=The Snake
+
+[Helmet_23 SwordInventoryItem]
+FriendlyName=Vim
+
+[Helmet_24 SwordInventoryItem]
+FriendlyName=Royal Helm
+
+[Helmet_25 SwordInventoryItem]
+FriendlyName=Libertine
+
+[Helmet_26 SwordInventoryItem]
+FriendlyName=Devil's Crown
+
+[Helmet_27 SwordInventoryItem]
+FriendlyName=Conqueror
+
+[Helmet_28 SwordInventoryItem]
+FriendlyName=Shadow
+
+[Helmet_38 SwordInventoryItem]
+FriendlyName=Helio Helm
+
+[Helmet_39 SwordInventoryItem]
+FriendlyName=Dark Fusion
+
+[Helmet_50 SwordInventoryItem]
+FriendlyName=Gem Helm
+
+[Helmet_100 SwordInventoryItem]
+FriendlyName=Helm of Fate
+
+[Helmet_101 SwordInventoryItem]
+FriendlyName=Mask of Secrets
+
+[Helmet_102 SwordInventoryItem]
+FriendlyName=Atium Helm
+
+[Helmet_103 SwordInventoryItem]
+FriendlyName=Noble Helm
+
+[Helmet_104 SwordInventoryItem]
+FriendlyName=Longshot
+
+[Helmet_105 SwordInventoryItem]
+FriendlyName=Cadmus
+
+[Helmet_106 SwordInventoryItem]
+FriendlyName=Deathtide
+
+[Helmet_107 SwordInventoryItem]
+FriendlyName=Mantis
+
+[Helmet_108 SwordInventoryItem]
+FriendlyName=The Hive
+
+[Helmet_109 SwordInventoryItem]
+FriendlyName=Nomadic Helm
+
+[Helmet_110 SwordInventoryItem]
+FriendlyName=Cavitic Helm
+
+[Helmet_111 SwordInventoryItem]
+FriendlyName=Colossal Helm
+
+[Helmet_112 SwordInventoryItem]
+FriendlyName=Eridius
+
+[Helmet_113 SwordInventoryItem]
+FriendlyName=Argon
+
+[Helmet_114 SwordInventoryItem]
+FriendlyName=Tarkas
+
+[Helmet_115 SwordInventoryItem]
+FriendlyName=Aran
+
+[Helmet_116 SwordInventoryItem]
+FriendlyName=Triveticus
+
+[Helmet_117 SwordInventoryItem]
+FriendlyName=Cyclopian Helm
+
+[Helmet_118 SwordInventoryItem]
+FriendlyName=Apoc
+
+[Helmet_119 SwordInventoryItem]
+FriendlyName=Shogun
+
+[Helmet_120 SwordInventoryItem]
+FriendlyName=Iron Crown
+
+[Helmet_121 SwordInventoryItem]
+FriendlyName=Hawken
+
+[Helmet_122 SwordInventoryItem]
+FriendlyName=Alloy Helm
+
+[Helmet_123 SwordInventoryItem]
+FriendlyName=Steel Helm
+
+[Helmet_124 SwordInventoryItem]
+FriendlyName=Helm of Ages
+
+[Helmet_125 SwordInventoryItem]
+FriendlyName=Davidian
+
+[Helmet_126 SwordInventoryItem]
+FriendlyName=Ariss
+
+[Helmet_127 SwordInventoryItem]
+FriendlyName=Crustak
+
+[Helmet_128 SwordInventoryItem]
+FriendlyName=Divarr
+
+[Helmet_129 SwordInventoryItem]
+FriendlyName=Exalio
+
+[Helmet_130 SwordInventoryItem]
+FriendlyName=Hazzoc
+
+[Helmet_131 SwordInventoryItem]
+FriendlyName=Honnyo
+
+[Helmet_132 SwordInventoryItem]
+FriendlyName=Noxix
+
+[Helmet_133 SwordInventoryItem]
+FriendlyName=Pallid
+
+[Helmet_134 SwordInventoryItem]
+FriendlyName=Radian
+
+[Helmet_135 SwordInventoryItem]
+FriendlyName=Rima
+
+[Helmet_136 SwordInventoryItem]
+FriendlyName=Sorok
+
+[Helmet_137 SwordInventoryItem]
+FriendlyName=Splintered Helm
+
+[Helmet_138 SwordInventoryItem]
+FriendlyName=The Unmarked
+
+[Helmet_139 SwordInventoryItem]
+FriendlyName=The Ward
+
+[Helmet_140 SwordInventoryItem]
+FriendlyName=Box
+
+[Helmet_141 SwordInventoryItem]
+FriendlyName=Helio Crown
+
+[Helmet_142 SwordInventoryItem]
+FriendlyName=Dark Plate Helm
+
+[Helmet_143 SwordInventoryItem]
+FriendlyName=EXO Helm
+
+[Helmet_144 SwordInventoryItem]
+FriendlyName=The Vile Helm
+
+[Helmet_145 SwordInventoryItem]
+FriendlyName=Rake's Scuba Mask
+
+[Helmet_146 SwordInventoryItem]
+FriendlyName=Ebon Helm
+
+[Helmet_147 SwordInventoryItem]
+FriendlyName=Maganese
+
+[Helmet_148 SwordInventoryItem]
+FriendlyName=Tencer
+
+[Helmet_149 SwordInventoryItem]
+FriendlyName=Starkrows
+
+[Helmet_150 SwordInventoryItem]
+FriendlyName=Serk
+
+[Helmet_151 SwordInventoryItem]
+FriendlyName=Lishe
+
+[Helmet_152 SwordInventoryItem]
+FriendlyName=Mayann
+
+[Helmet_153 SwordInventoryItem]
+FriendlyName=Brutal Helm
+
+[Helmet_154 SwordInventoryItem]
+FriendlyName=Nightbringer
+
+[Helmet_155 SwordInventoryItem]
+FriendlyName=Ultrasonic
+
+[Helmet_156 SwordInventoryItem]
+FriendlyName=Oblique
+
+[Helmet_157 SwordInventoryItem]
+FriendlyName=Finite
+
+[Helmet_158 SwordInventoryItem]
+FriendlyName=Crown of Kings
+
+[Helmet_159 SwordInventoryItem]
+FriendlyName=Siris' Face
+
+[Helmet_160 SwordInventoryItem]
+FriendlyName=Stateless
+
+[Helmet_300 SwordInventoryItem]
+FriendlyName=Thieves Mask
+
+[Helmet_301 SwordInventoryItem]
+FriendlyName=Murisan
+
+[Helmet_302 SwordInventoryItem]
+FriendlyName=Razoor
+
+[Helmet_303 SwordInventoryItem]
+FriendlyName=Isa's Face
+
+[Helmet_304 SwordInventoryItem]
+FriendlyName=Inari
+
+[Helmet_305 SwordInventoryItem]
+FriendlyName=Reinforced Helm
+
+[Helmet_306 SwordInventoryItem]
+FriendlyName=Strom
+
+[Helmet_307 SwordInventoryItem]
+FriendlyName=Siff
+
+[Helmet_308 SwordInventoryItem]
+FriendlyName=Serene Helm
+
+[Helmet_309 SwordInventoryItem]
+FriendlyName=Mystique
+
+[Helmet_310 SwordInventoryItem]
+FriendlyName=Noble Helm
+
+[Helmet_311 SwordInventoryItem]
+FriendlyName=Scaled Helm
+
+[Helmet_312 SwordInventoryItem]
+FriendlyName=Crystalis
+
+[Helmet_313 SwordInventoryItem]
+FriendlyName=Intimidator
+
+[Helmet_314 SwordInventoryItem]
+FriendlyName=Reactive Helm
+
+[Helmet_315 SwordInventoryItem]
+FriendlyName=Cobalt Helm
+
+[Helmet_316 SwordInventoryItem]
+FriendlyName=Chintathor
+
+[Helmet_317 SwordInventoryItem]
+FriendlyName=Calcium Helm
+
+[Helmet_318 SwordInventoryItem]
+FriendlyName=Perialis
+
+[Helmet_319 SwordInventoryItem]
+FriendlyName=Gentile Helm
+
+[Helmet_320 SwordInventoryItem]
+FriendlyName=Malady
+
+[Helmet_321 SwordInventoryItem]
+FriendlyName=Perconis
+
+[Helmet_322 SwordInventoryItem]
+FriendlyName=Adamantine
+
+[Helmet_323 SwordInventoryItem]
+FriendlyName=Alloy Helm
+
+[Helmet_324 SwordInventoryItem]
+FriendlyName=Argon
+
+[Helmet_325 SwordInventoryItem]
+FriendlyName=BikerHelm
+
+[Helmet_326 SwordInventoryItem]
+FriendlyName=Colossal Helm
+
+[Helmet_327 SwordInventoryItem]
+FriendlyName=Divarr
+
+[Helmet_328 SwordInventoryItem]
+FriendlyName=Hawken
+
+[Helmet_329 SwordInventoryItem]
+FriendlyName=Helm of Ages
+
+[Helmet_330 SwordInventoryItem]
+FriendlyName=Helm of Fate
+
+[Helmet_331 SwordInventoryItem]
+FriendlyName=Kalden
+
+[Helmet_332 SwordInventoryItem]
+FriendlyName=Mantis
+
+[Helmet_333 SwordInventoryItem]
+FriendlyName=Mighty Helm
+
+[Helmet_334 SwordInventoryItem]
+FriendlyName=Rima
+
+[Helmet_335 SwordInventoryItem]
+FriendlyName=Bristoe
+
+[Helmet_336 SwordInventoryItem]
+FriendlyName=Necronom
+
+[Helmet_337 SwordInventoryItem]
+FriendlyName=LoleLu
+
+[Magic_1 SwordInventoryItem]
+FriendlyName=Rusty Ring
+
+[Magic_2 SwordInventoryItem]
+FriendlyName=Shield Halo
+
+[Magic_3 SwordInventoryItem]
+FriendlyName=Venom Ring
+
+[Magic_4 SwordInventoryItem]
+FriendlyName=Frozen Band
+
+[Magic_5 SwordInventoryItem]
+FriendlyName=Zeus Loop
+
+[Magic_6 SwordInventoryItem]
+FriendlyName=Ring of Ice and Fire
+
+[Magic_7 SwordInventoryItem]
+FriendlyName=Ring of Flames
+
+[Magic_8 SwordInventoryItem]
+FriendlyName=Shattered Circle
+
+[Magic_9 SwordInventoryItem]
+FriendlyName=Lightning Round
+
+[Magic_10 SwordInventoryItem]
+FriendlyName=Ring of Elements
+
+[Magic_11 SwordInventoryItem]
+FriendlyName=The Conduit
+
+[Magic_12 SwordInventoryItem]
+FriendlyName=Circle of Life
+
+[Magic_13 SwordInventoryItem]
+FriendlyName=The Cog
+
+[Magic_14 SwordInventoryItem]
+FriendlyName=Cryo Loop
+
+[Magic_15 SwordInventoryItem]
+FriendlyName=Kward
+
+[Magic_16 SwordInventoryItem]
+FriendlyName=Illuminatus
+
+[Magic_17 SwordInventoryItem]
+FriendlyName=Jade Band
+
+[Magic_18 SwordInventoryItem]
+FriendlyName=Thorne
+
+[Magic_19 SwordInventoryItem]
+FriendlyName=Soulless Circle
+
+[Magic_20 SwordInventoryItem]
+FriendlyName=Dragoor Scale
+
+[Magic_21 SwordInventoryItem]
+FriendlyName=Gridiron
+
+[Magic_22 SwordInventoryItem]
+FriendlyName=Dark Halo
+
+[Magic_50 SwordInventoryItem]
+FriendlyName=Gem Circle
+
+[Magic_100 SwordInventoryItem]
+FriendlyName=Atomic Loop
+
+[Magic_101 SwordInventoryItem]
+FriendlyName=Barbok Ring
+
+[Magic_102 SwordInventoryItem]
+FriendlyName=Dark Crystal
+
+[Magic_103 SwordInventoryItem]
+FriendlyName=The Compass
+
+[Magic_104 SwordInventoryItem]
+FriendlyName=Ring of Man
+
+[Magic_105 SwordInventoryItem]
+FriendlyName=Devotion
+
+[Magic_106 SwordInventoryItem]
+FriendlyName=Infinity Loop
+
+[Magic_107 SwordInventoryItem]
+FriendlyName=Leathern Band
+
+[Magic_108 SwordInventoryItem]
+FriendlyName=Ring of Rings
+
+[Magic_109 SwordInventoryItem]
+FriendlyName=Skein
+
+[Magic_110 SwordInventoryItem]
+FriendlyName=Venom Kiss
+
+[Magic_111 SwordInventoryItem]
+FriendlyName=Sweet Loop
+
+[Magic_112 SwordInventoryItem]
+FriendlyName=Black Rose
+
+[Magic_113 SwordInventoryItem]
+FriendlyName=Royal Band
+
+[Magic_114 SwordInventoryItem]
+FriendlyName=Codex
+
+[Magic_115 SwordInventoryItem]
+FriendlyName=The Sacrifice
+
+[Magic_116 SwordInventoryItem]
+FriendlyName=Fire Circle
+
+[Magic_117 SwordInventoryItem]
+FriendlyName=High Storm
+
+[Magic_118 SwordInventoryItem]
+FriendlyName=Tidal Ring
+
+[Magic_119 SwordInventoryItem]
+FriendlyName=Turquoise Band
+
+[Magic_120 SwordInventoryItem]
+FriendlyName=Worm Hole
+
+[Magic_121 SwordInventoryItem]
+FriendlyName=Vegar
+
+[Magic_122 SwordInventoryItem]
+FriendlyName=Diruel
+
+[Magic_123 SwordInventoryItem]
+FriendlyName=Blaze Loop
+
+[Magic_124 SwordInventoryItem]
+FriendlyName=Paga Circle
+
+[Magic_125 SwordInventoryItem]
+FriendlyName=Cuauag
+
+[Magic_126 SwordInventoryItem]
+FriendlyName=Errin
+
+[Magic_127 SwordInventoryItem]
+FriendlyName=Flux Coil
+
+[Magic_128 SwordInventoryItem]
+FriendlyName=Manak Ring
+
+[Magic_129 SwordInventoryItem]
+FriendlyName=Tome Band
+
+[Magic_130 SwordInventoryItem]
+FriendlyName=Iridix
+
+[Magic_131 SwordInventoryItem]
+FriendlyName=The Holy Band
+
+[Magic_132 SwordInventoryItem]
+FriendlyName=Velda
+
+[Magic_133 SwordInventoryItem]
+FriendlyName=TamL
+
+[Magic_134 SwordInventoryItem]
+FriendlyName=Azar
+
+[Magic_135 SwordInventoryItem]
+FriendlyName=Chieftan
+
+[Magic_136 SwordInventoryItem]
+FriendlyName=Czarina
+
+[Magic_137 SwordInventoryItem]
+FriendlyName=Dagan
+
+[Magic_138 SwordInventoryItem]
+FriendlyName=Unihorn
+
+[Magic_139 SwordInventoryItem]
+FriendlyName=Envoy
+
+[Magic_140 SwordInventoryItem]
+FriendlyName=Erida
+
+[Magic_141 SwordInventoryItem]
+FriendlyName=Fleur
+
+[Magic_142 SwordInventoryItem]
+FriendlyName=Iron Heart
+
+[Magic_143 SwordInventoryItem]
+FriendlyName=Kaizzan
+
+[Magic_144 SwordInventoryItem]
+FriendlyName=Lotus
+
+[Magic_145 SwordInventoryItem]
+FriendlyName=Omega
+
+[Magic_146 SwordInventoryItem]
+FriendlyName=Phalanx
+
+[Magic_147 SwordInventoryItem]
+FriendlyName=Poe
+
+[Magic_148 SwordInventoryItem]
+FriendlyName=Rath
+
+[Magic_149 SwordInventoryItem]
+FriendlyName=Squee
+
+[Magic_150 SwordInventoryItem]
+FriendlyName=Tiderran
+
+[Magic_151 SwordInventoryItem]
+FriendlyName=Woad
+
+[Magic_152 SwordInventoryItem]
+FriendlyName=Xeris
+
+[DCL_01_Shield_01 SwordInventoryItem]
+FriendlyName=First DLC Shield
+
+[Armor_312 SwordInventoryItem]
+FriendlyName=Wraith Plate
+
+[Helmet_338 SwordInventoryItem]
+FriendlyName=Wraith Helm
+
+[Shield_338 SwordInventoryItem]
+FriendlyName=Wraith Guard
+
+[Sword_634 SwordInventoryItem]
+FriendlyName=Weston
+
+[Sword_537 SwordInventoryItem]
+FriendlyName=Serrated Spear
+
+[Sword_442 SwordInventoryItem]
+FriendlyName=Asunder
+
+[Helmet_161 SwordInventoryItem]
+FriendlyName=Hallow
+
+[Helmet_162 SwordInventoryItem]
+FriendlyName=Gobble
+
+[Helmet_339 SwordInventoryItem]
+FriendlyName=Hallow
+
+[Helmet_340 SwordInventoryItem]
+FriendlyName=Gobble
+
+[Sword_443 SwordInventoryItem]
+FriendlyName=Ronin Katana
+
+[Sword_152 SwordInventoryItem]
+FriendlyName=Infinity Blade
+
+[Sword_444 SwordInventoryItem]
+FriendlyName=Infinity Blade
+
+[Armor_313 SwordInventoryItem]
+FriendlyName=Vybrix Wrap
+
+[Sword_635 SwordInventoryItem]
+FriendlyName=Vybrix Claws
+
+[Sword_636 SwordInventoryItem]
+FriendlyName=Tourian
+
+[Sword_445 SwordInventoryItem]
+FriendlyName=Vybrix Blade
+
+[Sword_446 SwordInventoryItem]
+FriendlyName=Brinstar
+
+[Sword_538 SwordInventoryItem]
+FriendlyName=Vybrix Spear
+
+[Shield_340 SwordInventoryItem]
+FriendlyName=Thern Wrap
+
+[Shield_341 SwordInventoryItem]
+FriendlyName=Vybrix Guard
+
+[Shield_339 SwordInventoryItem]
+FriendlyName=The Empress
+
+[Shield_342 SwordInventoryItem]
+FriendlyName=Diortem Brace
+
+[Helmet_163 SwordInventoryItem]
+FriendlyName=Yhurle Helm
+
+[Helmet_341 SwordInventoryItem]
+FriendlyName=Crown of Queens
+
+[Helmet_343 SwordInventoryItem]
+FriendlyName=Vybrix Mask
+
+[Helmet_342 SwordInventoryItem]
+FriendlyName=Ryker
+
+[Sword_154 SwordInventoryItem]
+FriendlyName=Yhurle Blade
+
+[Sword_153 SwordInventoryItem]
+FriendlyName=Axis
+
+[Sword_253 SwordInventoryItem]
+FriendlyName=Yhurle Axe
+
+[Sword_252 SwordInventoryItem]
+FriendlyName=Arjona
+
+[Sword_354 SwordInventoryItem]
+FriendlyName=Yhurle Swords
+
+[Shield_144 SwordInventoryItem]
+FriendlyName=Neb
+
+[Shield_145 SwordInventoryItem]
+FriendlyName=Yhurle Guard
+
+[Armor_122 SwordInventoryItem]
+FriendlyName=Yhurle Plate
+
+[Armor_314 SwordInventoryItem]
+FriendlyName=Barsoom Armor
+
+[Armor_315 SwordInventoryItem]
+FriendlyName=Armor of Queens
+
+[Armor_316 SwordInventoryItem]
+FriendlyName=Aegis Plate
+
+[Helmet_344 SwordInventoryItem]
+FriendlyName=Samus
+
+[Sword_539 SwordInventoryItem]
+FriendlyName=Norfair
+
+[Sword_355 SwordInventoryItem]
+FriendlyName=Lebasi
+
+[Helmet_349 SwordInventoryItem]
+FriendlyName=Kaun
+
+[Helmet_352 SwordInventoryItem]
+FriendlyName=Frosted
+
+[Helmet_346 SwordInventoryItem]
+FriendlyName=Leatherhead
+
+[Helmet_348 SwordInventoryItem]
+FriendlyName=Sprung
+
+[Helmet_350 SwordInventoryItem]
+FriendlyName=Sunspike
+
+[Helmet_347 SwordInventoryItem]
+FriendlyName=Egg Head
+
+[Helmet_345 SwordInventoryItem]
+FriendlyName=Clauz
+
+[Helmet_351 SwordInventoryItem]
+FriendlyName=Love Baby
+
+[Helmet_33 SwordInventoryItem]
+FriendlyName=Frosted
+
+[Helmet_30 SwordInventoryItem]
+FriendlyName=Kaun
+
+[Helmet_31 SwordInventoryItem]
+FriendlyName=Leatherhead
+
+[Helmet_29 SwordInventoryItem]
+FriendlyName=Egg Head
+
+[Helmet_35 SwordInventoryItem]
+FriendlyName=Sunspike
+
+[Helmet_34 SwordInventoryItem]
+FriendlyName=Sprung
+
+[Helmet_37 SwordInventoryItem]
+FriendlyName=Clauz
+
+[Helmet_36 SwordInventoryItem]
+FriendlyName=Love Baby
+
+[Sword_254 SwordInventoryItem]
+FriendlyName=Axe of Heaven
+
+[Shield_146 SwordInventoryItem]
+FriendlyName=Pouloss
+
+[Armor_123 SwordInventoryItem]
+FriendlyName=Dragoor Plate
+
+[Sword_356 SwordInventoryItem]
+FriendlyName=Ammerm
+
+[Sword_155 SwordInventoryItem]
+FriendlyName=Lochra
+
+[Sword_447 SwordInventoryItem]
+FriendlyName=Blade of Heaven
+
+[Sword_540 SwordInventoryItem]
+FriendlyName=
+
+[Shield_343 SwordInventoryItem]
+FriendlyName=
+
+[Sword_637 SwordInventoryItem]
+FriendlyName=Death Gloves
+
+[Sword_448 SwordInventoryItem]
+FriendlyName=Solar Trans-DX
+
+[Sword_638 SwordInventoryItem]
+FriendlyName=The Subtle Knife
+
+[Sword_541 SwordInventoryItem]
+FriendlyName=Solar Trans-MX
+
+[Shield_344 SwordInventoryItem]
+FriendlyName=Jahsna Guard
+
+[Helmet_354 SwordInventoryItem]
+FriendlyName=Jahsna Mask
+
+[Armor_317 SwordInventoryItem]
+FriendlyName=Jahsna Wrap
+
+[Sword_543 SwordInventoryItem]
+FriendlyName=The Silent Spear
+
+[Armor_318 SwordInventoryItem]
+FriendlyName=Lunith Plate
+
+[Helmet_355 SwordInventoryItem]
+FriendlyName=Lunith Crown
+
+[Shield_345 SwordInventoryItem]
+FriendlyName=Lunith Brace
+
+[Shield_147 SwordInventoryItem]
+FriendlyName=Odium Guard
+
+[Shield_346 SwordInventoryItem]
+FriendlyName=Kermec Guard
+
+[Sword_542 SwordInventoryItem]
+FriendlyName=Emendo
+
+[Sword_357 SwordInventoryItem]
+FriendlyName=Yernaug
+
+[Sword_156 SwordInventoryItem]
+FriendlyName=Noe Mercy
+
+[Helmet_165 SwordInventoryItem]
+FriendlyName=Odium Helm
+
+[Helmet_356 SwordInventoryItem]
+FriendlyName=Kermec Helm
+
+[Helmet_164 SwordInventoryItem]
+FriendlyName=Dragoor Bane
+
+[Armor_124 SwordInventoryItem]
+FriendlyName=Odium Armor
+
+[Armor_319 SwordInventoryItem]
+FriendlyName=Kermec Armor
+
+[Helmet_166 SwordInventoryItem]
+FriendlyName=Team Coco
+
+[Sword_639 SwordInventoryItem]
+FriendlyName=Solar Trans-GX
+
+[Armor_125 SwordInventoryItem]
+FriendlyName=The Origin
+
+[Sword_449 SwordInventoryItem]
+FriendlyName=The Still Blade
+
+[Sword_255 SwordInventoryItem]
+FriendlyName=Derouic
+
+[Helmet_167 SwordInventoryItem]
+FriendlyName=Ryth Helm
+
+[Armor_126 SwordInventoryItem]
+FriendlyName=Ryth
+
+[TRA_Key_Small SwordInventoryItemKey]
+FriendlyName=Small Key
+
+[TRA_Key_Medium SwordInventoryItemKey]
+FriendlyName=Medium Key
+
+[TRA_Key_Large SwordInventoryItemKey]
+FriendlyName=Large Key
+
+[TRA_GrabBag_Small SwordInventoryItemRandom]
+FriendlyName=Prize Wheel
+
+[TRA_GrabBag_Medium SwordInventoryItemRandom]
+FriendlyName=Big Prize Wheel
+
+[TRA_GrabBag_Large SwordInventoryItemRandom]
+FriendlyName=Rare Prize Wheel
+
+[TRA_GrabBag_SmallGem SwordInventoryItemRandom]
+FriendlyName=Gem Wheel
+
+[TRA_GrabBag_MediumGem SwordInventoryItemRandom]
+FriendlyName=Big Gem Wheel
+
+[TRA_GrabBag_LargeGem SwordInventoryItemRandom]
+FriendlyName=Rare Gem Wheel
+
+[TRA_GrabBag_Uber SwordInventoryItemRandom]
+FriendlyName=ClashMob Prize Wheel
+
+[TreasureMap20 SwordInventoryItemKey]
+FriendlyName=Kuero's Cache Map
+
+[TreasureMap21 SwordInventoryItemKey]
+FriendlyName=The Cursed Map
+
+[TreasureMap22 SwordInventoryItemKey]
+FriendlyName=The Plate Map
+
+[TreasureMap23 SwordInventoryItemKey]
+FriendlyName=The Map of Life
+
+[TreasureMap24 SwordInventoryItemKey]
+FriendlyName=Map of the Forgotten
+
+[TreasureMap25 SwordInventoryItemKey]
+FriendlyName=The Root Map
+
+[TreasureMap26 SwordInventoryItemKey]
+FriendlyName=Map of Ash and Sorrow
+
+[TreasureMap27 SwordInventoryItemKey]
+FriendlyName=Ancient Map
+
+[TreasureMap28 SwordInventoryItemKey]
+FriendlyName=Soiled Map
+
+[TreasureMap29 SwordInventoryItemKey]
+FriendlyName=Map of the Looter
+
+[TreasureMap30 SwordInventoryItemKey]
+FriendlyName=Star Map
+
+[TreasureMap31 SwordInventoryItemKey]
+FriendlyName=The Warriors Map
+
+[TreasureMap32 SwordInventoryItemKey]
+FriendlyName=The Obscure Map
+
+[TreasureMap33 SwordInventoryItemKey]
+FriendlyName=The Map to Heaven
+
+[TreasureMap34 SwordInventoryItemKey]
+FriendlyName=Map of the Sacrifice
+
+[TreasureMap35 SwordInventoryItemKey]
+FriendlyName=Hearth Map
+
+[TreasureMap36 SwordInventoryItemKey]
+FriendlyName=Scorched Map
+
+[TreasureMap37 SwordInventoryItemKey]
+FriendlyName=Tomb of the Vile
+
+[TreasureMap38 SwordInventoryItemKey]
+FriendlyName=Black Fire Map
+
+[TreasureMap1 SwordInventoryItemKey]
+FriendlyName=Worn Treasure Map
+
+[TreasureMap2 SwordInventoryItemKey]
+FriendlyName=Old Treasure Map
+
+[TreasureMap3 SwordInventoryItemKey]
+FriendlyName=Mechanics Map
+
+[TreasureMap4 SwordInventoryItemKey]
+FriendlyName=Victors Spoils Map
+
+[TreasureMap5 SwordInventoryItemKey]
+FriendlyName=Wet Loot Map
+
+[TreasureMap6 SwordInventoryItemKey]
+FriendlyName=Scholars Map
+
+[TreasureMap7 SwordInventoryItemKey]
+FriendlyName=The Faceplate Map
+
+[TreasureMap8 SwordInventoryItemKey]
+FriendlyName=Light Forge Map
+
+[TreasureMap9 SwordInventoryItemKey]
+FriendlyName=Faded Loot Map
+
+[TreasureMap10 SwordInventoryItemKey]
+FriendlyName=Key Treasure Map
+
+[TreasureMap11 SwordInventoryItemKey]
+FriendlyName=Crown Map
+
+[TreasureMap12 SwordInventoryItemKey]
+FriendlyName=Dusty Treasure Map
+
+[TreasureMap13 SwordInventoryItemKey]
+FriendlyName=The Vile Map
+
+[TreasureMap14 SwordInventoryItemKey]
+FriendlyName=Tree Map
+
+[TreasureMap15 SwordInventoryItemKey]
+FriendlyName=Gruff Map
+
+[TreasureMap16 SwordInventoryItemKey]
+FriendlyName=Arena Map
+
+[TreasureMap17 SwordInventoryItemKey]
+FriendlyName=Etched Map
+
+[TreasureMap18 SwordInventoryItemKey]
+FriendlyName=Rune Map
+
+[TreasureMap19 SwordInventoryItemKey]
+FriendlyName=Bloody Map
+
+[TRA_World_1_Cactus SwordInventoryItemWorld]
+FriendlyName=Green Cactus
+Description=This ingredient boosts magic abilities
+
+[TRA_World_4_Reeds SwordInventoryItemWorld]
+FriendlyName=Green Reeds
+Description=This ingredient GREATLY boosts magic abilities
+
+[TRA_World_2_Berries SwordInventoryItemWorld]
+FriendlyName=Blue Berries
+Description=This ingredient boosts health
+
+[TRA_World_8_Butterfly SwordInventoryItemWorld]
+FriendlyName=Blue Butterfly
+Description=This ingredient GREATLY boosts health
+
+[TRA_World_3_PinkPlant SwordInventoryItemWorld]
+FriendlyName=Red Flower
+Description=This ingredient boosts attack strength
+
+[TRA_World_6_Mushroom SwordInventoryItemWorld]
+FriendlyName=Red Mushroom
+Description=This ingredient GREATLY boosts attack strength
+
+[TRA_World_5_DesertBulb SwordInventoryItemWorld]
+FriendlyName=Rare Bulb
+Description=This rare ingredient boosts the power of any potion
+
+[TRA_World_11_Bones SwordInventoryItemWorld]
+FriendlyName=Yellow Bones
+Description=This ingredient GREATLY boosts shields
+
+[TRA_World_10_Cocoon SwordInventoryItemWorld]
+FriendlyName=Yellow Cocoon
+Description=This ingredient boosts shields
+
+[TRA_World_7_Root SwordInventoryItemWorld]
+FriendlyName=Rare Root
+Description=This VERY rare ingredient GREATLY boosts the power of any potion
+
+[TRA_World_9_Skullfly SwordInventoryItemWorld]
+FriendlyName=Skullfly
+Description=This ingredient boosts ???????????
+
+[TRA_Potion_HealthL SwordInventoryItemPotion]
+FriendlyName=Full Health
+PotionDescription=Fully restores health
+
+[TRA_Potion_HealthM SwordInventoryItemPotion]
+FriendlyName=Medium Health
+
+[TRA_Potion_HealthS SwordInventoryItemPotion]
+FriendlyName=Small Health
+
+[TRA_Potion_HealthRegen SwordInventoryItemPotion]
+FriendlyName=Health Regen
+
+[TRA_Potion_HealthRegenL SwordInventoryItemPotion]
+FriendlyName=Large Health Regen
+
+[TRA_Potion_ShieldRegen SwordInventoryItemPotion]
+FriendlyName=Shield Regen
+
+[TRA_Potion_EasyParry SwordInventoryItemPotion]
+FriendlyName=Easy Parry
+
+[TRA_Potion_DoubleXP SwordInventoryItemPotion]
+FriendlyName=Double XP
+
+[UberElementalAttackGem SwordInventoryItemGem]
+FriendlyName=RARE DARKFIRE GEM
+PotionName=RARE DARKFIRE POTION
+
+[UberElementalAttackGem_100 SwordInventoryItemGem]
+FriendlyName=RARE DARKFIRE GEM
+PotionName=RARE DARKFIRE POTION
+
+[RainbowElementalAttackGem SwordInventoryItemGem]
+FriendlyName=RARE SPECTRUM GEM
+PotionName=RARE SPECTRUM POTION
+
+[RainbowElementalAttackGem_100 SwordInventoryItemGem]
+FriendlyName=RARE SPECTRUM GEM
+PotionName=RARE SPECTRUM POTION
+
+[UberAttackGem SwordInventoryItemGem]
+FriendlyName=RARE ATTACK GEM
+
+[UberHealthGem SwordInventoryItemGem]
+FriendlyName=RARE HEALTH GEM
+
+[UberShieldGem SwordInventoryItemGem]
+FriendlyName=RARE SHIELD GEM
+
+[UberMagicGem SwordInventoryItemGem]
+FriendlyName=RARE MAGIC GEM
+
+[UberFireGem SwordInventoryItemGem]
+FriendlyName=RARE FIRE GEM
+
+[UberIceGem SwordInventoryItemGem]
+FriendlyName=RARE ICE GEM
+
+[UberElecGem SwordInventoryItemGem]
+FriendlyName=RARE SHOCK GEM
+
+[UberPoisonGem SwordInventoryItemGem]
+FriendlyName=RARE POISON GEM
+
+[UberLightGem SwordInventoryItemGem]
+FriendlyName=RARE BRIGHT GEM
+
+[UberDarkGem SwordInventoryItemGem]
+FriendlyName=RARE DARK GEM
+
+[UberWaterGem SwordInventoryItemGem]
+FriendlyName=RARE WATER GEM
+
+[UberWindGem SwordInventoryItemGem]
+FriendlyName=RARE WIND GEM
+
+[UberGoldGem SwordInventoryItemGem]
+FriendlyName=RARE GOLD GEM
+
+[UberXPGem SwordInventoryItemGem]
+FriendlyName=RARE XP GEM
+
+[Potion_UnlimitedDodge SwordInventoryItemGem]
+PotionDescription=Unlimited dodge
+
+[10ft_2W_HornedWitch SwordInventoryBossItem]
+FriendlyName=HORNED WITCH
+FriendlyNamePlural=A coven of HORNED WITCHES
+Description=
+
+[10ft_2W_IronButcher SwordInventoryBossItem]
+FriendlyName=IRON BUTCHER
+FriendlyNamePlural=A gang of IRON BUTCHERS
+Description=
+
+[10ft_2W_Jester SwordInventoryBossItem]
+FriendlyName=WOOD JESTER
+FriendlyNamePlural=A clutch of WOOD JESTERS
+Description=
+
+[10ft_2W_MX-Stealth SwordInventoryBossItem]
+FriendlyName=MX-STEALTH
+FriendlyNamePlural=A phalanx of MX-STEALTHS
+Description=
+
+[10ft_2W_Roman SwordInventoryBossItem]
+FriendlyName=PLATED SOROK
+FriendlyNamePlural=A legion of PLATED SOROKS
+Description=
+
+[10ft_2W_StoneOracle SwordInventoryBossItem]
+FriendlyName=STONE ORACLE
+FriendlyNamePlural=A legion of STONE ORACLES
+Description=
+
+[10ft_2W_WickerHaunt SwordInventoryBossItem]
+FriendlyName=WICKER HAUNT
+FriendlyNamePlural=A tribe of WICKER HAUNTS
+Description=
+
+[10ft_2W_Kabuki SwordInventoryBossItem]
+FriendlyName=KABUKI
+FriendlyNamePlural=A band of KABUKIS
+Description=
+
+[10ft_2W_Xyloto SwordInventoryBossItem]
+FriendlyName=XYLOTO
+FriendlyNamePlural=A band of XYLOTO's minions
+Description=
+
+[10ft_2W_Archivist SwordInventoryBossItem]
+FriendlyName=ARCHIVIST
+FriendlyNamePlural=The ARCHIVIST's tribe
+Description=Blood Sentinel I
+
+[10ft_2Sword_Ninja SwordInventoryBossItem]
+FriendlyName=KUERO
+FriendlyNamePlural=A band KUERO's apprentices
+Description=
+
+[8ft_2W_Wasp SwordInventoryBossItem]
+FriendlyName=SU’UNAW
+FriendlyNamePlural=
+Description=
+
+[10ft_SnS_Antler SwordInventoryBossItem]
+FriendlyName=HORNED GUARDIAN
+FriendlyNamePlural=A herd of HORNED GUARDIANS
+Description=
+
+[10ft_SnS_Ashimar SwordInventoryBossItem]
+FriendlyName=ASHIMAR
+FriendlyNamePlural=ASHIMAR's sect
+Description=The Sorrowmaker
+
+[10ft_SnS_BlackKnight SwordInventoryBossItem]
+FriendlyName=THE DARK KNIGHT
+FriendlyNamePlural=A band of DARK KNIGHTS
+Description=
+
+[10ft_SnS_Ghoul SwordInventoryBossItem]
+FriendlyName=MARROW FIEND
+FriendlyNamePlural=A horde of MARROW FIENDS
+Description=
+
+[10ft_SnS_Chieftain SwordInventoryBossItem]
+FriendlyName=HORNED CHIEFTAIN
+FriendlyNamePlural=A herd of HORNED CHIEFTAINS
+Description=
+
+[10ft_SnS_IronWatchman SwordInventoryBossItem]
+FriendlyName=IRON WATCHMAN
+FriendlyNamePlural=A gang of IRON WATCHMEN
+
+[10ft_SnS_Mohawk SwordInventoryBossItem]
+FriendlyName=BRUTE
+FriendlyNamePlural=A gang of BRUTES
+
+[10ft_SnS_MX-Defender SwordInventoryBossItem]
+FriendlyName=MX-DEFENDER
+FriendlyNamePlural=A phalanx of MX-DEFENDERS
+Description=
+
+[10ft_SnS_Ronin SwordInventoryBossItem]
+FriendlyName=RONIN
+FriendlyNamePlural=A band of RONINS
+Description=
+
+[10ft_SnS_RookBane SwordInventoryBossItem]
+FriendlyName=ROOKBANE
+FriendlyNamePlural=ROOKBANE's posse
+Description=
+
+[10ft_SnS_RustNoc SwordInventoryBossItem]
+FriendlyName=RUST NOC
+FriendlyNamePlural=A pack of RUST NOCS
+Description=
+
+[10ft_SnS_GodKingAlpha SwordInventoryBossItem]
+FriendlyName=THANE
+FriendlyNamePlural=THANE's legion
+Description=High Lord Of House Ix
+
+[10ft_SnS_GodKingAlpha2 SwordInventoryBossItem]
+FriendlyName=THANE
+FriendlyNamePlural=THANE's legion
+Description=High Lord Of House Ix
+
+[10ft_SnS_GodKingAlpha3 SwordInventoryBossItem]
+FriendlyName=???
+Description=???
+
+[10ft_SnS_EK_Electro SwordInventoryBossItem]
+FriendlyName=IRON PALADIN
+FriendlyNamePlural=A battery of IRON PALADINS
+Description=
+
+[10ft_SnS_EK_Fire SwordInventoryBossItem]
+FriendlyName=INFERNO PALADIN
+FriendlyNamePlural=A battery of INFERNO PALADINS
+Description=
+
+[10ft_SnS_EK_Ice SwordInventoryBossItem]
+FriendlyName=FROZEN PALADIN
+FriendlyNamePlural=A battery of FROZEN PALADINS
+Description=
+
+[10ft_SnS_EK_Poison SwordInventoryBossItem]
+FriendlyName=VENOM PALADIN
+FriendlyNamePlural=A battery of VENOM PALADINS
+Description=
+
+[10ft_SnS_Faun SwordInventoryBossItem]
+FriendlyName=EALOSEUM
+FriendlyNamePlural=a group of EALOSEUM's clones
+Description=
+
+[10ft_SnS_Mech SwordInventoryBossItem]
+FriendlyName=ZERO MECH
+FriendlyNamePlural=A phalanx of ZERO MECHS
+Description=
+
+[10ft_SnS_Ronin_Movie SwordInventoryBossItem]
+FriendlyName=SAMURAI BRUTE
+FriendlyNamePlural=A band of SAMURAI BRUTES
+Description=
+
+[10ft_S_Acolyte SwordInventoryBossItem]
+FriendlyName=ACOLYTE
+FriendlyNamePlural=A flock of ACOLYTES
+Description=
+
+[10ft_S_EyelessNoc SwordInventoryBossItem]
+FriendlyName=EYELESS NOC
+FriendlyNamePlural=A pack of EYELESS NOCS
+Description=
+
+[10ft_S_FelSiren SwordInventoryBossItem]
+FriendlyName=FEL SIREN
+FriendlyNamePlural=A band of FEL SIRENS
+Description=
+
+[10ft_S_HornedStalker SwordInventoryBossItem]
+FriendlyName=HORNED STALKER
+FriendlyNamePlural=A herd of HORNED STALKERS
+Description=
+
+[10ft_S_IronLancer SwordInventoryBossItem]
+FriendlyName=IRON LANCER
+FriendlyNamePlural=A gang of IRON LANCERS
+Description=
+
+[10ft_S_MX-Enforcer SwordInventoryBossItem]
+FriendlyName=MX-ENFORCER
+FriendlyNamePlural=A unit of MX-ENFORCERS
+Description=
+
+[10ft_S_Saydhi SwordInventoryBossItem]
+FriendlyName=SAYDHI
+FriendlyNamePlural=A group of SAYDHI's minions
+Description=
+
+[10ft_S_DarkFiend SwordInventoryBossItem]
+FriendlyName=DARK FIEND
+FriendlyNamePlural=A drove of DARK FIENDS
+Description=
+
+[10ft_S_PetrifiedNoc SwordInventoryBossItem]
+FriendlyName=PETRIFIED NOC
+FriendlyNamePlural=A pack of PETRIFIED NOCS
+Description=
+
+[15ft_2H_Executioner SwordInventoryBossItem]
+FriendlyName=EXECUTIONER
+FriendlyNamePlural=A group of EXECUTIONERS
+Description=
+
+[15ft_2H_Genno SwordInventoryBossItem]
+FriendlyName=GENNO
+FriendlyNamePlural=GENNO's tribe
+Description=
+
+[15ft_2H_Golem SwordInventoryBossItem]
+FriendlyName=IRON GOLEM
+FriendlyNamePlural=A battery of IRON GOLEMS
+Description=
+
+[15ft_2H_GolemGold SwordInventoryBossItem]
+FriendlyName=PLATED GOLEM
+FriendlyNamePlural=A battery of PLATED GOLEMS
+Description=
+
+[15ft_2H_HornedDemon SwordInventoryBossItem]
+FriendlyName=HORNED DEMON
+FriendlyNamePlural=A herd of HORNED DEMONS
+Description=
+
+[15ft_2H_IronSentinel SwordInventoryBossItem]
+FriendlyName=IRON SENTINEL
+FriendlyNamePlural=A gang of IRON SENTINELS
+Description=
+
+[15ft_2H_Keeper SwordInventoryBossItem]
+FriendlyName=KEEPER
+FriendlyNamePlural=A horde of KEEPERS
+Description=
+
+[15ft_2H_MX-Hulk SwordInventoryBossItem]
+FriendlyName=MX-HULK
+FriendlyNamePlural=A phalanx of MX-HULKS
+Description=
+
+[15ft_2H_RabidNoc SwordInventoryBossItem]
+FriendlyName=RABID NOC
+FriendlyNamePlural=A pack of RABID NOCS
+Description=
+
+[15ft_2H_Troll SwordInventoryBossItem]
+FriendlyName=FERAL TROLL
+FriendlyNamePlural=A tribe of FERAL TROLLS
+Description=
+
+[15ft_2H_Warden SwordInventoryBossItem]
+FriendlyName=WARDEN
+FriendlyNamePlural=A horde of WARDENS
+Description=
+
+[15ft_2H_BogGiant SwordInventoryBossItem]
+FriendlyName=BOG GIANT
+FriendlyNamePlural=A horde of BOG GIANTS
+Description=
+
+[15ft_2H_Butcher SwordInventoryBossItem]
+FriendlyName=BUTCHER
+FriendlyNamePlural=A band of BUTCHERS
+Description=
+
+[15ft_2H_StoneDemon SwordInventoryBossItem]
+FriendlyName=STONE DEMON
+FriendlyNamePlural=A legion of STONE DEMONS
+Description=Blood Sentinel II
+
+[15ft_2h_Rancor SwordInventoryBossItem]
+FriendlyName=GORTOEL
+FriendlyNamePlural=GORTOEL's colony
+Description=
+
+[15ft_2H_HeadsMan SwordInventoryBossItem]
+FriendlyName=HEADSMAN
+FriendlyNamePlural=A horde of HEADSMEN
+Description=
+
+[20ft_B_Behemid SwordInventoryBossItem]
+FriendlyName=BEHEMID
+FriendlyNamePlural=A swarm of BEHEMIDS
+Description=
+
+[20ft_B_Chelon SwordInventoryBossItem]
+FriendlyName=CHELON
+FriendlyNamePlural=A nest of CHELONS
+Description=
+
+[20ft_B_Gargap SwordInventoryBossItem]
+FriendlyName=GARGAP
+FriendlyNamePlural=A flock of GARGAPS
+Description=
+
+[20ft_B_IronWretch SwordInventoryBossItem]
+FriendlyName=WRETCH
+FriendlyNamePlural=A horde of WRETCHES
+Description=
+
+[20ft_B_IronWretchV1 SwordInventoryBossItem]
+FriendlyName=IRON WRETCH
+FriendlyNamePlural=A horde of IRON WRETCHES
+Description=
+
+[20ft_B_IronWretchV2 SwordInventoryBossItem]
+FriendlyName=PIERCED WRETCH
+FriendlyNamePlural=A horde of PIERCED WRETCHES
+Description=
+
+[20ft_B_IronWretchV3 SwordInventoryBossItem]
+FriendlyName=PLATED WRETCH
+FriendlyNamePlural=A horde of PLATED WRETCHES
+Description=
+
+[20ft_B_MossGolem SwordInventoryBossItem]
+FriendlyName=MOSS GOLEM
+FriendlyNamePlural=A horde of MOSS GOLEMS
+Description=
+
+[20ft_B_Lupun SwordInventoryBossItem]
+FriendlyName=LUPUN
+FriendlyNamePlural=A pack of LUPUNS
+Description=
+
+[20ft_B_MX-Goliath SwordInventoryBossItem]
+FriendlyName=MX-GOLIATH
+FriendlyNamePlural=A phalanx of MX-GOLIATHS
+Description=Blood Sentinel III
+
+[20ft_B_EmberDragon SwordInventoryBossItem]
+FriendlyName=EMBER DEMON
+FriendlyNamePlural=A pack of EMBER DEMONS
+Description=
+
+[6ft_2H_EXO-Pilot SwordInventoryBossItem]
+FriendlyName=EXO-PILOT
+FriendlyNamePlural=A squadron of EXO-PILOTS
+Description=
+
+[6ft_SnS_HornedWildling SwordInventoryBossItem]
+FriendlyName=HORNED WILDLING
+FriendlyNamePlural=A herd of HORNED WILDLINGS
+Description=
+
+[6ft_SnS_IronGuard SwordInventoryBossItem]
+FriendlyName=IRON GUARD
+FriendlyNamePlural=A gang of IRON GUARDS
+Description=
+
+[6ft_SnS_IronHunter SwordInventoryBossItem]
+FriendlyName=IRON HUNTER
+FriendlyNamePlural=A gang of IRON HUNTERS
+Description=
+
+[6ft_SnS_KnightVar01 SwordInventoryBossItem]
+FriendlyName=KNIGHT TEMPLAR
+FriendlyNamePlural=A group of TEMPLARS
+Description=
+
+[6ft_SnS_KnightVar02 SwordInventoryBossItem]
+FriendlyName=ROGUE KNIGHT
+FriendlyNamePlural=A band of ROGUE KNIGHTS
+Description=
+
+[6ft_SnS_KnightVar03 SwordInventoryBossItem]
+FriendlyName=CAVALIER
+FriendlyNamePlural=A unit of CAVALIERS
+Description=
+
+[6ft_SnS_Ausar SwordInventoryBossItem]
+FriendlyName=AUSAR THE VILE
+FriendlyNamePlural=Soulless AUSARS
+Description=Soulless Horror
+
+[6ft_2H_PlatedGuard SwordInventoryBossItem]
+FriendlyName=PLATED GUARD
+FriendlyNamePlural=A gang of PLATED GUARDS
+Description=
+
+[6ft_2H_Shade SwordInventoryBossItem]
+FriendlyName=SHADE
+FriendlyNamePlural=A team of SHADES
+Description=
+
+[6ft_2W_Ryth2 SwordInventoryBossItem]
+FriendlyName=RYTH
+FriendlyNamePlural=RYTH's cadre
+Description=Deathless Blademaster
+
+[6ft_SnS_GodKing SwordInventoryBossItem]
+FriendlyName=RAIDRIAR
+FriendlyNamePlural=RAIDRIAR's army
+Description=The God King
+
+[6ft_SnS_DarkLord SwordInventoryBossItem]
+FriendlyName=CLASSIC GOD KING
+FriendlyNamePlural=The GOD KING's army
+Description=
+
+[6ft_SnS_EnemyKnight SwordInventoryBossItem]
+FriendlyName=HEDGE KNIGHT
+FriendlyNamePlural=A band of HEDGE KNIGHTS
+Description=
+
+[6ft_SnS_Fencer SwordInventoryBossItem]
+FriendlyName=ASSASSIN
+FriendlyNamePlural=An order of ASSASSINS
+Description=
+
+[6ft_SnS_Zero SwordInventoryBossItem]
+FriendlyName=THE BLOOD SLAVE
+FriendlyNamePlural=A league of BLOOD SLAVES
+Description=
+
+[50ft_Dragon SwordInventoryBossItem]
+FriendlyName=BA'EL
+FriendlyNamePlural=A horde of DRAGONS
+Description=THE DRAGON
+
+[50ft_Dragon_Pisci SwordInventoryBossItem]
+FriendlyName=BA'EL
+FriendlyNamePlural=A horde of DRAGONS
+Description=THE DRAGON
+
+[50ft_Dragon_StonyCrag SwordInventoryBossItem]
+FriendlyName=BA'EL
+FriendlyNamePlural=A horde of DRAGONS
+Description=THE DRAGON
+
+[10ft_SnS_Crusty SwordInventoryBossItem]
+FriendlyName=BONE FIEND
+FriendlyNamePlural=A drove of BONE FIENDS
+Description=
+
+[10ft_SnS_GK_Skull SwordInventoryBossItem]
+FriendlyName=TERROVAX
+FriendlyNamePlural=TERROVAX's band of thugs
+Description=High Lord of House Burke
+
+[10ft_SnS_MechFencer SwordInventoryBossItem]
+FriendlyName=IRON TEMPLAR
+FriendlyNamePlural=A brigade of IRON TEMPLARS
+Description=
+
+[10ft_SnS_Spaceface SwordInventoryBossItem]
+FriendlyName=MX-ELITE
+FriendlyNamePlural=A battery of MX-ELITES
+Description=
+
+[10ft_SnS_Tuskface SwordInventoryBossItem]
+FriendlyName=MUZZLED TROLL
+FriendlyNamePlural=A gang of MUZZLED TROLLS
+Description=
+
+[10ft_SnS_LavaLord SwordInventoryBossItem]
+FriendlyName=EMBER KNIGHT
+FriendlyNamePlural=A drove of EMBER KNIGHTS
+Description=
+
+[12ft_S_GK_BigHorn SwordInventoryBossItem]
+FriendlyName=THERIN
+FriendlyNamePlural=THERIN's band of followers
+Description=The Killer of Dreams
+
+[8ft_2W_GK_Squidface SwordInventoryBossItem]
+FriendlyName=MELEK
+FriendlyNamePlural=A bunch of MELEK's thugs
+Description=Warlord of House Ix
+
+[8ft_2W_GK_Pincrown SwordInventoryBossItem]
+FriendlyName=VARUN
+FriendlyNamePlural=A pact of VARUN's watchers
+Description=Watcher of Heaven
+
+[12ft_S_Heightener SwordInventoryBossItem]
+FriendlyName=OSLIM
+FriendlyNamePlural=A cabal of OSLIMERE
+Description=Deathless Bloodmage
+
+[12ft_S_ScorianGuard SwordInventoryBossItem]
+FriendlyName=MX-SCORIAN
+FriendlyNamePlural=A phalanx of MX-SCORIANS
+Description=
+
+[12ft_S_Toaster SwordInventoryBossItem]
+FriendlyName=ADAMANTINE GOLEM
+FriendlyNamePlural=A battery of ADAMANTINE GOLEMS
+Description=
+
+[12ft_S_Curly SwordInventoryBossItem]
+FriendlyName=RAZOR GOLEM
+FriendlyNamePlural=
+Description=
+
+[12ft_S_DevilSpike SwordInventoryBossItem]
+FriendlyName=WRETCHED HOB
+FriendlyNamePlural=A swarm of WRETCHED HOBS
+Description=
+
+[15ft_2H_ChainBeard SwordInventoryBossItem]
+FriendlyName=MINNOCH
+FriendlyNamePlural=The order of MINNOCH
+Description=Lesser Deathless
+
+[15ft_2H_RamHead SwordInventoryBossItem]
+FriendlyName=QUARTH
+FriendlyNamePlural=
+Description=
+
+[15ft_2H_BigBang SwordInventoryBossItem]
+FriendlyName=SAVAGE TROLL
+FriendlyNamePlural=A battery of SAVAGE TROLLS
+Description=
+
+[15ft_2H_ManyFaces SwordInventoryBossItem]
+FriendlyName=THANE
+FriendlyNamePlural=A clutch of THANE'S abominations
+Description=Deathless QIP Abomination
+
+[15ft_2H_Slinky SwordInventoryBossItem]
+FriendlyName=URANIUM GOLEM
+FriendlyNamePlural=A team of URANIUM GOLEMS
+Description=
+
+[15ft_2H_HeavyPlate SwordInventoryBossItem]
+FriendlyName=IRON DREADNAUGHT
+FriendlyNamePlural=A battery of IRON DREADNAUGHTS
+Description=
+
+[20ft_B_FieldBlight SwordInventoryBossItem]
+FriendlyName=ASHEN BLIGHT
+FriendlyNamePlural=A swarms of ASHEN BLIGHTS
+Description=
+
+[20ft_B_R_ChainBeard SwordInventoryBossItem]
+FriendlyName=BACCUS RIDER
+FriendlyNamePlural=A team of BACCUS RIDERS
+Description=
+
+[20ft_B_SaddleBeast SwordInventoryBossItem]
+FriendlyName=LAMPROIT
+FriendlyNamePlural=A herd of LAMPROITS
+Description=
+
+[20ft_B_ShatteredBeast SwordInventoryBossItem]
+FriendlyName=SHATTERED DEMON
+FriendlyNamePlural=A herd of DEMONS
+Description=
+
+[6ft_2H_ConeHead SwordInventoryBossItem]
+FriendlyName=MERCURY GOLEM
+FriendlyNamePlural=A battery of MERCURY GOLEMS
+Description=
+
+[6ft_SnS_GK_TallSpike SwordInventoryBossItem]
+FriendlyName=RAIDRIAR?
+FriendlyNamePlural=A group of SOULLESS
+Description=The Soulless God King
+
+[6ft_SnS_GK_TallSpikeV2 SwordInventoryBossItem]
+FriendlyName=RAIDRIAR?
+FriendlyNamePlural=SOULLESS order
+Description=The Soulless God King
+
+[6ft_SnS_GK_TallSpikeV3 SwordInventoryBossItem]
+FriendlyName=ZUORSARA
+FriendlyNamePlural=Cult of AUSAR
+Description=High Priest of Ausar's Cult
+
+[6ft_SnS_Collector SwordInventoryBossItem]
+FriendlyName=THE COLLECTOR
+FriendlyNamePlural=Order of COLLECTORS
+Description=Deathless Blademaster
+
+[6ft_SnS_ZealotNoc SwordInventoryBossItem]
+FriendlyName=ZEALOT NOC
+FriendlyNamePlural=A gang of ZEALOT NOCS
+Description=
+
+[6ft_2H_Loggins SwordInventoryBossItem]
+FriendlyName=SABURAI
+FriendlyNamePlural=A clan of SABURAI
+Description=
+
+[6ft_2H_LogginsB SwordInventoryBossItem]
+FriendlyName=KURO SABURAI
+FriendlyNamePlural=A gang of DARK SABURAI
+Description=
+
+[6ft_2H_Peacock SwordInventoryBossItem]
+FriendlyName=KUNOCHAI
+FriendlyNamePlural=A cult of KUNOCHAI
+Description=
+
+[6ft_2H_RedBull SwordInventoryBossItem]
+FriendlyName=HORNED RAZORBEL
+FriendlyNamePlural=HORNED RAZORBEL and her minions
+Description=
+
+[6ft_2H_SamuraiWoman SwordInventoryBossItem]
+FriendlyName=BUGEISHAI
+FriendlyNamePlural=A clan of BUGEISHAI
+Description=
+
+[6ft_2H_Worker SwordInventoryBossItem]
+FriendlyName=GALATH
+FriendlyNamePlural=A cadre of GALATHS
+Description=The Worker of Secrets
+
+[6ft_2H_PointyNoggin SwordInventoryBossItem]
+FriendlyName=BRUTAL GIN
+FriendlyNamePlural=A cadre of GINS
+Description=
+
+[6ft_2H_Robecca SwordInventoryBossItem]
+FriendlyName=MX-NINJA
+FriendlyNamePlural=A clan of NINJAS
+Description=
+
+[6ft_SnS_GK_Berka SwordInventoryBossItem]
+FriendlyName=LELINDRE
+FriendlyNamePlural=The followers of Lelindre
+Description=Mistress of The End
+
+[6ft_SnS_GK_BerkaV2 SwordInventoryBossItem]
+FriendlyName=LELINDRE
+FriendlyNamePlural=The followers of Lelindre
+Description=Mistress of The End
+
+[8ft_2W_RuneShade SwordInventoryBossItem]
+FriendlyName=DARKLING
+FriendlyNamePlural=A swarm of DARKLINGS
+Description=
+
+[8ft_2W_Scratchy SwordInventoryBossItem]
+FriendlyName=TWISTED NOC
+FriendlyNamePlural=A gang of TWISTED NOCS
+Description=
+
+[8ft_2W_Shaman SwordInventoryBossItem]
+FriendlyName=HORNED SHAMAN
+FriendlyNamePlural=A tribe of HORNED SHAMEN
+Description=
+
+[8ft_2W_SpikeArms SwordInventoryBossItem]
+FriendlyName=LEAD GOLEM
+FriendlyNamePlural=A gang of LEAD GOLEMS
+Description=
+
+[8ft_2W_DarkNinja SwordInventoryBossItem]
+FriendlyName=KURO SHINO
+FriendlyNamePlural=A sect of DARK NINJAS
+Description=
+
+[Siris_Health_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=HEALTH REGEN
+Description=Regenerate some HEALTH after each battle!
+
+[Siris_Health_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=BATTLE CHALLENGES
+Description=Earn extra Chips in BATTLE CHALLENGES during some fights!
+
+[Siris_Health_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=GEM STORE
+Description=More gems available for sale in the gem store with each AWAKENING!
+
+[Siris_Health_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=BLACKSMITH DISCOUNT
+Description=The Blacksmith Upgrades Items for LESS GOLD!
+
+[Siris_Health_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=SECOND CHANCE
+Description=After going down in a fight, you'll get back up for a SECOND CHANCE!
+
+[Siris_Health_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=SUPER GEM STORE
+Description=Even more and better gems available for sale in the gem store with each AWAKENING!
+
+[Isa_Health_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=GEM REMOVAL
+Description=Ability to REMOVE Gems that you have equipped on Items!
+
+[Isa_Health_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=POTION BOOST
+Description=POTIONS last for more than one fight!
+
+[Isa_Health_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=POTION MIXING SLOT
+Description=Unlock another POTION COOKING SLOT at the Cauldron!
+
+[Isa_Health_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=RARE MERCHANT
+Description=The Merchant offers more RARE ITEMS for sale!
+
+[Isa_Health_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=BLACKSMITH SPEED
+Description=The Blacksmith UPGRADES items much faster!
+
+[Isa_Health_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=FREE GEM REMOVAL
+Description=REMOVE Gems that you have equipped in Items for FREE!
+
+[Siris_Attack_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=COMBOS
+Description=SIRIS can now unleash COMBO ATTACKS during combat!
+
+[Siris_Attack_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=WEAPON CUSTOM COMBOS
+Description=SIRIS can now attack with weapon-specific BONUS COMBOS!
+
+[Siris_Attack_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=MEGA HIT
+Description=Unlock the ability to land a MEGA HIT after a successful Super Move Attack Chain!
+
+[Siris_Attack_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=DISCOUNT CARD
+Description=The Merchant sells her wares at a DEEPER DISCOUNT!
+
+[Siris_Attack_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=ITEM UPGRADE SLOT
+Description=Unlock another ITEM UPGRADE SLOT at the Blacksmith!
+
+[Siris_Attack_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=CHIP BOOSTER
+Description=Doubles the Chips earned in BATTLE CHALLENGES!
+
+[Isa_Attack_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=COMBOS
+Description=ISA can now unleash COMBO ATTACKS during combat!
+
+[Isa_Attack_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=WEAPON CUSTOM COMBOS
+Description=ISA can now attack with weapon-specific BONUS COMBOS!
+
+[Isa_Attack_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=XP MEGABOOST
+Description=Get MORE XP for each Fight completed!
+
+[Isa_Attack_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=ATTACK WINDOW
+Description=Land MORE HITS on Broken Enemies!
+
+[Isa_Attack_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=GEM FUSION SLOT
+Description=Unlock another GEM FUSION SLOT at the Gemcutter!
+
+[Isa_Attack_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=GEM MASTER
+Description=Greatly boosts GEM FUSION results!
+
+[Siris_Shield_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=SUPER ATTACK
+Description=SIRIS can now charge his SUPER ATTACK during combat!
+
+[Siris_Shield_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=SUPER ATTACK SPEED
+Description=Taking or dealing damage charges the SUPER ATTACK METER faster!
+
+[Siris_Shield_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=MERCHANT SPEED
+Description=The MERCHANT comes to your Hideout more often!
+
+[Siris_Shield_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=MEGA SHIELD
+Description=Attacks blocked with your Shield remove FEWER SHIELD POINTS!
+
+[Siris_Shield_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=GOLD FINGER
+Description=More GOLD BAGS appear in the world!
+
+[Siris_Shield_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=POTION MASTER
+Description=Drastically boosts the effect of potions.  Plus, carry even more potions!
+
+[Isa_Shield_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=SUPER ATTACK
+Description=ISA can now charge her SUPER ATTACK during combat!
+
+[Isa_Shield_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=CAULDRON SPEED
+Description=The Potion Master cooks potions FASTER!
+
+[Isa_Shield_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=MERCHANT CARGO
+Description=The Merchant has MORE ITEMS for sale!
+
+[Isa_Shield_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=GEM FUSION SPEED
+Description=The Gem Cutter fuses gems FASTER!
+
+[Isa_Shield_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=GREEN THUMB
+Description=Use MORE INGREDIENTS to cook potions, and MORE INGREDIENTS appear in the world!
+
+[Isa_Shield_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=MASTER LOOTER
+Description=Collect one GOLD BAG in the world and collect all rewards in that area!
+
+[Siris_Magic_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=INGREDIENT PLUS
+Description=SIRIS will collect an EXTRA POTION INGREDIENT for each one found!
+
+[Siris_Magic_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=FAST MAGIC
+Description=SIRIS charges his Magic Meter FASTER!
+
+[Siris_Magic_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=INGREDIENT MAX
+Description=Doubles the number of POTION INGREDIENTS your Inventory holds!
+
+[Siris_Magic_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=FASTER MAGIC
+Description=SIRIS charges his Magic Meter MUCH FASTER!
+
+[Siris_Magic_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=GOLD MEGABOOST
+Description=Get more Gold after each Fight!
+
+[Siris_Magic_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=HIGH ARCHMAGE
+Description=SIRIS can cast ultimate magic spells!
+
+[Isa_Magic_Perk_1 SwordInventoryPlayerAbility]
+FriendlyName=LOCK PICK I
+Description=ISA and SIRIS can unlock SPECIAL Treasure Chests and Doors!
+
+[Isa_Magic_Perk_2 SwordInventoryPlayerAbility]
+FriendlyName=FAST MAGIC
+Description=Charge ISA's Magic Meter FASTER!
+
+[Isa_Magic_Perk_3 SwordInventoryPlayerAbility]
+FriendlyName=LOCK PICK II
+Description=ISA can unlock SMALL Treasure Chests without a key!
+
+[Isa_Magic_Perk_4 SwordInventoryPlayerAbility]
+FriendlyName=FASTER MAGIC
+Description=ISA'S Magic Meter charges MUCH FASTER!
+
+[Isa_Magic_Perk_5 SwordInventoryPlayerAbility]
+FriendlyName=LOCK PICK III
+Description=ISA can unlock MEDIUM Treasure Chests without a key!
+
+[Isa_Magic_Perk_6 SwordInventoryPlayerAbility]
+FriendlyName=HIGH SORCERESS
+Description=Isa can cast ultimate magic spells!
+
+[00_DragonQuest SwordQuestData]
+DisplayName=Oh, and One More Thing...
+Description=The Dragon!
+
+[01_MainQuest SwordQuestData]
+DisplayName=PRELUDE - WHEN GODS COLLIDE
+Description=THE ARK: The WORKER OF SECRETS dared to place an Impostor on your throne! Confront the WORKER at his seat of power, and teach him the price of usurping THE GOD KING.
+
+[02_MainQuest SwordQuestData]
+DisplayName=ACT I - THE ANOMALY
+Description=THE STRONGHOLD AT LARIOTH: RAIDRIAR has made the ultimate sacrifice - it must not be in vain. Retrieve the WORKER's datapod from RAIDRIAR's stronghold in Larioth to find what information it contains.
+
+[03_MainQuest SwordQuestData]
+DisplayName=ACT II - BURIED IN THE PAST
+Description=THE SECCIAN DESERT: The WORKER is arming the Deathless with Infinity Weapons. Investigate his secret excavation in the Seccian Desert to learn the origin of these tools of destruction.
+
+[04_MainQuest SwordQuestData]
+DisplayName=ACT III - THE RIGHT WEAPON
+Description=THE PIT: Track down THERIN, the Deathless lord who runs brutal bloodsports in his arena, The Pit. He may have been armed with an Infinity Weapon...
+
+[05_MainQuest SwordQuestData]
+DisplayName=ACT III - THE RIGHT WEAPON
+Description=THE BROKEN TOWER: Locate and rescue JENSEN, the captured Blacksmith of SIRIS' home, Drem's Maw. Recruit him and his skills for SIRIS' secret offensive.
+
+[06_MainQuest SwordQuestData]
+DisplayName=ACT IV - REVELATIONS
+Description=THE VAULT OF TEARS: Return to AUSAR's former stronghold, the Vault of Tears, to discover how the WORKER stole his memory. TEL will show you where to look...
+
+[07_MainQuest SwordQuestData]
+DisplayName=ACT IV - REVELATIONS
+Description=THE PINNACLE MONASTERY: Investigate why LELINDRE, one of the oldest and most powerful Deathless, has aligned herself with the WORKER. Find out if she was given one of the Infinity Weapons...
+
+[08_MainQuest SwordQuestData]
+DisplayName=ACT V - ASCENSION
+Description=THE ARK: All roads have led to this. Journey to the WORKER's seat of power in the Hidden Lands, and stop him from unleashing his wrath and burning the world to ashes.
+
+[IB1_MainQuest SwordQuestData]
+DisplayName=INFINITY BLADE
+Description=THE DARK CITADEL: You are the Sacrifice, and like your father before you it is your destiny to try and slay THE GOD KING!
+
+[IB2_MainQuest SwordQuestData]
+DisplayName=INFINITY BLADE II
+Description=THE VAULT OF TEARS: Seek out the WORKER OF SECRETS - the legendary creator of the Infinity Blade - and convince him to join you! Rumor says that he is imprisoned in the VAULT OF TEARS...
+
+[SlotCanyon_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - THE COLLECTOR
+Description=THE CREVASSE: Mystery shrouded in legend hints that a trove of mythical weapons may be hidden here, at the center of the Scarred Wastes...
+
+[SlotCanyon_LootQuest SwordQuestData]
+DisplayName=EXPLORE - FORTUNE AND GLORY
+Description=THE CREVASSE: The COLLECTOR has left his secret trove to explore the world, looking for weapons of true craftmanship. Though guarded, he left much treasure here...
+
+[Koroth_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - AUSAR RISING
+Description=THE PLAINS OF KOROTH: Rumor tells of a secret cult dedicated to resurrecting AUSAR THE VILE. Though risky, there may be a way to learn what the WORKER is really plotting...
+
+[Koroth_LootQuest SwordQuestData]
+DisplayName=EXPLORE - ALPHA AND OMEGA
+Description=THE PLAINS OF KOROTH: Danger still lurks near the legendary battleground where AUSAR was hunted down and slain by RAIDRIAR.
+
+[Lantimor_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - REFLECTION
+Description=THE DARK CITADEL: The Soulless AUSAR has left a trail of blood and horror along his path to wreak vengeance upon RAIDRIAR. Destroy him before more innocents die.
+
+[Lantimor_LootQuest SwordQuestData]
+DisplayName=EXPLORE - BLOODLINES
+Description=THE DARK CITADEL: Though the GOD KING no longer rules here, treasure and glory still await those brave enough to tread the former path of The Sacrifice.
+
+[DremsMaw_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - POWER VACUUM
+Description=DREM'S MAW: Chaos has erupted as the Soulless AUSAR runs rampant through RAIDRIAR'S former Kingdom! Go to Drem's Maw and ensure that SIRIS's boyhood home is safe.
+
+[DremsMaw_LootQuest SwordQuestData]
+DisplayName=EXPLORE - HERO BORN
+Description=DREM'S MAW: With RAIDRIAR dead, fierce Daeril and Wildlings now roam the land terrorizing smaller villages. Getting rid of them helps the people... and fills your pockets.
+
+[DragonNest_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - THE DRAGOOR
+Description=NAFUSAAN MOUNTAINS: Only the bravest, and most foolish, of warriors has ever dared attempt to claim the treasures sitting at the feet of the legendary and fearsome Dragoor - King of Dragons!
+
+[DragonNest_LootQuest SwordQuestData]
+DisplayName=INTERLUDE - ICE AND FIRE
+Description=NAFUSAAN MOUNTAINS: This frozen wasteland is filled with danger... and treasure!
+
+[Desert_LootQuest SwordQuestData]
+DisplayName=INTERLUDE - THE STOCKPILE
+Description=THE SECCIAN DESERT: The WORKER's most ancient and powerful treasures were excavated here. Some of them remain locked away, guarded and protected by the fiercest of Daeril.
+
+[Asia_LootQuest SwordQuestData]
+DisplayName=EXPLORE - WHATS YOURS IS MINE
+Description=THE PINNACLE MONASTERY: LELINDRE has many treasures hidden here in her seat of power - but she won't have left them unguarded.
+
+[VOT_LootQuest SwordQuestData]
+DisplayName=EXPLORE - A LINK TO THE PAST
+Description=THE VAULT OF TEARS: Many hidden artifacts remain in this ancient lair of AUSAR THE VILE...
+
+[Lake_LootQuest SwordQuestData]
+DisplayName=EXPLORE - URIELS DREAM
+Description=THE STRONGHOLD AT LARIOTH: RAIDRIAR once kept many valuables here. Beware - his guards will defend them, even if he can use them no longer.
+
+[Prison_LootQuest SwordQuestData]
+DisplayName=EXPLORE - THE FORGOTTEN
+Description=THE BROKEN TOWER: Only the vilest of beings are sent here - but not everything left here to rot is without value...
+
+[DragonKill_Quest SwordQuestData]
+DisplayName=INTERLUDE - DRAGONSLAYER
+Description=THE HILLS OF LARIOTH: The DRAGON is wounded and has been spotted in Larioth. Destroy her before she can recover and wreak further devastation upon the land.
+
+[Dragon2Kill_Quest SwordQuestData]
+DisplayName=INTERLUDE - DRAGONMASTER
+Description=THE HILLS OF LARIOTH: The DRAGON is wounded and has been spotted in Larioth. Destroy her before she can recover and wreak further devastation upon the land.
+
+[Dragon3Kill_Quest SwordQuestData]
+DisplayName=INTERLUDE - DRAGONLORD
+Description=NAFUSAAN MOUNTAINS: The ancient DRAGON is wounded and has been spotted near her nest. Destroy her before she can recover and wreak further devastation upon the land.
+
+[PressDemo_DragonQuest SwordQuestData]
+DisplayName=INTERLUDE - DRAGONSLAYER
+Description=THE HILLS OF LARIOTH: The DRAGON is wounded and has been spotted in Larioth. Destroy her before she can recover and wreak further devastation upon the land.
+
+[PressDemo_Hills_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - THE BLOODMAGE
+Description=THE METIUS OBSERVATORY: TERROVAX hinted that the WORKER sent OSLIM, one of his most cunning Deathless Bloodmages, to investigate this ancient site. He travels armed with an Infinity Weapon...
+
+[Hills_SideQuest SwordQuestData]
+DisplayName=INTERLUDE - THE BLOODMAGE
+Description=THE METIUS OBSERVATORY: TERROVAX hinted that the WORKER sent OSLIM, one of his most cunning Deathless Bloodmages, to investigate this ancient site. He travels armed with an Infinity Weapon...
+
+[Hills_LootQuest SwordQuestData]
+DisplayName=EXPLORE - TOMB OF RUIN
+Description=THE METIUS OBSERVATORY: The ancient Observatory is locked and sealed by ancient magics that will open only to those equipped with the right keys, but the surrounding hills are littered with treasure...
+
+[ArenaQuest SwordQuestData]
+DisplayName=ARENA - BLOOD IN THE SAND
+Description=REWARD:
+
+[SwordMapPinChatName]
+MapPin_Dunes_A=SECCIAN DESERT
+MapPin_Obelisk_A=THE ARK
+MapPin_Lake_A=LARIOTH
+MapPin_ThePit=THE PIT
+MapPin_Lookout=BROKEN TOWER
+MapPin_VaultOfTears_S1=VAULT OF TEARS
+MapPin_Monastary_A=MONASTERY
+MapPin_Koroth=OBSERVATORY
+MapPin_KorothReal=KOROTH
+MapPin_Lantimor=LANTIMOR
+MapPin_DremsMaw=DREM'S MAW
+MapPin_SlotCanyon=SCARRED WASTES
+MapPin_AngelSunset=ARAN WASTE
+MapPin_Lake_B=DRAGONSLAYER
+MapPin_Survival=THE ARENA
+MapPin_DragonNest=NAFUSAAN
+MapPin_DragonNestKill=NAFUSAAN
+DeathlessMode=DEATHLESS
+
+[TitleCards]
+1=2 YEARS LATER
+2=RAIDRIAR'S STRONGHOLD, LARIOTH
+3=EXCAVATION, SECCIAN DESERT
+4=THE PIT, MAGHRYA
+5=THE BROKEN TOWER, LANTIMOR
+6=THE VAULT OF TEARS, SARANTHIA
+7=THE PINNACLE MONASTERY, HESPERN
+8=THE ARK
+9=THE HIDEOUT
+10=THE METIUS OBSERVATORY
+11=THE PLAINS OF KOROTH
+12=THE DARK CITADEL, LANTIMOR
+13=DREM'S MAW, LANTIMOR
+14=THE SCARRED WASTES
+
+[SwordPlayer]
+FireSpell=FIRE
+IceSpell=ICE
+WaterSpell=WATER
+WindSpell=WIND
+ElectricSpell=SHOCK
+PoisonSpell=POISON
+LightSpell=BRIGHT
+DarkSpell=DARK
+HolySpell=HOLY
+RainbowSpell=RAINBOW
+CrystalSpell=CRYSTAL
+InfinitySpell=INFINITY
+HealSelf=HEAL
+HealShield=SHIELD
+IncinerateSpell=INCINERATE
+ShockSpell=SHOCK
+DefendSpell=DEFEND
+HasteSpell=BLIND
+NullifySpell=NULLIFY
+WeakenSpell=BLUNT
+SlowSpell=FREEZE
+ComboStatus=COMBO HIT
+BonusComboStatus=BONUS COMBO HIT
+ComboElementalStatus=COMBO %elem%
+BonusComboElementalStatus=BONUS COMBO %elem%
+HitStatusNormal=HIT
+HitStatusElemental=%elem% HIT
+HitStatusWeak=SCRATCH
+HitStatusMissed=MISSED
+FinishingHit=FINISHING BONUS
+BlockStatus=BLOCK
+BlockPerfectStatus=PERFECT BLOCK
+BlockGreatStatus=BLOCK BREAK
+BlockPerfectGreatStatus=PERFECT BLOCK BREAK
+BlockFailedStatus=BLOCK FAILED
+BlockBrokenStatus=BROKEN BLOCK
+BlockExtraInfoDirection=DIRECTION
+BlockExtraInfoElemental=%elemental% DAMAGE
+BlockedStatus=BLOCKED
+ParryStatus=PARRY
+ParryGreatStatus=GREAT PARRY
+ParryPerfectStatus=PERFECT PARRY
+ParryBreakStatus=PARRY BREAK
+ParryGreatBreakStatus=GREAT PARRY BREAK
+ParryPerfectBreakStatus=PERFECT PARRY BREAK
+ParryFailedStatus=PARRY FAILED
+ParryExtraInfoImpossible=IMPOSSIBLE
+ParryExtraInfoDirection=DIRECTION
+DodgeStatus=DODGE
+DodgeGreatStatus=DODGE BREAK
+DodgeFailedStatus=DODGE FAILED
+DodgeRushedStatus=EXHAUSTED
+DodgeRushedFailedStatus=EXHAUSTED FAILED DODGE
+DodgeRushedGreatStatus=EXHAUSTED DODGE BREAK
+ChargeLostStatus=ATTACK CHARGE LOST
+StabStatus=STAB
+StabFailedStatus=STAB FAILED
+StabSlashStatus=SLASH
+StabGreatSlashStatus=GREAT SLASH
+StabPerfectSlashStatus=PERFECT SLASH
+StabSlashFailedStatus=WEAK SLASH
+SuperMoveStatus=SUPER
+FinishingHitStatus=MEGA HIT
+DizzyStatus=DIZZY
+SecondChanceString=SECOND CHANCE
+XPMaxStatus=XP MAX
+XPStatus=XP
+MaxStr=MAX
+BossLightSlowStatus=SLOW SLASH
+BossLightMediumStatus=MEDIUM SLASH
+BossLightFastStatus=FAST SLASH
+BossHeavySlowStatus=SLOW CHOP
+BossHeavyMediumStatus=MEDIUM CHOP
+BossHeavyFastStatus=FAST CHOP
+BossSpecial1Status=LEVEL 1 FURY!
+BossSpecial2Status=LEVEL 2 FURY!!
+BossSpecial3Status=LEVEL 3 FURY!!!
+BossHitHeavyStatus=BIG HIT!
+BossHitLightStatus=HIT!
+BossTapStarsStatus=TAP SKULLS
+BossDodgedStatus=DODGED
+BossDodgedBrokenStatus=DODGED BROKEN
+BossBlockedBrokenStatus=BLOCKED BROKEN
+BossParriedStatus=PARRIED
+BossParriedBrokenStatus=PARRIED BROKEN
+BattleChallengeIntro=^ Bonus:
+BattleChallengeSuccess=^ Bonus Win:
+BattleChallengeFailed=^ Bonus Lost:
+BattleChallengeRequirementIntro=Requirement:
+BattleChallengeRequirementSuccess=Requirement Met:
+BattleChallengeRequirementFailed=Requirement Failed:
+ClashMobBattleChallengeIntro=Qualify:
+NewGamePlusTitle=NewGame+
+NewGamePlusInfo=Congratulations, you've unlocked NewGame+!  Re-earn & re-master items in intensified combat!\nLevel up your character as high as you want!\n\nTo change to NewGame+, open the Character Slots menu in Options.You can switch between your NewGame+ and Main save anytime.
+iOSUpgradeTitle=Upgrade Device iOS
+iOSUpgradeInfo=It is HIGHLY recommended that you upgrade your device to the latest iOS version for better game performance.  Tap your SETTINGS icon on your home screen, and go to SOFTWARE UPDATE to upgrade.
+TimeToGoBackStr=Time to go back...
+RequiresSiris=REQUIRES SIRIS
+RequiresIsa=REQUIRES ISA
+RequiresLockPick1=REQUIRES LOCK PICK I SKILL
+RequiresLockPick2=REQUIRES LOCK PICK II SKILL
+RequiresLockPick3=REQUIRES LOCK PICK III SKILL
+GoldNameStr=Gold
+ChipsNameStr=Chips
+CheevoTierDescription=Tier %Tier%: %CheevoDesc%
+SirisNameString=SIRIS
+IsaNameString=ISA
+GodKingNameString=GOD KING
+ArenaRewardString=Next Reward at Round %NextRoundNum%:\n%NextRewardAmount%
+ArenaFinishedString=You have completed the Arena!
+ChargeBoost=+%Num% Charge
+ChargeHit=%HitStatus%+%Num%
+EngageString0=The Worker misses you!
+EngageString1=The Forgemaster needs items to upgrade!
+EngageString2=Time to sharpen your Infinity Blade!
+EngageString3=Time to fuse some gems!
+EngageString0=The Worker misses you!
+EngageString1=The Forgemaster needs items to upgrade!
+EngageString2=Time to sharpen your Infinity Blade!
+EngageString3=Time to fuse some gems!
+
+[BC_NoDamageTaken SwordInventoryBattleChallenges]
+FriendlyName=Take No Damage
+
+[BC_NoBlocking SwordInventoryBattleChallenges]
+FriendlyName=No Blocking
+
+[BC_Blocking SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Blocks
+ResultString=You Did %TriggerCount% Blocks
+ProgressString=Your Blocks
+TriggerName=Block
+TriggerNamePlural=Blocks
+ClickBonus=%TriggerCount% Blocks
+
+[BC_NoDodging SwordInventoryBattleChallenges]
+FriendlyName=No Dodging
+
+[BC_NoMagic SwordInventoryBattleChallenges]
+FriendlyName=No Magic
+
+[BC_NoParry SwordInventoryBattleChallenges]
+FriendlyName=No Parry
+
+[BC_NoHorizontalSwipes SwordInventoryBattleChallenges]
+FriendlyName=No Horizontal Attacks
+
+[BC_NoVerticalSwipes SwordInventoryBattleChallenges]
+FriendlyName=No Vertical Attacks
+
+[BC_NoSameDodgeDir SwordInventoryBattleChallenges]
+FriendlyName=No Dodge Same Dir
+
+[BC_HorizontalSwipesTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Horizontal Attacks
+ResultString=You Did %TriggerCount% Horizontal Attacks
+ProgressString=Your Horizontal Attacks
+TriggerName=Horizontal Attack
+TriggerNamePlural=Horizontal Attacks
+ClickBonus=%TriggerCount% Horizontal Attacks
+
+[BC_VerticalSwipesTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Vertical Attacks
+ResultString=You Did %TriggerCount% Vertical Attacks
+ProgressString=Your Vertical Attacks
+TriggerName=Vertical Attack
+TriggerNamePlural=Vertical Attacks
+ClickBonus=%TriggerCount% Vertical Attacks
+
+[BC_ComboTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Combos
+ResultString=You Did %TriggerCount% Combos
+ProgressString=Your Combos
+TriggerName=Combo
+TriggerNamePlural=Combos
+ClickBonus=%TriggerCount% Combos
+
+[BC_Combo5Target SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% 5 Hit Combos
+ResultString=You Did %TriggerCount% 5 Hit Combos
+ProgressString=Your 5 Hit Combos
+TriggerName=5 Hit Combo
+TriggerNamePlural=5 Hit Combos
+ClickBonus=%TriggerCount% 5 Hit Combos
+
+[BC_PerfectParryTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Perfect Parries
+ResultString=You Did %TriggerCount% Perfect Parries
+ProgressString=Your Perfect Parries
+TriggerName=Perfect Parry
+TriggerNamePlural=Perfect Parries
+ClickBonus=%TriggerCount% Perfect Parries
+
+[BC_PerfectBlockTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Perfect Blocks
+ResultString=You Did %TriggerCount% Perfect Blocks
+ProgressString=Your Perfect Blocks
+TriggerName=Perfect Block
+TriggerNamePlural=Perfect Blocks
+ClickBonus=%TriggerCount% Perfect Blocks
+
+[BC_ParryTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Parries
+ResultString=You Did %TriggerCount% Parries
+ProgressString=Your Parries
+TriggerName=Parry
+TriggerNamePlural=Parries
+ClickBonus=%TriggerCount% Parries
+
+[BC_ScratchTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Scratches
+ResultString=You Did %TriggerCount% Scratches
+ProgressString=Your Scratches
+TriggerName=Scratch
+TriggerNamePlural=Scratches
+ClickBonus=%TriggerCount% Scratches
+
+[BC_MagicTarget SwordInventoryBattleChallenges]
+FriendlyName=Do Magic %TriggerCount% Times
+ResultString=You Did Magic %TriggerCount% Times
+ProgressString=Your Magic
+TriggerName=Magic
+TriggerNamePlural=Magic
+ClickBonus=%TriggerCount% Magic
+
+[BC_MagicKillBoss SwordInventoryBattleChallenges]
+FriendlyName=Kill Titan with Magic
+
+[BC_ScratchKillBoss SwordInventoryBattleChallenges]
+FriendlyName=Kill Titan with Scratch
+
+[BC_StabTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Stabs
+ResultString=You Did %TriggerCount% Stabs
+ProgressString=Your Stabs
+TriggerName=Stab
+TriggerNamePlural=Stabs
+ClickBonus=%TriggerCount% Stabs
+
+[BC_SlashTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Slashes
+ResultString=You Did %TriggerCount% Slashes
+ProgressString=Your Slashes
+TriggerName=Slash
+TriggerNamePlural=Slashes
+ClickBonus=%TriggerCount% Slashes
+
+[BC_DodgeTarget SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Dodges
+ResultString=You Did %TriggerCount% Dodges
+ProgressString=Your Dodges
+TriggerName=Dodge
+TriggerNamePlural=Dodges
+ClickBonus=%TriggerCount% Dodges
+
+[BC_BreakBoss SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Breaks
+ResultString=You Did %TriggerCount% Breaks
+ProgressString=Your Breaks
+TriggerName=Break
+TriggerNamePlural=Breaks
+ClickBonus=%TriggerCount% Breaks
+
+[BC_PerfectBreakBoss SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Perfect Breaks
+ResultString=You Did %TriggerCount% Perfect Breaks
+ProgressString=Your Perfect Breaks
+TriggerName=Perfect Break
+TriggerNamePlural=Perfect Breaks
+ClickBonus=%TriggerCount% Perfect Breaks
+
+[BC_MegaHit SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Mega Hits
+ResultString=You Did %TriggerCount% Mega Hits
+ProgressString=Your Mega Hits
+TriggerName=Mega Hit
+TriggerNamePlural=Mega Hits
+ClickBonus=%TriggerCount% Mega Hits
+
+[BC_BonusCombo SwordInventoryBattleChallenges]
+FriendlyName=Do %TriggerCount% Bonus Combos
+ResultString=You Did %TriggerCount% Bonus Combos
+ProgressString=Your Bonus Combos
+TriggerName=Bonus Combo
+TriggerNamePlural=Bonus Combos
+ClickBonus=%TriggerCount% Bonus Combos
+
+[BC_GetHit SwordInventoryBattleChallenges]
+FriendlyName=Take %TriggerCount% Hits
+ResultString=You Took %TriggerCount% Hits
+ProgressString=Your Hits Taken
+TriggerName=Taken Hit
+TriggerNamePlural=Taken Hits
+ClickBonus=%TriggerCount% Taken Hits
+
+[CM_UnlimitedSuper SwordInventoryPlayerAbility]
+FriendlyName=Unlimited Super Meter!
+
+[CM_StartMagicFull SwordInventoryPlayerAbility]
+FriendlyName=Fills Magic meter!
+
+[CM_FastMagicCharge SwordInventoryPlayerAbility]
+FriendlyName=Fast Magic charge!
+
+[CM_DodgeMagicCharge SwordInventoryPlayerAbility]
+FriendlyName=Magic will charges from every Dodge!
+
+[CM_BlockMagicCharge SwordInventoryPlayerAbility]
+FriendlyName=Magic charges from every Block!
+
+[CM_ParryMagicCharge SwordInventoryPlayerAbility]
+FriendlyName=Magic charges from every Parry!
+
+[CM_CantSlash SwordInventoryPlayerAbility]
+FriendlyName=
+
+[CM_CantDodge SwordInventoryPlayerAbility]
+FriendlyName=
+
+[CM_CantBlock SwordInventoryPlayerAbility]
+FriendlyName=
+
+[CM_BossWontBreak SwordInventoryPlayerAbility]
+FriendlyName=
+
+[CM_AlwaysDizzyBoss SwordInventoryPlayerAbility]
+FriendlyName=Titan stays dizzy!
+
+[CM_HighDamageOnParry SwordInventoryPlayerAbility]
+FriendlyName=Parries do massive damage!
+
+[CM_HighDamageOnDodge SwordInventoryPlayerAbility]
+FriendlyName=Dodges do massive damage!
+
+[CM_HighDamageOnBlock SwordInventoryPlayerAbility]
+FriendlyName=Blocks do massive damage!
+
+[CM_HugeBreakWindows SwordInventoryPlayerAbility]
+FriendlyName=Long boss break windows!
+
+[SwordClashMobPages]
+PageAllStr=ALL
+PageComingSoonStr=COMING SOON
+PageActiveStr=ACTIVE
+PageVictoryStr=VICTORY
+PageLossStr=LOSS
+
+[SwordClashMobDrawCard]
+RewardString=REWARD:
+ComingSoonString=Coming Soon!
+
+[SwordHudBase]
+SwordClashTapString=TAP!
+AchievementTitle=ACHIEVEMENT
+
+[SwordHudMain]
+LootFightString=LOOT FIGHT
+
+[SwordCharacterViewerScene]
+AvatarFailTitle=CHARACTER VIEWER
+AvatarFailMsg=Unable to download character from server.  Please try again later.
+
+[SwordAvatarInCloud]
+AvatarUploadTitle=CHARACTER UPLOAD
+AvatarUploadSuccess=Upload Successful!
+AvatarUploadFailed=Upload Failed! Please try again later.
+
+[SwordCharacterViewerControlsScene]
+UnlockString=UNLOCK:
+BuySetString=BUY SET:
+EquipSetString=EQUIP SET
+CannotBuyItem=UNAVAILABLE
+CoverColorBannerString=\nUnlock the COLOR %Color% for %Chips%!  Customize your character and stand out from the Mob!
+CoverAnimBannerString=\nUnlock the STYLE %AnimName% for %Chips%!  Show off your personality with this cool style!
+UploadTitle=UPLOAD CHARACTER
+UploadInstructions=Upload your current character to the Infinity Blade Servers to show it to your friends! They can purchase your items for a discounted price! Would you like to upload your avatar now?
+FullInstructionString=Customize your character! Use one finger to move and rotate, and two fingers to zoom. Additional options on the right.
+SnapShotInstructions=Share a SELFIE with your friends! SELFIE lets you to take a screenshot of your avatar by pressing your iOS device Home and Sleep button at the same time. Touch anywhere on the screen to exit this mode.
+ColorInstructions=Customize the COLOR of your character!
+AnimInstructions=Customize the STYLE of your character! STYLE Animations play when you equip a new item and when your friends view your character.
+MyMobInstructions=Check out your friends' cool gear! These are your Game Center, Facebook, and Google+ friends who are also playing Infinity Blade III. You may purchase items you do not own at a discount. You will not pay for items you currently own.
+RandomInstructions=Check out the sweet gear from another Infinity Blade player! You may purchase items you do not own at a discount. You will not pay for items you currently own.\nWarning: You may never see this character again...
+SnapShotTitle=SELFIE
+ColorTitle=COLOR
+AnimTitle=STYLE
+MyMobTitle=FRIENDS
+RandomTitle=RANDOM PLAYER
+Buy3dBttnString=Buy 3-D Printed\nSTATUE!
+
+[SwordAchievementsScene]
+ScreenTitleStr=GOALS
+
+[SwordLinksScene]
+InfoButton=INFO
+ScreenTitleStr=MORE STUFF TO GET
+Ib1Text=INFINITY BLADE
+Ib1BuyLink=http://epic.gm/ib1itunes
+Ib1GiftLink=http://epic.gm/ib1gift
+IbaText=INFINITY BLADE:\nAWAKENING
+IbaBuyLink=http://epic.gm/ibaitunes
+IbaGiftLink=http://epic.gm/ibaitunes
+Ib2Text=INFINITY BLADE II
+Ib2BuyLink=http://epic.gm/ib2itunes
+Ib2GiftLink=http://epic.gm/ib2gift
+IbrText=INFINITY BLADE:\nREDEMPTION
+IbrBuyLink=http://epic.gm/ibritunes
+IbrGiftLink=http://epic.gm/ibritunes
+Ib3Text=INFINITY BLADE III
+Ib3BuyLink=RATE
+Ib3GiftLink=http://epic.gm/ib3gift
+IdsText=IMAGINE DRAGONS:\nMONSTER
+IdsBuyLink=http://epic.gm/idmonster
+IdsGiftLink=0
+St1Text=INFINITY BLADE SOUNDTRACK VOL. 1
+St1BuyLink=http://epic.gm/ibsoundtrack
+St1GiftLink=0
+St2Text=INFINITY BLADE SOUNDTRACK VOL. 2
+St2BuyLink=http://epic.gm/ibsoundtrack2
+St2GiftLink=0
+IdaText=IMAGINE DRAGONS:\nNIGHT VISIONS
+IdaBuyLink=http://epic.gm/idnight
+IdaGiftLink=0
+RateString=RATE
+Ib3dText=3D PRINT CURRENT CHARACTER
+Ib3dBuyLink=Buy3dPrint
+Ib3dGiftLink=0
+
+[SwordLinksListItem]
+BuyString=BUY
+GiftString=GIFT
+
+[SwordAchievementsListItem]
+CollectString=COLLECT
+CompletedString=COMPLETE
+
+[SwordRewardsScene]
+SocialChallengeRewardTitle=CLASHMOB REWARD!
+SocialChallengeRewardMsg=Accept your reward for participating in %EventName%!
+SocialChallengeOldReward=a past CLASHMOB event
+
+[SwordClashMobResultScene]
+DoneString=DONE
+TryAgainString=TRY AGAIN
+RewardDescStr=Only %TimeLeft% left to win:
+FacebookStr=COMMENT
+TwitterStr=TWITTER
+MyMobStr=MY MOB GIFT
+LikeStr=LIKE
+TweetStr=RETWEET
+YouTubeStr=SUBSCRIBE
+BonusStr=+ 1 Bonus Play
+NumLikesStr=View Likes (%Value%)
+NumCommentsStr=View Comments (%Value%)
+NumTweetsStr=View Retweets (%Value%)
+EarnMorePerks=EARN MORE PERKS
+LoginTwitter=LOGIN TWITTER
+LoginTwitterUrl=http://epic.gm/ib3twitter
+LoginFacebookUrl=http://epic.gm/ib3fb
+LoginGoogleUrl=http://epic.gm/ib3google
+FacebookAuthFailedTitle=FACEBOOK AUTHORIZATION
+FacebookAuthFailedMessage=The app is not able to connect properly with Facebook. Would you like see our help page?
+TwitterAuthFailedTitle=TWITTER AUTHORIZATION
+TwitterAuthFailedMessage=The app is not able to connect properly with Twitter. Would you like see our help page?
+GoogleAuthTitle=GOOGLE+ AUTHORIZATION
+GoogleAuthFailedMessage=The app is not able to connect properly with Google+. Would you like see our help page?
+GooglePlusLoginNoCancelMessage=The authorization process cannot be canceled. Would you like to continue?
+
+[SwordQuestData]
+DeathlessTitleString=DEATHLESS QUEST
+DeathlessQuestDescString=%QuestTitle%\n
+DeathlessLootDescString=%QuestTitle%\nYou were killed by %KillerName%! Try to recover the DEATHLESS LOOT from your corpse:
+DeathlessForgiveString=The Deathless Quest loot has been returned to you!
+DeathlessForgivePushString=The Deathless Quest has forgiven you.  Return to the HIDEOUT to get your lost items back!
+
+[SwordBattleEventStrings]
+GoldRewardStr=gold
+ChipsRewardStr=chips
+BT_Kill1Boss_SocialDesc=Bonus! Click to do extra:
+BT_KillNBosses_SocialDesc=Bonus! Click all to:
+BT_TimeSurvival_SocialDesc=Bonus! Click all to add:
+BT_TreasureCollection_SocialDesc=Bonus! Click all to get extra:
+BT_BattleChallengeTrigger_SocialDesc=Bonus! Click all for more:
+BT_Kill1Boss_Click=%Value% DAMAGE!
+BT_KillNBosses_Click=KILL %Value% TITANS!
+BT_TimeSurvival_Click=%Value% SECONDS!
+BT_TreasureCollection_Click=%Value% BAGS!
+BT_Kill1Boss_ClickTiny=TITAN DAMAGE!
+BT_KillNBosses_ClickTiny=TITAN KILL!
+BT_TimeSurvival_ClickTiny=MORE TIME!
+BT_TreasureCollection_ClickTiny=BAGS!
+BT_Kill1Boss_Detail=KILL TITAN
+BT_KillNBosses_Detail=KILL %Goal% TITANS
+BT_KillNBosses_Detail_1=KILL A TITAN
+BT_TimeSurvival_Detail=SURVIVE %Goal% SECS
+BT_TreasureCollection_Detail=COLLECT %Goal% BAGS
+BT_BattleChallengeTrigger_Detail=DO %Goal% %Action%
+BT_Kill1Boss_Result=YOU HAVE DONE LITTLE DAMAGE!
+BT_KillNBosses_Result=YOU KILLED A TITAN!
+BT_TimeSurvival_Result=YOU SURVIVED ONE SECOND!
+BT_TreasureCollection_Result=YOU COLLECTED A BAG!
+BT_Kill1Boss_Results=YOU HAVE DONE %Progress% DAMAGE!
+BT_KillNBosses_Results=YOU HAVE KILLED %Progress% TITANS!
+BT_TimeSurvival_Results=YOU HAVE SURVIVED %Progress% SECONDS!
+BT_TreasureCollection_Results=YOU COLLECTED %Progress% BAGS!
+BT_Kill1Boss_TotalResults=YOU HAVE DONE A TOTAL OF %Progress% DAMAGE!
+BT_KillNBosses_TotalResults=YOU HAVE KILLED A TOTAL OF %Progress% TITANS!
+BT_TimeSurvival_TotalResults=YOU HAVE SURVIVED A TOTAL OF %Progress% SECONDS!
+BT_TreasureCollection_TotalResults=YOU COLLECTED A TOTAL OF %Progress% BAGS!
+BT_Kill1Boss_Progress=YOUR DAMAGE
+BT_KillNBosses_Progress=TITANS YOU KILLED
+BT_TimeSurvival_Progress=SECONDS YOU SURVIVED
+BT_TreasureCollection_Progress=BAGS YOU COLLECTED
+FailedToHelp=You did not qualify for the reward.
+RankStr=RANK:
+
+[SwordBattleEventDefaultDescription]
+Title_BT_Kill1Boss_0=Clash at the %MapName%
+Title_BT_Kill1Boss_1=Swords and %BossName%
+Title_BT_Kill1Boss_2=%MapName% Showdown
+Desc_BT_Kill1Boss_0=%BossName% has stolen the village tribute! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Desc_BT_Kill1Boss_1=%BossName% has challenged all comers in the %MapName%! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Desc_BT_Kill1Boss_2=%BossName% is taking his anger out on defenseless villagers! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Title_BT_KillNBosses_0=Cleanse the %MapName%
+Title_BT_KillNBosses_1=Invasion at the %MapName%
+Title_BT_KillNBosses_2=Horde at the %MapName%
+Desc_BT_KillNBosses_0=%BossNamePlural% has been spotted near the %MapName%! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Desc_BT_KillNBosses_1=%BossNamePlural% has breached the defenses! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Desc_BT_KillNBosses_2=%BossNamePlural% has overrun the %MapName%! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Title_BT_BattleChallengeTrigger_0=%TriggerName% or Die
+Title_BT_BattleChallengeTrigger_1=%TriggerName%-A-Thon
+Desc_BT_BattleChallengeTrigger_0=%BossName% has come to the %MapName% for vengance! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Desc_BT_BattleChallengeTrigger_1=%BossName% has issued a challenge! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Title_BT_TimeSurvival_0=%MapName% Survivor
+Title_BT_TimeSurvival_1=Last Moments and %BossName%
+Desc_BT_TimeSurvival_0=%BossName% has hunted you down! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Desc_BT_TimeSurvival_1=%BossName% has tracked you to the %MapName%! %ClashMobGoal% %PlayerPerks% %SuccessReq%
+Title_BT_TreasureCollection_0=Gold of the %MapName%
+Title_BT_TreasureCollection_1=%MapName% Money Bags
+Desc_BT_TreasureCollection_0=The %MapName% is littered with gold. %ClashMobGoal%
+Desc_BT_TreasureCollection_1=%ClashMobGoal%
+SuccessReqStr=Success Requires: %SuccessReq%
+Map_CM_CrackedDesert_0=Sacred Ruins
+Map_CM_CrackedDesert_1=Dead Valley
+Map_CM_Field_Burning_0=Burning Field
+Map_CM_Field_Burning_1=Ash Plains
+Map_CM_Field_Day_0=Bright Field
+Map_CM_Field_Day_1=Honor Plains
+Map_CM_Field_Night_0=Dark Field
+Map_CM_Field_Night_1=Star Plains
+Map_CM_Sand_Day_0=Scorched Desert
+Map_CM_Sand_Day_1=Forgotten Lands
+Map_CM_Sand_Sunset_0=Fading Desert
+Map_CM_Sand_Sunset_1=Kings Ruins
+Goal_BT_Kill1Boss_0=Deal as much damage as you can - do your part to defeat the Titan!
+Goal_BT_KillNBosses_0=Kill one in time - do your part to defeat them all!
+Goal_BT_BattleChallengeTrigger_0=Do as many %TriggerNamePlural% as possible!
+Goal_BT_TimeSurvival_0=Survive as long as you can!
+Goal_BT_TreasureCollection_0=Collect as many gold bags as you can!
+
+[SwordSocialChallenge]
+FacebookCommentTitle=Reply To ClashMob Post
+
+[SwordClashMobData]
+MobSize=MOB SIZE
+
+[SwordSocialChallengePerks]
+PT_MoneyStr=%X% Bonus
+PT_TimeStr=%X% Seconds
+PT_FreePlayStr=%X% Bonus Play
+PT_HealthStr=%X% More Health
+
+[SwordSocialChallengeGifts]
+NotifyString=%UserName% has sent you a bonus play for %EventName%.
+
+[SwordMyMobScene]
+PerksTitle=SKILLS
+PerksDesc=The more friends you have playing Infinity Blade, the more bonuses you get for each ClashMob.
+FriendsColHeader=FRIENDS
+PerksColHeader=SKILLS ADDED
+MyMobTitle=MY MOB:
+InviteString=INVITE
+
+[SwordMyMobGiftScene]
+MyMobTitle=GIFT TO MY MOB:
+GiftTitle=GIFT BONUS PLAY TO MOB MEMBERS
+GiftDesc=Click on Mob members to gift Bonus Plays for this ClashMob. Checkmarks indicate you have given or recieved Bonus Plays from members of your Mob.
+GiftsLeftString=GIFTS REMAINING:
+
+[SwordItemListScene]
+AttackString=ATTACK
+DefenseString=DEFENSE
+WeaponListString=LIGHT
+DualWeaponListString=DUAL
+TwoHandedWeaponListString=HEAVY
+ShieldListString=SHIELDS
+HelmetListString=HELMETS
+ArmorListString=ARMOR
+MagicListString=RINGS
+KatanaString=LIGHT
+StaffString=HEAVY
+ClawString=DUAL
+VambraceString=SHIELDS
+GemListString=GEMS
+GoldBagNoNetwork=Must be connected to a network in order to purchase Gold from the App Store.
+GoldBagNoPermission=Unable to buy Gold because this device is restricted from In-App Purchases.
+GoldBagFailed=Unable to connect to App Store, App may need to be restarted.
+GoldBagDesc=Purchase one bag of %NumGold% gold pieces for %Cost% from the App Store
+StoreScreenString=STORE
+ItemScreenString=INVENTORY
+ShowAllString=ALL
+GemsString=GEM BAG
+ItemsString=ITEMS
+SuppliesString=SUPPLIES
+
+[SwordSuppliesListScene]
+PotionListString=POTIONS
+KeyListString=KEYS
+WorldItemListString=INGREDIENTS
+GrabBagListString=PRIZE WHEELS
+KeyItemListString=MAPS
+
+[SwordItemAttribDisplay]
+AttackString=ATTACK
+DefenseString=DEFENSE
+EmptyGemSlotString=EQUIP GEM
+MustOwnToEquipString=MUST OWN ITEM TO EQUIP GEM
+DragGemString=DRAG GEM HERE TO EQUIP
+UnownedGemSlotString=SEE GEM SLOTS
+TraderEmptyGemSlotString=GEM
+IncinerateSpellDesc=Damage Enemy!
+ShockSpellDesc=Damage Enemy Over Time!
+SlowSpellDesc=Slows Enemy Attacks!
+NullifySpellDesc=Removes Enemy Elemental Resistance!
+HasteSpellDesc=Bigger Attack Window On Enemy!
+WeakenSpellDesc=Enemy Does Less Damage!
+HealSelfDesc=Restores Health!
+DefendSpellDesc=Restores Shield and Health!
+HolySpellDesc=Steal Health From Enemy!
+
+[SwordMpEquipScene]
+CostString=Cost:
+OwnedString=Owned
+CurrentString=CURRENT:
+UpgradeString=UPGRADE:
+RoundString=Round %Num%
+UpgradeBttnString=UPGRADE
+RoundLoss=ROUND LOSS
+RoundWin=ROUND WIN
+
+[SwordMpVsScene]
+VsString=VS.
+
+[SwordMpResultsScene]
+OpponentWantsToContinueString=%Opponent% wants to continue playing!
+PlayerWantsToContinueString=Waiting for %Opponent% to continue!
+GameIsOverString=Game Over!
+NumWinsString=Rounds Won:
+NumLossesString=Rounds Lost:
+PlayMoreString=NEXT MATCH
+QuitMatchString=QUIT
+CancelString=CANCEL
+VictoriesString=VICTORIES:
+
+[SwordPurchaseCurrency]
+BagOfGoldName=Bag of Gold
+BagOfGoldPrompt=Would you like to purchase one bag of %NumGold% gold pieces for %Cost% from the App Store?
+TransactionFailed=Transaction Failed
+TransactionFailedUnknown=Transaction Failed.  Reason is unknown.
+InsuficientGoldTitleString=Insufficient %Currency%
+InsuficientGoldNoNetwork=You must be connected to a network in order to purchase %Currency% from the App Store.
+InsuficientGoldBuyMsgString=You need %gold% more gold.  Would you like to purchase gold from the App Store?
+InsuficientGoldMsgString=You need %gold% more gold.
+ConnectingToItunes=Connecting
+NotConnectedToNetwork=Unable to connect to App Store.\nNo network connection available.
+NotConnectedToMCP=Unable to connect to the game servers.
+NoPermissionToBuy=You do not have permission to purchase from the App Store.
+AppStoreError=%Reason%\n\n%Suggestion%
+AppStoreError_Unknown=Unable to connect to the App Store.
+ServerError_Generic=There was an error recording this purchase.
+ServerError_NoProducts=There was an error processing this purchase.
+ServerError_BadProductID=There was a problem processing this purchase.
+SellItemString=Are you sure you want to sell your last %item%?
+SellItemTitle=Sell Last Item
+SellMasteredTitle=Sell Mastered Item
+SellMasteredGemString=You can't sell a mastered item that has equipped gems in it.
+TransactionSuccess=Congratulations!
+SuccessMessageGold=You successfully purchased %amount% more gold.\nSpend it well!
+SuccessMessageChips=You successfully purchased %amount% more chips.\nEnjoy!
+
+[SwordUserOptionsScene]
+OptionsScreenString=OPTIONS
+AdvancedScreenString=ADVANCED OPTIONS
+HelpScreenString=HELP
+DebugScreenString=DEBUG - REMOVE BY SHIP!
+
+[SwordUserOptionsList]
+SaveSlotsString=Character Slots
+NameCharacterString=Rename Character
+InvertAxisString=Invert Look Axis
+RestartBloodline1String=Restart Rebirth 1
+MusicVolumeString=Music Volume
+SfxVolumeString=SFX Volume
+GuiVolumeString=Interface Volume
+CreditsString=View Game Credits
+AdavancedString=Advanced Options
+HelpString=Help
+PrivacyPolicyString=View Privacy Policy
+PrivacyPolicyLink=http://epic.gm/privacy
+WebsiteString=Online Instructions and Help
+WebsiteLink=http://epic.gm/ib3manual
+IB1String=INFINITY BLADE I
+IB2String=INFINITY BLADE II
+IBAwakeningString=INFINITY BLADE: AWAKENING
+IBRedemptionString=INFINITY BLADE: REDEMPTION
+RestartGameString=Reset Player Character
+RestartLastAwakeningString=Restart Last Awakening
+RestartVariableAwakeningString=Restart %Awakenings% Awakenings Back
+RestartVariableDeathlessString=Roll back Deathless difficulty %count%x
+RestartVariableDeathlessTitle=Roll back Deathless difficulty
+RestartVariableDeathlessConfirm=This will lower the LVL of all Deathless.\nFor example, the Worker is currently LVL %CurrentLVL%, this will set him to LVL %NewLVL%.\nAre you sure you want to do this?
+RestorePurchases=Restore Purchases
+RateInfinityBladeString=Rate Infinity Blade III
+PlayOriginsString=View Infinity Blade Origins
+OriginsVideoUrl=http://epic.gm/iborigins
+RestartGameWarning1String=Are you sure you want to reset your Character?
+RestartGameWarning2String=If you Reset your Character you will lose all progress, levels, items, and Gold. Are you certain you want to reset your Character?
+RestartGameWarning3String=There is no undo once you reset your character - you will restart the game from the very beginning. Reset now?
+RestartBloodline1WarningString=Are you sure you want to save current character, gold, items, and restart from Rebirth 1?
+DodgeButtonSizeString=Dodge Button Size
+DodgeButtonPosString=Dodge Button Position
+FacebookLogoutString=Facebook: Logout
+FacebookLoginString=Facebook: Login
+FacebookClearDataString=Unlink Social Accounts
+FacebookClearDataWarningTitle=Unlink Social Accounts
+FacebookClearDataWarningString=This will unlink any social accounts you have associated with your game account.
+UnlinkSocialAccountsCompleteTitle=Unlink Social Accounts Complete
+UnlinkSocialAccountsCompleteString=Social accounts have been removed from your game account. If the game is played again, any social accounts that are signed in will automatically be added to the game account.
+SliderTextString=MP Titan Slider Text
+MoveSavesToCloudString=Move Local Saves to the Cloud
+GlobalChatString=Allow Global Chat
+ShowSubtitlesString=Show Subtitles
+TurnOffNewItemAlertsString=Turn Off ! Alerts
+DisableSfxVolumeString=Disable SFX (May Improve Performance)
+TechnicalSupport=Technical Data
+CsEmailString=Customer Support
+EnableCloudSave=Enable Cloud Saving
+ForceCloudSave=Force Save to Cloud
+NoGameCenterCloudTitle=No Game Center Account
+NoGameCenterCloudMessage=In order to enable cloud saving, you need to be signed into a Game Center account.
+GoogleLogoutString=Google+: Logout
+GoogleLoginString=Google+: Login
+SyncAchievementsString=Sync Game Center Achievements
+
+[SwordSocialServiceBase]
+ServiceNotMappedToMcpIdTitle=Link %SocialService% To Game
+ServiceNotMappedToMcpId=Your %SocialService% account %AccountName% is currently linked to a different Epic account.  Would you like to instead link it to your account on this device?
+
+[SwordSocialServiceFacebook]
+ExternalTypeUiName=Facebook
+
+[SwordSocialServiceTwitter]
+ExternalTypeUiName=Twitter
+
+[SwordSocialServiceGameCenter]
+ExternalTypeUiName=Game Center
+
+[SwordSocialServiceGoogle]
+ExternalTypeUiName=Google
+
+[SwordQuestChatScene]
+AllowGlobalChatTitle=Allow Global Chat?
+AllowGlobalChatText=Online interactions are not rated
+ReplyToString=Reply To
+RCTE_Global=GLOBAL
+RCTE_MyMob=MY MOB
+RCTE_AtMe=@ME
+
+[SwordLoginSocialServicesScene]
+LoginTitle=LOGIN SOCIAL NETWORK
+LoginMessage=In order to use this feature you must be logged into at least one social account.  Please select one more accounts to connect to.  MY MOB is all your friends playing this game who are friends in one of your social networks.
+
+[SwordSaveGameList]
+SaveSlotChangeWaringString=Are you sure you want to quit and load character slot %Slot%? You will lose unsaved progress for current character.
+SaveSlotNewWaringString=Are you sure you want to quit and create a new character in slot %Slot%? You will lose unsaved progress for current character.
+
+[SwordOptionListSaveSlot]
+SaveSlotString=CHARACTER SLOT %Num%
+SaveSlotActiveString=ACTIVE GAME
+LevelString=Level %Num%
+BloodLineString=Rebirth %Num%
+EmptySlotString=CREATE NEW CHARACTER
+
+[SwordOptionListCheckBox]
+OnString=on
+OffString=off
+
+[SwordSaveGameScene]
+SaveGameScreenString=CHARACTER SLOTS
+StartBttnString=PLAY
+DeleteBttnString=DELETE
+ResetBttnString=RESET
+CopyBttnString=COPY
+CreateNewGameTitle=New Character
+CreateNewGameString=Create a new character in this save slot?
+DeleteSaveSlotTitle=Delete Save Game
+ConfirmDeleteString=Are you sure you want to delete the save game in slot %Slot%?  All progress in the save game will be lost and cannot be recovered!
+CopySaveSlotTitle=Copy Game To Save Slot
+ConfirmCopyString=Are you sure you want to overwrite game slot %Slot% with your current game?  Previous save game data will be lost and cannot be recovered!
+CreateNewGamePlusTitle=Start NewGame+
+CreateNewGamePlusString=Playing NewGame+ will let you re-earn and re-master all your items and level up your character even further! Start NewGame+ now?
+ResetNewGamePlusTitle=Reset NewGame+
+ResetNewGamePlusString=This will delete the current NewGame+ game.  It will restart NewGame+ from the current save game.  Reset NewGame+?
+
+[SwordResolveCloudSaveConflictPopup]
+CloudString=Cloud
+LocalString=Device
+TitleString=SELECT YOUR SAVE FILE
+MessageString=Your Cloud save game is newer than your Device save game.\nPlease select which save game you would like to use:
+CloudSaveString=CLOUD SAVE (NEWER)
+LocalSaveString=DEVICE SAVE
+FightDeltaString=CLOUD SAVE IS %NumFights% FIGHTS AHEAD OF DEVICE SAVE
+OrString=OR
+ConfirmResolveTitleString=CONFIRM
+ConfirmResolveString=Are you sure you want to replace your %Overwritten% save with your %Overwriting% save?
+
+[SwordTechnicalDataPopup]
+GetTicketString=Refresh Ticket
+
+[SwordCsEmailPopup]
+TitleString=Customer Support
+OptionsInstructionsString=Please select the option that best describes the issue.  You will be able to add additional information on the next page.
+DetailsInstructionsString=We want to help solve this issue as quickly as possible, so please add your email as well as any additional details that might help us understand better.
+IssueBttn0String=Other
+IssueBttn1String=Trouble progressing in game
+IssueBttn2String=Issue with purchases
+IssueBttn3String=Problem with saved game
+EmailString=Email
+AdditionalDetailsString=Additional Details
+InvalidEmailTitle=Invalid Email
+InvalidEmailMsg=It appears this is not a valid email.  Please enter your email address so we can respond to your issue.
+ThankYouTitle=Thank You
+ThankYouMsg=Thank you for this information.  We will contact you through email soon.
+AdditionalInfoString=Additional Information:
+SendingSupportMsg=REPORTING ISSUE
+FailedSendTitle=CONNECTION FAILED
+FailedSendMsg=There was a problem sending this report.  Would you like to try again?  Or feel free to email us at customer.service@chairentertainment.com
+PotentialHack=Potentially Manipulated
+
+[SwordItemStoreScene]
+BuyBttnString=BUY
+SellBttnString=SELL
+ValueString=¶
+CostString=¶
+EquipItemTitle=Equip New Item
+EquipItemString=Would you like to equip the %item%?
+SellItemString=Are you sure you want to sell your last %item%?
+SellItemTitle=Sell Last Item
+
+[SwordInventoryScene]
+PurchaseCurrencyMsg=GET MORE CURRENCY!
+CompareBttnString=COMPARE
+EquipBttnString=EQUIP
+ConsumeBttnString=USE
+BuyString=BUY:
+SellString=SELL:
+EquipString=EQUIP:
+ForgeProgressString=UPGRADE PROGRESS
+ForgeCompleteString=UPGRADE COMPLETE!
+EquippedString=EQUIPPED
+ItemsString=ITEMS
+UseString=USE:
+ViewString=VIEW:
+FoundString=FOUND:
+EquipItemTitle=Equip New Item
+FullInstructionString=%Instructions%
+LightInstructionString=LIGHT WEAPONS strike a balance between speed and power.\nSIRIS can Dodge, and also Block with a Shield.\n - 3-Hit Combo: ᐊ ᐅ ᐊ\n - 4-Hit Combo: ᐊ ᐊ ᐅ ᐅ\n - 5-Hit Combo: ᐊ ᐅ ᐃ ᐁ ᐊ\n(Combos can start from any direction)
+HeavyInstructionString=HEAVY WEAPONS are very powerful but slow.\nSIRIS can Block attacks from all 3 directions, but cant Dodge.\n - Combo Trigger: ᐁ ᐁ or ᐃ ᐃ or ᐅ ᐅ or ᐊ ᐊ\nThis Triggers a Slash Bonus, but ends Enemy Break.\n(Try to time combo to end on last hit of break)
+DualInstructionString=DUAL WEAPONS are fast but not very powerful.\nSIRIS can Dodge and Duck, but cant Block.\n - Combo Trigger: ᐊ ᐅ ᐊ\nOnce Combo is Triggered, every hit is a Combo Hit.\nDuring Combo Hits, Siris can execute a Secondary Combo.\n - Secondary Combo: ᐊ ᐅ ᐁ or ᐊ ᐅ ᐃ or ᐅ ᐊ ᐁ or ᐅ ᐊ ᐃ
+KatanaInstructionString=LIGHT WEAPONS strike a balance between speed and power.\nISA can Dodge, and also Block with a Shield.\n - 3-Hit Combo: ᐊ ᐅ ᐊ\n - 4-Hit Combo: ᐊ ᐊ ᐅ ᐅ\n - 5-Hit Combo: ᐊ ᐅ ᐃ ᐁ ᐊ\n(Combos can start from any direction.)
+StaffInstructionString=HEAVY WEAPONS are very powerful but slow.\nISA can Block attacks from all 3 directions, but cant Dodge.\n - Combo Trigger: ᐁ ᐁ or ᐃ ᐃ or ᐅ ᐅ or ᐊ ᐊ\nThis Triggers a Slash Bonus, but ends Enemy Break.\n(Try to time combo to end on last hit of break)
+ClawInstructionString=DUAL WEAPONS are fast but not very powerful.\nISA can Dodge or Jump, but cant Block.\n - Combo Trigger: ᐊ ᐅ ᐊ\nOnce Combo is Triggered, every hit is a Combo Hit.\nDuring Combo Hits, Isa can execute a Secondary Combo.\n - Secondary Combo: ᐊ ᐅ ᐁ or ᐊ ᐅ ᐃ or ᐅ ᐊ ᐁ or ᐅ ᐊ ᐃ
+ShieldInstructionString=SHIELDS allow SIRIS to Block incoming attacks.\nThey can also provide stat boosts and be equipped with gems.\nShield stats and bonuses apply regardless of Weapon type Equipped.
+VambraceInstructionString=SHIELDS allow ISA to Block incoming attacks.\nThey can also provide stat boosts and be equipped with gems.\nShield stats and bonuses apply regardless of Weapon type Equipped.
+HelmetInstructionString=HELMETS provide protection from incoming attacks.\nThey can also provide stat boosts and be equipped with gems.
+ArmorInstructionString=ARMOR provides protection from incoming attacks.\nIt can also provide stat boosts and be equipped with gems.\nArmor also has a Stamina Stat, which determines how often you can Dodge before Exhaustion.
+RingInstructionString=RINGS allow SIRIS and ISA to cast different types of Magic Spells.\nThey can also provide stat boosts and be equipped with gems.\n - HEAL: Restores Health\n - DEFEND: Restores Shield & Player Health\n - INCINERATE: Damage Enemy\n - SHOCK: Damage Enemy Over Time\n - FREEZE: Slows Enemy Attacks\n - NULLIFY: Removes Enemy Elemental Resistance\n - BLIND: Bigger Attack Window on Enemy\n - BLUNT: Enemy Does Less Damage\n - HOLY: Steal Health From Enemy\n
+GemInstructionString=GEMS can be slotted into Items with matching Gem Slots.\nThese powerful modifiers can boost stats, add elemental bonuses, or give unique abilities to Items.
+GemsFullMsgString=Your gem inventory is currently full.  You'll need to make room in it before you can buy new gems.
+EquipItemString=Would you like to equip the %item%?
+HealthPotionDesc=Restores health to full. Current health is %Health% of %MaxHealth%.
+SmallHealthRegenDesc=Restores 10 health every second during battle.
+LargeHealthRegenDesc=Restores 100 health every second during battle.
+ShieldRegenDesc=Restores a shield point every two and a half seconds during battle.
+DoubleXPDesc=Doubles the rewarded XP after a battle.
+Key1Desc=Green key to open green locks - it will automatically be used by clicking on chest.
+Key2Desc=Yellow key to open yellow locks - it will automatically be used by clicking on chest.
+Key3Desc=Black key to open black locks - it will automatically be used by clicking on chest.
+Wheel1Desc=Spin the Red Prize Wheel for a chance to win new items.
+Wheel2Desc=Spin the Blue Prize Wheel for a chance to win high-end new items.
+Wheel3Desc=Spin the Gold Prize Wheel for a chance to win super new items.
+Wheel4Desc=Spin the ClashMob Prize Wheel for a chance to win items based on your player level!
+GemWheel1Desc=Spin the Gem Wheel for a chance to win new gems.
+GemWheel2Desc=Spin the Big Gem Wheel for a chance to win high-end new gems.
+GemWheel3Desc=Spin the ClashMob Gem Wheel for a chance to win gems based on your player level!
+GemDesc=\nEnhance abilities of weapons and armor - in store this Rebirth!
+
+[SwordSuppliesScene]
+BuyString=BUY:
+SuppliesString=SUPPLIES
+UseString=USE:
+ViewString=VIEW:
+FoundString=FOUND:
+MaxString=MAX
+ActiveString=ACTIVE:
+FightsLeftString=FIGHTS LEFT:
+FullInstructionString=%Instructions%
+PotionInstructionString=Potions grant temporary stat boosts, abilities, or replace lost health.
+KeyInstructionString=Keys open Treasure Chests.\nDifferent types of Keys open different Chests.
+IngredientInstructionString=Ingredients can be cooked into different Potions.\n - Blue: Health\n - Green: Magic\n - Red: Strength\n - Yellow: Defence\n - Rare: Boosts Potion
+MapInstructionString=Maps show the location of Hidden Treasure in the world.
+PrizeWheelInstructionString=Prize wheels provide a chance to win Items, Gems, or Supplies.\nGive it a spin to win!
+DiscardString=DISCARD:
+TrashPotionTitle=DISCARD POTION
+TrashPotionString=Are you sure you want to discard this potion for %Value%?
+
+[SwordXpBar]
+MasteryString=MASTERY
+BuyMasteredTitleString=Master Item
+BuyMasteredMsgString=Would you like to master your %item%\nfor %Amount%?
+MasteredString=MASTERED
+ItemXpString=XP
+ItemXpOfTotalString=XP %Cur% of %Total%
+DeathlessLootString=DEATHLESS LOOT
+CollectorLootString=COLLECTOR LOOT
+SwapWeaponTitleString=EQUIP RANDOM ITEM
+SwapWeaponMsgString=Equip a random unmastered item from your inventory!\nIt will also be at risk for this Deathless Quest...\n\nEquip random item now?
+
+[SwordIapPopup]
+ScreenTitleStr=GET MORE CURRENCY
+LackFundsInstructions=You need %Amount% more for this purchase. Buy more %Currency%?
+
+[SwordMcpAuthenticatePopup]
+TitleStr=CONNECT TO INFINITY BLADE SERVER
+MessageStr=You are currently not connected to the Infinity Blade Server, so ClashMobs, Cloud saves, In-App purchases, and other online features will not work.\nWould you like to connect to the Infinity Blade Server?
+MessageNoSavesStr=You are currently not connected to the Infinity Blade Server, so many online features will not be available.\nWould you like to connect to the Infinity Blade Server?
+CloudSyncSuccessTitle=SUCCESS!
+CloudSyncSuccessMsg=You are now connected to the Infinity Blade Server.
+CloudSyncFailTitle=NOT CONNECTED
+CloudSyncFailMsg=Unable to connect to server right now.\nPlease try again later.
+NoMcpIdMsg=There was an error connecting. You may need to restart the App.
+
+[SwordPlayerInfoPopupScene]
+SmallKeyRequiredString=REQUIRES SMALL KEY
+MediumKeyRequiredString=REQUIRES MEDIUM KEY
+LargeKeyRequiredString=REQUIRES LARGE KEY
+LockedString=PATH LOCKED
+RequiredItemString=REQUIRES EQUIPPED %item%
+RequiredSolarTransItemString=REQUIRES EQUIPPED SOLAR TRANS
+InventoryFullString=CAN'T CARRY MORE OF THIS SUPPLY
+RythFightTitle=RYTH CHALLENGE
+RythFightMessage=GEMS and POTIONS are ineffective against RYTH!\nDo you want to challenge RYTH?
+
+[SwordCookerBasePopup]
+ReturnToHideoutTitle=RETURN TO HIDEOUT
+ReturnToHideoutStr=Do you want to return to your Hideout to retrieve the completed item?
+
+[SwordGemCookerPopup]
+CookerIsDoneString=Gem Fusion is complete!
+
+[SwordPotionCauldronPopup]
+CookerIsDoneString=Potion is cooked!
+
+[SwordItemForgePopup]
+CookerIsDoneString=Item has been upgraded!
+
+[SwordIapDiscountPopup]
+CurrencyDiscountString=Currency Sale!!!\nLimited time only.
+
+[SwordBattleResults]
+BonusStrDamage=Damage Dealt Bonus
+BonusStrKillSpeed=Kill Speed Bonus
+BonusStrBlockDamage=Damage Blocked Bonus
+BonusStrShieldLeft=Shield Left Bonus
+BonusStrDodge=Dodge Bonus
+BonusStrHealthLeft=Health Bonus
+BonusStrParry=Parry Bonus
+BonusStrBossLevel=Boss Level Bonus
+BonusStrMagicUse=Spell Bonus
+BonusStrSuperMove=Super Move Bonus
+
+[SwordCharacterScene]
+ItemsBttnString=ITEMS
+GemsBttnString=GEMS
+SuppliesBttnString=SUPPLIES
+PerksBttnString=SKILLS
+GoalsBttnString=GOALS
+CustomizeBttnString=CUSTOMIZE
+StaminaNoDodgeString=NO DODGE
+RestartBattleString=RESTART BATTLE
+CloudConnectionString=NO SERVER CONNECTION
+
+[SwordOptionsPopout]
+OptionsBttnString=OPTIONS
+GameCenterBttnString=GAME CENTER
+LeaderboardsBttnString=LEADERBOARDS
+CurrencyString=CURRENCY
+ChairStoreBttnString=STORE
+GoToHideoutString=GO TO HIDEOUT
+
+[SwordStatsBaseScene]
+SkillsTabString=SKILLS
+StatsTabString=STATS
+
+[SwordStatsScene]
+HealthString=HEALTH
+AttackString=ATTACK
+ShieldString=SHIELD
+MagicString=MAGIC
+StaminaString=STAMINA
+BonusString=BONUS
+NoBonusString=No Bonus
+GainedLevelString=LEVEL %level%
+SkillHeaderString=STATS
+ItemHeaderString=ITEM
+TotalString=TOTAL
+RebirthString=AWAKENING
+RebalanceStatsTitle=Reallocate Skill Points
+RebalanceStatsString=Do you want to pay %cost% to reallocate your skill points?
+RebalanceStatsBttnString=REBALANCE
+FullInstructionString=STATS shows your base stats gained from allocated Skill Points.\nITEM shows your stats from currently equipped Items.\nTOTAL shows your total combined stats.
+
+[SwordPerksScene]
+HealthString=HEALTH
+AttackString=ATTACK
+ShieldString=SHIELD
+MagicString=MAGIC
+GainedLevelString=LEVEL %level%
+RebalanceStatsTitle=Reallocate Skill Points
+RebalanceStatsString=Do you want to pay %cost% to reallocate your skill points?
+RebalanceStatsBttnString=REBALANCE
+CharacterOnlyString=
+UnlockPointsString=%points% more SKILL POINTS to Unlock
+OnePointString=1 more point to unlock this skill
+BuyPerkString=BUY SKILL FOR %chips%
+BuyPerkTitle=Buy Skill
+BuyPerkConfirmation=Do you want to pay %cost% to gain this skill immediately?
+TouchPerkString=Spend SKILL POINTS to permanently increase your STATS and unlock SKILLS. Gain more Skill Points by Mastering Items and Leveling Up!
+SpendPointsString=Spend your SKILL POINTS by touching the HEALTH/ATTACK/SHIELD/MAGIC buttons. More points will unlock more skills!
+FullInstructionString=Spend your SKILL POINTS by touching the HEALTH/ATTACK/SHIELD/MAGIC buttons.
+
+[SwordInventoryBttnItemAttrib]
+RageString=CHAIN
+SpeedString=SPEED
+DefenseString=DEFENSE
+DefensePctString=DEFENSE +%pct%%
+IRT_Indoor=INDOOR
+IRT_Outdoor=OUTDOOR
+
+[SwordPlayerXpBar]
+LevelString=LEVEL %level%
+
+[SwordBattleResultsScene]
+InventoryBttnString=INVENTORY
+SkipEndingString=SKIP ENDING
+ContinueBttnString=CONTINUE
+VictoryString=VICTORY!
+DragonMessage=THE DRAGON GOT AWAY!
+DragonDamageMessage=You did %dmg% points of damage!
+DefeatString=DEFEAT!
+CurXpString=XP
+LeveledUpString=LEVELED UP!
+BossBonusString=Boss XP
+GenericBonusString=Battle Bonus XP
+CashOutString=CASH OUT:
+ExitArenaString=EXIT ARENA
+ArenaVictoryString=ROUND %RoundNum% VICTORY!
+ArenaRewardString=ROUND %RoundNum% REWARD!!!
+ArenaCongratsString=CONGRATULATIONS!!!
+AbandonRewardTitle=GIVE UP
+AbandonRewardString=If you leave now, you will lose any rewards you've earned up to this point.\nAre you sure you want to exit the arena?
+DeathlessLootRewardString=LOOT RECOVERED!
+CollectorWonMessage=THE COLLECTOR HAS CLAIMED YOUR WEAPON!
+CollectorWonSubMsg=WIN IT BACK WHEN HE CHALLENGES YOU AGAIN!
+CollectorRetreatMessage=YOU HAVE DECLINED the COLLECTOR'S CHALLENGE.
+CollectorRetreatSubMsg=LOOK FOR HIM TO CHALLENGE YOU AGAIN!
+CollectorWontTakeWeapon=THE COLLECTOR'S HONOR WON'T ALLOW HIM TO TAKE ANY MORE OF YOUR WEAPONS! BETTER LUCK NEXT TIME!
+
+[SwordPlayerInfoDisplay]
+PlayerHealth=Health:
+LevelString=LVL:
+HealtherSeperator=|
+
+[SwordBossInfoPopupScene]
+LevelString=LVL
+
+[SwordInventoryItemText]
+LevelString=LVL
+
+[SwordBattleResultsBttnXpBar]
+MasteredString=MASTERED
+XPString=XP
+
+[SwordQuestClashMobScene]
+ChallengesTitleString=CLASHMOB
+BetaString=beta
+ProgressBarVictory=MOB VICTORY!
+ProgressBarIncomplete=MOB FAILED
+DurationString=Duration:
+RequirementsString=REQUIREMENTS
+GiftString=GIFT
+NotQualifiedString=NOT QUALIFIED
+CurrentlyQualifiedString=CURRENTLY QUALIFIED
+AttemptString=ATTEMPT
+NumAttemptsString=%n% of %m%
+SoloTypeTitle=TRIALS
+CoopTypeTitle=CLASHMOB
+CompetitiveTypeTitle=AEGIS TOURNAMENT
+StageString=Stage %Num% :
+PendingOutcomeOfPreviousClashMob=Pending...
+ComingSoonString=COMING SOON!
+SoloInfoString=Trials: Solo tests of skill where victory pays out Battle Chips, Gold or other Items or Supplies.\nEach attempt is ranked as Bronze, Silver, or Gold.
+CoopInfoString=ClashMob: Cooperative battle where your score combines with the score of everyone else who plays.\nIf the goal is met, all qualifiers win the reward.
+CompInfoString=Aegis Tournament: Events where you compete to post a high score.\nAt the end of each stage, only the top qualifying players move on to the next.
+
+[SwordClashMobChildScene]
+PreRegisterString=PRE-REGISTER:
+BuyReplayString=Do you want pay %gold% to replay this ClashMob now?
+BuyReplayTitleString=BUY REPLAY
+BuyInString=Do you want pay %gold% to play the ClashMob?
+BuyInTitleString=BUY TO PLAY
+StartsString=Starts in:
+TimeExpiredString=Expired
+CompletedString=Completed
+ClaimRewardString=Reward!
+VictoryString=Victory!
+FailedRewardString=Mob Loss
+MobWinString=Mob Win
+AwaitingServerResponse=SYNCING WITH SERVER:
+CheckBackSoon=CHECK BACK SOON
+ClaimReward=CLAIM REWARD:
+TimeLeftStr=Time Left:
+MobLostString=MOB REWARD LOST
+RetryRequirementString=PLAY AGAIN:
+QualifiedRequirementsString=QUALIFIED!
+RequirementsExtraPlay=BONUS PLAY:
+WaitRequirementString=WAIT:
+PlayNowRequirementString=PLAY NOW:
+DidNotQualify=DID NOT QUALIFY
+NeededYourHelp=NEEDED YOUR HELP!
+RewardClaimed=REWARD CLAIMED!
+ClashMobRequirementsTitle=CLASHMOB REQUIREMENTS
+ClashMobRequirementsLevelMsg=Your character needs to be level %LevelNumber% for this Clashmob.\nDid you know you can use gold to master items and level up faster?\nWould you like to go to your inventory now?
+ClashMobRequirementsLevelWrongSlotMsg=Your main save character needs to be level %LevelNumber% for this Clashmob.\nWould you like to load to your main save now?
+ClashMobRequirementsItemMsg=This Clashmob requires item %ItemName%.\nWould you like to buy it now?
+ClashMobRequirementsItemWrongSlotMsg=This Clashmob requires item %ItemName%.\nYour main save character doesn't have it, would you like to load your main save now?
+ClashMobLevelRequirement=Character Level %LevelNumber%\n
+ClashMobLevelRequirementRange=Character Level %RequireLevel% to %MaxLevel%\n
+ClashMobItemRequirement=%ItemType%: %ItemName%\n
+LightWeaponString=LIGHT WEAPON
+TwoHandedWeaponString=HEAVY WEAPON
+DualWeaponString=DUAL WEAPON
+ShieldString=SHIELD
+ArmorString=ARMOR
+HelmetString=HELMET
+MagicString=RING
+ProgressOfString=OF
+RegisterToPlay=SIGN UP TO PLAY
+
+[SwordClashMobLoginScene]
+TitleString=LOGIN TO FACEBOOK
+MessageString=Start your mob by logging into Facebook.
+LoginString=LOGIN
+CancelString=NO THANKS
+
+[SwordMyMobItem]
+TimePlayed=Played %Time% Ago
+ReceivedString=Received:
+GiftedString=Gifted:
+
+[SwordSecureTime]
+YearsString=%Time% Years
+YearString=%Time% Year
+MonthsString=%Time% Months
+MonthString=%Time% Month
+DaysString=%Time%D
+DayString=%Time%D
+HoursString=%Time%H
+HourString=%Time%H
+MinutesString=%Time%M
+MinuteString=%Time%M
+SecondsString=%Time%S
+SecondString=%Time%S
+LessThanOneMinute=about 1m
+
+[SwordInventoryItemList]
+AllItemsString=All
+EquipItemsString=Equipped
+OwnedItemsString=Inventory
+BuyItemsString=Store
+CanAffordItemsString=Affordable
+BetterThanEquippedString=Suggested Upgrades
+AllowedUpgradesString=Available Upgrades
+CannotAffordItemsString=Cannot Afford
+ArmorItemsString=Armor
+ShieldItemsString=Shields
+WeaponItemsString=Weapons
+HelmetItemsString=Helmets
+MagicItemsString=Magic
+BossItemsString=Bosses
+BossRingItemsString=Rings
+CantEquipItemTitle=CAN'T EQUIP ITEM
+CantEquipItemHardCoreLoot=You can't equip this item, it is on your corpse in the DEATHLESS QUEST.
+CantEquipItemCollector=You can't equip this item, The Collector currently possesses it. Defeat him to win this item back.
+
+[SwordMpSelectScene]
+SelectCharacterString=Select Character
+LeaderboardString=Leaderboard
+BeginString=Select
+BackString=Back
+
+[SwordBattleLossScene]
+ReplayString=RETRY
+ContinueGameString=CONTINUE
+MakeEasierString=TOO HARD?
+LastAwakening=LAST AWAKENING
+YouLostString=DEFEAT!
+YouSurvivedString=SURVIVED %Num%
+RestartSurvivalString=PLAY AGAIN
+ReturnToGameString=EXIT TO CAMPAIGN
+MakeEasierWarningTitle=RETURN TO PREVIOUS AWAKENING?
+MakeEasierWarningString=Keep all your progress (gold, chips, items, XP, etc.) and continue in a less challenging Awakening to build more strength.
+HardcoreModeTitle=DEATHLESS QUEST
+HardcoreModeFailed=You have died in a DEATHLESS QUEST and %TitanName% now guards your DEATHLESS LOOT.\nTo win it back you'll need to defeat them next time!
+ArenaModeTitle=ARENA
+ArenaModeFailed=You have died in the Arena. Return to the Hideout and try again later.
+CollectorFailedTitle=COLLECTOR
+CollectorFailedString=You have been defeated by THE COLLECTOR, he has taken your weapon.  Track him down and defeat him to reclaim it and other rare weapons!
+
+[SwordGameWonScene]
+StartBloodlinePlusString=Play NewGame+
+NextBloodlineString=Play Next Rebirth
+YouBeatTheGameString=THE END?
+NextBloodlineTitle=Next Rebirth
+NextBloodlineMsg=Are you sure?  Playing NewGame+ will let you re-master all your items and level up your character even further.
+PlayPlusTitle=NewGame+!
+PlayPlusMsg=Re-start Rebirth 1 with current level/skill points!\nRe-earn & re-master items in intensified combat!\nLevel up your character as high as you want!\nNote: Current items & (non-purchased) gold will reset.\n\nProceed?
+
+[SwordMpSelectBossScene]
+SelectBossString=Select Boss
+
+[SwordMpSetupScene]
+ReadyBttnString=READY
+WaitingBttnString=WAITING...
+StartingBttnString=STARTING...
+StartingInString=Starting in %Secs%
+
+[SwordTitleMenuScene]
+StartGameBttnString=Start Awakening
+ContinueGameBttnString=Start Awakening %age%
+
+[SwordFinalDeathScene]
+TimeLaterString=%Time% Later
+
+[SwordCreditsScene]
+CreditsTitleString=CREDITS
+
+[SwordCollectorInventoryScene]
+ScreenTitleString=COLLECTOR'S WEAPONS
+RiskString=RISK YOUR WEAPON TO WIN HIS?
+RiskGemString=RISK YOUR WEAPON TO WIN HIS GEM?
+FightString=FIGHT
+SkipString=SKIP
+CapturedWeaponString=CAPTURED
+CollectorInventoryString=ANCIENT AND RARE
+CollectorWeaponString=COLLECTOR
+FullInstructionString=Fight the Collector and win to claim his weapon, but if you lose he will take your weapon and add it to his collection.
+
+[SwordGemManagementScene]
+TrashGemMsg=Are you sure you want to sell the '%gem%'?
+TutorialMsg=You can't sell this item right now.
+RecoverGemTitle=RECOVER GEM
+RecoverGemMsg=Do you want to spend %gold% gold to remove and keep the '%gem%' from '%item%'?
+CantRecoverGemMsg=Can't remove this gem until you unlock\nIsa's GEM REMOVAL skill.
+CantRecoverGemGenericMsg=Can't change gems in this item right now.
+LootLockedGemsMsg=Gems can't be changed in locked items.
+DestroyGemTitle=DESTROY GEM
+DestroyGemMsg=Do you want to destroy the '%gem%' and receive %gold% gold for the broken gem?
+SellString=SELL: %value%
+GemsString=GEMS
+InventoryGemsFullMessage=Your gem inventory is full, do you want to stay and make room by equipping or selling gems?  While your gem inventory is full you will not receive anymore gem treasures.
+SellGemTitle=SELL GEM
+BuySlotsTitle=BUY GEM SLOTS
+SellGemMessage=Do you want to sell %GemName% for %Gold% gold?
+GemCookerTitle=FUSION CHAMBER
+GemCookerInstructions=Drag 3 gems to fuse into a more powerful gem
+StartCookString=START
+GemCreatedStr=New Gem Fused!
+GemCreatedInstructionStr=Drag new gem to your inventory
+AwesomeSaberTitle=AWESOMENESS
+AwesomeSaber1=Are you ready for the most face-meltingly awesome weapon of all time?
+AwesomeSaber2=Are you ready for a guitar solo of awesome on your soul?
+AwesomeSaber3=What do you get when you combine a rainbow with a chainsaw?  Are you ready to find out?
+AwesomeSaberTooBad=TOO BAD!
+UnlockSlotsString=EXPAND GEM BAG
+UpgradeGemsSlotsTitle=INCREASE GEM INVENTORY SIZE
+UpgradeGemsSlotsMsg=Would you like to increase your total Gem Slots to %NewSize% for %Gold% gold?
+FullInstructionString=Drag Gems into Item Slots of the same shape to attach and equip. The STAR shaped Item Slot is special and will accept a Circle, Square, Triangle, Diamond, or Hex Gem!
+
+[SwordTutorialPopup]
+TryItNowString=Try It Now!
+MoreInfo=MORE INFO
+NextButton=NEXT
+
+[SwordBasePC]
+PlayerHasQuitMpGameTitle=Game Over
+PlayerHasQuitMpGame=%Player% has quit the game.
+ClashMobServerErrorTitle=CLASHMOB SERVER ERROR
+ClashMobServerErrorMsg=There is a communication error with the ClashMob Server. Please check you internet connection, or try again later.
+
+[SwordPC]
+SkipFinalTitle=SKIP
+SetCharacterNameStr=Enter Character Name
+SkipFinalText=Are you sure you want to skip the rest of the story and credits?
+BonusAbilityXP=XP
+BonusAbilityItemXPGain=XPGain
+BonusAbilityGold=Gold
+BonusAbilityGoldDrop=GoldDrop
+BonusAbilityItemDrop=ItemDrop
+BonusAbilityLifeDrop=LifeDrop
+SyncingAchievementsString=Syncing Game Center Achievements
+AchievementSyncSuccessfullString=Successfully synced Game Center Achievements
+AchievementSyncFailedString=Unable to sync all Game Center Achievements
+AppleStoreDemo_Title=Infinity Blade Demo
+AppleStoreDemo_AppStoreMsg=Feature not enabled for this demo.
+AppleStoreDemo_GameCenterMsg=Feature not enabled for this demo.
+AppleStoreDemo_GenericMsg=Feature not enabled for this demo.
+AppleStoreDemo_DemoSplash=This version of Infinity Blade has been created specifically for demonstration purposes.
+ExitArenaTitle=Quit Arena Mode
+ExitArenaMsg=Do you want to quit single player arena mode and return back to the campaign?
+UnableToJoinGame=You are currently in a match and cannot join another.
+GemsFullTitle=FULL GEM INVENTORY
+GemsFullMessage=Your gem inventory is now full, you need to manage it or you won't be able to hold new gems.  Going to the Gem Inventory now.
+MerchantGemsFullMessage=Your gem inventory is now full, you need to manage it or you won't be able to hold new gems.
+PotionsFullTitle=FULL POTION INVENTORY
+PotionsFullMessage=Your potion inventory is now full, use some of your potions in battle and then come back.
+InternetMessageTitle=Internet Connection Error
+InternetMessageText=An internet connection is required to access this feature. Please make sure your device is connected to the internet.
+CloudConflict_Title=Character Slot Conflict
+CloudConflict_Message=Someone else is playing '%CharacterName%' on another device right now. One of you may lose data if you don't switch Character Slots in the Options menu.
+CloudSlotsFull_Title=Character Slots Full
+CloudSlotsFull_Message1=Your Character Slots are all full. You will need to delete a Character Slot in the Options Menu in order to play this save file that could not be moved into the cloud.
+CloudSlotsFull_Message2=Your Character Slots are all full. You will need to delete %Num% Character Slots in the Options Menu in order to play these save files that could not be moved into the cloud.
+CloudMoveSuccess_Title=Success
+CloudMoveSuccess_Message=Your local Character Slots have all been successfully moved into the Cloud.
+NoTwitterAccount_Title=No Twitter Account
+NoTwitterAccount_Msg=No Twitter account setup on this iOS device.  Launch system settings and enable your Twitter account.
+NoMessageAccount_Title=No iMessage Account
+NoMessageAccount_Msg=No iMessage account setup on this iOS device.  Launch system settings and enable your iMessage account.
+NoEmailAccount_Title=No Email Account
+NoEmailAccount_Msg=No Email account setup on this iOS device.  Launch system settings and enable your Email account.
+Comma=,
+ClashmobNotAvailable_Title=CLASHMOB
+ClashmobNotAvailable_Message=Sorry, this feature is no longer available.
+
+[SwordGameViewportClient]
+ConnectionFailed_Title=Connection Lost
+ConnectionFailed=Your connection has been lost.
+
+[Facebook]
+FacebookApprove_Title=Facebook
+FacebookApprove_Msg=Would you like to be able to see your character in the Infinity Blade app for Facebook?
+FacebookConnect_Title=Facebook
+FacebookConnect_Msg=Connecting to Facebook...
+FacebookConnectError_Title=Facebook
+FacebookConnectError_Msg=There was a problem connecting to the Facebook servers. Please try again later.
+FacebookPosted_Title=Facebook
+FacebookPosted_Msg=Success! You can now view your character on Facebook by using the Infinity Blade app.
+
+[SwordRateGamePopup]
+MessageString=Thanks for playing Infinity Blade III!\n\nPlease consider reviewing our game!
+AgainMessageString=Thanks for playing Infinity Blade III!\n\nSince reviews are re-set with each update, please consider giving it another review.
+IB1MessageString=INFINITY BLADE I\nSee how it all began!\nWinner of the 2011 Apple Design Award, and more than 20 'Game of the Year' & 'Top App' awards!\nWould you like to learn more?
+ChairStoreString=Experience more from the INFINITY BLADE universe!\nSee how it all began!\nWould you like to learn more?
+BookMessageString=INFINITY BLADE: AWAKENING\nThe story continues in this all-new novella from acclaimed fantasy author Brandon Sanderson,\nnow available on iBooks!\nWould you like to learn more?
+ShowMPHelp=Before you begin, would you like to see the info and instructions page for multiplayer?
+YesString=YES
+NoString=NO
+LaterString=LATER
+
+[SwordGrabBagScene]
+GrabBagTitle=PRIZE WHEEL
+GiveItASpinString=GIVE IT A SPIN
+SpinChallengedTitle=COME ON!
+SpinChallengedMsg=You're going to have to do better than that. Stop fooling around and give it a real spin.
+
+[MonthString]
+1=Jan
+2=Feb
+3=Mar
+4=Apr
+5=May
+6=Jun
+7=Jul
+8=Aug
+9=Sept
+10=Oct
+11=Nov
+12=Dec
+
+[SwordCheevos]
+TRACK_Weekly=Friday night fights
+TRACK_Weekly_Desc=Complete a weekly achievement
+TRACK_Combo=Recombination
+TRACK_Combo_Desc=Do %count% combo attacks
+TRACK_Parry=It's all in the reflexes
+TRACK_Parry_Desc=Do %count% parries
+TRACK_Dodge=Saw that one coming
+TRACK_Dodge_Desc=Do %count% dodges
+TRACK_Block=Brace yourself
+TRACK_Block_Desc=Do %count% blocks
+TRACK_Magic=Hand is quicker
+TRACK_Magic_Desc=Cast magic %count% times
+TRACK_BonusCombo=Stay on target
+TRACK_BonusCombo_Desc=Do %count% bonus combo attacks
+TRACK_BonusCombo_SinDesc=Do a bonus combo attack
+TRACK_SuperMove=Traveling without moving
+TRACK_SuperMove_Desc=Do %count% super moves
+TRACK_Stab=Red wedding
+TRACK_Stab_Desc=Do %count% stab attacks
+TRACK_FinishingHit=Finshing the job
+TRACK_FinishingHit_Desc=Do %count% mega hits
+TRACK_FinishingHit_SinDesc=Do a mega hit
+TRACK_PerfectParry=Like water off a duck
+TRACK_PerfectParry_Desc=Do %count% great parries
+TRACK_PerfectParry_SinDesc=Do a great parry
+TRACK_PerfectBlock=Don't give an inch
+TRACK_PerfectBlock_Desc=Do %count% perfect blocks
+TRACK_PerfectBlock_SinDesc=Do a perfect block
+TRACK_SirisLevel=Aegis
+TRACK_SirisLevel_Desc=Siris reaches level %count%
+TRACK_IsaLevel=Deathless
+TRACK_IsaLevel_Desc=Isa reaches level %count%
+TRACK_MasteredItem=Now I am the master
+TRACK_MasteredItem_Desc=Master %count% items
+TRACK_MasteredItem_SinDesc=Master an item
+TRACK_Forge=Folding steel
+TRACK_Forge_Desc=Upgrade an item %count% times
+TRACK_Forge_SinDesc=Upgrade an item
+TRACK_ItemLevel=Forgemaster
+TRACK_ItemLevel_Desc=Upgrade an item to level %count%
+TRACK_GemCook=Diamonds are forever
+TRACK_GemCook_Desc=Fuse %count% gems
+TRACK_GemCook_SinDesc=Fuse a new gem
+TRACK_PotionCraft=This is my family label
+TRACK_PotionCraft_Desc=Cook %count% potions
+TRACK_PotionCraft_SinDesc=Cook a potion
+TRACK_PotionUse=Home-brewed
+TRACK_PotionUse_Desc=Use %count% crafted potions
+TRACK_PotionUse_SinDesc=Use a crafted potion
+TRACK_GrabBags=High roller
+TRACK_GrabBags_Desc=Use %count% prize wheels
+TRACK_GrabBags_SinDesc=Use a prize wheel
+TRACK_Ingredients=Hunt and gather
+TRACK_Ingredients_Desc=Collect %count% potion ingredients
+TRACK_Merchant=Steady supplier
+TRACK_Merchant_Desc=Buy %count% items from the merchant
+TRACK_ClashMob=Socially responsible
+TRACK_ClashMob_Desc=Participate in %count% ClashMobs
+TRACK_ClashMob_SinDesc=Participate in a ClashMob
+GOAL_Gold=Empire building
+GOAL_Gold_Desc=Acquire %count% gold
+GOAL_ModifiedItems=Slotted
+GOAL_ModifiedItems_Desc=Accumulate %count% gem modified items
+GOAL_InfinityBlade=Gotcha!
+GOAL_InfinityBlade_Desc=Obtain the Infinity Blade
+GOAL_Combat1=Untouchable
+GOAL_Combat1_SinDesc=Finish a fight with a Light Weapon without Siris taking damage
+GOAL_Combat1_Desc=Finish %count% fights with a Light Weapon without Siris taking damage
+GOAL_Combat2=Unstoppable
+GOAL_Combat2_SinDesc=Finish a fight with a Heavy Weapon without Siris taking damage
+GOAL_Combat2_Desc=Finish %count% fights with a Heavy Weapon without Siris taking damage
+GOAL_Combat3=Unyielding
+GOAL_Combat3_SinDesc=Finish a fight with a Dual Weapon without Siris taking damage
+GOAL_Combat3_Desc=Finish %count% fights with a Dual Weapon without Siris taking damage
+GOAL_Combat4=Irresistible
+GOAL_Combat4_SinDesc=Finish a fight with a Light Weapon without Isa taking damage
+GOAL_Combat4_Desc=Finish %count% fights with a Light Weapon without Isa taking damage
+GOAL_Combat5=Indestructible
+GOAL_Combat5_SinDesc=Finish a fight with a Heavy Weapon without Isa taking damage
+GOAL_Combat5_Desc=Finish %count% fights with a Heavy Weapon without Isa taking damage
+GOAL_Combat6=Inconceivable
+GOAL_Combat6_SinDesc=Finish a fight with a Dual Weapon without Isa taking damage
+GOAL_Combat6_Desc=Finish %count% fights with a Dual Weapon without Isa taking damage
+PROG_Story1=Old friends
+PROG_Story1_Desc=Defeat Ashimar
+PROG_Story2=Knowledge is power
+PROG_Story2_Desc=Retrieve the Worker's datapod
+PROG_Story3=No more bullies
+PROG_Story3_Desc=Defeat Terrovax
+PROG_Story4=Two men enter
+PROG_Story4_Desc=Defeat Therin
+PROG_Story5=Arms like tree trunks
+PROG_Story5_Desc=Rescue Jensen
+PROG_Story6=Eternal sunshine
+PROG_Story6_Desc=Find the Redeemer
+PROG_Story7=Welcome to my secret lair
+PROG_Story7_Desc=Find the location of the Worker's stronghold
+PROG_Story8=Until the end of the world
+PROG_Story8_Desc=Defeat the Worker
+PROG_Story9=Through fire and water
+PROG_Story9_Desc=Defeat the Dragon
+PROG_Story10=At the lady's behest
+PROG_Story10_Desc=Recruit the Gemcutter
+PROG_Story11=All's fair...
+PROG_Story11_Desc=Meet the Merchant
+PROG_Story12=Toddler of Secrets
+PROG_Story12_Desc=Defeat the game and watch the credits until the end
+PROG_NewGamePlus=Clean slate
+PROG_NewGamePlus_Desc=Start New Game +
+TRACK_TitanKill=Bash of the Titans
+TRACK_TitanKill_Desc=Defeat %count% Titans
+TRACK_Slash=Slash Gordon
+TRACK_Slash_Desc=Do %count% slash attacks
+TRACK_RealPerfectParry=Perfect form
+TRACK_RealPerfectParry_Desc=Do %count% perfect parries
+TRACK_ArenaMode=Are you not entertained?!
+TRACK_ArenaMode_Desc=Complete %count% Arena quests
+TRACK_ArenaMode_SinDesc=Complete an Arena quest
+TRACK_DeathlessQuest=YOU WILL DIE!
+TRACK_DeathlessQuest_Desc=Complete %count% Deathless quests!
+TRACK_DeathlessQuest_SinDesc=Complete a Deathless quest!
+TRACK_BossPerkKils=Whew!!!
+TRACK_BossPerkKils_Desc=Defeat %count% enemies that have a Titan Skill
+TRACK_BossPerkKils_SinDesc=Defeat an enemy that has a Titan Skill
+GOAL_Collector1=Collect this!
+GOAL_Collector1_Desc=Win a weapon from the Collector
+GOAL_Collector2=Collected!
+GOAL_Collector2_Desc=Win all of the Collector's Weapons
+GOAL_HolidayHelm1=Humpty dumpty
+GOAL_HolidayHelm1_Desc=Collect Egg Head Helm
+GOAL_HolidayHelm2=Pot 'o gold
+GOAL_HolidayHelm2_Desc=Collect Kaun Helm
+GOAL_HolidayHelm3=Friday night fights
+GOAL_HolidayHelm3_Desc=Collect Leatherhead Helm
+GOAL_HolidayHelm4=Sleepy hollow
+GOAL_HolidayHelm4_Desc=Collect Hallow Helm
+GOAL_HolidayHelm5=Top hat & tails
+GOAL_HolidayHelm5_Desc=Collect Gobble Helm
+GOAL_HolidayHelm6=Jolly happy soul
+GOAL_HolidayHelm6_Desc=Collect Frosted Helm
+GOAL_HolidayHelm7=Flutterby
+GOAL_HolidayHelm7_Desc=Collect Sprung Helm
+GOAL_HolidayHelm8=Summer breeze
+GOAL_HolidayHelm8_Desc=Collect Sunspike Helm
+GOAL_HolidayHelm9=Cupid's arrow
+GOAL_HolidayHelm9_Desc=Collect Love Baby Helm
+GOAL_HolidayHelm10=Tis the season
+GOAL_HolidayHelm10_Desc=Collect Klauz Helm
+GOAL_HolidayHelmAll=True dedication
+GOAL_HolidayHelmAll_Desc=Collect all holiday helms
+
+[Gems]
+StatGemName=%type% Stat Gem
+StatPotionName=%type% Stat Potion
+Damage=Attack
+Health=Health
+Shield=Shield
+Magic=Magic
+Stat=Stat
+ElementalDamageGemName=%type% Attack Gem
+ElementalDamagePotionName=%type% Attack Potion
+ElementalDefenseGemName=%type% Defense Gem
+ElementalDefensePotionName=%type% Defense Potion
+GenericGem=%type% Gem
+GenericPotion=%type% Potion
+AET_Random=EXTRA
+AET_Fire=FIRE
+AET_Ice=ICE
+AET_Electric=SHOCK
+AET_Poison=POISON
+AET_Light=BRIGHT
+AET_Dark=DARK
+AET_Wind=WIND
+AET_Water=WATER
+AET_All=ALL
+GemName=%type% %effect% Gem
+PotionName=%type% %effect% Potion
+PerkGemType=Skill
+CombatGemType=Combat
+BonusGemType=Bonus
+LightGemType=Light
+HeavyGemType=Heavy
+DualGemType=Dual
+RareGemType=Rare
+SpecialType=Rare
+BT_Passive=Passive
+BT_OnCombo=Combo
+BT_OnCombo2=2-Hit Combo
+BT_OnCombo3=3-Hit Combo
+BT_OnCombo4=4-Hit Combo
+BT_OnCombo5=5-Hit Combo
+BT_OnBonusCombo=Bonus Combo
+BT_OnHit=Hit
+BT_OnScratch=Scratch
+BT_OnHorizontalAttack=Horizontal Attack
+BT_OnVerticalAttack=Vertical Attack
+BT_OnMiss=Miss
+BT_OnParry=Parry
+BT_OnPerfectParry=Perfect Parry
+BT_OnDodge=Dodge
+BT_OnEmptyDodge=Empty Dodge
+BT_OnGoodDodge=Good Dodge
+BC_OnSameDodgeDir=Same Dodge Direction
+BT_OnBlock=Block
+BT_OnPerfectBlock=Perfect Block
+BT_OnBossBreak=Break
+BT_OnPerfectBossBreak=Perfect Break
+BT_OnPerfectBossBreakChain=Perfect Break Chain
+BT_On2HSlash=Slash
+BT_OnPerfect2HSlash=Perfect Slash
+BT_OnStab=Stab
+BT_OnMagic=Magic
+BT_OnSuperMove=Super Move
+BT_OnSuperFinishHit=Mega Hit
+BT_OnGloryModeHit=Finishing Hit
+BT_OnTakeDamage=Take Damage
+BT_OnHitByTitanAttack=Get Hit
+BT_OnDeath=Death
+BT_OnTransition=Stage
+BT_OnBattleStage2=Stage 2
+BT_OnBattleStage3=Stage 3
+BT_OnBattleChallengeSuccess=Challenge
+BT_ImmediateUse=Use
+BE_PlayerStats=Stat
+F_BE_PlayerStats=Get %val% Stat
+BE_PlayerElementalDefense=Elemental Defense
+F_BE_PlayerElementalDefense=Get %val% Elemental Defense
+BE_PlayerGetHealth=Health
+F_BE_PlayerGetHealth=Get %val% Health
+BE_PlayerGetShield=Shield
+F_BE_PlayerGetShield=Get %val% Shield
+BE_PlayerGetDodge=Dodge
+F_BE_PlayerGetDodge=Get %val% Dodge Charge
+BE_PlayerGetGold=Gold
+F_BE_PlayerGetGold=Get %val% Gold
+BE_PlayerGetSuperCharge=Super Charge
+F_BE_PlayerGetSuperCharge=Get %pct% Super Charge
+BE_PlayerGetMagicCharge=Magic Charge
+F_BE_PlayerGetMagicCharge=Get %pct% Magic Charge
+BE_PlayerGetDamageCharge=Attack Charge
+F_BE_PlayerGetDamageCharge=Attack Charge +%val%
+BE_PlayerGetXP=XP
+F_BE_PlayerGetXP=Get %val% XP
+BE_PlayerGetForgeMonth=Gem Fusion
+F_BE_PlayerGetForgeMonth=Gem Fusion
+BE_PlayerTakeDamage=Take Damage
+F_BE_PlayerTakeDamage=Take %val% Damage
+BE_PlayerSwitchWeaponClass=Switch Class
+F_BE_PlayerSwitchWeaponClass=Switch Class
+BE_BossTakeDamage=Damage
+F_BE_BossTakeDamage=Damage Titan %val%
+BE_BossStun=Stun Titan
+F_BE_BossStun=Stun Titan %val%s
+BE_BossQuickStab=Stab
+F_BE_BossQuickStab=Stab
+BE_BossHitWindow1Off=Titan Break
+F_BE_BossHitWindow1Off=Break Window +%val%
+BE_Time_DodgeHold=Dodge Hold
+F_BE_Time_DodgeHold=Dodge Hold%Sval%
+BE_Time_DodgeRechargeRate=Dodge Recharge
+F_BE_Time_DodgeRechargeRate=Dodge Recharge%Sval%
+BE_Time_ParrySlomo=Parry Speed
+F_BE_Time_ParrySlomo=Parry Speed%Sval%
+BE_Time_ParryWidth=Parry Angle
+F_BE_Time_ParryWidth=Parry Angle%Sval%
+BE_Time_BossHitWindow=Titan Break
+F_BE_Time_BossHitWindow=On Titan Break, Window +%val%
+BE_Time_BigHitsAfterCombo=Combo
+F_BE_Time_BigHitsAfterCombo=Continue Combo
+BE_Time_BossForceParryReacts=Titan Parry React
+F_BE_Time_BossForceParryReacts=Titan Parry React%Sval%
+BE_Time_BossAttackSpeedMod=Titan Speed
+F_BE_Time_BossAttackSpeedMod=Titan Speed at %pct%
+BE_Time_ComboSlashCountMod=Combo Slash
+F_BE_Time_ComboSlashCountMod=Combo Slash +%pct%
+BE_Time_AllBlocksValid=Block All
+F_BE_Time_AllBlocksValid=Block All Attacks
+BE_Time_ParryAllAttacks=Parry All
+F_BE_Time_ParryAllAttacks=Parry All Attacks
+BE_Time_LimitComboType=Limit Combo
+F_BE_Time_LimitComboType=Limit Combo
+BE_World_GoldPct=Gold+
+F_BE_World_GoldPct=Get %pct% more Gold
+BE_World_XPPct=XP+
+F_BE_World_XPPct=Get %pct% more XP
+BE_World_RarePct=Rare+
+F_BE_World_RarePct=%pct% more likely to Drop Rare Items
+BE_World_DropRatio=Drop+
+F_BE_World_DropRatio=%pct% more likely to Drop %item%
+BE_World_TouchTreasureSpawn=Treasure
+F_BE_World_TouchTreasureSpawn=%item% appear in the World
+BE_VarAdd_DragonFightLengthBonus=Dragon
+F_BE_VarAdd_DragonFightLengthBonus=Dragon Stays Longer
+BE_VarAdd_BossLevelPlus=Titan LVL
+F_BE_VarAdd_BossLevelPlus=Titan LVL +%val%
+BE_VarAdd_BonusComboLimit=Combo
+F_BE_VarAdd_BonusComboLimit=Bonus Combo Length -1
+BE_VarAdd_SecondChanceCount=Second Chance
+F_BE_VarAdd_SecondChanceCount=Add a Second Chance
+BE_VarAdd_GreatParryAll=Great Parry All
+F_BE_VarAdd_GreatParryAll=Great Parry All Attacks
+DescTriggerEffect=On %trigger%, %effect%
+DescPassiveEffect=%effect%
+DescPassiveEffectRetrigger=%effect% Every %retrigger% Second(s)
+DescTriggerEffectDuration=On %trigger%, %effect% For %duration% Second(s)
+DescTriggerEffectRetriggerDuration=On %trigger%, %effect% Every %retrigger% Second(s) For %duration% Second(s)
+DescTriggerEffectRetrigger=On %trigger%, %effect% Every %retrigger% Second(s)
+TRA_Random=Random Items
+TRA_Random_Potion=Potion
+TRA_Random_Gold=Gold Bags
+TRA_Random_Key=Keys
+TRA_Random_Gem=Gems
+TRA_Random_Item=Items
+TRA_Random_World=Ingredients
+TRA_Gold_Small=Gold Bags
+TRA_Gold_Medium=Gold Bags
+TRA_Gold_Large=Gold Bags
+TRA_Key_Small=Small Key
+TRA_Key_Medium=Medium Key
+TRA_Key_Large=Large Key
+TRA_Item_Weapon=Weapon
+TRA_Item_Shield=Shield
+TRA_Item_Armor=Armor
+TRA_Item_Helmet=Helmet
+TRA_Item_Magic=Magic
+TRA_GrabBag_Uber=ClashMob Prize Wheel
+
+[BossPerks]
+EBP_NoMagic=IMMUNE TO MAGIC
+EBP_NoSuper=IMMUNE TO SUPER
+EBP_UberElemental=ELEMENTAL TITAN
+EBP_Parry=GREAT PARRY ONLY
+EBP_Block=PERFECT BLOCK ONLY
+EBP_NormalDamage=NORMAL DAMAGE RESIST
+EBP_Fast=SUPER FAST ATTACK
+EBP_Health=HEALTH REGEN
+EBP_Potion=IMMUNE TO POTIONS
+EBP_Gems=DISABLES GEMS
+EBP_Weak=WEAK TO %Action% %val%X
+
+[BossWeakness]
+EBWP_Fire=FIRE ATTACKS
+EBWP_Ice=ICE ATTACKS
+EBWP_Electric=SHOCK ATTACKS
+EBWP_Poison=POISON ATTACKS
+EBWP_Light=BRIGHT ATTACKS
+EBWP_Dark=DARK ATTACKS
+EBWP_Wind=WIND ATTACKS
+EBWP_Water=WATER ATTACKS
+EBWP_LightWeapon=LIGHT WEAPON
+EBWP_HeavyWeapon=HEAVY WEAPON
+EBWP_DualWeapon=DUAL WEAPON
+EBWP_Magic=MAGIC DAMAGE
+EBWP_Stab=STAB ATTACKS
+EBWP_Slash=SLASH ATTACKS
+EBWP_Combo=COMBO ATTACKS
+
+[SwordIapListItem]
+SaleText=%bonus% bonus
+
+[SwordCookTimeConflict]
+HelpMessage=Our server time does not match your device time.  Please make sure you are online in order for this item to be completed after the correct amount of time.
+
+[SwordMyMobManager]
+LoginChangedTitle=Login Changed
+LoginChangedText=The logged in user has changed. Please restart the app to connect to the cloud.
+GameCenterAuthenticationFailure=Unable to connect Game Center account with cloud.  Please try again later.  You may also try to restart the app.
+
+[CustomAnimDataName]
+SirisAnim00=DEFAULT
+SirisAnim01=STOIC
+SirisAnim02=GLORY
+SirisAnim03=CROSSED
+SirisAnim04=ORDER
+SirisAnim05=DUELIST
+SirisAnim06=RUNNIN'
+SirisAnim07=OH YEAH
+SirisAnim08=TWIST
+SirisAnim09=FEVER
+SirisAnim10=SWINGIN'
+IsaAnim00=DEFAULT
+IsaAnim01=CALM
+IsaAnim02=POISE
+IsaAnim03=ZENITH
+IsaAnim04=ARC
+IsaAnim05=HORIZON
+IsaAnim06=SHAKIN'
+IsaAnim07=FUNKY
+IsaAnim08=BOOMIN'
+IsaAnim09=TWO STEP
+IsaAnim10=BREAK IT DOWN
+TestAnim01=Attack Right
+TestAnim02=Windup
+TestAnim03=Block Left
+TestAnim04=Block Right
+TestAnim05=Big Swing
+TestAnim06=Attack Down
+
+[CustomColorName]
+Default=Default
+Light=Light
+Dark=Dark
+Red=Red
+Yellow=Yellow
+Green=Green
+Turqoise=Turqoise
+Blue=Blue
+Purple=Purple
+Orange=Orange
+Gold=Gold
+Pink=Pink

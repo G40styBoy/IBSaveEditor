@@ -3,13 +3,15 @@ using SaveDumper.JsonCruncher;
 using SaveDumper.Serializer;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
+using IBSaveEditor.Localization;
 
 namespace SaveDumper;
 
 internal class Program
 {
     private static string? inputPath;
-    private static bool debug = false;
+    private static bool debug = true;
+    public static Config config;
 
     public static void Main()
     {
@@ -20,6 +22,7 @@ internal class Program
         }
 
         Console.Title = "IBSaveDumper";
+        config = new Config{useFriendlyName = true};
 
         while (true)
         {
@@ -133,7 +136,7 @@ internal class Program
     private static void PrintBanner()
     {
         Util.PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        Util.PrintColoredLine("         SAVE DUMPER TOOL v0.2          ", ConsoleColor.Cyan, true);
+        Util.PrintColoredLine("         SAVE DUMPER TOOL v0.3          ", ConsoleColor.Cyan, true);
         Util.PrintColoredLine("========================================", ConsoleColor.Cyan, true);
         Util.PrintColoredLine(" © 2025 G40sty. All rights reserved.\n", ConsoleColor.DarkGray, true);
     }
@@ -179,8 +182,13 @@ internal class Program
     /// </summary>
     private static void DebugMain()
     {
+        IntLocalization.LoadFromExecutableDirectory();
         Console.ReadKey();
     }
 }
 
+public sealed class Config
+{
+    public required bool useFriendlyName { get; init; }
+}
 

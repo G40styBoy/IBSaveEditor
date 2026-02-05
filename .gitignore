@@ -292,4 +292,5 @@ __pycache__/
 # exlude files and folders related to the project
 OUTPUT/
 SAVE STORAGE LOCATION/
+OLD LOGIC STORAGE/
 

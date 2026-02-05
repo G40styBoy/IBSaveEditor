@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Newtonsoft.Json;
 using System.Globalization;
+using SaveDumper;
 
 /// <summary>
 /// Enum representation of all UProperty types discoverable inside of an Infinity Blade Save.
@@ -155,7 +156,9 @@ public record struct TagContainer
     public int size;
     public int arrayIndex;
 
-    //UStruct
+    /// <summary>
+    /// stores struct alternate name. This is unused
+    /// </summary>
     public string alternateName;
 
     //UArray
@@ -257,7 +260,6 @@ public class UFloatProperty : UProperty
             uHelper.PopulatePropertyMetadataSize(this);
     }
 
-
     public override void WriteValueData(Utf8JsonWriter writer) { }
     public override void WriteValueData(Utf8JsonWriter writer, string name)
     {
@@ -297,32 +299,43 @@ public class UBoolProperty : UProperty
     public override void SerializeValue(BinaryWriter writer) => writer.Write(value); 
 }
 
-//TODO: eventually add proper support for fName's
 public class UStringProperty : UProperty
-{
-    private const string FNAME_PREFIX = "ini_";
-    private bool isName = false;
+{    
     public string value = string.Empty;
 
-    public UStringProperty(UnrealPackage UPK, TagContainer tag) : base(tag)
-    {
-        value = UPK.DeserializeString();
-        CheckForFName(tag);
-    }
+    public UStringProperty(UnrealPackage UPK, TagContainer tag) : base(tag) => value = UPK.DeserializeString();
 
     public UStringProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {      
         value = uHelper.ReaderValueToString(reader);
         size = uHelper.ReturnLitteEndianStringLength(value);
-        CheckForFName(tag);
         if (ShouldTrackFullSize(tag))
             uHelper.PopulatePropertyMetadataSize(this);
     }
 
-    private void CheckForFName(TagContainer tag)
-    {
-        if (tag.type is UType.NAME_PROPERTY)
-            isName = true;
+    public override void WriteValueData(Utf8JsonWriter writer) => writer.WriteStringValue(value);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public override void WriteValueData(Utf8JsonWriter writer, string name) => writer.WriteString(name, value);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public override void SerializeValue(BinaryWriter writer) => uHelper.SerializeString(ref writer, value); 
+}
+
+public class UNameProperty : UProperty
+{
+    private const string FNAME_PREFIX = "ini_";
+    private bool useFriendly = Program.config.useFriendlyName;
+    public string value = string.Empty;
+
+    public UNameProperty(UnrealPackage UPK, TagContainer tag) : base(tag) => value = UPK.DeserializeString();
+
+    public UNameProperty(JsonTextReader reader, TagContainer tag) : base(tag)
+    {      
+        value = uHelper.ReaderValueToString(reader);
+        size = uHelper.ReturnLitteEndianStringLength(value);
+        if (ShouldTrackFullSize(tag))
+            uHelper.PopulatePropertyMetadataSize(this);
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) => writer.WriteStringValue(value);
@@ -330,8 +343,7 @@ public class UStringProperty : UProperty
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override void WriteValueData(Utf8JsonWriter writer, string name)
     {
-        if (isName)
-            name = $"{FNAME_PREFIX}{name}";
+        name = $"{FNAME_PREFIX}{name}";
         writer.WriteString(name, value);
     }
 
@@ -503,7 +515,6 @@ public class UStructProperty : UProperty
         foreach (var element in elements)
             element.WriteValueData(writer, element.name);
     }
-    
 
     public override void WriteValueData(Utf8JsonWriter writer) => LoopJsonParsing(writer);
     public override void WriteValueData(Utf8JsonWriter writer, string name)
@@ -676,17 +687,6 @@ public class UArrayProperty<T> : UProperty
         if (arrayEntryCount is 0)
             return;
 
-        // we need a hack here because the writer.Write method for strings does not function how i want
-        // custom function needs to be executed here
-        if (elements[0] is string)
-        {
-            var castedElements = elements.OfType<string>();
-            foreach (var element in castedElements)
-                uHelper.SerializeString(ref writer, element);
-
-            return;
-        }            
-
         switch (elements[0])
         {
             case int:
@@ -700,6 +700,14 @@ public class UArrayProperty<T> : UProperty
                 break;
             case List<UProperty>:
                 SerializeDynamicStruct(writer);
+                break;
+            // we need a hack here because the writer.Write method for strings appends the size as a stand-alone int
+            // this is bad practice, but a hack needs to be in place here
+            case string:
+                var castedElements = elements.OfType<string>();
+                foreach (var element in castedElements)
+                    uHelper.SerializeString(ref writer, element);
+
                 break;
             default:
                 throw new NotImplementedException("Dynamic array type not implemented.");

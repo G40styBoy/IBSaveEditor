@@ -105,9 +105,7 @@ public class UnrealPackage : IDisposable
                         ? Game.IB2
                         : Game.VOTE;
                 }
-
                 packageData.streamBytes = GetFileBytes();
-
             }
             else
             {

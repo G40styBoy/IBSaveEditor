@@ -87,7 +87,8 @@ public class UPKDeserializer
             UType.FLOAT_PROPERTY => new UFloatProperty(UPK, tag),
             UType.BOOL_PROPERTY => new UBoolProperty(UPK, tag),
             UType.BYTE_PROPERTY => UByteProperty.InstantiateProperty(UPK, tag),
-            UType.STR_PROPERTY or UType.NAME_PROPERTY => new UStringProperty(UPK, tag),
+            UType.STR_PROPERTY => new UStringProperty(UPK, tag),
+            UType.NAME_PROPERTY => new UNameProperty(UPK, tag),
             UType.STRUCT_PROPERTY => CreateStructProperty(UPK, tag),
             UType.ARRAY_PROPERTY => CreateArrayProperty(UPK, tag),
             _ => throw new NotSupportedException($"Unsupported property type: {tag.type}")
