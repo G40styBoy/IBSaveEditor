@@ -1,6 +1,6 @@
-# Infinity Blade Save Dumper
+# Infinity Blade Save Editor
 
-**IBSaveDumper** is a simple tool for handling save file packages for the Infinity Blade Trilogy. It allows you to extract, modify, and repackage save data with ease.
+**IBSaveEditor** is a simple tool for handling save file packages for the Infinity Blade Trilogy. It allows you to extract, modify, and repackage save data with ease.
 
 ---
 
