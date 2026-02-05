@@ -18,14 +18,7 @@
 3. Modify the `.json` file as needed.
 4. Drag and drop the modified `.json` file into the program.
 5. The program transforms your modified data back into the original save format.
-
----
-
-## ❓ Not sure what save files are supported? Check here!
-- Unencrypted IB3 ✅
-- Unencrypted/Encrypted IB2 ✅
-- Unencrypted/Encrypted IB1 ❌
-
+   
 ---
 
 ## ⚠️ Notes
