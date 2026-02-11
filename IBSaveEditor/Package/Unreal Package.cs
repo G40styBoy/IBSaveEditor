@@ -3,13 +3,13 @@ using SaveDumper.UnrealPackageManager.Crypto;
 
 public class UnrealPackage : IDisposable
 {
-    internal string filePath;
+    public string filePath { get; init; }
+    public PackageData packageData { get; private set; }
     private FileStream fileStream;
     private BinaryReader binaryReader;
     private BinaryWriter binaryWriter;
-    internal PackageData packageData;
 
-    public record struct PackageData
+    public sealed record PackageData
     {
         public string packageName;
         public bool bisEncrypted;

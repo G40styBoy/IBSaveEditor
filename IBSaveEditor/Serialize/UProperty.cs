@@ -325,7 +325,7 @@ public class UStringProperty : UProperty
 public class UNameProperty : UProperty
 {
     private const string FNAME_PREFIX = "ini_";
-    private bool useFriendly = Program.config.useFriendlyName;
+    // private bool useFriendly = Program.config.useFriendlyName;
     public string value = string.Empty;
 
     public UNameProperty(UnrealPackage UPK, TagContainer tag) : base(tag) => value = UPK.DeserializeString();

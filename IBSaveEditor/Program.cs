@@ -1,8 +1,6 @@
 ﻿using SaveDumper.JsonParser;
 using SaveDumper.JsonCruncher;
 using SaveDumper.Serializer;
-using System.Reflection.Emit;
-using System.Security.Cryptography;
 using IBSaveEditor.Localization;
 
 namespace SaveDumper;
@@ -10,8 +8,8 @@ namespace SaveDumper;
 internal class Program
 {
     private static string? inputPath;
-    private static bool debug = true;
-    public static Config config;
+    private static bool debug = false;
+    // public static Config config;
 
     public static void Main()
     {
@@ -22,7 +20,6 @@ internal class Program
         }
 
         Console.Title = "IBSaveDumper";
-        config = new Config{useFriendlyName = true};
 
         while (true)
         {
