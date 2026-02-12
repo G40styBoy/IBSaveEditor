@@ -28,7 +28,7 @@ public class JsonDataParser : IDisposable
     internal void WriteDataToFile(UnrealPackage UPK)
     {
         // set the package type for our enumerator class so our program knows what game's enum pool to pull from
-        IBEnum.game = UPK.packageData.game;
+        IBEnum.game = UPK.game;
         try
         {
             writer.WriteStartObject();

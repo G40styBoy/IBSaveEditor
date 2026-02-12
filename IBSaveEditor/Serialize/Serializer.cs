@@ -28,7 +28,7 @@ class DataSerializer : IDisposable
         // if (UPK.packageData.bisEncrypted)
         //     fileName = $"{UPK.packageData.packageName} - MODDED{EXTENSION}";
         // else
-        fileName = $@"{UPK.packageData.packageName}{EXTENSION}";
+        fileName = $@"{UPK.packageName}{EXTENSION}";
 
         outputPath = Path.Combine(FilePaths.OutputDir, fileName);
 
@@ -49,8 +49,8 @@ class DataSerializer : IDisposable
             uhelper.SerializeString(ref binWriter, "None");
             binWriter.Flush();
 
-            if (UPK.packageData.bisEncrypted)
-                PackageCrypto.EncryptPackage(ref stream, UPK.packageData);
+            if (UPK.isEncrypted)
+                PackageCrypto.EncryptPackage(ref stream, UPK);
 
             return true;
         }
@@ -64,9 +64,9 @@ class DataSerializer : IDisposable
     {
         // even encrypted files have header data stored before encryption
         // add here so the file can be read correctly when loading a save
-        if (UPK.packageData.bisEncrypted)
+        if (UPK.isEncrypted)
         {
-            switch (UPK.packageData.game)
+            switch (UPK.game)
             {
                 case Game.IB1:
                     binWriter.Write(PackageCrypto.NO_MAGIC);
@@ -82,8 +82,8 @@ class DataSerializer : IDisposable
         }
 
         // write out unencrypted header info
-        binWriter.Write(UPK.packageData.saveVersion);
-        binWriter.Write(UPK.packageData.saveMagic);        
+        binWriter.Write(UPK.saveVersion);
+        binWriter.Write(UPK.saveMagic);        
     }
 
     private string GetNextSaveFileNameForOuput(string fileName, string fileExtension)

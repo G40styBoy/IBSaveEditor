@@ -15,7 +15,7 @@ class PackageCrypto
     public const uint NO_MAGIC = 4294967295u;
     private const int BLOCK_SIZE = 16;
 
-    public static bool TryDecryptHalfBlock(Game game, FileStream stream)
+    public static bool TryDecryptHalfBlock(Game game, Stream stream)
     {
         byte[] buffer = new byte[BLOCK_SIZE];
         stream.Read(buffer, 0, BLOCK_SIZE);
@@ -43,9 +43,9 @@ class PackageCrypto
     /// Checks the first 8 bytes to determine the package's encryption state
     /// </summary>
     /// <returns>Returns if the package is encrypted or not</returns>
-    public static bool IsPackageEncrypted(UnrealPackage.PackageData package) =>
-         !(package.saveVersion == SAVE_FILE_VERSION_IB3 || package.saveVersion == SAVE_FILE_VERSION_PC)
-         || package.saveMagic != NO_MAGIC;
+    public static bool IsPackageEncrypted(UnrealPackage UPK) =>
+         !(UPK.saveVersion == SAVE_FILE_VERSION_IB3 || UPK.saveVersion == SAVE_FILE_VERSION_PC)
+         || UPK.saveMagic != NO_MAGIC;
 
     public static byte[] GetPackageAESKey(Game game)
     {
@@ -79,20 +79,20 @@ class PackageCrypto
 
     public static byte[] DecryptPackage(UnrealPackage UPK)
     {
-        Aes aes = ConstructPackageAES(UPK.packageData.game);
+        Aes aes = ConstructPackageAES(UPK.game);
         using (ICryptoTransform decryptor = aes.CreateDecryptor())
         {
             int srcOffset = sizeof(int);
 
             // skip over save version and encryption magic for IB1 package
-            if (UPK.packageData.game is Game.IB1)
+            if (UPK.game is Game.IB1)
                 srcOffset *= 2;
 
-            if (UPK.packageData.streamBytes is null)
-                throw new InvalidDataException("Attempting to perform decryption on an empty stream.");
+            byte[] streamBytes = UPK.GetStreamBytes();
+
             // get the encrypted package's bytes and skip X amount over
-            byte[] encryptedData = new byte[UPK.packageData.streamBytes.Length - srcOffset];
-            Array.ConstrainedCopy(UPK.packageData.streamBytes, srcOffset, encryptedData, 0, encryptedData.Length);  //UPK.packageData.streamBytes!
+            byte[] encryptedData = new byte[streamBytes.Length - srcOffset];
+            Array.ConstrainedCopy(streamBytes, srcOffset, encryptedData, 0, encryptedData.Length); 
             return decryptor.TransformFinalBlock(encryptedData, 0, encryptedData.Length);
         }
 
@@ -104,10 +104,10 @@ class PackageCrypto
     /// <param name="stream"></param>
     /// <param name="data"></param>
     /// <exception cref="InvalidDataException"></exception>
-    public static void EncryptPackage(ref FileStream stream, UnrealPackage.PackageData data)
+    public static void EncryptPackage(ref FileStream stream, UnrealPackage UPK)
     {
         stream.Position = 0;
-        Aes aes = ConstructPackageAES(data.game);
+        Aes aes = ConstructPackageAES(UPK.game);
         using (ICryptoTransform encryptor = aes.CreateEncryptor())
         {
             byte[] decryptedData;
@@ -121,9 +121,9 @@ class PackageCrypto
 
             // calculate header size here to append correct amount of data
             int headerSize = 0;
-            if (data.game is Game.IB1)
+            if (UPK.game is Game.IB1)
                 headerSize = sizeof(uint) * 2;
-            else if (data.game is Game.IB2 or Game.VOTE)
+            else if (UPK.game is Game.IB2 or Game.VOTE)
                 headerSize = sizeof(uint);
             else
                 throw new InvalidDataException("Package is encrypted but isn't supported for appending header info.");
@@ -132,13 +132,13 @@ class PackageCrypto
 
             // copy header data into the new array first
             int offset = 4;
-            if (data.game is Game.IB1)
+            if (UPK.game is Game.IB1)
             {
-                Array.Copy(BitConverter.GetBytes(data.saveVersion), 0, finalData, 0, sizeof(uint));
-                Array.Copy(BitConverter.GetBytes(data.saveMagic), 0, finalData, sizeof(int), sizeof(uint));
+                Array.Copy(BitConverter.GetBytes(UPK.saveVersion), 0, finalData, 0, sizeof(uint));
+                Array.Copy(BitConverter.GetBytes(UPK.saveMagic), 0, finalData, sizeof(int), sizeof(uint));
                 offset *= 2;
             }
-            else if (data.game is Game.IB2 or Game.VOTE)
+            else if (UPK.game is Game.IB2 or Game.VOTE)
                 Array.Copy(BitConverter.GetBytes(IB2_SAVE_MAGIC), 0, finalData, 0, sizeof(uint));
 
             Array.Copy(encryptedData, 0, finalData, offset, encryptedData.Length);

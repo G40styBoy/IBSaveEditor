@@ -3,42 +3,31 @@ using SaveDumper.UnrealPackageManager.Crypto;
 
 public class UnrealPackage : IDisposable
 {
-    public string filePath { get; init; }
-    public PackageData packageData { get; private set; }
-    private FileStream fileStream;
-    private BinaryReader binaryReader;
-    private BinaryWriter binaryWriter;
+    private string filePath { get; init; }
+    private Stream _stream;
+    private BinaryReader _reader;
+    private BinaryWriter _writer;
 
-    public sealed record PackageData
-    {
-        public string packageName;
-        public bool bisEncrypted;
-        public uint saveVersion;
-        public uint saveMagic;
-        /// <summary>
-        /// Houses our stream bytes for encrypted streams, otherwise null.
-        /// </summary>
-        public byte[]? streamBytes;
-        public Game game;
-    }
+    public string packageName { get; private set; }
+    public bool isEncrypted { get; private set; }
+    public uint saveVersion { get; private set; }
+    public uint saveMagic { get; private set; }
+    public Game game { get; private set; }
 
     /// <summary>
     /// Default Unreal Package constructor
     /// </summary>
-    /// <param name="filePath">File to read the package from</param>
     public UnrealPackage(string filePath)
     {
         this.filePath = filePath;
         if (!File.Exists(filePath))
             throw new FileNotFoundException("The specified file does not exist.", filePath);
 
-        packageData = new PackageData();
-        packageData.packageName = Path.GetFileNameWithoutExtension(filePath);
+        packageName = Path.GetFileNameWithoutExtension(filePath);
         try
         {
-
-            fileStream = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            InitializeBinaryReadWrite();
+            _stream = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            InitializeReaders();
             GetPackageHeaderInfo();
             ResolvePackageInfo();
         }
@@ -48,73 +37,95 @@ public class UnrealPackage : IDisposable
         }
     }
 
-    /// <summary>
-    /// Constructor implemented for encrypted packages.
-    /// </summary>
-    public UnrealPackage(PackageData packageData)
+    private void InitializeStreamFromBytes(byte[] data)
     {
-        this.packageData = packageData;
-        filePath = $@"{FilePaths.OutputDir}/{Path.GetRandomFileName()}";
+        if (_stream is not null)
+            DisposeStream();
+        _stream = new MemoryStream(data, writable: true);
+        InitializeReaders();
+    }
 
-        try
+    private void InitializeReaders()
+    {
+        _reader = new BinaryReader(_stream, Encoding.UTF8, leaveOpen: true);
+        _writer = new BinaryWriter(_stream, Encoding.UTF8, leaveOpen: true);
+    }
+
+
+    /// <summary>
+    /// Returns a copy of the underlying stream's bytes without altering its final position.
+    /// </summary>
+    public byte[] GetStreamBytes()
+    {
+        if (_stream == null)
+            throw new InvalidOperationException("Stream is not initialized.");
+
+        if (_stream is MemoryStream ms)
+            return ms.ToArray(); 
+
+        long originalPosition = 0;
+
+        if (_stream.CanSeek)
         {
-            fileStream = File.Create(filePath, 0, FileOptions.DeleteOnClose);
-            InitializeBinaryReadWrite();
-            TransformEncryptedPackage();
+            originalPosition = _stream.Position;
+            _stream.Position = 0;
         }
-        catch (Exception exception)
-        {
-            Dispose();
-            throw new Exception(exception.Message);
-        }
+
+        using var copyStream = new MemoryStream();
+        _stream.CopyTo(copyStream);
+
+        if (_stream.CanSeek)
+            _stream.Position = originalPosition;
+
+        return copyStream.ToArray();
     }
 
     /// <returns>A boolean value that indicates whether the stream has reached the end of the file</returns>
-    internal bool IsEndFile() => fileStream.Position >= fileStream.Length;
+    public bool IsEndFile() => _stream.Position >= _stream.Length;
 
     /// <summary>
     /// Sets the stream position to the specified amount
     /// </summary>
-    /// <param name="position">position to set</param>
-    public void SetStreamPosition(long position) => fileStream.Position = position;
+    public void SetStreamPosition(long position) => _stream.Position = position;
     /// <summary>
     /// Sets the stream position to 0
     /// </summary>
-    public void ResetStreamPosition() => fileStream.Position = 0;
+    public void ResetStreamPosition() => _stream.Position = 0;
 
     /// <summary>
     /// Attempts to collect as much data as possible from the header data of the file.
     /// Also invokes decryption of certian packages if needed
     /// </summary>
-    /// <exception cref="InvalidOperationException"></exception>
     private void ResolvePackageInfo()
     {
         try
         {
-            if (PackageCrypto.IsPackageEncrypted(packageData))
+            if (PackageCrypto.IsPackageEncrypted(this))
             {
-                packageData.bisEncrypted = true;
+                isEncrypted = true;
 
-                if (packageData.saveMagic == PackageCrypto.IB1_SAVE_MAGIC)
-                    packageData.game = Game.IB1;
+                if (saveMagic == PackageCrypto.IB1_SAVE_MAGIC)
+                    game = Game.IB1;
 
-                else if (packageData.saveVersion == PackageCrypto.IB2_SAVE_MAGIC)
+                else if (saveVersion == PackageCrypto.IB2_SAVE_MAGIC)
                 {
                     SetStreamPosition(sizeof(int));
-                    packageData.game = PackageCrypto.TryDecryptHalfBlock(Game.IB2, fileStream)
+                    game = PackageCrypto.TryDecryptHalfBlock(Game.IB2, _stream)
                         ? Game.IB2
                         : Game.VOTE;
                 }
-                packageData.streamBytes = GetFileBytes();
             }
             else
             {
-                packageData.game = packageData.saveVersion switch
+                // can either be an IB3 or unencrypted IB2 package
+                if (saveVersion is PackageCrypto.SAVE_FILE_VERSION_IB3)
                 {
-                    PackageCrypto.SAVE_FILE_VERSION_IB3 => Game.IB3,
-                    PackageCrypto.SAVE_FILE_VERSION_PC => Game.IB1,
-                    _ => throw new InvalidOperationException("Unknown save version.")
-                };
+                    if (IsPackageIB3()) game = Game.IB3;
+                    else game = Game.IB2;
+                    return;
+                }       
+
+                game = Game.IB1;  // defaults to IB1
             }
         }
         catch (Exception exception)
@@ -124,73 +135,42 @@ public class UnrealPackage : IDisposable
         }
     }
 
+    private bool IsPackageIB3()
+    {
+        const string STRING_TO_CHECK = "CurrentEngineVersion";
+        //checking here to see if "CurrentEngineVersion" is present
+        SetStreamPosition(_stream.Length - 62);
+        return DeserializeString() is STRING_TO_CHECK;
+    }
 
     /// <summary>
     /// Populates the info for our package header so we can use it to determine save type.
     /// </summary>
     private void GetPackageHeaderInfo()
     {
-        packageData.saveVersion = DeserializeUInt();
-        packageData.saveMagic = DeserializeUInt();
+        if (_stream.Position != 0)
+            _stream.Position = 0;
+        saveVersion = DeserializeUInt();
+        saveMagic = DeserializeUInt();
         ResetStreamPosition();
     }
 
-    private void InitializeBinaryReadWrite()
-    {
-        try
-        {
-            binaryReader = new BinaryReader(fileStream, Encoding.UTF8);
-            binaryWriter = new BinaryWriter(fileStream, Encoding.UTF8);
-        }
-        catch (Exception exception)
-        {
-            throw new InvalidOperationException(exception.Message);
-        }
-    }
-
-    private byte[] GetFileBytes()
-    {
-        if (fileStream is null)
-            return new byte[0];
-
-        fileStream.Position = 0;
-        using (var memoryStream = new MemoryStream())
-        {
-            fileStream.CopyTo(memoryStream);
-            return memoryStream.ToArray();
-        }
-    }
-
     /// <summary>
-    /// Reverts the stream position during deserialization given a value and its type
+    /// Reverts the stream position during deserialization given a value and its type.
+    /// Right now this only supports strings, but for now we don't need to revert any other type
+
     /// </summary>
     public void RevertStreamPosition(string value)
     {
-        // Right now this only supports strings, but for now we don't need to revert any other type
-        fileStream.Position -= sizeof(int) + sizeof(byte); // size + nt
-        fileStream.Position -= value.Length;
-    }
-
-    internal void TransformEncryptedPackage(bool outputDecryptedFile = false)
-    {
-        try
-        {
-            byte[] decryptedData = PackageCrypto.DecryptPackage(this);
-            fileStream.Write(decryptedData, 0, decryptedData.Length);
-            if (outputDecryptedFile)
-                File.WriteAllBytes($@"{FilePaths.OutputDir}/Decrypted.bin", decryptedData);    
-        }
-        catch (Exception exception)
-        {
-            throw new InvalidOperationException($"Failed to decrypt package. {exception.Message}");
-        }
+        _stream.Position -= sizeof(int) + sizeof(byte); // size + nt
+        _stream.Position -= value.Length;
     }
 
     /// <returns>the next string in the stream</returns>
     internal string PeekString()
     {
         string str;
-        long originalPosition = binaryReader.BaseStream.Position;
+        long originalPosition = _reader.BaseStream.Position;
 
         try
         {
@@ -198,7 +178,7 @@ public class UnrealPackage : IDisposable
         }
         finally
         {
-            binaryReader.BaseStream.Position = originalPosition;
+            _reader.BaseStream.Position = originalPosition;
         }
 
         return str;
@@ -208,11 +188,11 @@ public class UnrealPackage : IDisposable
     {
         try
         {
-            var strLength = binaryReader.ReadInt32();
+            var strLength = _reader.ReadInt32();
             if (strLength <= 0)
                 return string.Empty;
 
-            var bytes = binaryReader.ReadBytes(strLength);
+            var bytes = _reader.ReadBytes(strLength);
             return Encoding.UTF8.GetString(bytes).TrimEnd('\0');
         }
         catch (Exception exception)
@@ -238,7 +218,7 @@ public class UnrealPackage : IDisposable
     {
         try
         {
-            int _buffer = binaryReader.ReadInt32();
+            int _buffer = _reader.ReadInt32();
 
             if (int.IsNegative(_buffer) && _buffer != -1)
                 return int.MaxValue;
@@ -255,7 +235,7 @@ public class UnrealPackage : IDisposable
     {
         try
         {
-            return binaryReader.ReadUInt32();
+            return _reader.ReadUInt32();
         }
         catch (ArgumentOutOfRangeException)
         {
@@ -268,7 +248,7 @@ public class UnrealPackage : IDisposable
     {
         try
         {
-            float _buffer = binaryReader.ReadSingle();
+            float _buffer = _reader.ReadSingle();
 
             if (float.IsNaN(_buffer) || float.IsInfinity(_buffer))
                 throw new InvalidDataException($"Invalid float value: {_buffer}");
@@ -285,18 +265,19 @@ public class UnrealPackage : IDisposable
     {
         try
         {
-            return binaryReader.ReadBoolean();
+            return _reader.ReadBoolean();
         }
         catch (ArgumentOutOfRangeException)
         {
             throw new ArgumentOutOfRangeException($"Could not convert {sizeof(bool)} to a bool.");
         }
     }
+
     internal byte DeserializeByte()
     {
         try
         {
-            return binaryReader.ReadByte();
+            return _reader.ReadByte();
         }
         catch (Exception)
         {
@@ -305,25 +286,32 @@ public class UnrealPackage : IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private ReadOnlySpan<byte> Deserialize(int count) => binaryReader.ReadBytes(count);
+    private ReadOnlySpan<byte> Deserialize(int count) => _reader.ReadBytes(count);
 
     /// <summary>
     /// Deserializes a package's contents into a list of UProperties
     /// </summary>
     /// <returns>A list of all UProperties inside of the package</returns>
-    /// <exception cref="InvalidOperationException">Deserialization was a failure</exception>
     public List<UProperty> DeserializeUPK()
     {
         const int ENCRYPTED_IB1_HEADER = 4;
         const int HEADER_SIZE = 8;
+
+        // replaces existing stream data with the newly decrypted data
+        if (isEncrypted)
+        {
+            byte[] decryptedData = PackageCrypto.DecryptPackage(this);
+            InitializeStreamFromBytes(decryptedData);
+        }
+            
         try
         {
-            if (packageData.game is Game.IB1 && packageData.bisEncrypted is true)
+            if (game is Game.IB1 && isEncrypted is true)
                 SetStreamPosition(ENCRYPTED_IB1_HEADER);
             else
                 SetStreamPosition(HEADER_SIZE);
 
-            var deserializer = new UPKDeserializer(packageData.game);
+            var deserializer = new UPKDeserializer(game);
             var uProperties = deserializer.DeserializePackage(this);
             return uProperties;
         }
@@ -335,16 +323,21 @@ public class UnrealPackage : IDisposable
 
     public void Close()
     {
-        binaryReader?.Close();
-        binaryWriter?.Close();
-        fileStream?.Close();
+        _reader?.Close();
+        _writer?.Close();
+        _stream?.Close();
+    }
+
+    private void DisposeStream()
+    {
+        _reader?.Dispose();
+        _writer?.Dispose();
+        _stream?.Dispose();
     }
 
     public void Dispose()
     {
-        binaryReader?.Dispose();
-        binaryWriter?.Dispose();
-        fileStream?.Dispose();
+        DisposeStream();
         GC.SuppressFinalize(this);
     }
 

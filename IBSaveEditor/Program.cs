@@ -42,15 +42,6 @@ internal class Program
             try
             {
                 UPK = new UnrealPackage(inputPath);
-
-                // if our package is encrypted, we need to create 
-                // a new stream with the decrypted data 
-                if (UPK.packageData.bisEncrypted)
-                {
-                    UPK.Dispose();
-                    UPK = new UnrealPackage(UPK.packageData);
-                }
-
                 RunDeserialization(UPK);
             }
             catch (Exception ex)
@@ -149,7 +140,7 @@ internal class Program
     {
         ProgressBar.Run("Serializing", () =>
         {
-            var cruncher = new JsonDataCruncher(jsonPath, UPK.packageData.game);
+            var cruncher = new JsonDataCruncher(jsonPath, UPK.game);
             var crunchedData = cruncher.ReadJsonFile();
             if (crunchedData is null)
                 throw new InvalidOperationException("Serialization process failed!");
