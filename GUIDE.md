@@ -102,7 +102,7 @@ Rules:
 
 ---
 
-## 4. Bytes (Small Integers, Often Prefixed with `b`)
+## 4. Bytes (Small Integers, Prefixed with `b`)
 
 Format:
 
