@@ -1,71 +1,68 @@
-namespace SaveDumper.Deserializer;
-
 /// <summary>
 /// Takes unencrypted serialized data and mutates it into digestable data.
 /// </summary>
-public class UPKDeserializer
+public class Deserializer
 {
-    private List<ArrayMetadata> gamearrayInfo;
     private List<UProperty> propertyCollection = new();
-
-    private const int MAX_STATIC_ARRAY_ELEMENTS = 2000; // Prevent memory exhaustion
-    private static readonly int UNINITIALIZED_VALUE = -1; 
-
-    internal protected UPKDeserializer(Game game) => gamearrayInfo = UArray.PopulateArrayInfo(game);
+    private const int MAX_STATIC_ARRAY_ELEMENTS = 2000; 
+    private const int UNINITIALIZED_VALUE = -1; 
     
-    internal List<UProperty> DeserializePackage(UnrealPackage UPK)
+    public List<UProperty> DeserializePackage(UnrealPackage upk)
     {
-        while (!UPK.IsEndFile()) 
+        while (!upk.IsEndFile())
         {
+            long startPos = upk.GetStreamPosition();
             try
             {
-                UProperty tag = ConstructTag(UPK);
+                UProperty? tag = ConstructTag(upk);
 
-                // once we pull in the None property the package has been fully read
                 if (tag is null)
                     break;
+
                 propertyCollection.Add(tag);
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                throw new InvalidOperationException(exception.Message);
+                throw new InvalidDataException($"Failed to deserialize package at stream position {startPos}.", ex);
             }
         }
         return propertyCollection;
     }
 
-    private UProperty ConstructTag(UnrealPackage UPK, bool allowStaticArrayDetection = true)
+    private UProperty? ConstructTag(UnrealPackage upk, bool allowStaticArrayDetection = true)
     {
         try
         {
             // immediatly checking if we pull in "None"
             var tag = new TagContainer();
-            tag.name = UPK.DeserializeString();
+            tag.name = upk.DeserializeString();
             if (tag.name is UType.NONE)               
-                return null!;
+                return null;
             
-            // We can tell the compiler to ignore the warning about tag.arrayInfo possibly being null
             // null possibility is fully accounted for, and in some cases expected for logic
-            tag.arrayInfo = UArray.GetCurrentArray(gamearrayInfo, tag.name)!;
-
+            if (UArrayRegistry.TryGet(upk.info.game, tag.name, out var metadata))
+                tag.arrayInfo = metadata!;
+            else
+                tag.arrayInfo = null; 
+            
             if (allowStaticArrayDetection && tag.arrayInfo != null && tag.arrayInfo.arrayType is ArrayType.Static)
             {
-                UPK.RevertStreamPosition(tag.name);
+                upk.RevertStreamPosition(tag.name);
                 PopulateUPropertyMetadata(ref tag, UType.ARRAY_PROPERTY, UNINITIALIZED_VALUE, UNINITIALIZED_VALUE);
                 tag.type = UType.ARRAY_PROPERTY;
                 tag.arrayEntryCount = 0;
             }
             else
             {
-                PopulateUPropertyMetadata(ref tag, UPK.DeserializeString(), UPK.DeserializeInt(), UPK.DeserializeInt());
+                PopulateUPropertyMetadata(ref tag, upk.DeserializeString(), upk.DeserializeInt(), upk.DeserializeInt());
                 if (tag.type is UType.ARRAY_PROPERTY)
-                    tag.arrayEntryCount = UPK.DeserializeInt();
+                    tag.arrayEntryCount = upk.DeserializeInt();
             }
-            return ConstructUProperty(UPK, tag);
+            return ConstructUProperty(upk, tag);
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-            throw new InvalidOperationException(exception.Message);
+            throw new InvalidOperationException("Failed to construct tag.", ex);
         }  
     }
 
@@ -79,56 +76,56 @@ public class UPKDeserializer
         tag.size = size;
     }
 
-    private UProperty ConstructUProperty(UnrealPackage UPK, TagContainer tag)
+    private UProperty ConstructUProperty(UnrealPackage upk, TagContainer tag)
     {
         return tag.type switch
         {
-            UType.INT_PROPERTY => new UIntProperty(UPK, tag),
-            UType.FLOAT_PROPERTY => new UFloatProperty(UPK, tag),
-            UType.BOOL_PROPERTY => new UBoolProperty(UPK, tag),
-            UType.BYTE_PROPERTY => UByteProperty.InstantiateProperty(UPK, tag),
-            UType.STR_PROPERTY => new UStringProperty(UPK, tag),
-            UType.NAME_PROPERTY => new UNameProperty(UPK, tag),
-            UType.STRUCT_PROPERTY => CreateStructProperty(UPK, tag),
-            UType.ARRAY_PROPERTY => CreateArrayProperty(UPK, tag),
+            UType.INT_PROPERTY => new UIntProperty(upk, tag),
+            UType.FLOAT_PROPERTY => new UFloatProperty(upk, tag),
+            UType.BOOL_PROPERTY => new UBoolProperty(upk, tag),
+            UType.BYTE_PROPERTY => UByteProperty.InstantiateProperty(upk, tag),
+            UType.STR_PROPERTY => new UStringProperty(upk, tag),
+            UType.NAME_PROPERTY => new UNameProperty(upk, tag),
+            UType.STRUCT_PROPERTY => CreateStructProperty(upk, tag),
+            UType.ARRAY_PROPERTY => CreateArrayProperty(upk, tag),
             _ => throw new NotSupportedException($"Unsupported property type: {tag.type}")
         };
     }
 
-    private UStructProperty CreateStructProperty(UnrealPackage UPK, TagContainer tag)
+    private UStructProperty CreateStructProperty(UnrealPackage upk, TagContainer tag)
     {
         // store the alternate name for the struct somewhere. This does not get used!
-        tag.alternateName = UPK.DeserializeString();   
-        LoopTagConstructor(UPK, out List<UProperty> elements);
+        tag.alternateName = upk.DeserializeString();   
+        LoopTagConstructor(upk, out List<UProperty> elements);
         return new UStructProperty(tag, tag.alternateName, elements);
     }
 
-    private UProperty CreateArrayProperty(UnrealPackage UPK, TagContainer tag)
+    private UProperty CreateArrayProperty(UnrealPackage upk, TagContainer tag)
     {
         if (tag.arrayInfo.arrayType is ArrayType.Static)
-            return BuildArrayProperty(UPK, tag);
+            return BuildArrayProperty(upk, tag);
 
         return tag.arrayInfo.valueType switch
         {
-            PropertyType.IntProperty => BuildArrayProperty(UPK, tag, UPK => UPK.DeserializeInt()),
-            PropertyType.FloatProperty => BuildArrayProperty(UPK, tag, UPK => UPK.DeserializeFloat()),
-            PropertyType.StrProperty or PropertyType.NameProperty => BuildArrayProperty(UPK, tag, UPK => UPK.DeserializeString()),
-            PropertyType.StructProperty => BuildArrayProperty(UPK, tag, _ => ReadStructElement(UPK)),
+            PropertyType.IntProperty => BuildArrayProperty(upk, tag, upk => upk.DeserializeInt()),
+            PropertyType.FloatProperty => BuildArrayProperty(upk, tag, upk => upk.DeserializeFloat()),
+            PropertyType.StrProperty or PropertyType.NameProperty => BuildArrayProperty(upk, tag, upk => upk.DeserializeString()),
+            PropertyType.StructProperty => BuildArrayProperty(upk, tag, _ => ReadStructElement(upk)),
             _ => throw new NotSupportedException($"Unsupported array type: {tag.arrayInfo.valueType}")
         };
     }
 
-    private UArrayProperty<T> BuildArrayProperty<T>(UnrealPackage UPK, TagContainer tag, Func<UnrealPackage, T> reader) where T : notnull
+    private UArrayProperty<T> BuildArrayProperty<T>(UnrealPackage upk, TagContainer tag, Func<UnrealPackage, T> reader) where T : notnull
     {
         var elements = new List<T>();
 
         for (int i = 0; i < tag.arrayEntryCount; i++)
-            elements.Add(reader(UPK));
+            elements.Add(reader(upk));
 
         return new UArrayProperty<T>(tag, elements);
     }
 
-    private UArrayProperty<UProperty> BuildArrayProperty(UnrealPackage UPK, TagContainer tag)
+    private UArrayProperty<UProperty> BuildArrayProperty(UnrealPackage upk, TagContainer tag)
     {
         var elements = new List<UProperty>();
         int loopCount = 0;
@@ -137,11 +134,11 @@ public class UPKDeserializer
             if (loopCount > MAX_STATIC_ARRAY_ELEMENTS)
                 throw new Exception("Infinite loop detected while deserializing static array.");
 
-            var nextname = UPK.PeekString();
+            var nextname = upk.PeekString();
             if (nextname != tag.name)
                 break;
 
-            elements.Add(ConstructTag(UPK, allowStaticArrayDetection: false));
+            elements.Add(ConstructTag(upk, allowStaticArrayDetection: false));
             tag.arrayEntryCount++;
             loopCount++;
         }
@@ -149,18 +146,18 @@ public class UPKDeserializer
         return new UArrayProperty<UProperty>(tag, elements);
     }
 
-    private List<UProperty> ReadStructElement(UnrealPackage UPK)
+    private List<UProperty> ReadStructElement(UnrealPackage upk)
     {
-        LoopTagConstructor(UPK, out List<UProperty> elements);
+        LoopTagConstructor(upk, out List<UProperty> elements);
         return elements;
     }
 
-    private void LoopTagConstructor(UnrealPackage UPK, out List<UProperty> elements)
+    private void LoopTagConstructor(UnrealPackage upk, out List<UProperty> elements)
     {
         UProperty tag;
         elements = new List<UProperty>();
 
-        while ((tag = ConstructTag(UPK)) != null)
+        while ((tag = ConstructTag(upk)) != null)
             elements.Add(tag);
     }
 }

@@ -1,24 +1,17 @@
-using SaveDumper.Deserializer;
-using SaveDumper.UnrealPackageManager.Crypto;
-
 public class UnrealPackage : IDisposable
 {
     private Stream _stream;
     private BinaryReader _reader;
     private BinaryWriter _writer;
-
-    public string packageName { get; private set; }
-    public bool isEncrypted { get; private set; }
-    public uint saveVersion { get; private set; }
-    public uint saveMagic { get; private set; }
-    public Game game { get; private set; }
+    public PackageInfo info { get; private set; } = null!;
 
     public UnrealPackage(string filePath)
     {
         if (!File.Exists(filePath))
             throw new FileNotFoundException("The specified file does not exist.", filePath);
 
-        packageName = Path.GetFileNameWithoutExtension(filePath);
+        info = new PackageInfo();
+        info.SetPackageName(Path.GetFileNameWithoutExtension(filePath));
 
         try
         {
@@ -29,7 +22,7 @@ public class UnrealPackage : IDisposable
         }
         catch (Exception ex)
         {
-            DisposeStream();
+            Dispose();
             throw new InvalidOperationException($"Failed to construct UnrealPackage for '{filePath}'.", ex);
         }
     }
@@ -41,7 +34,7 @@ public class UnrealPackage : IDisposable
     private void InitializeStreamFromBytes(byte[] data)
     {
         if (_stream is not null)
-            DisposeStream();
+            Dispose();
         _stream = new MemoryStream(data, writable: true);
         InitializeReaders();
     }
@@ -57,16 +50,17 @@ public class UnrealPackage : IDisposable
     /// </summary>
     private void ResolvePackageType()
     {
+        Game game;
         try
         {
             if (PackageCrypto.IsPackageEncrypted(this))
             {
-                isEncrypted = true;
+                info.SetIsEncrypted(true);
 
-                if (saveMagic == PackageCrypto.IB1_SAVE_MAGIC)
+                if (info.saveMagic == PackageConstants.IB1_SAVE_MAGIC)
                     game = Game.IB1;
 
-                else if (saveVersion == PackageCrypto.IB2_SAVE_MAGIC)
+                else if (info.saveVersion == PackageConstants.IB2_SAVE_MAGIC)
                 {
                     SetStreamPosition(sizeof(int));
                     game = PackageCrypto.TryDecryptHalfBlock(Game.IB2, _stream) ? Game.IB2 : Game.VOTE;
@@ -77,19 +71,22 @@ public class UnrealPackage : IDisposable
             }
             else
             {
+                info.SetIsEncrypted(false);
+
                 // can either be an IB3 or unencrypted IB2 package
-                if (saveVersion is PackageCrypto.SAVE_FILE_VERSION_IB3)
+                if (info.saveVersion is PackageConstants.SAVE_FILE_VERSION_IB3)
                 {
                     if (IsPackageIB3()) game = Game.IB3;
                     else game = Game.IB2;
                 }       
-                else if (saveVersion is PackageCrypto.SAVE_FILE_VERSION_PC)
+                else if (info.saveVersion is PackageConstants.SAVE_FILE_VERSION_PC)
                     game = Game.IB1; 
 
                 else
                     throw new InvalidDataException("Could not decipher decrypted package type when attempting to resolve package info.");
-                
             }
+
+            info.SetGame(game);
         }
         catch (Exception exception)
         {
@@ -103,7 +100,7 @@ public class UnrealPackage : IDisposable
     /// </summary>
     private bool IsPackageIB3()
     {
-        if (isEncrypted) return false;
+        if (info.isEncrypted) return false;
 
         const string STRING_TO_CHECK = "CurrentEngineVersion";
         const int ENGINE_VERSION_LOCATION = 62;
@@ -116,8 +113,8 @@ public class UnrealPackage : IDisposable
     {
         if (_stream.Position != 0)
             _stream.Position = 0;
-        saveVersion = DeserializeUInt();
-        saveMagic = DeserializeUInt();
+        info.SetSaveVersion(DeserializeUInt());
+        info.SetSaveMagic(DeserializeUInt());
         ResetStreamPosition();
     }
 
@@ -288,7 +285,7 @@ public class UnrealPackage : IDisposable
         const int HEADER_SIZE = 8;
 
         // replaces existing stream data with the newly decrypted data
-        if (isEncrypted)
+        if (info.isEncrypted)
         {
             byte[] decryptedData = PackageCrypto.DecryptPackage(this);
             InitializeStreamFromBytes(decryptedData);
@@ -296,12 +293,12 @@ public class UnrealPackage : IDisposable
             
         try
         {
-            if (game is Game.IB1 && isEncrypted is true)
+            if (info.game is Game.IB1 && info.isEncrypted is true)
                 SetStreamPosition(ENCRYPTED_IB1_HEADER);
             else
                 SetStreamPosition(HEADER_SIZE);
 
-            var deserializer = new UPKDeserializer(game);
+            Deserializer deserializer = new Deserializer();
             var uProperties = deserializer.DeserializePackage(this);
             return uProperties;
         }
@@ -348,20 +345,14 @@ public class UnrealPackage : IDisposable
         _stream.Position = position;
     }
 
+    public long GetStreamPosition() => _stream.Position;
+
     public void ResetStreamPosition() => _stream.Position = 0;
 
-    private void DisposeStream()
+    public void Dispose()
     {
         _reader?.Dispose();
         _writer?.Dispose();
         _stream?.Dispose();
     }
-
-    public void Dispose()
-    {
-        DisposeStream();
-        GC.SuppressFinalize(this);
-    }
-
-    ~UnrealPackage() => Dispose();
 }

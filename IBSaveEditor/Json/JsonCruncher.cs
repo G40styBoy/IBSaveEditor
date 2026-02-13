@@ -1,7 +1,5 @@
 using Newtonsoft.Json;
 
-namespace SaveDumper.JsonCruncher;
-
 /// <summary>
 /// Takes in a json file with deserialized data, and crunches it into a digestable format to serialize the data
 /// </summary>
@@ -15,27 +13,25 @@ class JsonDataCruncher
     private readonly HashSet<string> SpecialIntNames = new() { "bWasEncrypted" };
     private readonly HashSet<string> SpecialStructNames = new() { "SavedCheevo" };
 
-    private JsonTextReader reader;
+    private JsonTextReader _reader;
     private List<UProperty> crunchedList = new List<UProperty>();
-    private List<ArrayMetadata> arrayData;
-    private UPropertyDataHelper uHelper;
+    private Game game;
 
-    public JsonDataCruncher(string jsonFile, Game type)
+    public JsonDataCruncher(string jsonFile, Game game)
     {
+        this.game = game;
         string jsonFileText = File.ReadAllText(jsonFile);
-        reader = new JsonTextReader(new StringReader(jsonFileText));
-        arrayData = UArray.PopulateArrayInfo(type);
-        uHelper = new UPropertyDataHelper();
+        _reader = new JsonTextReader(new StringReader(jsonFileText));
     }
 
     internal List<UProperty> ReadJsonFile()
     {
         try
         {
-            while (reader.Read())
+            while (_reader.Read())
             {
                 // skip start and end token
-                if (reader.Depth <= NORMAL_READER_DEPTH && reader.TokenType is JsonToken.StartObject or JsonToken.EndObject)
+                if (_reader.Depth <= NORMAL_READER_DEPTH && _reader.TokenType is JsonToken.StartObject or JsonToken.EndObject)
                     continue;
                 ReadJsonProperty(out UProperty property);
             }
@@ -57,10 +53,10 @@ class JsonDataCruncher
 
     private bool IsSpecialStruct(string name) => SpecialStructNames.Contains(name);
 
-    private bool IsNestedProperty() => reader.Depth > NORMAL_READER_DEPTH;
+    private bool IsNestedProperty() => _reader.Depth > NORMAL_READER_DEPTH;
 
-    private bool ReadJsonList() => reader.Read() && reader.TokenType is not JsonToken.EndObject;
-    private bool ReadJsonDictionary() => reader.Read() && reader.TokenType is not JsonToken.EndArray;
+    private bool ReadJsonList() => _reader.Read() && _reader.TokenType is not JsonToken.EndObject;
+    private bool ReadJsonDictionary() => _reader.Read() && _reader.TokenType is not JsonToken.EndArray;
 
     private void AddPropertyToCollection(UProperty property) => crunchedList.Add(property);
     private void AddPropertyListToCollection(List<UProperty> propertyList)
@@ -83,15 +79,15 @@ class JsonDataCruncher
     private void ReadPropertyName(out TagContainer tag)
     {
         tag = new TagContainer();
-        tag.name = uHelper.ReaderValueToString(reader);
+        tag.name = UPropertyHelper.ReaderValueToString(_reader);
         if (tag.name is null)
             throw new InvalidOperationException("Property name is null");
     }
 
-    private UProperty ConstructUProperty(TagContainer tag)
+    private UProperty? ConstructUProperty(TagContainer tag)
     {
-        reader.Read();
-        return reader.TokenType switch
+        _reader.Read();
+        return _reader.TokenType switch
         {
             JsonToken.Integer => JsonInteger(tag),
             JsonToken.Float => JsonFloat(tag),
@@ -101,7 +97,7 @@ class JsonDataCruncher
             JsonToken.StartArray => JsonArray(tag),
             // TODO: need to account for empty arrays more gracefully. Right now its kinda messy \
             // we account and at times expect this, tell compiler to ignore
-            JsonToken.EndArray => null!,
+            JsonToken.EndArray => null,
             _ => throw new NotSupportedException($"Unsupported property type: {tag.type}")
         };
     }
@@ -112,25 +108,25 @@ class JsonDataCruncher
         {
             RemovePrefix(ref tag.name, BYTE_PREFIX);
             PopulateUPropertyMetadata(ref tag, UType.BYTE_PROPERTY, sizeof(byte), 0);
-            return UByteProperty.InstantiateProperty(ref reader, tag);
+            return UByteProperty.InstantiateProperty(ref _reader, tag);
         }
 
         PopulateUPropertyMetadata(ref tag, UType.INT_PROPERTY, sizeof(int), 0);
-        return new UIntProperty(reader, tag);
+        return new UIntProperty(_reader, tag);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private UProperty JsonFloat(TagContainer tag)
     {
         PopulateUPropertyMetadata(ref tag, UType.FLOAT_PROPERTY, sizeof(float), 0);
-        return new UFloatProperty(reader, tag);
+        return new UFloatProperty(_reader, tag);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private UProperty JsonBoolean(TagContainer tag)
     {
         PopulateUPropertyMetadata(ref tag, UType.BOOL_PROPERTY, UProperty.BYTE_SIZE_SPECIAL, 0);
-        return new UBoolProperty(reader, tag);
+        return new UBoolProperty(_reader, tag);
     }
 
     private UProperty JsonString(TagContainer tag)
@@ -142,7 +138,7 @@ class JsonDataCruncher
         }
         else
             PopulateUPropertyMetadata(ref tag, UType.STR_PROPERTY, 0, 0);
-        return new UStringProperty(reader, tag);
+        return new UStringProperty(_reader, tag);
     }
 
     private UProperty JsonObject(TagContainer tag)
@@ -152,13 +148,13 @@ class JsonDataCruncher
         {
             RemovePrefix(ref tag.name, ENUM_PREFIX, SpecialEnumNames);
             PopulateUPropertyMetadata(ref tag, UType.BYTE_PROPERTY, 0, 0);
-            return UByteProperty.InstantiateProperty(ref reader, tag);
+            return UByteProperty.InstantiateProperty(ref _reader, tag);
         }
 
         // stand-alone struct logic
-        var elements = ReadStructElement(reader);
+        var elements = ReadStructElement(_reader);
         PopulateUPropertyMetadata(ref tag, UType.STRUCT_PROPERTY, 0, 0);
-        return new UStructProperty(reader, tag, elements, string.Empty);
+        return new UStructProperty(_reader, tag, elements, string.Empty);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -175,10 +171,11 @@ class JsonDataCruncher
             text = text[prefix.Length..];
     }
 
-    private UProperty JsonArray(TagContainer tag)
+    private UProperty? JsonArray(TagContainer tag)
     {
-        tag.arrayInfo = UArray.GetCurrentArray(arrayData, tag.name)!;
-        if (tag.arrayInfo is null)
+        if (UArrayRegistry.TryGet(game, tag.name, out var metadata))
+            tag.arrayInfo = metadata!;
+        else
             throw new InvalidOperationException($"{tag.arrayInfo} is null");
 
         if (tag.arrayInfo.arrayType is ArrayType.Dynamic)
@@ -187,14 +184,14 @@ class JsonDataCruncher
             PopulateUPropertyMetadata(ref tag, UType.ARRAY_PROPERTY, sizeof(int), 0);
             return tag.arrayInfo.valueType switch
             {
-                PropertyType.IntProperty => BuildArrayProperty(tag, _ => uHelper.ParseReaderValue<int>(reader, int.TryParse)),
-                PropertyType.FloatProperty => BuildArrayProperty(tag, _ => uHelper.ParseReaderValue<float>(reader, float.TryParse)),
-                PropertyType.StrProperty or PropertyType.NameProperty => BuildArrayProperty(tag, _ => uHelper.ReaderValueToString(reader)),
-                PropertyType.StructProperty => BuildArrayProperty(tag, _ => ReadStructElement(reader)),
+                PropertyType.IntProperty => BuildArrayProperty(tag, _ => UPropertyHelper.ParseReaderValue<int>(_reader, int.TryParse)),
+                PropertyType.FloatProperty => BuildArrayProperty(tag, _ => UPropertyHelper.ParseReaderValue<float>(_reader, float.TryParse)),
+                PropertyType.StrProperty or PropertyType.NameProperty => BuildArrayProperty(tag, _ => UPropertyHelper.ReaderValueToString(_reader)),
+                PropertyType.StructProperty => BuildArrayProperty(tag, _ => ReadStructElement(_reader)),
                 _ => throw new NotSupportedException($"Unsupported dynamic array type: {tag.arrayInfo.valueType}")
             };
         }
-        else if (tag.arrayInfo.arrayType is ArrayType.Static)
+        else 
         {
             // we dont expect data back here since we are generating multiple properties
             // return null and let the logic handle itself
@@ -212,11 +209,8 @@ class JsonDataCruncher
                     break;
                 default: throw new NotSupportedException($"Unsupported static array type: {tag.arrayInfo.valueType}");
             }
-            return null!;
+            return null;
         }
-
-        // This should never happen, but account for it
-        throw new InvalidOperationException();
     }
 
     private void ReconstructIntProperty(TagContainer parentTag)
@@ -227,22 +221,22 @@ class JsonDataCruncher
         Type enumType = IBEnum.GetArrayIndexEnum(parentName);
 
         //skip over "{" 
-        reader.Read();
+        _reader.Read();
         while (ReadJsonList())
         {
             ReadPropertyName(out TagContainer tag);
-            int arrayIndex = IBEnum.GetArrayIndexUsingReflection(enumType, uHelper.ReaderValueToString(reader));
+            int arrayIndex = IBEnum.GetArrayIndexUsingReflection(enumType, UPropertyHelper.ReaderValueToString(_reader));
             PopulateUPropertyMetadata(ref tag, UType.INT_PROPERTY, sizeof(int), arrayIndex);
 
             tag.name = parentName;
-            reader.Read();
+            _reader.Read();
 
-            reconstructedIntPropertyList.Add(new UIntProperty(reader, tag));
+            reconstructedIntPropertyList.Add(new UIntProperty(_reader, tag));
         }
         AddPropertyListToCollection(reconstructedIntPropertyList);
 
         // skip over "]"
-        reader.Read();
+        _reader.Read();
     }
 
     private void ReconstructFNameProperty(TagContainer parentTag)
@@ -257,7 +251,7 @@ class JsonDataCruncher
             tag.name = parentName;
             PopulateUPropertyMetadata(ref tag, UType.NAME_PROPERTY, 0, arrayIndex);
 
-            reconstructedFNamePropertyList.Add(new UStringProperty(reader, tag));
+            reconstructedFNamePropertyList.Add(new UStringProperty(_reader, tag));
             arrayIndex++;
         }
 
@@ -275,7 +269,7 @@ class JsonDataCruncher
         // read over the object that encapsulates our static struct data
         if (shouldCalculateIndex)
         {
-            reader.Read();
+            _reader.Read();
             enumType = IBEnum.GetArrayIndexEnum(parentName);
         }
 
@@ -287,19 +281,18 @@ class JsonDataCruncher
             if (shouldCalculateIndex)
             {
                 // read over the end object that encapsulates our data and break out of the loop
-                if (reader.TokenType is JsonToken.EndObject)
+                if (_reader.TokenType is JsonToken.EndObject)
                 {
-                    reader.Read();
+                    _reader.Read();
                     break;
                 }
 
-                arrayIndex = IBEnum.GetArrayIndexUsingReflection(enumType, uHelper.ReaderValueToString(reader));
+                arrayIndex = IBEnum.GetArrayIndexUsingReflection(enumType, UPropertyHelper.ReaderValueToString(_reader));
             }
             PopulateUPropertyMetadata(ref tag, UType.STRUCT_PROPERTY, 0, arrayIndex);
 
-            var elements = ReadStructElement(reader);
-
-            var property = new UStructProperty(reader, tag, elements, parentTag.arrayInfo.alternateName.ToString());
+            var elements = ReadStructElement(_reader);
+            var property = new UStructProperty(_reader, tag, elements, parentTag.arrayInfo.alternateName.ToString());
             reconstructedStructList.Add(property);
 
             arrayIndex++;
@@ -313,9 +306,9 @@ class JsonDataCruncher
         var elements = new List<T>();
 
         while (ReadJsonDictionary())
-            elements.Add(function(reader));
+            elements.Add(function(_reader));
 
-        return new UArrayProperty<T>(reader, tag, elements);
+        return new UArrayProperty<T>(_reader, tag, elements);
     }
 
     private List<UProperty> ReadStructElement(JsonTextReader reader)

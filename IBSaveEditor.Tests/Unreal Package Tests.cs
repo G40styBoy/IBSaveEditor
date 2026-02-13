@@ -28,7 +28,7 @@ namespace IBSaveEditor.Tests
         public void PackageRecognitionTest(string filePath, Game expectedGame)
         {
             var package = new UnrealPackage(filePath);
-            Assert.Equal(expectedGame, package.game);
+            Assert.Equal(expectedGame, package.info.game);
         }
 
         [Theory]
@@ -39,6 +39,9 @@ namespace IBSaveEditor.Tests
             List<UProperty> properties = package.DeserializeUPK();
             Assert.NotNull(properties);
             Assert.NotEmpty(properties);  
+
+            // check to see if there are an adequate amount of properties
+            Assert.InRange(properties.Count, 30, int.MaxValue);
         }
     }
 }

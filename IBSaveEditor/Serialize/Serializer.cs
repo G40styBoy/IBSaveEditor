@@ -1,56 +1,45 @@
-using SaveDumper.UnrealPackageManager.Crypto;
-
-namespace SaveDumper.Serializer;
-
 /// <summary>
 /// Takes crunched Json data and converts it into serialized data readable for BasicLoadObject
 /// This gets written out into a binary file
 /// </summary>
-class DataSerializer : IDisposable
+class Serializer : IDisposable
 {
     private const string DEFAULT_NAME = "UnencryptedSave0";
     private const string EXTENSION = ".bin";
 
     private readonly List<UProperty> crunchedData;
-    private BinaryWriter binWriter;
-    private FileStream stream;
-    private readonly UPropertyDataHelper uhelper;
     private readonly string outputPath;
-    private UnrealPackage UPK;
 
-    public DataSerializer(UnrealPackage UPK, List<UProperty> crunchedData)
+    private BinaryWriter _writer;
+    private Stream _stream;
+    private PackageInfo info;
+
+    public Serializer(PackageInfo info, List<UProperty> crunchedData)
     {
-        this.UPK = UPK;
-        this.crunchedData = crunchedData;
-        string fileName;
-        uhelper = new UPropertyDataHelper();
-
-        // if (UPK.packageData.bisEncrypted)
-        //     fileName = $"{UPK.packageData.packageName} - MODDED{EXTENSION}";
-        // else
-        fileName = $@"{UPK.packageName}{EXTENSION}";
-
+        string fileName = $@"{info.packageName}{EXTENSION}";
         outputPath = Path.Combine(FilePaths.OutputDir, fileName);
 
-        stream = new FileStream(outputPath, FileMode.Create, FileAccess.ReadWrite);
-        binWriter = new BinaryWriter(stream);
+        _stream = new FileStream(outputPath, FileMode.Create, FileAccess.ReadWrite);
+        _writer = new BinaryWriter(_stream);
+        this.info = info;
+        this.crunchedData = crunchedData;
     }
 
-    internal bool SerializeAndOutputData()
+    public bool SerializeAndOutputData()
     {
         try
         {
             SerializePackageHeader();
             foreach (var uProperty in crunchedData)
             {
-                uhelper.SerializeMetadata(ref binWriter, uProperty);
-                uProperty.SerializeValue(binWriter);
+                UPropertyHelper.SerializeMetadata(ref _writer, uProperty);
+                uProperty.SerializeValue(_writer);
             }
-            uhelper.SerializeString(ref binWriter, "None");
-            binWriter.Flush();
+            UPropertyHelper.SerializeString(ref _writer, "None");
+            _writer.Flush();
 
-            if (UPK.isEncrypted)
-                PackageCrypto.EncryptPackage(ref stream, UPK);
+            if (info.isEncrypted)
+                PackageCrypto.EncryptPackage(ref _stream, info);
 
             return true;
         }
@@ -64,16 +53,16 @@ class DataSerializer : IDisposable
     {
         // even encrypted files have header data stored before encryption
         // add here so the file can be read correctly when loading a save
-        if (UPK.isEncrypted)
+        if (info.isEncrypted)
         {
-            switch (UPK.game)
+            switch (info.game)
             {
                 case Game.IB1:
-                    binWriter.Write(PackageCrypto.NO_MAGIC);
+                    _writer.Write(PackageConstants.NO_MAGIC);
                     break;
                 case Game.IB2 or Game.VOTE:
-                    binWriter.Write(0);
-                    binWriter.Write(PackageCrypto.NO_MAGIC);
+                    _writer.Write(0);
+                    _writer.Write(PackageConstants.NO_MAGIC);
                     break;
                 default:
                     throw new InvalidDataException("Package is encrypted but its game type for header population isnt supported.");
@@ -82,46 +71,13 @@ class DataSerializer : IDisposable
         }
 
         // write out unencrypted header info
-        binWriter.Write(UPK.saveVersion);
-        binWriter.Write(UPK.saveMagic);        
-    }
-
-    private string GetNextSaveFileNameForOuput(string fileName, string fileExtension)
-    {
-        string[] saveFiles = Directory.GetFiles(FilePaths.OutputDir, $"*{fileExtension}");
-        if (saveFiles.Length == 0)
-            return $"{fileName}0{fileExtension}";
-
-        int maxIndex = -1;
-
-        foreach (var file in saveFiles)
-        {
-            string nameWithoutExt = Path.GetFileNameWithoutExtension(file);
-
-            var match = System.Text.RegularExpressions.Regex.Match(nameWithoutExt, @"(\d+)$");
-            if (match.Success && int.TryParse(match.Value, out int index))
-            {
-                if (index > maxIndex)
-                    maxIndex = index;
-            }
-        }
-
-        int nextIndex = maxIndex + 1;
-        string newFileName = System.Text.RegularExpressions.Regex.Replace(
-            fileName,
-            @"\d+$",
-            nextIndex.ToString()
-        );
-
-        if (!System.Text.RegularExpressions.Regex.IsMatch(fileName, @"\d+$"))
-            newFileName = $"{fileName}{nextIndex}";
-
-        return newFileName + fileExtension;
+        _writer.Write(info.saveVersion);
+        _writer.Write(info.saveMagic);        
     }
 
     public void Dispose()
     {
-        binWriter?.Dispose();
-        stream?.Dispose();
+        _writer.Dispose();
+        _stream.Dispose();
     }
 }

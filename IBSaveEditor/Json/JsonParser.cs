@@ -1,40 +1,36 @@
-using System.Diagnostics;
 using System.Text.Json;
 
-namespace SaveDumper.JsonParser;
-
 /// <summary>
-/// Accepts Deserialized Data from an UnrealPackage and writes it to a .json file
-/// *generated data gets sent to \OUTPUT* 
+/// Accepts Deserialized Data from an UnrealPackage and writes it to a .json file.
 /// </summary>
 public class JsonDataParser : IDisposable
 {
     private readonly string filePath = $@"{FilePaths.OutputDir}\Deserialized Save Data.json";
     private readonly List<UProperty> saveData;
-    private readonly FileStream fs;
-    private readonly Utf8JsonWriter writer;
+    private readonly FileStream _stream;
+    private readonly Utf8JsonWriter _writer;
 
     public JsonDataParser(List<UProperty> saveData)
     {
         this.saveData = saveData;
 
-        fs = File.Create(filePath);
-        writer = new Utf8JsonWriter(fs, new JsonWriterOptions {Indented = true});
+        _stream = File.Create(filePath);
+        _writer = new Utf8JsonWriter(_stream, new JsonWriterOptions {Indented = true});
     }
 
     /// <summary>
     /// Writes out all save data neatly into a json file
     /// </summary>
-    internal void WriteDataToFile(UnrealPackage UPK)
+    public void WriteDataToFile(Game game)
     {
         // set the package type for our enumerator class so our program knows what game's enum pool to pull from
-        IBEnum.game = UPK.game;
+        IBEnum.game = game;
         try
         {
-            writer.WriteStartObject();
+            _writer.WriteStartObject();
             foreach (var uProperty in saveData)
-                uProperty.WriteValueData(writer, uProperty.name);
-            writer.WriteEndObject();
+                uProperty.WriteValueData(_writer, uProperty.name);
+            _writer.WriteEndObject();
         }
         catch (Exception exception)
         {
@@ -44,7 +40,7 @@ public class JsonDataParser : IDisposable
 
     public void Dispose()
     {
-        writer?.Dispose();
-        fs?.Dispose();
+        _writer?.Dispose();
+        _stream?.Dispose();
     }
 }

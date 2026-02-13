@@ -1,15 +1,9 @@
-﻿using SaveDumper.JsonParser;
-using SaveDumper.JsonCruncher;
-using SaveDumper.Serializer;
-using IBSaveEditor.Localization;
-
-namespace SaveDumper;
+﻿namespace SaveDumper;
 
 internal class Program
 {
     private static string? inputPath;
     private static bool debug = false;
-    // public static Config config;
 
     public static void Main()
     {
@@ -38,11 +32,11 @@ internal class Program
             Console.WriteLine("Processing save package...\n");
 
             FilePaths.ValidateOutputDirectory();
-            UnrealPackage UPK;
+            UnrealPackage upk;
             try
             {
-                UPK = new UnrealPackage(inputPath);
-                RunDeserialization(UPK);
+                upk = new UnrealPackage(inputPath);
+                RunDeserialization(upk);
             }
             catch (Exception ex)
             {
@@ -64,7 +58,7 @@ internal class Program
 
             try
             {
-                RunSerialization(UPK, jsonPath);
+                RunSerialization(upk.info, jsonPath);
             }
             catch (Exception ex)
             {
@@ -74,6 +68,44 @@ internal class Program
             WaitAndRestart();
         }
     }
+
+    private static void RunSerialization(PackageInfo info, string jsonPath)
+    {
+        ProgressBar.Run("Serializing", () =>
+        {
+            var cruncher = new JsonDataCruncher(jsonPath, info.game);
+            var crunchedData = cruncher.ReadJsonFile();
+            if (crunchedData is null)
+                throw new InvalidOperationException("Serialization process failed!");
+
+            using (var serializer = new Serializer(info, crunchedData))
+                serializer.SerializeAndOutputData();
+        });
+    }
+
+    private static void RunDeserialization(UnrealPackage upk)
+    {
+        ProgressBar.Run("Deserializing", () =>
+        {
+            List<UProperty> propertyList = upk.DeserializeUPK();
+            if (propertyList is null)
+                throw new InvalidOperationException("Deserialization process failed!");
+
+            using (var JsonDataParser = new JsonDataParser(propertyList))
+                JsonDataParser.WriteDataToFile(upk.info.game);
+
+            upk.Dispose();
+        });
+    }
+
+    /// <summary>
+    /// For development testing
+    /// </summary>
+    private static void DebugMain()
+    {
+        Console.ReadKey();
+    }
+
 
     private static string PromptForFile(string prompt, string requiredExtension, string invalidMessage, string wrongExtensionMessage)
     {
@@ -124,9 +156,9 @@ internal class Program
     private static void PrintBanner()
     {
         Util.PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        Util.PrintColoredLine("         SAVE DUMPER TOOL v0.3          ", ConsoleColor.Cyan, true);
+        Util.PrintColoredLine("         SAVE DUMPER TOOL ALPHA          ", ConsoleColor.Cyan, true);
         Util.PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        Util.PrintColoredLine(" © 2025 G40sty. All rights reserved.\n", ConsoleColor.DarkGray, true);
+        Util.PrintColoredLine(" © 2026 G40sty. All rights reserved.\n", ConsoleColor.DarkGray, true);
     }
 
     private static void WaitAndRestart()
@@ -135,48 +167,4 @@ internal class Program
         Console.ReadKey(true);
         Console.Clear();
     }
-
-    private static void RunSerialization(UnrealPackage UPK, string jsonPath)
-    {
-        ProgressBar.Run("Serializing", () =>
-        {
-            var cruncher = new JsonDataCruncher(jsonPath, UPK.game);
-            var crunchedData = cruncher.ReadJsonFile();
-            if (crunchedData is null)
-                throw new InvalidOperationException("Serialization process failed!");
-
-            using (var serializer = new DataSerializer(UPK, crunchedData))
-                serializer.SerializeAndOutputData();
-        });
-    }
-
-    private static void RunDeserialization(UnrealPackage UPK)
-    {
-        ProgressBar.Run("Deserializing", () =>
-        {
-            List<UProperty> uProperties = UPK.DeserializeUPK();
-            if (uProperties is null)
-                throw new InvalidOperationException("Deserialization process failed!");
-
-            using (var JsonDataParser = new JsonDataParser(uProperties))
-                JsonDataParser.WriteDataToFile(UPK);
-
-            UPK.Dispose();
-        });
-    }
-
-    /// <summary>
-    /// For development testing
-    /// </summary>
-    private static void DebugMain()
-    {
-        IntLocalization.LoadFromExecutableDirectory();
-        Console.ReadKey();
-    }
 }
-
-public sealed class Config
-{
-    public required bool useFriendlyName { get; init; }
-}
-
