@@ -35,10 +35,10 @@ namespace IBSaveEditor.Tests
         [MemberData(nameof(PackageFilePaths))]
         public void PackageDeserializationTest(string filePath)
         {
-            var package = new UnrealPackage(filePath);
-            var properties = package.DeserializeUPK();
+            UnrealPackage package = new UnrealPackage(filePath);
+            List<UProperty> properties = package.DeserializeUPK();
             Assert.NotNull(properties);
-            Assert.NotEmpty(properties);
+            Assert.NotEmpty(properties);  
         }
     }
 }
