@@ -7,8 +7,6 @@ Reference example structure: Deserialized Save Data.json
 
 # ⚠️ Before You Start
 
-- Always create a backup of your original save file.
-- Only edit the deserialized JSON file.
 - Use a proper editor (VS Code, Notepad++, etc.).
 - Do not break JSON formatting.
 - Do not add comments (JSON does not support comments).
@@ -237,17 +235,3 @@ Incorrect:
 }
 ```
 
----
-
-# Safe Editing Workflow
-
-1. Backup original save.
-2. Modify one value at a time.
-3. Save.
-4. Validate JSON formatting.
-5. Re-import.
-6. Test in game.
-
-If broken:
-- Restore backup.
-- Undo last change.
