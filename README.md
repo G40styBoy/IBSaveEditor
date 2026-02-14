@@ -31,8 +31,6 @@ This guide explains how to safely edit the deserialized `.json` file, including 
 
 ## Notes
 - Tool is still in early stages of development. If bugs are encountered please create an issue.
-- Always create backups before modifying save data.
-- Invalid JSON formatting will prevent repackaging.
 
 ---
 
