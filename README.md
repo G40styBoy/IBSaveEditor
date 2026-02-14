@@ -14,7 +14,7 @@
 
 ## Documentation
 
-- [Save Editing Guide](Save-Editing-Guide.md)
+- [Save Editing Guide](GUIDE.md)
 
 This guide explains how to safely edit the deserialized `.json` file, including data types, arrays, enums, and formatting rules.
 
