@@ -7,7 +7,7 @@ class PackageCrypto
     public static bool TryDecryptHalfBlock(Game game, Stream stream)
     {
         byte[] buffer = new byte[BLOCK_SIZE];
-        stream.Read(buffer, 0, BLOCK_SIZE);
+        stream.ReadExactly(buffer, 0, BLOCK_SIZE);
         using var aes = ConstructPackageAES(game);
         using var transformer = aes.CreateDecryptor();
 
@@ -43,7 +43,7 @@ class PackageCrypto
             Game.IB1 => PackageConstants.IB1AES,
             Game.IB2 => PackageConstants.IB2AES,
             Game.VOTE => PackageConstants.VOTEAES,
-            _ => []
+            _ => throw new NotImplementedException($"AES Key for {game} not supported!")
         };
     }
 
