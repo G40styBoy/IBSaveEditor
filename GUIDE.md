@@ -1,7 +1,7 @@
 
 # Save Editing Guide
 
-Reference example structure: Deserialized Save Data.json
+Reference example structure: "File Name".json
 
 ---
 
