@@ -1,170 +1,122 @@
-﻿namespace SaveDumper;
+﻿namespace IBSaveEditor;
 
-internal class Program
+public sealed class Program
 {
-    private static string? inputPath;
-    private static bool debug = false;
+    private const string TITLE = "IBSaveDumper";
+    private const string BANNER_NAME = "SAVE DUMPER TOOL ALPHA";
+    private const string BIN_FILE_EXT = ".bin";
+    private const string JSON_FILE_EXT = ".json";
 
     public static void Main()
     {
-        if (debug)
-        {
-            DebugMain();
-            return;
-        }
-
-        Console.Title = "IBSaveDumper";
+        Console.Title = TITLE;
 
         while (true)
         {
-            Console.Clear();
-            PrintBanner();
-
-            inputPath = PromptForFile(
-                "Drag and drop a .bin save file: ",
-                ".bin",
-                "Invalid file. Please drag a valid .bin file: ",
-                "Only .bin files are accepted. Please try again: "
-            );
-
-            Console.Clear();
-            PrintBanner();
-            Console.WriteLine("Processing save package...\n");
-
-            FilePaths.ValidateOutputDirectory();
-            UnrealPackage upk;
+            Util.RefreshConsole(BANNER_NAME);
             try
             {
-                upk = new UnrealPackage(inputPath);
-                RunDeserialization(upk);
+                FilePaths.ValidateOutputDirectory();
+
+                string path = PromptForExistingFile(
+                    "Drop a .bin (deserialize) or .json (repackage), then press Enter: ",
+                    "Invalid file. Drop a real file path: ",
+                    "Only .bin or .json are accepted. Try again: "
+                );
+
+                Util.RefreshConsole(BANNER_NAME);
+                string ext = Path.GetExtension(path).ToLowerInvariant();
+
+                if (ext == BIN_FILE_EXT)
+                {
+                    RunBinToJson(path);
+                    Util.PrintSuccess("Done. JSON written to OUTPUT.");
+                }
+                else if (ext == JSON_FILE_EXT)
+                {
+                    RunJsonToBin(path);
+                    Util.PrintSuccess("Done. Package written to OUTPUT.");
+                }
+                else
+                    throw new InvalidOperationException("Only .bin or .json are accepted.");
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                WaitAndRestart();
-                continue;
+                Util.PrintFailure(ex);
             }
 
-            string jsonPath = PromptForFile(
-                "Now drag and drop the modified .json file to repackage: ",
-                ".json",
-                "Invalid file. Please drag a valid .json file: ",
-                "Only .json files are accepted. Please try again: "
-            );
-
-            Console.Clear();
-            PrintBanner();
-            Console.WriteLine("Processing save data...\n");
-
-            try
-            {
-                RunSerialization(upk.info, jsonPath);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            WaitAndRestart();
+            Util.Restart();
         }
     }
 
-    private static void RunSerialization(PackageInfo info, string jsonPath)
+    private static void RunBinToJson(string binPath)
     {
-        ProgressBar.Run("Serializing", () =>
-        {
-            var cruncher = new JsonDataCruncher(jsonPath, info.game);
-            var crunchedData = cruncher.ReadJsonFile();
-            if (crunchedData is null)
-                throw new InvalidOperationException("Serialization process failed!");
+        Console.WriteLine("Processing .bin package...\n");
 
-            using (var serializer = new Serializer(info, crunchedData))
-                serializer.SerializeAndOutputData();
-        });
+        using var upk = new UnrealPackage(binPath);
+        Util.PrintStep("Loading Package", "OK");
+
+        List<UProperty> properties = upk.DeserializeUPK();
+        if (properties is null || properties.Count == 0)
+            throw new InvalidOperationException("Deserialization failed: no properties were produced.");
+        Util.PrintStep("Deserializing Package", "OK");
+
+
+        using var parser = new JsonDataParser(properties, upk.info);
+        parser.WriteDataToFile();
+        Util.PrintStep("Writing JSON", "OK");
     }
 
-    private static void RunDeserialization(UnrealPackage upk)
+    private static void RunJsonToBin(string jsonPath)
     {
-        ProgressBar.Run("Deserializing", () =>
-        {
-            List<UProperty> propertyList = upk.DeserializeUPK();
-            if (propertyList is null)
-                throw new InvalidOperationException("Deserialization process failed!");
+        Util.PrintColoredLine("Processing .json data...", ConsoleColor.Yellow);
 
-            using (var JsonDataParser = new JsonDataParser(propertyList))
-                JsonDataParser.WriteDataToFile(upk.info.game);
+        EnvelopeMeta meta = JsonUtils.ReadMeta(jsonPath);
+        var info = new PackageInfo();
+        info.SetPackageName(meta.PackageName);
+        info.SetGame(meta.Game);
+        info.SetIsEncrypted(meta.IsEncrypted);
+        info.SetSaveVersion(meta.SaveVersion);
+        info.SetSaveMagic(meta.SaveMagic);
+        Util.PrintStep("Loading Metadata", "OK");
 
-            upk.Dispose();
-        });
+        string dataJson = JsonUtils.ExtractDataObjectJson(jsonPath, "data");
+
+        var cruncher = new JsonDataCruncher(dataJson, info.game); 
+        var crunchedData = cruncher.ReadJsonFile();               
+        if (crunchedData is null)
+            throw new InvalidOperationException("Serialization failed: JSON could not be parsed into save data.");
+        Util.PrintStep("Crunching JSON Data", "OK");
+
+        using var serializer = new Serializer(info, crunchedData);
+        serializer.SerializeAndOutputData();
+        Util.PrintStep("Serializing Package", "OK");
     }
 
-    /// <summary>
-    /// For development testing
-    /// </summary>
-    private static void DebugMain()
+    private static string PromptForExistingFile(string prompt, string invalidMessage, string wrongExtensionMessage)
     {
-        Console.ReadKey();
-    }
-
-
-    private static string PromptForFile(string prompt, string requiredExtension, string invalidMessage, string wrongExtensionMessage)
-    {
-        string? path;
-        bool showingError = false;
-
         while (true)
         {
-            int promptLine = Console.CursorTop;
+            Console.Write(prompt);
 
-            if (!showingError)
-                Console.Write(prompt);
-
-            path = Console.ReadLine()?.Trim('"');
+            string? input = Console.ReadLine();
+            string? path = input?.Trim().Trim('"');
 
             if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             {
-                ClearAndShowError(promptLine, invalidMessage);
-                showingError = true;
+                Util.PrintInlineError(invalidMessage); 
                 continue;
             }
 
-            if (Path.GetExtension(path).ToLowerInvariant() != requiredExtension)
+            string ext = Path.GetExtension(path).ToLowerInvariant();
+            if (ext != BIN_FILE_EXT && ext != JSON_FILE_EXT)
             {
-                ClearAndShowError(promptLine, wrongExtensionMessage);
-                showingError = true;
+                Util.PrintInlineError(wrongExtensionMessage);
                 continue;
             }
 
-            break;
+            return path;
         }
-        return path!;
-    }
-
-    private static void ClearAndShowError(int startLine, string message)
-    {
-        // clear from the start line downward (3 lines should be enough)
-        for (int i = 0; i < 3; i++)
-        {
-            Console.SetCursorPosition(0, startLine + i);
-            Console.Write(new string(' ', Console.WindowWidth - 1));
-        }
-
-        Console.SetCursorPosition(0, startLine);
-        Console.Write(message);
-    }
-
-    private static void PrintBanner()
-    {
-        Util.PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        Util.PrintColoredLine("         SAVE DUMPER TOOL ALPHA          ", ConsoleColor.Cyan, true);
-        Util.PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        Util.PrintColoredLine(" © 2026 G40sty. All rights reserved.\n", ConsoleColor.DarkGray, true);
-    }
-
-    private static void WaitAndRestart()
-    {
-        Console.WriteLine("\nPress any key to continue...");
-        Console.ReadKey(true);
-        Console.Clear();
     }
 }

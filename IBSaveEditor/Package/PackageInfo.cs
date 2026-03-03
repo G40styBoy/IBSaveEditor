@@ -49,3 +49,9 @@ public sealed class PackageInfo
         _game = value;
     }
 }
+
+public readonly record struct EnvelopeMeta(Game Game = Game.IB1,
+                                        bool IsEncrypted = false,
+                                        string PackageName = "",
+                                        uint SaveVersion = 0,
+                                        uint SaveMagic = 0);

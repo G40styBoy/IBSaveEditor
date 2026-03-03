@@ -17,7 +17,7 @@ public record struct TagContainer
 
     //UArray
     public int arrayEntryCount;
-    public ArrayMetadata? arrayInfo;
+    public ArrayMetadata arrayInfo;
 
     /// <summary>
     /// lets us know if we need to keep track of a properties total size for struct and array purposes
@@ -76,7 +76,7 @@ public enum AlternateName
     ShowConsumableBadge,
     LastEquippedWeaponOfType,
 
-    //ib2
+    //IB2
     SocialChallengeSave
 }
 

@@ -179,12 +179,12 @@ public abstract class UByteProperty : UProperty
         };
     }
 
-    public static UByteProperty InstantiateProperty(ref JsonTextReader reader, TagContainer tag)
+    public static UByteProperty InstantiateProperty(JsonTextReader reader, TagContainer tag)
     {
         return tag.size switch
         {
             sizeof(byte) => new USimpleByteProperty(reader, tag),
-            0 => new UEnumByteProperty(ref reader, tag),
+            0 => new UEnumByteProperty(reader, tag),
             _ => throw new NotSupportedException($"Unsupported byte property size: {tag.size}")
         };
     }
@@ -234,12 +234,12 @@ public class UEnumByteProperty : UByteProperty
         enumValue = UPK.DeserializeString();
     }
 
-    public UEnumByteProperty(ref JsonTextReader reader, TagContainer tag) : base(tag)
+    public UEnumByteProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {
-        if (CheckPropertyName(ref reader, ENUM_NAME))
+        if (CheckPropertyName(reader, ENUM_NAME))
             enumName = UPropertyHelper.ReaderValueToString(reader);
 
-        if (CheckPropertyName(ref reader, ENUM_VALUE))
+        if (CheckPropertyName(reader, ENUM_VALUE))
             enumValue = UPropertyHelper.ReaderValueToString(reader);
 
         size = UPropertyHelper.ReturnLitteEndianStringLength(enumValue);
@@ -253,7 +253,7 @@ public class UEnumByteProperty : UByteProperty
         }
     }
 
-    private bool CheckPropertyName(ref JsonTextReader reader, string stringExpected)
+    private bool CheckPropertyName(JsonTextReader reader, string stringExpected)
     {
         reader.Read();
         if (UPropertyHelper.ReaderValueToString(reader) != stringExpected)

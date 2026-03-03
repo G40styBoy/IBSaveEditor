@@ -16,7 +16,7 @@ public static class IBEnum
     private const string CONSUMABLE = "NumConsumable";
     private const string CHEEVO = "SavedCheevo";
     private const string VOTE_COUNT = "LastVoteCount";
-    public static Game game;
+    private static Game game;
 
     public static string GetEnumEntryFromIndex(string alias, int idx)
     {
@@ -35,7 +35,6 @@ public static class IBEnum
 
     /// <summary>
     /// Associates a string t from the generic enum passed.
-    /// Thisz
     /// </summary>
     /// <returns>Index position of the enum value, or -1 if not found</returns>
     public static int GetArrayIndexFromEnum<T>(string fName) where T : Enum
@@ -55,7 +54,7 @@ public static class IBEnum
         MethodInfo genericMethod = method.MakeGenericMethod(enumType);
         try
         {
-            return (int)genericMethod.Invoke(null, new object[] { value });
+            return (int?)genericMethod.Invoke(null, new[] { value }) ?? -1;
         }
         catch (Exception exception)
         {
@@ -63,11 +62,6 @@ public static class IBEnum
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    /// <exception cref="InvalidDataException"></exception>
     public static Type GetArrayIndexEnum(string alias)
     {
         return (game, alias) switch
@@ -81,8 +75,10 @@ public static class IBEnum
         };
     }
 
+    public static void SetGame(Game _game) => game = _game;
+
     #region IB3 Enums
-    public enum eTouchRewardActor_IB3
+    private enum eTouchRewardActor_IB3
     {
         TRA_Random,                     // 0
         TRA_Random_Potion,              // 1
@@ -137,7 +133,7 @@ public static class IBEnum
         TRA_MAX                         // 50
     }
 
-    public enum eAchievements_IB3
+    private enum eAchievements_IB3
     {
         A_NONE,                         // 0
         TRACK_Combo,                    // 1
@@ -210,7 +206,7 @@ public static class IBEnum
         eAchievements_MAX               // 68
     };
 
-    public enum EExternalType
+    private enum EExternalType
     {
         ExType_GameCenter,              // 0
         ExType_None,                    // 1
@@ -220,7 +216,7 @@ public static class IBEnum
         ExType_MAX                      // 5
     };
 
-    public enum ePlayerCharacterType
+    private enum ePlayerCharacterType
     {
         EPCT_Siris,                     // 0
         EPCT_Isa,                       // 1
@@ -230,7 +226,7 @@ public static class IBEnum
     #endregion
 
     #region IB2 Enums
-    public enum eNewWorldType
+    private enum eNewWorldType
     {
         NWT_SaveStart,                  // 0
         NWT_NewBloodline,               // 1
@@ -361,11 +357,10 @@ public static class IBEnum
     #endregion
 
     #region IB1 Enums
-
     #endregion
 
     #region VOTE
-    enum CharacterFilterEnum
+    private enum CharacterFilterEnum
     {
         CFE_All,                        // 0
         CFE_Obama,                      // 1

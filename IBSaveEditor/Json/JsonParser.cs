@@ -1,46 +1,80 @@
 using System.Text.Json;
 
 /// <summary>
-/// Accepts Deserialized Data from an UnrealPackage and writes it to a .json file.
+/// Accepts deserialized data from an UnrealPackage and writes it to a .json file
+/// in an envelope format: { "meta": { ... }, "data": { ... } }.
 /// </summary>
-public class JsonDataParser : IDisposable
+public sealed class JsonDataParser : IDisposable
 {
-    private readonly string filePath = $@"{FilePaths.OutputDir}\Deserialized Save Data.json";
     private readonly List<UProperty> saveData;
     private readonly FileStream _stream;
     private readonly Utf8JsonWriter _writer;
+    private readonly PackageInfo info;
 
-    public JsonDataParser(List<UProperty> saveData)
+    public JsonDataParser(List<UProperty> saveData, PackageInfo info)
     {
         this.saveData = saveData;
+        this.info = info;
 
-        _stream = File.Create(filePath);
-        _writer = new Utf8JsonWriter(_stream, new JsonWriterOptions {Indented = true});
+        _stream = File.Create($"{FilePaths.OutputDir}/{info.packageName}.json");
+        _writer = new Utf8JsonWriter(_stream, new JsonWriterOptions { Indented = true });
     }
 
     /// <summary>
-    /// Writes out all save data neatly into a json file
+    /// Writes out all save data into a json envelope that includes required metadata for repackaging.
     /// </summary>
-    public void WriteDataToFile(Game game)
+    public void WriteDataToFile()
     {
-        // set the package type for our enumerator class so our program knows what game's enum pool to pull from
-        IBEnum.game = game;
+        if (info is null)
+            throw new ArgumentNullException(nameof(info));
+
+        // set enum pool for the correct game
+        IBEnum.SetGame(info.game);
+
         try
         {
             _writer.WriteStartObject();
-            foreach (var uProperty in saveData)
-                uProperty.WriteValueData(_writer, uProperty.name);
+
+            WriteMeta(info);
+            WriteData();
+
             _writer.WriteEndObject();
+            _writer.Flush();
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-            throw new InvalidOperationException(exception.Message);
+            throw new InvalidOperationException("Failed to write deserialized save JSON.", ex);
         }
+    }
+
+    private void WriteMeta(PackageInfo info)
+    {
+        _writer.WritePropertyName("metadata");
+        _writer.WriteStartObject();
+
+        _writer.WriteString("packageName", info.packageName);
+        _writer.WriteString("game", info.game.ToString());
+        _writer.WriteBoolean("isEncrypted", info.isEncrypted);
+        _writer.WriteNumber("saveVersion", info.saveVersion);
+        _writer.WriteNumber("saveMagic", info.saveMagic);
+
+        _writer.WriteEndObject();
+    }
+
+    private void WriteData()
+    {
+        _writer.WritePropertyName("data");
+        _writer.WriteStartObject();
+
+        foreach (var uProperty in saveData)
+            uProperty.WriteValueData(_writer, uProperty.name);
+
+        _writer.WriteEndObject();
     }
 
     public void Dispose()
     {
-        _writer?.Dispose();
-        _stream?.Dispose();
+        _writer.Dispose();
+        _stream.Dispose();
     }
 }

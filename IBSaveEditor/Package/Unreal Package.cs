@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 public class UnrealPackage : IDisposable
 {
     private Stream _stream;
@@ -39,6 +41,7 @@ public class UnrealPackage : IDisposable
         InitializeReaders();
     }
 
+    [MemberNotNull(nameof(_reader), nameof(_writer))]
     private void InitializeReaders()
     {
         _reader = new BinaryReader(_stream, Encoding.UTF8, leaveOpen: true);

@@ -36,14 +36,14 @@ public class Deserializer
             // immediatly checking if we pull in "None"
             var tag = new TagContainer();
             tag.name = upk.DeserializeString();
-            if (tag.name is UType.NONE)               
+            if (tag.name is UType.NONE)
                 return null;
             
             // null possibility is fully accounted for, and in some cases expected for logic
             if (UArrayRegistry.TryGet(upk.info.game, tag.name, out var metadata))
                 tag.arrayInfo = metadata!;
             else
-                tag.arrayInfo = null; 
+                tag.arrayInfo = null!; 
             
             if (allowStaticArrayDetection && tag.arrayInfo != null && tag.arrayInfo.arrayType is ArrayType.Static)
             {
@@ -138,7 +138,10 @@ public class Deserializer
             if (nextname != tag.name)
                 break;
 
-            elements.Add(ConstructTag(upk, allowStaticArrayDetection: false));
+            UProperty newTag = ConstructTag(upk, allowStaticArrayDetection: false)!;
+            if (newTag != null)
+                elements.Add(newTag);
+              
             tag.arrayEntryCount++;
             loopCount++;
         }
@@ -157,7 +160,7 @@ public class Deserializer
         UProperty tag;
         elements = new List<UProperty>();
 
-        while ((tag = ConstructTag(upk)) != null)
+        while ((tag = ConstructTag(upk)!) != null)
             elements.Add(tag);
     }
 }
