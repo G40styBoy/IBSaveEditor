@@ -1,34 +1,39 @@
 /// <summary>
 /// Used to package and pass tag data neatly. 
-/// Ends up being used in uproperty construction
+/// Ends up being used to construct UProperty's
 /// </summary>
 public record struct TagContainer
 {
-    //UProperty
     public string name;
     public string type;
     public int size;
     public int arrayIndex;
-
-    /// <summary>
-    /// stores struct alternate name. This is unused
-    /// </summary>
     public string alternateName;
-
-    //UArray
     public int arrayEntryCount;
     public ArrayMetadata arrayInfo;
-
     /// <summary>
-    /// lets us know if we need to keep track of a properties total size for struct and array purposes
+    /// If we need to keep track of a UProperty's total size for struct and array purposes
     /// </summary>
     public bool bShouldTrackMetadataSize;
 }
 
 /// <summary>
-/// String representation of all UProperty types discoverable inside of an Infinity Blade Save.
+/// Defines constant byte sizes used in the serialized UProperty binary layout.
+/// These values represent fixed-length fields present in UProperty metadata.
 /// </summary>
-public record struct UType
+public static class UPropertyLayout
+{
+    public const int NULL_TERMINATOR_SIZE = sizeof(byte);
+    public const int ARRAY_INDEX_SIZE = sizeof(int);
+    public const int VALUE_SIZE = sizeof(int);
+    public const int NAME_SIZE = sizeof(int);
+    public const int BYTE_SIZE_SPECIAL = 0;
+}
+
+/// <summary>
+/// String representation of all UProperty types discoverable inside of a Save Package.
+/// </summary>
+public static class UType
 {
     public const string INT_PROPERTY = "IntProperty";
     public const string FLOAT_PROPERTY = "FloatProperty";
@@ -42,7 +47,7 @@ public record struct UType
 }
 
 /// <summary>
-/// Enum representation of all UProperty types discoverable inside of an Infinity Blade Save.
+/// Enum representation of all UProperty types discoverable inside of a Save Package.
 /// </summary>
 public enum PropertyType
 {
@@ -75,8 +80,6 @@ public enum AlternateName
     SavedCheevoData,
     ShowConsumableBadge,
     LastEquippedWeaponOfType,
-
-    //IB2
     SocialChallengeSave
 }
 

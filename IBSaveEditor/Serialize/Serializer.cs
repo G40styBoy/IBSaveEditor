@@ -10,7 +10,7 @@ class Serializer : IDisposable
     private readonly List<UProperty> crunchedData;
     private readonly string outputPath;
 
-    private BinaryWriter _writer;
+    private UnrealBinaryWriter _writer;
     private Stream _stream;
     private PackageInfo info;
 
@@ -20,7 +20,7 @@ class Serializer : IDisposable
         outputPath = Path.Combine(FilePaths.OutputDir, fileName);
 
         _stream = new FileStream(outputPath, FileMode.Create, FileAccess.ReadWrite);
-        _writer = new BinaryWriter(_stream);
+        _writer = new UnrealBinaryWriter(_stream);
         this.info = info;
         this.crunchedData = crunchedData;
     }
@@ -32,10 +32,10 @@ class Serializer : IDisposable
             SerializePackageHeader();
             foreach (var uProperty in crunchedData)
             {
-                UPropertyHelper.SerializeMetadata(ref _writer, uProperty);
+                _writer.WritePropertyMetadata(uProperty);
                 uProperty.SerializeValue(_writer);
             }
-            UPropertyHelper.SerializeString(ref _writer, "None");
+            _writer.WriteUnrealString("None");
             _writer.Flush();
 
             if (info.isEncrypted)

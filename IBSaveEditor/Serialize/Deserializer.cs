@@ -115,19 +115,19 @@ public class Deserializer
         };
     }
 
-    private UArrayProperty<T> BuildArrayProperty<T>(UnrealPackage upk, TagContainer tag, Func<UnrealPackage, T> reader) where T : notnull
+    private UArrayProperty BuildArrayProperty<T>(UnrealPackage upk, TagContainer tag, Func<UnrealPackage, T> reader) where T : notnull
     {
-        var elements = new List<T>();
+        var elements = new List<object>();
 
         for (int i = 0; i < tag.arrayEntryCount; i++)
             elements.Add(reader(upk));
 
-        return new UArrayProperty<T>(tag, elements);
+        return new UArrayProperty(tag, elements);
     }
 
-    private UArrayProperty<UProperty> BuildArrayProperty(UnrealPackage upk, TagContainer tag)
+    private UArrayProperty BuildArrayProperty(UnrealPackage upk, TagContainer tag)
     {
-        var elements = new List<UProperty>();
+        var elements = new List<object>();
         int loopCount = 0;
         while (true)
         {
@@ -146,7 +146,7 @@ public class Deserializer
             loopCount++;
         }
 
-        return new UArrayProperty<UProperty>(tag, elements);
+        return new UArrayProperty(tag, elements);
     }
 
     private List<UProperty> ReadStructElement(UnrealPackage upk)

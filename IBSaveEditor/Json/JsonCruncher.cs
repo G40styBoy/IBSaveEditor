@@ -158,7 +158,7 @@ internal sealed class JsonDataCruncher
 
     private UProperty JsonBoolean(TagContainer tag)
     {
-        PopulateUPropertyMetadata(ref tag, UType.BOOL_PROPERTY, UProperty.BYTE_SIZE_SPECIAL, 0);
+        PopulateUPropertyMetadata(ref tag, UType.BOOL_PROPERTY, UPropertyLayout.BYTE_SIZE_SPECIAL, 0);
 
         try { return new UBoolProperty(_reader, tag); }
         catch (Exception ex) { throw BuildReaderStateException($"Failed to build BoolProperty '{tag.name}'.", ex); }
@@ -435,9 +435,9 @@ internal sealed class JsonDataCruncher
         AddPropertyListToCollection(reconstructedStructList);
     }
 
-    private UArrayProperty<T> BuildArrayProperty<T>(TagContainer tag, Func<JsonTextReader, T> function) where T : notnull
+    private UArrayProperty BuildArrayProperty<T>(TagContainer tag, Func<JsonTextReader, T> function) where T : notnull
     {
-        var elements = new List<T>();
+        var elements = new List<object>();
 
         while (ReadJsonDictionary())
         {
@@ -453,7 +453,7 @@ internal sealed class JsonDataCruncher
 
         try
         {
-            return new UArrayProperty<T>(_reader, tag, elements);
+            return new UArrayProperty(_reader, tag, elements);
         }
         catch (Exception ex)
         {

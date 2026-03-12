@@ -1,27 +1,23 @@
+using System.Globalization;
 using System.Text.Json;
 using Newtonsoft.Json;
-using System.Globalization;
 
 /// <summary>
-/// Class handling everything UObjects. Mainly stores metadata
+/// Class handling everything UProperty related.
 /// </summary>
 public abstract class UProperty
 {
-    public const int NULL_TERMINATOR = sizeof(byte);
-    public const int ARRAY_INDEX_SIZE = sizeof(int);
-    public const int VALUE_SIZE = sizeof(int);
-    /// <summary>
-    /// Size used for booleans inside of serialized data. Boolean size should usually be a byte
-    /// </summary>
-    public const int BYTE_SIZE_SPECIAL = 0;
-
     public string name;
     public string type;
     public int size;
     public int arrayIndex;
-    public int? uPropertyElementSize; // This value is seperately constructed due to its special construction requirments
 
-    public UProperty(TagContainer tag)
+    /// <summary>
+    /// The size of the entire UProperty including metadata.
+    /// </summary>
+    public int? uPropertyElementSize;
+
+    protected UProperty(TagContainer tag)
     {
         name = tag.name;
         type = tag.type;
@@ -29,18 +25,19 @@ public abstract class UProperty
         size = tag.size;
     }
 
-    private protected bool ShouldTrackFullSize(TagContainer tag) => tag.bShouldTrackMetadataSize is true;
+    private protected bool ShouldTrackFullSize(TagContainer tag) => tag.bShouldTrackMetadataSize;
 
     public abstract void WriteValueData(Utf8JsonWriter writer);
     public abstract void WriteValueData(Utf8JsonWriter writer, string name);
-    public abstract void SerializeValue(BinaryWriter writer);
+    public abstract void SerializeValue(UnrealBinaryWriter writer);
 }
 
 public class UIntProperty : UProperty
 {
     public int value;
-    public UIntProperty(UnrealPackage UPK, TagContainer tag)
-        : base(tag) => value = UPK.DeserializeInt();
+
+    public UIntProperty(UnrealPackage upk, TagContainer tag)
+        : base(tag) => value = upk.DeserializeInt();
 
     public UIntProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {
@@ -51,46 +48,48 @@ public class UIntProperty : UProperty
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) { }
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
     public override void WriteValueData(Utf8JsonWriter writer, string name) => writer.WriteNumber(name, value);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer) => writer.Write(value); 
+    public override void SerializeValue(UnrealBinaryWriter writer) => writer.Write(value);
 }
 
 public class UFloatProperty : UProperty
 {
     public float value;
-    private readonly string doubleFormat = "0.0#########"; // More decimal places                              
-    private readonly CultureInfo cultureInfo = CultureInfo.InvariantCulture;
-    public UFloatProperty(UnrealPackage UPK, TagContainer tag)
-        : base(tag) => value = UPK.DeserializeFloat();
+
+    private static readonly string DoubleFormat = "0.0#########";
+    private static readonly CultureInfo InvariantCulture = CultureInfo.InvariantCulture;
+
+    public UFloatProperty(UnrealPackage upk, TagContainer tag)
+        : base(tag) => value = upk.DeserializeFloat();
 
     public UFloatProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {
         value = UPropertyHelper.ParseReaderValue<float>(reader, float.TryParse);
+
         if (ShouldTrackFullSize(tag))
             UPropertyHelper.PopulatePropertyMetadataSize(this);
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) { }
+
     public override void WriteValueData(Utf8JsonWriter writer, string name)
     {
-        // Since json rounds up .0 values it causes an issue for us when interpreting the json data
-        // with this we work around the program omitting the .0 suffix
+        // JSON drops trailing .0 by default, which breaks downstream interpretation.
         writer.WritePropertyName(name);
-        writer.WriteRawValue(value.ToString(doubleFormat, cultureInfo));
+        writer.WriteRawValue(value.ToString(DoubleFormat, InvariantCulture));
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer) => writer.Write(value); 
+    public override void SerializeValue(UnrealBinaryWriter writer) => writer.Write(value);
 }
 
 public class UBoolProperty : UProperty
 {
     public bool value;
-    public UBoolProperty(UnrealPackage UPK, TagContainer tag)
-        : base(tag) => value = UPK.DeserializeBool();
+
+    public UBoolProperty(UnrealPackage upk, TagContainer tag)
+        : base(tag) => value = upk.DeserializeBool();
 
     public UBoolProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {
@@ -98,83 +97,80 @@ public class UBoolProperty : UProperty
 
         if (ShouldTrackFullSize(tag))
         {
-            // with bools, they're value size is serialized as 0
-            // we need to account for this when calculating its metadata size   
+            // Bool values serialize with size 0 in metadata, but still occupy one byte in content.
             uPropertyElementSize = sizeof(bool);
             UPropertyHelper.PopulatePropertyMetadataSize(this);
         }
     }
+
     public override void WriteValueData(Utf8JsonWriter writer) { }
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
     public override void WriteValueData(Utf8JsonWriter writer, string name) => writer.WriteBoolean(name, value);
-    
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer) => writer.Write(value); 
+
+    public override void SerializeValue(UnrealBinaryWriter writer) => writer.Write(value);
 }
 
 public class UStringProperty : UProperty
-{    
+{
     public string value = string.Empty;
 
-    public UStringProperty(UnrealPackage UPK, TagContainer tag) : base(tag) => value = UPK.DeserializeString();
+    public UStringProperty(UnrealPackage upk, TagContainer tag) : base(tag)
+        => value = upk.DeserializeString();
 
     public UStringProperty(JsonTextReader reader, TagContainer tag) : base(tag)
-    {      
+    {
         value = UPropertyHelper.ReaderValueToString(reader);
-        size = UPropertyHelper.ReturnLitteEndianStringLength(value);
+        size = UPropertyHelper.GetLittleEndianStringLength(value);
+
         if (ShouldTrackFullSize(tag))
             UPropertyHelper.PopulatePropertyMetadataSize(this);
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) => writer.WriteStringValue(value);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override void WriteValueData(Utf8JsonWriter writer, string name) => writer.WriteString(name, value);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer) => UPropertyHelper.SerializeString(ref writer, value); 
+    public override void SerializeValue(UnrealBinaryWriter writer) => writer.WriteUnrealString(value);
 }
 
 public class UNameProperty : UProperty
 {
     private const string FNAME_PREFIX = "ini_";
-    // private bool useFriendly = Program.config.useFriendlyName;
+
     public string value = string.Empty;
 
-    public UNameProperty(UnrealPackage UPK, TagContainer tag) : base(tag) => value = UPK.DeserializeString();
+    public UNameProperty(UnrealPackage upk, TagContainer tag) : base(tag)
+        => value = upk.DeserializeString();
 
     public UNameProperty(JsonTextReader reader, TagContainer tag) : base(tag)
-    {      
+    {
         value = UPropertyHelper.ReaderValueToString(reader);
-        size = UPropertyHelper.ReturnLitteEndianStringLength(value);
+        size = UPropertyHelper.GetLittleEndianStringLength(value);
+
         if (ShouldTrackFullSize(tag))
             UPropertyHelper.PopulatePropertyMetadataSize(this);
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) => writer.WriteStringValue(value);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override void WriteValueData(Utf8JsonWriter writer, string name)
-    {
-        name = $"{FNAME_PREFIX}{name}";
-        writer.WriteString(name, value);
-    }
+        => writer.WriteString($"{FNAME_PREFIX}{name}", value);
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer) => UPropertyHelper.SerializeString(ref writer, value); 
+    public override void SerializeValue(UnrealBinaryWriter writer) => writer.WriteUnrealString(value);
 }
 
 public abstract class UByteProperty : UProperty
 {
-    public UByteProperty(TagContainer tag) : base(tag) {}
+    protected UByteProperty(TagContainer tag) : base(tag) { }
 
-    public static UByteProperty InstantiateProperty(UnrealPackage UPK, TagContainer tag)
+    public static UByteProperty InstantiateProperty(UnrealPackage upk, TagContainer tag)
     {
-        var identifier = UPK.DeserializeString();
+        string identifier = upk.DeserializeString();
+
         return tag.size switch
         {
-            sizeof(byte) => new USimpleByteProperty(UPK, tag),
-            > sizeof(byte) => new UEnumByteProperty(UPK, tag, identifier),
+            sizeof(byte) => new USimpleByteProperty(upk, tag),
+            > sizeof(byte) => new UEnumByteProperty(upk, tag, identifier),
             _ => throw new NotSupportedException($"Unsupported byte property size: {tag.size}")
         };
     }
@@ -193,8 +189,9 @@ public abstract class UByteProperty : UProperty
 public class USimpleByteProperty : UByteProperty
 {
     public byte value;
-    public USimpleByteProperty(UnrealPackage UPK, TagContainer tag)
-        : base(tag) => value = UPK.DeserializeByte();
+
+    public USimpleByteProperty(UnrealPackage upk, TagContainer tag)
+        : base(tag) => value = upk.DeserializeByte();
 
     public USimpleByteProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {
@@ -202,84 +199,87 @@ public class USimpleByteProperty : UByteProperty
 
         if (ShouldTrackFullSize(tag))
         {
-            // since there is no enumerator name, we need to serialize none in its place
-            uPropertyElementSize = UPropertyHelper.ReturnLitteEndianStringLength(UType.NONE);
+            // Simple byte properties serialize "None" in place of an enum name.
+            uPropertyElementSize = UPropertyHelper.GetLittleEndianStringLength(UType.NONE);
             UPropertyHelper.PopulatePropertyMetadataSize(this);
         }
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) { }
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
     public override void WriteValueData(Utf8JsonWriter writer, string name) => writer.WriteNumber($"b{name}", value);
-    public override void SerializeValue(BinaryWriter writer)
+
+    public override void SerializeValue(UnrealBinaryWriter writer)
     {
-        UPropertyHelper.SerializeString(ref writer, "None");
+        writer.WriteUnrealString(UType.NONE);
         writer.Write(value);
     }
 }
 
 public class UEnumByteProperty : UByteProperty
 {
-    public string enumName = string.Empty;
-    public string enumValue = string.Empty;
     private const string ENUM_PREFIX = "e";
     private const string EDGECASE_PLAYERTYPE = "eCurrentPlayerType";
     private const string ENUM_NAME = "Enum";
     private const string ENUM_VALUE = "Enum Value";
 
+    public string enumName = string.Empty;
+    public string enumValue = string.Empty;
 
-    public UEnumByteProperty(UnrealPackage UPK, TagContainer tag, string enumName) : base(tag)
+    public UEnumByteProperty(UnrealPackage upk, TagContainer tag, string enumName) : base(tag)
     {
         this.enumName = enumName;
-        enumValue = UPK.DeserializeString();
+        enumValue = upk.DeserializeString();
     }
 
     public UEnumByteProperty(JsonTextReader reader, TagContainer tag) : base(tag)
     {
-        if (CheckPropertyName(reader, ENUM_NAME))
+        if (ReadExpectedPropertyName(reader, ENUM_NAME))
             enumName = UPropertyHelper.ReaderValueToString(reader);
 
-        if (CheckPropertyName(reader, ENUM_VALUE))
+        if (ReadExpectedPropertyName(reader, ENUM_VALUE))
             enumValue = UPropertyHelper.ReaderValueToString(reader);
 
-        size = UPropertyHelper.ReturnLitteEndianStringLength(enumValue);
-        // read past the "}" closing statement so our logic doesnt run into issues
+        size = UPropertyHelper.GetLittleEndianStringLength(enumValue);
+
+        // Move past the closing brace.
         reader.Read();
 
         if (ShouldTrackFullSize(tag))
         {
-            uPropertyElementSize = UPropertyHelper.ReturnLitteEndianStringLength(enumName);
+            uPropertyElementSize = UPropertyHelper.GetLittleEndianStringLength(enumName);
             UPropertyHelper.PopulatePropertyMetadataSize(this);
         }
     }
 
-    private bool CheckPropertyName(JsonTextReader reader, string stringExpected)
+    private bool ReadExpectedPropertyName(JsonTextReader reader, string expected)
     {
         reader.Read();
-        if (UPropertyHelper.ReaderValueToString(reader) != stringExpected)
-            throw new InvalidDataException($"Expected {stringExpected} as a property name.");
+
+        if (UPropertyHelper.ReaderValueToString(reader) != expected)
+            throw new InvalidDataException($"Expected {expected} as a property name.");
+
         reader.Read();
         return true;
     }
 
     public override void WriteValueData(Utf8JsonWriter writer) { }
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
     public override void WriteValueData(Utf8JsonWriter writer, string name)
     {
-        // Edge case since "eCurrentPlayerType" is the only enum that is prefixed with e
-        // this is the same name that gets loaded into the loaders .obj, so we cant change it
         if (name is not EDGECASE_PLAYERTYPE)
             name = $"{ENUM_PREFIX}{name}";
+
         writer.WriteStartObject(name);
         writer.WriteString(ENUM_NAME, enumName);
         writer.WriteString(ENUM_VALUE, enumValue);
         writer.WriteEndObject();
     }
 
-    public override void SerializeValue(BinaryWriter writer)
+    public override void SerializeValue(UnrealBinaryWriter writer)
     {
-        UPropertyHelper.SerializeString(ref writer, enumName);
-        UPropertyHelper.SerializeString(ref writer, enumValue);
+        writer.WriteUnrealString(enumName);
+        writer.WriteUnrealString(enumValue);
     }
 }
 
@@ -298,19 +298,17 @@ public class UStructProperty : UProperty
     {
         this.structName = structName;
         this.elements = elements;
-        size += UPropertyHelper.CalculateSpecialPropertyContentSize(elements);
+
+        size += UPropertyHelper.CalculatePropertyContentSize(elements);
 
         if (this.structName == string.Empty)
-            this.structName = AttemptResolveAltName();
+            this.structName = ResolveAlternateStructName();
 
-        uPropertyElementSize = UPropertyHelper.ReturnLitteEndianStringLength(this.structName);
+        uPropertyElementSize = UPropertyHelper.GetLittleEndianStringLength(this.structName);
         UPropertyHelper.PopulatePropertyMetadataSize(this);
     }
 
-    /// <summary>
-    /// used for structs with alternames embedded in static arrays
-    /// <summary/>
-    private string AttemptResolveAltName()
+    private string ResolveAlternateStructName()
     {
         return name switch
         {
@@ -323,205 +321,202 @@ public class UStructProperty : UProperty
         };
     }
 
-    private void LoopJsonParsing(Utf8JsonWriter writer)
-    {
-        foreach (var element in elements)
-            element.WriteValueData(writer, element.name);
-    }
+    public override void WriteValueData(Utf8JsonWriter writer)
+        => UPropertyHelper.WritePropertyListJson(writer, elements);
 
-    public override void WriteValueData(Utf8JsonWriter writer) => LoopJsonParsing(writer);
     public override void WriteValueData(Utf8JsonWriter writer, string name)
     {
         writer.WriteStartObject(name);
-        LoopJsonParsing(writer);
+        UPropertyHelper.WritePropertyListJson(writer, elements);
         writer.WriteEndObject();
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer)
+    public override void SerializeValue(UnrealBinaryWriter writer)
     {
         if (structName != string.Empty)
-                UPropertyHelper.SerializeString(ref writer, structName);
+            writer.WriteUnrealString(structName);
 
-        foreach (var element in elements)
-        {
-            UPropertyHelper.SerializeMetadata(ref writer, element);
-            element.SerializeValue(writer);
-        }
-
-        UPropertyHelper.SerializeString(ref writer, "None");
+        UPropertyHelper.SerializePropertyList(writer, elements);
     }
 }
 
-public class UArrayProperty<T> : UProperty
+public class UArrayProperty : UProperty
 {
-    public ArrayMetadata arrayInfo;
-    public int arrayEntryCount;
-    public List<T> elements;
     private const string EDGECASE_CHEEVO = "SavedCheevo";
 
-    public UArrayProperty(TagContainer tag, List<T> elements) : base(tag)
+    public ArrayMetadata arrayInfo;
+    public int arrayEntryCount;
+    public List<object> elements;
+
+    public UArrayProperty(TagContainer tag, List<object> elements) : base(tag)
     {
         arrayEntryCount = tag.arrayEntryCount;
         this.elements = elements;
         arrayInfo = tag.arrayInfo;
     }
 
-    public UArrayProperty(JsonTextReader reader, TagContainer tag, List<T> elements) : base(tag)
+    public UArrayProperty(JsonTextReader reader, TagContainer tag, List<object> elements) : base(tag)
     {
         arrayEntryCount = elements.Count;
         this.elements = elements;
         arrayInfo = tag.arrayInfo;
-        size += UPropertyHelper.CalculateSpecialPropertyContentSize(elements);
+
+        size += UPropertyHelper.CalculatePropertyContentSize(elements);
         UPropertyHelper.PopulatePropertyMetadataSize(this);
     }
 
-    private void LoopJsonParsing(Utf8JsonWriter writer)
+    public override void WriteValueData(Utf8JsonWriter writer) => WriteArrayContentsAsJson(writer);
+
+    public override void WriteValueData(Utf8JsonWriter writer, string name)
+    {
+        writer.WriteStartArray(name);
+        WriteArrayContentsAsJson(writer);
+        writer.WriteEndArray();
+    }
+
+    public override void SerializeValue(UnrealBinaryWriter writer)
+    {
+        writer.Write(arrayEntryCount);
+
+        if (arrayEntryCount == 0)
+            return;
+
+        SerializeArrayContents(writer);
+    }
+
+    private void WriteArrayContentsAsJson(Utf8JsonWriter writer)
     {
         if (arrayInfo.arrayType is ArrayType.Dynamic)
         {
-            WriteDynamicElements(writer);
+            WriteDynamicArrayContentsAsJson(writer);
             return;
         }
 
-        // dealing with only static arrays now
-        // static arrays with the type "Array" arent supported
+        WriteStaticArrayContentsAsJson(writer);
+    }
+
+    private void WriteStaticArrayContentsAsJson(Utf8JsonWriter writer)
+    {
         if (arrayInfo.valueType is PropertyType.StructProperty)
         {
-            if (name is EDGECASE_CHEEVO)
-            {
-                writer.WriteStartObject();
-                foreach (UStructProperty element in elements.OfType<UStructProperty>())
-                    element.WriteValueData(writer, IBEnum.GetEnumEntryFromIndex(name, element.arrayIndex));
-
-                writer.WriteEndObject();
-                return;
-            }
-
-            foreach (UStructProperty element in elements.OfType<UStructProperty>())
-            {
-                writer.WriteStartObject();
-                element.WriteValueData(writer);
-                writer.WriteEndObject();
-            }
+            WriteStaticStructArrayAsJson(writer);
             return;
         }
 
         if (arrayInfo.valueType is PropertyType.IntProperty)
         {
+            WriteStaticIntArrayAsJson(writer);
+            return;
+        }
+
+        WriteStaticPropertyArrayAsJson(writer);
+    }
+
+    private void WriteStaticStructArrayAsJson(Utf8JsonWriter writer)
+    {
+        if (name == EDGECASE_CHEEVO)
+        {
             writer.WriteStartObject();
-            LoopFunctionOverVariablesOfElementType<UProperty>(element => element.WriteValueData(writer, IBEnum.GetEnumEntryFromIndex(name, element.arrayIndex)));
+
+            foreach (UStructProperty element in elements.OfType<UStructProperty>())
+                element.WriteValueData(writer, IBEnum.GetEnumEntryFromIndex(name, element.arrayIndex));
+
             writer.WriteEndObject();
             return;
         }
-        else
-        {
-            LoopFunctionOverVariablesOfElementType<UProperty>(element => element.WriteValueData(writer));
-            return;
-        }
 
-        throw new NotImplementedException($"Unsupported array type: {arrayInfo.valueType}");
+        foreach (UStructProperty element in elements.OfType<UStructProperty>())
+        {
+            writer.WriteStartObject();
+            element.WriteValueData(writer);
+            writer.WriteEndObject();
+        }
     }
 
-    private void WriteDynamicElements(Utf8JsonWriter writer)
+    private void WriteStaticIntArrayAsJson(Utf8JsonWriter writer)
     {
-        if (arrayEntryCount is 0)
-            return;
+        writer.WriteStartObject();
 
-        switch (elements[0])
+        foreach (UProperty element in elements.OfType<UProperty>())
+            element.WriteValueData(writer, IBEnum.GetEnumEntryFromIndex(name, element.arrayIndex));
+
+        writer.WriteEndObject();
+    }
+
+    private void WriteStaticPropertyArrayAsJson(Utf8JsonWriter writer)
+    {
+        foreach (UProperty element in elements.OfType<UProperty>())
+            element.WriteValueData(writer);
+    }
+
+    private void WriteDynamicArrayContentsAsJson(Utf8JsonWriter writer)
+    {
+        object? firstElement = UPropertyHelper.GetFirstOrNull(elements);
+
+        switch (firstElement)
         {
+            case null:
+                return;
+
             case string:
-                LoopFunctionOverVariablesOfElementType<string>(writer.WriteStringValue);
+                foreach (string element in elements.OfType<string>())
+                    writer.WriteStringValue(element);
                 break;
+
             case int:
-                LoopFunctionOverVariablesOfElementType<int>(writer.WriteNumberValue);
+                foreach (int element in elements.OfType<int>())
+                    writer.WriteNumberValue(element);
                 break;
+
             case float:
-                LoopFunctionOverVariablesOfElementType<float>(writer.WriteNumberValue);
+                foreach (float element in elements.OfType<float>())
+                    writer.WriteNumberValue(element);
                 break;
+
             case bool:
-                LoopFunctionOverVariablesOfElementType<bool>(writer.WriteBooleanValue);
+                foreach (bool element in elements.OfType<bool>())
+                    writer.WriteBooleanValue(element);
                 break;
+
             case List<UProperty>:
-                ReadDynamicStruct(writer);
+                UPropertyHelper.WriteNestedPropertyListsJson(writer, elements.OfType<List<UProperty>>());
                 break;
+
             default:
                 throw new NotImplementedException("Dynamic array type not implemented.");
         }
     }
 
-    private void ReadDynamicStruct(Utf8JsonWriter writer)
+    private void SerializeArrayContents(UnrealBinaryWriter writer)
     {
-        foreach (var element in elements.OfType<List<UProperty>>())
-        {
-            writer.WriteStartObject();
-            // nested array(s)
-            foreach (var dynamicElement in element)
-                dynamicElement.WriteValueData(writer, dynamicElement.name);
-            writer.WriteEndObject();
-        }
-    }
+        object? firstElement = UPropertyHelper.GetFirstOrNull(elements);
 
-    private void SerializeDynamicStruct(BinaryWriter writer)
-    {
-        foreach (var element in elements.OfType<List<UProperty>>())
-        {
-            // nested array(s)
-            foreach (var dynamicElement in element)
-            {
-                UPropertyHelper.SerializeMetadata(ref writer, dynamicElement);
-                dynamicElement.SerializeValue(writer);
-            }
-
-            UPropertyHelper.SerializeString(ref writer, "None");
-        }
-    }
-
-    private void LoopFunctionOverVariablesOfElementType<Type>(Action<Type> func) where Type : notnull
-    {
-        var castedElements = elements.OfType<Type>();
-        foreach (Type element in castedElements)
-            func(element);
-    }
-
-    public override void WriteValueData(Utf8JsonWriter writer) => LoopJsonParsing(writer);
-    public override void WriteValueData(Utf8JsonWriter writer, string name)
-    {
-        writer.WriteStartArray(name);
-        LoopJsonParsing(writer);
-        writer.WriteEndArray();
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override void SerializeValue(BinaryWriter writer)
-    {
-        writer.Write(arrayEntryCount);
-
-        if (arrayEntryCount is 0)
-            return;
-
-        switch (elements[0])
+        switch (firstElement)
         {
             case int:
-                LoopFunctionOverVariablesOfElementType<int>(writer.Write);
+                foreach (int element in elements.OfType<int>())
+                    writer.Write(element);
                 break;
-            case float:
-                LoopFunctionOverVariablesOfElementType<float>(writer.Write);
-                break;
-            case bool:
-                LoopFunctionOverVariablesOfElementType<bool>(writer.Write);
-                break;
-            case List<UProperty>:
-                SerializeDynamicStruct(writer);
-                break;
-            // we need a hack here because the writer.Write method for strings appends the size as a stand-alone int
-            // this is bad practice, but a hack needs to be in place here
-            case string:
-                var castedElements = elements.OfType<string>();
-                foreach (var element in castedElements)
-                    UPropertyHelper.SerializeString(ref writer, element);
 
+            case float:
+                foreach (float element in elements.OfType<float>())
+                    writer.Write(element);
                 break;
+
+            case bool:
+                foreach (bool element in elements.OfType<bool>())
+                    writer.Write(element);
+                break;
+
+            case string:
+                foreach (string element in elements.OfType<string>())
+                    writer.WriteUnrealString(element);
+                break;
+
+            case List<UProperty>:
+                UPropertyHelper.SerializeNestedPropertyLists(writer, elements.OfType<List<UProperty>>());
+                break;
+
             default:
                 throw new NotImplementedException("Dynamic array type not implemented.");
         }
@@ -529,41 +524,43 @@ public class UArrayProperty<T> : UProperty
 }
 
 /// <summary>
-/// Helper class for <see cref="UProperty"/> and any other class that needs it as a dependency.
+/// Helper methods shared across UProperty implementations.
+/// Only reusable mechanics live here.
 /// </summary>
 public static class UPropertyHelper
 {
-    public static int ReturnLitteEndianStringLength(string str)
+    public static int GetLittleEndianStringLength(string str)
     {
         if (str == string.Empty)
             return sizeof(int);
-        return UProperty.VALUE_SIZE + str.Length + UProperty.NULL_TERMINATOR;
+
+        return UPropertyLayout.VALUE_SIZE + str.Length + UPropertyLayout.NULL_TERMINATOR_SIZE;
     }
+
     public static void PopulatePropertyMetadataSize(UProperty property)
     {
         property.uPropertyElementSize ??= 0;
-        property.uPropertyElementSize += ReturnLitteEndianStringLength(property.name); // name string size
-        property.uPropertyElementSize += ReturnLitteEndianStringLength(property.type); // name type size
-        property.uPropertyElementSize += UProperty.VALUE_SIZE; // Little endian value size
-        property.uPropertyElementSize += UProperty.ARRAY_INDEX_SIZE; // little endian array index
-        property.uPropertyElementSize += property.size; // actual size of value
+        property.uPropertyElementSize += GetLittleEndianStringLength(property.name);
+        property.uPropertyElementSize += GetLittleEndianStringLength(property.type);
+        property.uPropertyElementSize += UPropertyLayout.VALUE_SIZE;
+        property.uPropertyElementSize += UPropertyLayout.ARRAY_INDEX_SIZE;
+        property.uPropertyElementSize += property.size;
     }
 
     public static string ReaderValueToString(JsonTextReader reader)
     {
-        string str;
-        str = reader.Value?.ToString() ?? string.Empty;
         if (reader.Value is null)
             throw new InvalidCastException($"Reader.Value is null. Expected a value, got {reader.TokenType}");
-        return str;
+
+        return reader.Value.ToString() ?? string.Empty;
     }
 
     internal static T ParseReaderValue<T>(JsonTextReader reader, TryParseDelegate<T> tryParse) where T : struct
     {
-        // we account for a null result, silence warning
-        string str = reader.Value?.ToString()!;  
-        if (str is null)
+        if (reader.Value is null)
             throw new InvalidCastException($"Reader.Value is null for {reader.TokenType}");
+
+        string str = reader.Value.ToString()!;
 
         if (!tryParse(str, out T result))
             throw new ArgumentException($"Cannot convert '{str}' to {typeof(T).Name}");
@@ -573,83 +570,95 @@ public static class UPropertyHelper
 
     internal protected delegate bool TryParseDelegate<T>(string input, out T result);
 
-    public static int CalculateSpecialPropertyContentSize<T>(List<T> elements)
+    public static int CalculatePropertyContentSize(List<UProperty> properties)
+        => CalculatePropertyListSize(properties);
+
+    public static int CalculatePropertyContentSize(List<object> elements)
     {
-        if (elements.Count is 0)
+        if (elements.Count == 0)
             return 0;
 
         return elements[0] switch
         {
-            string => GetSpecialPropertyArraySize(elements),
+            string => CalculateStringArraySize(elements.OfType<string>()),
             int => elements.Count * sizeof(int),
             float => elements.Count * sizeof(float),
             bool => elements.Count * sizeof(bool),
-            List<UProperty> => GetStructArraySize(elements),
-            UProperty => GetSpecialPropertyStructSize(elements),
+            List<UProperty> => CalculateNestedPropertyListsSize(elements.OfType<List<UProperty>>()),
+            UProperty => CalculatePropertyListSize(elements.OfType<UProperty>()),
             _ => throw new NotImplementedException("Dynamic array size calculation not implemented for this type.")
         };
     }
 
-    private static int GetSpecialPropertyArraySize<T>(List<T> elements)
+    public static void WritePropertyListJson(Utf8JsonWriter writer, IEnumerable<UProperty> properties)
+    {
+        foreach (UProperty property in properties)
+            property.WriteValueData(writer, property.name);
+    }
+
+    public static void WriteNestedPropertyListsJson(Utf8JsonWriter writer, IEnumerable<List<UProperty>> nestedPropertyLists)
+    {
+        foreach (List<UProperty> propertyList in nestedPropertyLists)
+        {
+            writer.WriteStartObject();
+            WritePropertyListJson(writer, propertyList);
+            writer.WriteEndObject();
+        }
+    }
+
+    public static void SerializePropertyList(UnrealBinaryWriter writer, IEnumerable<UProperty> properties)
+    {
+        foreach (UProperty property in properties)
+        {
+            writer.WritePropertyMetadata(property);
+            property.SerializeValue(writer);
+        }
+
+        writer.WriteUnrealString(UType.NONE);
+    }
+
+    public static void SerializeNestedPropertyLists(UnrealBinaryWriter writer, IEnumerable<List<UProperty>> nestedPropertyLists)
+    {
+        foreach (List<UProperty> propertyList in nestedPropertyLists)
+            SerializePropertyList(writer, propertyList);
+    }
+
+    public static object? GetFirstOrNull(List<object> elements)
+    {
+        if (elements.Count == 0)
+            return null;
+
+        return elements[0];
+    }
+
+    private static int CalculateStringArraySize(IEnumerable<string> elements)
     {
         int totalSize = 0;
 
-        foreach (string element in elements.OfType<string>())
-            totalSize += ReturnLitteEndianStringLength(element);
+        foreach (string element in elements)
+            totalSize += GetLittleEndianStringLength(element);
 
         return totalSize;
     }
 
-    private static int GetSpecialPropertyStructSize<T>(List<T> elements) => CalculatePropertyListSize(elements.OfType<UProperty>());
+    private static int CalculateNestedPropertyListsSize(IEnumerable<List<UProperty>> nestedPropertyLists)
+    {
+        int totalSize = 0;
+
+        foreach (List<UProperty> propertyList in nestedPropertyLists)
+            totalSize += CalculatePropertyListSize(propertyList);
+
+        return totalSize;
+    }
 
     private static int CalculatePropertyListSize(IEnumerable<UProperty> properties)
     {
         int totalSize = 0;
 
-        foreach (var property in properties)
+        foreach (UProperty property in properties)
             totalSize += property.uPropertyElementSize ?? 0;
 
-        // Always add the "None" terminator
-        totalSize += ReturnLitteEndianStringLength(UType.NONE);
-
+        totalSize += GetLittleEndianStringLength(UType.NONE);
         return totalSize;
-    }
-
-    private static int GetStructArraySize<T>(List<T> elements)
-    {
-        int totalSize = 0;
-
-        foreach (var nestedArray in elements.OfType<List<UProperty>>())
-            totalSize += CalculatePropertyListSize(nestedArray);
-
-        return totalSize;
-    }
-
-    /// <summary>
-    /// Overwrite method for BinaryWriter.write(string) so it does not append the size to the beginning of the string
-    /// </summary>
-    public static void SerializeString(ref BinaryWriter binWriter, string str)
-    {
-        // write the size of the 0 string
-        if (str == string.Empty)
-        {
-            binWriter.Write(0);
-            return;
-        }
-
-        // instead of using binWriter.Write directly for strings, use this work-around 
-        // avoids appending the string size as a byte to the beginning of the string in hex
-        byte[] strBytes = Encoding.UTF8.GetBytes(str);
-        binWriter.Write(str.Length + sizeof(byte)); // str + nt
-        binWriter.Write(strBytes);
-        binWriter.Write((byte)0);  // null term
-    }
-
-    public static void SerializeMetadata(ref BinaryWriter binWriter, UProperty property)
-    {
-        SerializeString(ref binWriter, property.name);
-        SerializeString(ref binWriter, property.type);
-        binWriter.Write(property.size);
-        binWriter.Write(property.arrayIndex);
     }
 }
