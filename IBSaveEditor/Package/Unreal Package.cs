@@ -35,7 +35,7 @@ public class UnrealPackage : IDisposable
     /// <param name="data">The raw package data used to populate the stream.</param>
     private void InitializeStreamFromBytes(byte[] data)
     {
-        if (_stream is not null)
+        if (_stream != null)
             Dispose();
         _stream = new MemoryStream(data, writable: true);
         InitializeReaders();
@@ -77,12 +77,12 @@ public class UnrealPackage : IDisposable
                 info.SetIsEncrypted(false);
 
                 // can either be an IB3 or unencrypted IB2 package
-                if (info.saveVersion is PackageConstants.SAVE_FILE_VERSION_IB3)
+                if (info.saveVersion == PackageConstants.SAVE_FILE_VERSION_IB3)
                 {
                     if (IsPackageIB3()) game = Game.IB3;
                     else game = Game.IB2;
                 }       
-                else if (info.saveVersion is PackageConstants.SAVE_FILE_VERSION_PC)
+                else if (info.saveVersion == PackageConstants.SAVE_FILE_VERSION_PC)
                     game = Game.IB1; 
 
                 else
@@ -93,8 +93,7 @@ public class UnrealPackage : IDisposable
         }
         catch (Exception exception)
         {
-            throw new InvalidOperationException(
-                $"Package Data population failed. Reason: {exception.Message}", exception);
+            throw new InvalidOperationException($"Package Data population failed. Reason: {exception.Message}", exception);
         }
     }
 
@@ -296,7 +295,7 @@ public class UnrealPackage : IDisposable
             
         try
         {
-            if (info.game is Game.IB1 && info.isEncrypted is true)
+            if (info.game == Game.IB1 && info.isEncrypted)
                 SetStreamPosition(ENCRYPTED_IB1_HEADER);
             else
                 SetStreamPosition(HEADER_SIZE);
