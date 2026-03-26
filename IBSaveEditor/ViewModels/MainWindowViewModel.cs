@@ -1,13 +1,9 @@
-using System;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ReactiveUI;
-using IBSaveEditor.Models;
 using IBSaveEditor.Services;
 
 namespace IBSaveEditor.ViewModels;
@@ -190,8 +186,9 @@ public class MainWindowViewModel : ReactiveObject
 
     public void RunDeserialize(string binPath)
     {
+        FilePaths.ValidateOutputDirectory();
         try
-        {
+        {   
             Log($"Deserializing: {Path.GetFileName(binPath)}");
             StatusMessage = "Deserializing...";
 
@@ -217,6 +214,7 @@ public class MainWindowViewModel : ReactiveObject
 
     public void RunSerialize(string jsonPath)
     {
+        FilePaths.ValidateOutputDirectory();
         try
         {
             Log($"Serializing: {Path.GetFileName(jsonPath)}");

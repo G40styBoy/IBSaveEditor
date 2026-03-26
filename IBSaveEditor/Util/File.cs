@@ -5,7 +5,12 @@
 public static class FilePaths
 {
     public static DirectoryInfo parentDirectory = Directory.GetParent(Directory.GetCurrentDirectory())!;
-    public static string OutputDir = $@"{parentDirectory}\OUTPUT";
+    #if DEBUG
+        public static string OutputDir = $@"{parentDirectory}\OUTPUT";
+    #else
+        public static string OutputDir = Path.Combine(
+            AppContext.BaseDirectory, "OUTPUT");
+    #endif
     public static string Localization = $@"{parentDirectory}\IBSaveEditor\Localization";
 
     public static string baseLocation = $@"{parentDirectory}\SAVE STORAGE LOCATION";
