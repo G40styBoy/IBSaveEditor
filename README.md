@@ -1,73 +1,74 @@
 # Infinity Blade Save Editor
 
-**IBSaveEditor** is a utility for working with save packages from the Infinity Blade Trilogy. It allows you to convert, inspect, modify, and rebuild save data through a structured JSON format.
+A desktop save editor for the Infinity Blade Trilogy. Load, inspect, and modify save data through a clean UI.
+
+---
+
+## How It Works
+
+Save files for Infinity Blade games are stored as binary `.bin` packages. The editor works in three steps:
+
+**1. Deserialize**
+Click **Deserialize .bin** and select a save file. The editor reads the binary package, decrypts it if necessary, and writes a `.json` file to the `OUTPUT` folder.
+
+**2. Edit**
+Click **Open** and load the exported `.json`. All save properties appear in the tree on the left. Click any property to view and edit its value on the right. Structs and arrays can be expanded to browse and modify their members.
+
+**3. Serialize**
+Click **Save** to write your changes, then click **Serialize .json** to rebuild the `.bin` package. The output is written to the `OUTPUT` folder.
+
+---
+
+## Interface Overview
+
+| Panel | Purpose |
+|---|---|
+| Left tree | All save properties, expandable by clicking the arrow |
+| Right panel | Value editor for the selected property |
+| Log panel | Timestamped record of all file operations |
+| Toolbar | Open, Save, Reload, Deserialize .bin, Serialize .json |
 
 ---
 
 ## Features
 
-- **Drag-and-drop input**: Drop either a `.bin` or `.json` file directly into the application.  
-- **Automatic processing**: The tool detects the file type and performs the correct operation automatically.  
-- **Encrypted save support**: Detects and decrypts encrypted save packages when necessary.  
-- **Binary to JSON conversion**: Converts `.bin` save packages into a structured, editable `.json` file.  
-- **JSON to binary rebuild**: Reconstructs a valid save package from a modified `.json` file.  
-- **Structured JSON envelope**: Outputs save data in a clear `metadata` and `data` format for safer editing.  
-- **Validation and diagnostics**: Includes strong JSON validation and detailed error messages to help identify formatting or structural issues.  
+- **Deserialize and serialize** — Convert between `.bin` save packages and editable JSON
+- **Full property editing** — Edit integers, floats, booleans, strings, bytes, enums, structs, and arrays
+- **Add and remove entries** — Add new members to structs and arrays with type selection, or remove existing ones
+- **Duplicate entries** — Clone any struct member or array item with a single click
+- **Encrypted save support** — Detects and handles encrypted save packages automatically
 
 ---
 
-## Usage
+## Supported Property Types
 
-- Drop a `.bin` file into the program to extract it.  
-- Drop a `.json` file into the program to rebuild it.  
-- All generated files are written automatically to the `OUTPUT` folder.  
-
-No manual step switching or mode selection is required. The tool determines the correct action based on the file extension.
-
----
-
-## JSON Format
-
-Exported save files use a structured envelope:
-
-- `metadata`: Contains package information such as game type, encryption state, version, and identifiers.  
-- `data`: Contains the full serialized save data.  
-
-When editing:
-
-- Preserve the overall structure.  
-- Do not remove required metadata fields.  
-- Follow correct data types for properties.  
-
----
-
-## Documentation
-
-- [Save Editing Guide](GUIDE.md)
-
-The guide explains:
-
-- Property types (int, float, bool, string, byte, enum, struct, array)  
-- Enum formatting rules  
-- Array structure requirements  
-- Common editing mistakes to avoid  
+| Type | Description |
+|---|---|
+| `int` | Integer |
+| `float` | Floating point number |
+| `bool` | True or false |
+| `byte` | Value from 0 to 255 |
+| `string` | Plain text |
+| `name` | Friendly name reference |
+| `enum` | Named enum type and value pair |
+| `struct` | Nested group of named properties |
+| `array` | Ordered list of items |
 
 ---
 
 ## Output
 
-All processed files are placed in the `OUTPUT` directory located beside the executable. Existing files may be overwritten if names match.
+All processed files are written to the `OUTPUT` directory located beside the executable. Existing files with the same name will be overwritten.
 
 ---
 
 ## Notes
 
-- This tool is still under active development.  
-- Error messages are designed to surface structural or formatting problems clearly.  
-- Invalid JSON structure or mismatched metadata may prevent rebuilds.  
+- This tool is still under active development
+- Error messages are surfaced in the log panel.
 
 ---
 
 ## Credits
 
-- Hox8 for providing AES keys for each game.
+- **Hox8** -> AES keys for each game
