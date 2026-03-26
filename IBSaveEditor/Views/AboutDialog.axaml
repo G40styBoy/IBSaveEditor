@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="IBSaveEditor.Views.AboutDialog"
+        Title="About"
+        Width="360" Height="260"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        Background="#0D1B2A"
+        FontFamily="'Cascadia Code','Consolas',monospace">
+
+  <Border Padding="32">
+    <StackPanel Spacing="0">
+
+      <!-- Title -->
+      <TextBlock Text="Infinity Blade Save Editor"
+                 Foreground="#E0E1DD"
+                 FontSize="16"
+                 FontWeight="SemiBold"
+                 Margin="0,0,0,4"/>
+
+      <Border Height="1" Background="#1B263B" Margin="0,12,0,20"/>
+
+      <!-- Author -->
+      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
+        <TextBlock Text="Author" Foreground="#415A77" FontSize="11" Width="60" VerticalAlignment="Center"/>
+        <TextBlock Text="G40sty" Foreground="#E0E1DD" FontSize="12" VerticalAlignment="Center"/>
+      </StackPanel>
+
+      <!-- YouTube -->
+      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
+        <TextBlock Text="YouTube" Foreground="#415A77" FontSize="11" Width="60" VerticalAlignment="Center"/>
+        <Button Classes="about-link-btn"
+                Content="@g40styboi42"
+                Tag="https://www.youtube.com/@g40styboi42"
+                Click="OnLinkClick"/>
+      </StackPanel>
+
+      <!-- GitHub -->
+      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,24">
+        <TextBlock Text="GitHub" Foreground="#415A77" FontSize="11" Width="60" VerticalAlignment="Center"/>
+        <Button Classes="about-link-btn"
+                Content="G40styBoy"
+                Tag="https://github.com/G40styBoy"
+                Click="OnLinkClick"/>
+      </StackPanel>
+
+      <!-- Close -->
+      <Button Classes="toolbar-btn"
+              Content="Close"
+              HorizontalAlignment="Right"
+              Click="OnCloseClick"/>
+
+    </StackPanel>
+  </Border>
+</Window>

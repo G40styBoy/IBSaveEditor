@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:IBSaveEditor.ViewModels"
+             x:Class="IBSaveEditor.Views.NodeTreeCell"
+             x:DataType="vm:NodeViewModel">
+
+  <Grid ColumnDefinitions="Auto,24,Auto,8,Auto,8,Auto"
+        Margin="4,2" Height="26">
+
+    <!-- Indentation -->
+    <Border Grid.Column="0" Width="{Binding Indent}"/>
+
+    <!-- Expand glyph -->
+    <TextBlock Grid.Column="1" x:Name="ExpanderGlyph"
+               Classes="expander-glyph"
+               Text="{Binding ExpanderGlyph}"/>
+
+    <!-- Type badge -->
+    <Border Grid.Column="2"
+            Classes="badge"
+            Classes.badge-int="{Binding TypeHint,    Converter={x:Static vm:TypeHintConverters.IsInt}}"
+            Classes.badge-float="{Binding TypeHint,  Converter={x:Static vm:TypeHintConverters.IsFloat}}"
+            Classes.badge-bool="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsBool}}"
+            Classes.badge-string="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsString}}"
+            Classes.badge-byte="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsByte}}"
+            Classes.badge-name="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsName}}"
+            Classes.badge-struct="{Binding IsStruct}"
+            Classes.badge-array="{Binding IsArray}"
+            Classes.badge-enum="{Binding IsEnum}">
+      <TextBlock Text="{Binding TypeHint}" FontSize="9" FontWeight="Bold"/>
+    </Border>
+
+    <!-- Property name -->
+    <TextBlock Grid.Column="4"
+               Text="{Binding Name}"
+               Foreground="#E0E1DD"
+               FontSize="12"
+               VerticalAlignment="Center"/>
+
+    <!-- Child count -->
+    <TextBlock Grid.Column="6"
+               IsVisible="{Binding HasChildren}"
+               Text="{Binding Children.Count, StringFormat='({0})'}"
+               Foreground="#415A77"
+               FontSize="10"
+               VerticalAlignment="Center"/>
+  </Grid>
+</UserControl>

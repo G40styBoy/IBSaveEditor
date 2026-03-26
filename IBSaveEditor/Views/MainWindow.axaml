@@ -1,0 +1,112 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:IBSaveEditor.ViewModels"
+        xmlns:views="using:IBSaveEditor.Views"
+        x:Class="IBSaveEditor.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="{Binding WindowTitle}"
+        Width="1100" Height="780"
+        MinWidth="700" MinHeight="520"
+        Background="#0D1B2A">
+
+  <DockPanel>
+
+    <!-- Toolbar -->
+    <Border DockPanel.Dock="Top" Classes="toolbar" Padding="8,6">
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <Button Classes="toolbar-btn accent" Click="OnOpenClick"  Content="Open"/>
+        <Button Classes="toolbar-btn"        Click="OnSaveClick" Content="Save"/>
+        <Border Width="1" Margin="4,0" Background="#415A77"/>
+        <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
+        <Border Width="1" Margin="4,0" Background="#415A77"/>
+        <Button Classes="toolbar-btn"        Click="OnDeserializeClick" Content="Deserialize .bin"/>
+        <Button Classes="toolbar-btn"        Click="OnSerializeClick"   Content="Serialize .json"/>
+      </StackPanel>
+    </Border>
+
+    <!-- Status bar -->
+    <Border DockPanel.Dock="Bottom" Classes="statusbar">
+      <DockPanel>
+        <Button Classes="log-clear-btn" DockPanel.Dock="Right"
+                Content="About" Click="OnAboutClick"
+                Foreground="#415A77" Padding="8,2"/>
+        <TextBlock Classes="status-text" HorizontalAlignment="Right"
+                   IsVisible="{Binding IsDirty}" Foreground="#778DA9"
+                   Text="unsaved changes" DockPanel.Dock="Right" Margin="0,0,12,0"/>
+        <Border/>
+      </DockPanel>
+    </Border>
+
+    <!-- Log panel — docked below main content, above status bar -->
+    <Border DockPanel.Dock="Bottom" Classes="log-panel" Height="140">
+      <DockPanel>
+        <Border DockPanel.Dock="Top" Classes="log-header">
+          <DockPanel>
+            <TextBlock Classes="panel-label" Text="LOG" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <Button Classes="log-clear-btn" HorizontalAlignment="Right"
+                    Content="Clear" Click="OnClearLogClick"/>
+          </DockPanel>
+        </Border>
+        <ScrollViewer x:Name="LogScroller"
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto">
+          <ItemsControl ItemsSource="{Binding LogEntries}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Classes="log-entry" Text="{Binding}"/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </ScrollViewer>
+      </DockPanel>
+    </Border>
+
+    <!-- Main split -->
+    <Grid ColumnDefinitions="300,1,*">
+
+      <!-- Left: flat property list -->
+      <DockPanel Grid.Column="0">
+        <Border DockPanel.Dock="Top" Classes="panel-header">
+          <TextBlock Classes="panel-label" Text="PROPERTIES"/>
+        </Border>
+        <ListBox x:Name="NodeListBox"
+                 ItemsSource="{Binding VisibleNodes}"
+                 SelectedItem="{Binding SelectedNode}"
+                 Background="#0D1B2A"
+                 BorderThickness="0"
+                 Padding="0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto">
+          <ListBox.ItemContainerTheme>
+            <ControlTheme TargetType="ListBoxItem" x:DataType="vm:NodeViewModel">
+              <Setter Property="Padding"    Value="0"/>
+              <Setter Property="Margin"     Value="0"/>
+              <Setter Property="Background" Value="Transparent"/>
+              <Style Selector="^:selected /template/ ContentPresenter">
+                <Setter Property="Background" Value="#1B263B"/>
+              </Style>
+              <Style Selector="^:pointerover /template/ ContentPresenter">
+                <Setter Property="Background" Value="#1B263B"/>
+              </Style>
+            </ControlTheme>
+          </ListBox.ItemContainerTheme>
+          <ListBox.ItemTemplate>
+            <DataTemplate DataType="vm:NodeViewModel">
+              <views:NodeTreeCell/>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </DockPanel>
+
+      <Border Grid.Column="1" Classes="v-divider"/>
+
+      <!-- Right: property editor -->
+      <DockPanel Grid.Column="2">
+        <Border DockPanel.Dock="Top" Classes="panel-header">
+          <TextBlock Classes="panel-label" Text="EDIT"/>
+        </Border>
+        <views:PropertyEditorView DataContext="{Binding SelectedNode}"/>
+      </DockPanel>
+
+    </Grid>
+  </DockPanel>
+</Window>
