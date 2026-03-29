@@ -1,7 +1,4 @@
-using System.IO;
-using System.Linq;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
@@ -74,7 +71,6 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
             Title = "Save JSON",
-            SuggestedFileName = "save.json",
             FileTypeChoices = new[]
             {
                 new FilePickerFileType("JSON Files") { Patterns = new[] { "*.json" } }

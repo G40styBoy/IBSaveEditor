@@ -131,8 +131,8 @@
     <Setter Property="BorderBrush"     Value="#415A77"/>
     <Setter Property="BorderThickness" Value="1"/>
     <Setter Property="CornerRadius"    Value="3"/>
-    <Setter Property="Padding"         Value="8,5"/>
-    <Setter Property="FontSize"        Value="12"/>
+    <Setter Property="Padding"         Value="10,8"/>
+    <Setter Property="FontSize"        Value="20"/>
   </Style>
   <Style Selector="TextBox.prop-input:focus /template/ Border#PART_BorderElement">
     <Setter Property="BorderBrush" Value="#778DA9"/>
@@ -185,9 +185,9 @@
 
   <!-- ── Expander glyph ────────────────────────────────────────────────────── -->
   <Style Selector="TextBlock.expander-glyph">
-    <Setter Property="FontSize"   Value="16"/>
+    <Setter Property="FontSize"   Value="30"/>
     <Setter Property="Foreground" Value="#415A77"/>
-    <Setter Property="Width"      Value="24"/>
+    <Setter Property="Width"      Value="80"/>
     <Setter Property="TextAlignment" Value="Center"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
     <Setter Property="Cursor"     Value="Hand"/>

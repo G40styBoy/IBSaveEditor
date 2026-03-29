@@ -12,7 +12,7 @@ public static class JsonToNodeTree
     {
         // Case-insensitive search for "data" key
         var dataProp = root.Properties()
-            .FirstOrDefault(p => p.Name.Equals("data", System.StringComparison.OrdinalIgnoreCase));
+            .FirstOrDefault(p => p.Name.Equals("data", StringComparison.OrdinalIgnoreCase));
 
         if (dataProp?.Value is JObject dataObj)
         {
