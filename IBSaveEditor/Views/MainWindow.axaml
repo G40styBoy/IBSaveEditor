@@ -5,8 +5,9 @@
         x:Class="IBSaveEditor.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="{Binding WindowTitle}"
-        Width="1100" Height="780"
+        Width="700" Height="1080"
         MinWidth="700" MinHeight="520"
+        MaxWidth="700"
         Background="#0D1B2A">
 
   <DockPanel>
@@ -29,7 +30,8 @@
       <DockPanel>
         <Button Classes="log-clear-btn" DockPanel.Dock="Right"
                 Content="About" Click="OnAboutClick"
-                Foreground="#415A77" Padding="8,2"/>
+                Foreground="#08111b" Padding="8,2"
+                Background="#778DA9"/>
         <TextBlock Classes="status-text" HorizontalAlignment="Right"
                    IsVisible="{Binding IsDirty}" Foreground="#778DA9"
                    Text="unsaved changes" DockPanel.Dock="Right" Margin="0,0,12,0"/>
@@ -44,7 +46,9 @@
           <DockPanel>
             <TextBlock Classes="panel-label" Text="LOG" VerticalAlignment="Center" DockPanel.Dock="Left"/>
             <Button Classes="log-clear-btn" HorizontalAlignment="Right"
-                    Content="Clear" Click="OnClearLogClick"/>
+                    Content="Clear" Click="OnClearLogClick"
+                    Foreground="#08111b" Padding="8,2"
+                    Background="#778DA9"/>
           </DockPanel>
         </Border>
         <ScrollViewer x:Name="LogScroller"
