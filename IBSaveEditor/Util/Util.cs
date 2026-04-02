@@ -1,5 +1,9 @@
 using System.Diagnostics;
 
+namespace IBSaveEditor.Util;
+/// <summary>
+/// Utility class for methods in which do not need an isolated file. These are used everywhere in the codebase.
+/// </summary>
 public static class Util
 {
     public static void PrintColored(string message, ConsoleColor color, bool resetColor = true)

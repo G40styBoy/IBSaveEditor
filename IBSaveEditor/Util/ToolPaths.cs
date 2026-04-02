@@ -1,10 +1,12 @@
+namespace IBSaveEditor.Util;
 /// <summary>
 /// Helps keep file locations, names, etc. organized.
-/// All file path data needed for the program is stored here
+/// All file path data needed is stored here
 /// </summary>
-public static class FilePaths
+public static class ToolPaths
 {
     public static DirectoryInfo parentDirectory = Directory.GetParent(Directory.GetCurrentDirectory())!;
+    // If DEBUG build, we want our tool output stored to the root directory. Else store outside of EXE 
     #if DEBUG
         public static string OutputDir = $@"{parentDirectory}\OUTPUT";
     #else

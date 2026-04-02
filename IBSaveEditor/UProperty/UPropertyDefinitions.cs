@@ -1,3 +1,6 @@
+using IBSaveEditor.UProperties.UArray;
+namespace IBSaveEditor.UProperties;
+
 /// <summary>
 /// Used to package and pass tag data neatly. 
 /// Ends up being used to construct UProperty's

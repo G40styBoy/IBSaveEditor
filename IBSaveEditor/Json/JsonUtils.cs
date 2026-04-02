@@ -1,9 +1,7 @@
-// JsonUtils.cs
-#nullable enable
-using System;
-using System.IO;
 using System.Text.Json;
+using IBSaveEditor.Package;
 
+namespace IBSaveEditor.Json;
 public static class JsonUtils
 {
     public static EnvelopeMeta ReadMeta(string jsonPath)

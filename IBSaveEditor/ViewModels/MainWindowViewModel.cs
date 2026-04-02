@@ -5,6 +5,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ReactiveUI;
 using IBSaveEditor.Services;
+using IBSaveEditor.Package;
+using IBSaveEditor.Json;
+using IBSaveEditor.Serialize;
+using IBSaveEditor.Util;
 
 namespace IBSaveEditor.ViewModels;
 
@@ -186,7 +190,7 @@ public class MainWindowViewModel : ReactiveObject
 
     public void RunDeserialize(string binPath)
     {
-        FilePaths.ValidateOutputDirectory();
+        ToolPaths.ValidateOutputDirectory();
         try
         {   
             Log($"Deserializing: {Path.GetFileName(binPath)}");
@@ -214,7 +218,7 @@ public class MainWindowViewModel : ReactiveObject
 
     public void RunSerialize(string jsonPath)
     {
-        FilePaths.ValidateOutputDirectory();
+        ToolPaths.ValidateOutputDirectory();
         try
         {
             Log($"Serializing: {Path.GetFileName(jsonPath)}");

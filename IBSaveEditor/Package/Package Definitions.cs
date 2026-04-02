@@ -1,4 +1,5 @@
 using System.Reflection;
+namespace IBSaveEditor.Package;
 
 public enum Game
 {

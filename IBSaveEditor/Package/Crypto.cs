@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+namespace IBSaveEditor.Package;
 
 class PackageCrypto
 {

@@ -1,3 +1,5 @@
+namespace IBSaveEditor.Package;
+
 internal static class PackageConstants
 {
     // Credits to hox for the keys and the idea to initialize the keys in UTF8. Thanks!

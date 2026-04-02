@@ -15,4 +15,7 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.3" />
     <PackageReference Include="ReactiveUI" Version="20.1.1" />
   </ItemGroup>
+  <PropertyGroup>
+  <ApplicationIcon>tool.ico</ApplicationIcon>
+  </PropertyGroup>
 </Project>

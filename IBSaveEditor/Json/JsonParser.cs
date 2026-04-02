@@ -1,5 +1,9 @@
 using System.Text.Json;
+using IBSaveEditor.UProperties; 
+using IBSaveEditor.Package;
+using IBSaveEditor.Util;
 
+namespace IBSaveEditor.Json;
 /// <summary>
 /// Accepts deserialized data from an UnrealPackage and writes it to a .json file
 /// in an envelope format: { "meta": { ... }, "data": { ... } }.
@@ -16,7 +20,7 @@ public sealed class JsonDataParser : IDisposable
         this.saveData = saveData;
         this.info = info;
 
-        _stream = File.Create($"{FilePaths.OutputDir}/{info.packageName}.json");
+        _stream = File.Create($"{ToolPaths.OutputDir}/{info.packageName}.json");
         _writer = new Utf8JsonWriter(_stream, new JsonWriterOptions { Indented = true });
     }
 

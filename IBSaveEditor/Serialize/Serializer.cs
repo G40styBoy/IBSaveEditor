@@ -1,3 +1,9 @@
+using IBSaveEditor.UProperties;
+using IBSaveEditor.Wrappers;
+using IBSaveEditor.Util;
+using IBSaveEditor.Package;
+
+namespace IBSaveEditor.Serialize;
 /// <summary>
 /// Takes crunched Json data and converts it into serialized data readable for BasicLoadObject
 /// This gets written out into a binary file
@@ -17,7 +23,7 @@ class Serializer : IDisposable
     public Serializer(PackageInfo info, List<UProperty> crunchedData)
     {
         string fileName = $@"{info.packageName}{EXTENSION}";
-        outputPath = Path.Combine(FilePaths.OutputDir, fileName);
+        outputPath = Path.Combine(ToolPaths.OutputDir, fileName);
 
         _stream = new FileStream(outputPath, FileMode.Create, FileAccess.ReadWrite);
         _writer = new UnrealBinaryWriter(_stream);

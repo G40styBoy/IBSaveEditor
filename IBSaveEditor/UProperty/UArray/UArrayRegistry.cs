@@ -1,33 +1,15 @@
-public class ArrayMetadata
-{
-    public ArrayName arrayName;
-    public AlternateName alternateName;
-    public PropertyType valueType;
-    public ArrayType arrayType;
+using IBSaveEditor.Package; 
 
-    public ArrayMetadata(ArrayName arrayName, AlternateName alternateName, PropertyType valueType, ArrayType arrayType)
-    {
-        this.arrayName = arrayName;
-        this.alternateName = alternateName;
-        this.valueType = valueType;
-        this.arrayType = arrayType;
-    }
-
-    public void PrintInfo()
-    {
-        Console.WriteLine($"Array Name: {arrayName}");
-        Console.WriteLine($"Alternate Name: {alternateName}");
-        Console.WriteLine($"Value Type: {valueType}");
-        Console.WriteLine($"Static: {arrayType}\n");
-    }
-}
-
+namespace IBSaveEditor.UProperties.UArray;
+/// <summary>
+/// Stores a static list of every array we can encounter in a save package.
+/// </summary>
 public static class UArrayRegistry
 {
     private static readonly IReadOnlyDictionary<ArrayName, ArrayMetadata> Common =
         new Dictionary<ArrayName, ArrayMetadata>
         {
-            // Static Arrays
+            #region IB3 Static Arrays
             [ArrayName.Currency] = new(ArrayName.Currency, AlternateName.CurrencyStruct, PropertyType.StructProperty, ArrayType.Static),
             [ArrayName.Stats] = new(ArrayName.Stats, AlternateName.PlayerSavedStats, PropertyType.StructProperty, ArrayType.Static),
             [ArrayName.NumConsumable] = new(ArrayName.NumConsumable, AlternateName.None, PropertyType.IntProperty, ArrayType.Static),
@@ -38,8 +20,9 @@ public static class UArrayRegistry
             [ArrayName.SavedCheevo] = new(ArrayName.SavedCheevo, AlternateName.SavedCheevoData, PropertyType.StructProperty, ArrayType.Static),
             [ArrayName.LastEquippedWeaponOfType] = new(ArrayName.LastEquippedWeaponOfType, AlternateName.LastEquippedWeaponOfType, PropertyType.NameProperty, ArrayType.Static),
             [ArrayName.CharacterEquippedList] = new(ArrayName.CharacterEquippedList, AlternateName.PlayerEquippedItemList, PropertyType.StructProperty, ArrayType.Static),
+            #endregion
 
-            // Dynamic Arrays
+            #region IB3 Dynamic Arrays
             [ArrayName.EquippedItemNames] = new(ArrayName.EquippedItemNames, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.EquippedItems] = new(ArrayName.EquippedItems, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.LinkNotificationBadges] = new(ArrayName.LinkNotificationBadges, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
@@ -63,8 +46,9 @@ public static class UArrayRegistry
             [ArrayName.HardCoreCurrentQuestData] = new(ArrayName.HardCoreCurrentQuestData, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.LoggedAnalyticsAchievements] = new(ArrayName.LoggedAnalyticsAchievements, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.McpAuthorizedServices] = new(ArrayName.McpAuthorizedServices, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
+            #endregion
 
-            // Subset Arrays
+            #region Subset Arrays
             [ArrayName.Gems] = new(ArrayName.Gems, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.SocketedGemData] = new(ArrayName.SocketedGemData, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.Reagents] = new(ArrayName.Reagents, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
@@ -74,8 +58,9 @@ public static class UArrayRegistry
             [ArrayName.SavedItems] = new(ArrayName.SavedItems, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.Quests] = new(ArrayName.Quests, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.PendingAction] = new(ArrayName.PendingAction, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
+            #endregion
 
-            // IB2-ish / shared
+            #region IB2
             [ArrayName.PlayerCookerGems] = new(ArrayName.PlayerCookerGems, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.SuperBoss] = new(ArrayName.SuperBoss, AlternateName.None, PropertyType.IntProperty, ArrayType.Dynamic),
             [ArrayName.ActiveBattlePotions] = new(ArrayName.ActiveBattlePotions, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
@@ -83,13 +68,16 @@ public static class UArrayRegistry
             [ArrayName.SocialChallengeSaveEvents] = new(ArrayName.SocialChallengeSaveEvents, AlternateName.SocialChallengeSave, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.GiftedTo] = new(ArrayName.GiftedTo, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.GiftedFrom] = new(ArrayName.GiftedFrom, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
+            #endregion
 
-            // IB1
+            #region IB1
             [ArrayName.PlaythroughItemsGiven] = new(ArrayName.PlaythroughItemsGiven, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
+            #endregion
 
-            // VOTE
+            #region VOTE
             [ArrayName.EquippedListO] = new(ArrayName.EquippedListO, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.EquippedListR] = new(ArrayName.EquippedListR, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
+            #endregion
         };
 
     private static readonly IReadOnlyDictionary<Game, IReadOnlyDictionary<ArrayName, ArrayMetadata>> PerGame =

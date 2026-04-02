@@ -1,3 +1,8 @@
+using IBSaveEditor.UProperties;
+namespace IBSaveEditor.Wrappers;
+/// <summary>
+/// Wrapper for <see cref="BinaryWriter"/> that includes methods tailoring to Unreal Packages.
+/// </summary>
 public class UnrealBinaryWriter : BinaryWriter
 {
     public UnrealBinaryWriter(Stream stream) : base(stream) { }

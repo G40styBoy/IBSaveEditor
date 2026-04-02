@@ -1,3 +1,8 @@
+using IBSaveEditor.UProperties;
+using IBSaveEditor.UProperties.UArray;
+using IBSaveEditor.Package; 
+
+namespace IBSaveEditor.Serialize;
 /// <summary>
 /// Takes unencrypted serialized data and mutates it into digestable data.
 /// </summary>

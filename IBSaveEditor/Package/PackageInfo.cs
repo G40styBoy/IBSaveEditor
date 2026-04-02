@@ -1,3 +1,4 @@
+namespace IBSaveEditor.Package;
 /// <summary>
 /// Represents the immutable header and identity metadata of a parsed Unreal package.
 /// 

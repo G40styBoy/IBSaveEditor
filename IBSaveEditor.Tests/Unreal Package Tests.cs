@@ -1,4 +1,6 @@
 ﻿using Xunit.Abstractions;
+using IBSaveEditor.Package;
+using IBSaveEditor.UProperties;
 
 namespace IBSaveEditor.Tests
 {

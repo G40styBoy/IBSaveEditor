@@ -1,9 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
+using IBSaveEditor.UProperties;
+using IBSaveEditor.UProperties.UArray;
+using IBSaveEditor.Package;
 
+
+namespace IBSaveEditor.Json;
 /// <summary>
 /// Takes JSON text (not a file) containing deserialized save data and crunches it into a digestible
 /// format to serialize the data.

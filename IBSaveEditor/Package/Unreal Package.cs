@@ -1,5 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
+using IBSaveEditor.UProperties;
+using IBSaveEditor.Serialize;
 
+namespace IBSaveEditor.Package;
+/// <summary>
+/// Class managing all unreal packages encounterable. 
+/// </summary>
 public class UnrealPackage : IDisposable
 {
     private Stream _stream;
