@@ -28,6 +28,8 @@ public class StructNode : SaveNode
 {
     public override NodeType NodeType => NodeType.Struct;
     public ObservableCollection<SaveNode> Children { get; set; } = new();
+
+    public bool UnwrapForDisplay { get; set; }
 }
 
 public class ArrayNode : SaveNode
@@ -35,7 +37,20 @@ public class ArrayNode : SaveNode
     public override NodeType NodeType => NodeType.Array;
     public bool IsFixed { get; set; }
     public int? FixedLength { get; set; }
-    /// <summary>The TypeHint of the items inside this array — inferred from existing items.</summary>
+
+    /// <summary>The TypeHint of the items inside this array — inferred from the registry.</summary>
     public string ItemTypeHint { get; set; } = "string";
+
+    /// <summary>
+    /// True when this array's items have a JSON wrapper struct that should be
+    /// hidden from the user. Set by the registry-aware <c>JsonToNodeTree</c>
+    /// for static arrays of non-struct types (e.g. NumConsumable, ShowConsumableBadge).
+    /// <para>
+    /// The wrapper is preserved in the data layer for round-trip integrity —
+    /// only the UI looks through it.
+    /// </para>
+    /// </summary>
+    public bool UnwrapForDisplay { get; set; }
+
     public ObservableCollection<SaveNode> Items { get; set; } = new();
 }

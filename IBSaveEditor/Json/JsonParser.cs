@@ -2,48 +2,37 @@ using System.Text.Json;
 using IBSaveEditor.UProperties; 
 using IBSaveEditor.Package;
 using IBSaveEditor.Util;
+using IBSaveEditor.Enums;
+using System.Text;
+
 
 namespace IBSaveEditor.Json;
 /// <summary>
 /// Accepts deserialized data from an UnrealPackage and writes it to a .json file
 /// in an envelope format: { "meta": { ... }, "data": { ... } }.
 /// </summary>
-public sealed class JsonDataParser : IDisposable
+public sealed class JsonDataParser
 {
     private readonly List<UProperty> saveData;
-    private readonly FileStream _stream;
-    private readonly Utf8JsonWriter _writer;
     private readonly PackageInfo info;
 
     public JsonDataParser(List<UProperty> saveData, PackageInfo info)
     {
         this.saveData = saveData;
         this.info = info;
-
-        _stream = File.Create($"{ToolPaths.OutputDir}/{info.packageName}.json");
-        _writer = new Utf8JsonWriter(_stream, new JsonWriterOptions { Indented = true });
+        IBEnum.SetGame(info.game);
     }
 
-    /// <summary>
-    /// Writes out all save data into a json envelope that includes required metadata for repackaging.
-    /// </summary>
     public void WriteDataToFile()
     {
         if (info is null)
             throw new ArgumentNullException(nameof(info));
 
-        // set enum pool for the correct game
-        IBEnum.SetGame(info.game);
-
         try
         {
-            _writer.WriteStartObject();
-
-            WriteMeta(info);
-            WriteData();
-
-            _writer.WriteEndObject();
-            _writer.Flush();
+            using var stream = File.Create($"{ToolPaths.OutputDir}/{info.packageName}.json");
+            using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
+            WriteAll(writer);
         }
         catch (Exception ex)
         {
@@ -51,34 +40,55 @@ public sealed class JsonDataParser : IDisposable
         }
     }
 
-    private void WriteMeta(PackageInfo info)
+    public string ReturnDataAsString()
     {
-        _writer.WritePropertyName("metadata");
-        _writer.WriteStartObject();
+        if (info is null)
+            throw new ArgumentNullException(nameof(info));
 
-        _writer.WriteString("packageName", info.packageName);
-        _writer.WriteString("game", info.game.ToString());
-        _writer.WriteBoolean("isEncrypted", info.isEncrypted);
-        _writer.WriteNumber("saveVersion", info.saveVersion);
-        _writer.WriteNumber("saveMagic", info.saveMagic);
-
-        _writer.WriteEndObject();
+        try
+        {
+            using var stream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
+            WriteAll(writer);
+            return Encoding.UTF8.GetString(stream.ToArray());
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException("Failed to serialize save JSON.", ex);
+        }
     }
 
-    private void WriteData()
+    private void WriteAll(Utf8JsonWriter writer)
     {
-        _writer.WritePropertyName("data");
-        _writer.WriteStartObject();
+        writer.WriteStartObject();
+        WriteMeta(writer);
+        WriteData(writer);
+        writer.WriteEndObject();
+        writer.Flush();
+    }
+
+    private void WriteMeta(Utf8JsonWriter writer)
+    {
+        writer.WritePropertyName("metadata");
+        writer.WriteStartObject();
+
+        writer.WriteString("packageName", info.packageName);
+        writer.WriteString("game", info.game.ToString());
+        writer.WriteBoolean("isEncrypted", info.isEncrypted);
+        writer.WriteNumber("saveVersion", info.saveVersion);
+        writer.WriteNumber("saveMagic", info.saveMagic);
+
+        writer.WriteEndObject();
+    }
+
+    private void WriteData(Utf8JsonWriter writer)
+    {
+        writer.WritePropertyName("data");
+        writer.WriteStartObject();
 
         foreach (var uProperty in saveData)
-            uProperty.WriteValueData(_writer, uProperty.name);
+            uProperty.WriteValueData(writer, uProperty.name);
 
-        _writer.WriteEndObject();
-    }
-
-    public void Dispose()
-    {
-        _writer.Dispose();
-        _stream.Dispose();
+        writer.WriteEndObject();
     }
 }

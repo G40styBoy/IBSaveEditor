@@ -1,4 +1,6 @@
 using IBSaveEditor.UProperties;
+using System.Text;
+
 namespace IBSaveEditor.Wrappers;
 /// <summary>
 /// Wrapper for <see cref="BinaryWriter"/> that includes methods tailoring to Unreal Packages.

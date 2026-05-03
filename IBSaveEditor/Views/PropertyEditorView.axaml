@@ -12,31 +12,32 @@
                HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     <ScrollViewer IsVisible="{Binding $parent[UserControl].DataContext, Converter={x:Static ObjectConverters.IsNotNull}}"
-                  Padding="20">
+                  Padding="16,16,16,16">
       <StackPanel Spacing="0">
 
-        <!-- Header -->
+        <!-- Header: name only, no badge -->
         <StackPanel Spacing="6" Margin="0,0,0,20">
-          <TextBlock Text="{Binding Name}" Foreground="#E0E1DD" FontSize="18" FontWeight="SemiBold"/>
-          <Border Classes="badge" HorizontalAlignment="Left"
-                  Classes.badge-int="{Binding TypeHint,    Converter={x:Static vm:TypeHintConverters.IsInt}}"
-                  Classes.badge-float="{Binding TypeHint,  Converter={x:Static vm:TypeHintConverters.IsFloat}}"
-                  Classes.badge-bool="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsBool}}"
-                  Classes.badge-string="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsString}}"
-                  Classes.badge-byte="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsByte}}"
-                  Classes.badge-name="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsName}}"
-                  Classes.badge-struct="{Binding IsStruct}"
-                  Classes.badge-array="{Binding IsArray}"
-                  Classes.badge-enum="{Binding IsEnum}">
-            <TextBlock Text="{Binding TypeHint}" FontSize="10" FontWeight="Bold"/>
-          </Border>
+          <TextBlock Text="{Binding DisplayName}" Foreground="#E0E1DD" FontSize="22" FontWeight="SemiBold"/>
         </StackPanel>
 
         <Border Classes="divider" Margin="0,0,0,20"/>
 
         <!-- ═══ PRIMITIVE ═══════════════════════════════════════════════ -->
-        <StackPanel IsVisible="{Binding IsPrimitive}" Spacing="6">
-          <TextBlock Classes="field-label" Text="VALUE"/>
+        <StackPanel IsVisible="{Binding IsPrimitive}" Spacing="8">
+          <DockPanel>
+            <TextBlock Classes="field-label" Text="VALUE" FontSize="13"
+                       VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <Button Classes="log-clear-btn" HorizontalAlignment="Right"
+                    IsVisible="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsNotBool}}"
+                    Content="Copy" Click="OnCopyValueClick"
+                    Foreground="#E0E1DD" Background="#415A77" Padding="8,2"/>
+          </DockPanel>
+
+          <!-- FName label (shown when string starts with _ini) -->
+          <TextBlock x:Name="FNameLabel"
+                     IsVisible="False"
+                     Text="fname  /  references game ini files"
+                     Foreground="#778DA9" FontSize="10" FontStyle="Italic"/>
 
           <!-- Bool -->
           <ToggleSwitch x:Name="BoolToggle"
@@ -45,52 +46,78 @@
               OnContent="true" OffContent="false"
               IsCheckedChanged="OnBoolToggleChanged"/>
 
-          <!-- Int / Byte — same box, byte just clamps on write-back -->
+          <!-- Int -->
           <TextBox x:Name="IntBox"
               IsVisible="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsInt}}"
               Classes="prop-input"
+              MinWidth="60" MaxWidth="500"
+              HorizontalAlignment="Left"
               LostFocus="OnIntBoxLostFocus"
-              KeyDown="OnNumericKeyDown"/>
+              KeyDown="OnNumericKeyDown"
+              TextChanged="OnNumericTextChanged"/>
+
+          <!-- Byte -->
           <TextBox x:Name="ByteBox"
               IsVisible="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsByte}}"
               Classes="prop-input"
-              LostFocus="OnIntBoxLostFocus"
-              KeyDown="OnNumericKeyDown"/>
+              MinWidth="60" MaxWidth="500"
+              HorizontalAlignment="Left"
+              LostFocus="OnByteBoxLostFocus"
+              KeyDown="OnNumericKeyDown"
+              TextChanged="OnNumericTextChanged"/>
 
           <!-- Float -->
           <TextBox x:Name="FloatBox"
               IsVisible="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsFloat}}"
               Classes="prop-input"
+              MinWidth="60" MaxWidth="500"
+              HorizontalAlignment="Left"
               LostFocus="OnFloatBoxLostFocus"
-              KeyDown="OnNumericKeyDown"/>
+              KeyDown="OnNumericKeyDown"
+              TextChanged="OnNumericTextChanged"/>
 
-          <!-- String / Name -->
+          <!-- String -->
           <TextBox x:Name="StringBox"
               IsVisible="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsString}}"
               Classes="prop-input"
-              LostFocus="OnStringBoxLostFocus"/>
+              MinWidth="60"
+              HorizontalAlignment="Left"
+              LostFocus="OnStringBoxLostFocus"
+              TextChanged="OnStringTextChanged"/>
+
+          <!-- Name -->
           <TextBox x:Name="NameBox"
               IsVisible="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsName}}"
               Classes="prop-input"
-              LostFocus="OnStringBoxLostFocus"/>
+              MinWidth="60"
+              HorizontalAlignment="Left"
+              LostFocus="OnStringBoxLostFocus"
+              TextChanged="OnStringTextChanged"/>
         </StackPanel>
 
         <!-- ═══ ENUM ═════════════════════════════════════════════════════ -->
         <StackPanel IsVisible="{Binding IsEnum}" Spacing="12">
           <StackPanel Spacing="4">
-            <TextBlock Classes="field-label" Text="ENUM TYPE"/>
-            <TextBox x:Name="EnumTypeBox" Classes="prop-input" LostFocus="OnEnumTypeLostFocus"/>
+            <TextBlock Classes="field-label" Text="ENUM TYPE" FontSize="13"/>
+            <TextBox x:Name="EnumTypeBox" Classes="prop-input"
+                     MinWidth="60" HorizontalAlignment="Left"
+                     LostFocus="OnEnumTypeLostFocus"
+                     TextChanged="OnStringTextChanged"/>
           </StackPanel>
           <StackPanel Spacing="4">
-            <TextBlock Classes="field-label" Text="ENUM VALUE"/>
-            <TextBox x:Name="EnumValueBox" Classes="prop-input" LostFocus="OnEnumValueLostFocus"/>
+            <TextBlock Classes="field-label" Text="ENUM VALUE" FontSize="13"/>
+            <TextBox x:Name="EnumValueBox" Classes="prop-input"
+                     MinWidth="60" HorizontalAlignment="Left"
+                     LostFocus="OnEnumValueLostFocus"
+                     TextChanged="OnStringTextChanged"/>
           </StackPanel>
         </StackPanel>
 
         <!-- ═══ STRUCT ═══════════════════════════════════════════════════ -->
         <StackPanel IsVisible="{Binding IsStruct}" Spacing="4">
           <DockPanel Margin="0,0,0,10">
-            <TextBlock Classes="field-label" Text="MEMBERS" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <TextBlock Classes="field-label" Text="MEMBERS" FontSize="13"
+                       VerticalAlignment="Center" DockPanel.Dock="Left"/>
             <Button Classes="add-item-btn" HorizontalAlignment="Right"
                     Content="+ Add Member" Click="OnAddMemberClick"/>
           </DockPanel>
@@ -98,7 +125,11 @@
           <!-- Struct type picker -->
           <Border Classes="type-picker" x:Name="StructTypePickerPanel" IsVisible="False" Margin="0,0,0,10">
             <StackPanel Spacing="8">
-              <TextBlock Classes="field-label" Text="MEMBER NAME"/>
+              <DockPanel>
+                <TextBlock Classes="field-label" Text="MEMBER NAME" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                <Button Classes="array-remove-btn" Content="✕" HorizontalAlignment="Right"
+                        Click="OnCancelStructAdd" Foreground="#415A77"/>
+              </DockPanel>
               <TextBox x:Name="StructMemberNameBox" Classes="prop-input" Watermark="e.g. MyProperty"/>
               <TextBlock Classes="field-label" Text="SELECT TYPE" Margin="0,6,0,0"/>
               <WrapPanel Orientation="Horizontal">
@@ -119,23 +150,30 @@
             <ItemsControl.ItemTemplate>
               <DataTemplate DataType="vm:NodeViewModel">
                 <Border Padding="0,6" BorderBrush="#1B263B" BorderThickness="0,0,0,1">
-                  <Grid ColumnDefinitions="Auto,8,160,12,*,8,Auto,4,Auto">
+                  <Grid ColumnDefinitions="Auto,8,*,8,Auto,4,Auto">
+                    <!-- Type badge (hidden when IsIni — fname badge takes over) -->
                     <Border Grid.Column="0" Classes="badge"
+                            IsVisible="{Binding ShowBadgeNonIni}"
                             Classes.badge-int="{Binding TypeHint,    Converter={x:Static vm:TypeHintConverters.IsInt}}"
                             Classes.badge-float="{Binding TypeHint,  Converter={x:Static vm:TypeHintConverters.IsFloat}}"
                             Classes.badge-bool="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsBool}}"
                             Classes.badge-string="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsString}}"
                             Classes.badge-byte="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsByte}}"
-                            Classes.badge-name="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsName}}"
                             Classes.badge-struct="{Binding IsStruct}"
                             Classes.badge-array="{Binding IsArray}"
                             Classes.badge-enum="{Binding IsEnum}">
                       <TextBlock Text="{Binding TypeHint}" FontSize="9" FontWeight="Bold"/>
                     </Border>
-                    <TextBlock Grid.Column="2" Classes="prop-label" Text="{Binding Name}" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="4" IsVisible="{Binding HasChildren}"
-                               Text="{Binding Children.Count, StringFormat='({0} items)'}"
-                               Foreground="#415A77" FontSize="11" VerticalAlignment="Center"/>
+                    <!-- FName badge -->
+                    <Border Grid.Column="0" Classes="badge badge-fname"
+                            IsVisible="{Binding ShowBadgeIni}">
+                      <TextBlock Text="fname" FontSize="9" FontWeight="Bold"/>
+                    </Border>
+                    <!-- Member name -->
+                    <TextBlock Grid.Column="2" Classes="prop-label" Text="{Binding DisplayName}"
+                               VerticalAlignment="Center"/>
+                    <Button Grid.Column="4" Classes="array-remove-btn" Content="⧉"
+                            Tag="{Binding}" Click="OnDuplicateMemberClick" Foreground="#415A77"/>
                     <Button Grid.Column="6" Classes="array-remove-btn" Content="✕"
                             Tag="{Binding}" Click="OnRemoveMemberClick"/>
                   </Grid>
@@ -148,7 +186,8 @@
         <!-- ═══ ARRAY ════════════════════════════════════════════════════ -->
         <StackPanel IsVisible="{Binding IsArray}" Spacing="4">
           <DockPanel Margin="0,0,0,10">
-            <TextBlock Classes="field-label" Text="ITEMS" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <TextBlock Classes="field-label" Text="ITEMS" FontSize="13"
+                       VerticalAlignment="Center" DockPanel.Dock="Left"/>
             <Button Classes="add-item-btn" HorizontalAlignment="Right"
                     IsVisible="{Binding !IsFixedArray}"
                     Content="+ Add Item" Click="OnAddItemClick"/>
@@ -157,7 +196,12 @@
           <!-- Array type picker -->
           <Border Classes="type-picker" x:Name="ArrayTypePickerPanel" IsVisible="False" Margin="0,0,0,10">
             <StackPanel Spacing="8">
-              <TextBlock Classes="field-label" Text="SELECT ITEM TYPE"/>
+              <DockPanel>
+                <TextBlock Classes="field-label" Text="SELECT ITEM TYPE"
+                           VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                <Button Classes="array-remove-btn" Content="✕" HorizontalAlignment="Right"
+                        Click="OnCancelArrayAdd" Foreground="#415A77"/>
+              </DockPanel>
               <WrapPanel Orientation="Horizontal">
                 <Button Classes="type-choice-btn" Content="int"    Tag="int"    Click="OnArrayTypeChosen" Margin="0,0,6,6"/>
                 <Button Classes="type-choice-btn" Content="float"  Tag="float"  Click="OnArrayTypeChosen" Margin="0,0,6,6"/>
@@ -175,27 +219,37 @@
             <ItemsControl.ItemTemplate>
               <DataTemplate DataType="vm:NodeViewModel">
                 <Border Padding="0,5" BorderBrush="#1B263B" BorderThickness="0,0,0,1">
-                  <Grid ColumnDefinitions="60,8,Auto,8,*,8,Auto,4,Auto">
-                    <TextBlock Grid.Column="0" Classes="prop-label" Text="{Binding Name}" VerticalAlignment="Center"/>
-                    <Border Grid.Column="2" Classes="badge" VerticalAlignment="Center"
+                  <Grid ColumnDefinitions="Auto,6,Auto,12,*,8,Auto,4,Auto">
+                    <!-- Badge -->
+                    <Border Grid.Column="0" Classes="badge" VerticalAlignment="Center"
+                            IsVisible="{Binding ShowBadgeNonIni}"
                             Classes.badge-int="{Binding TypeHint,    Converter={x:Static vm:TypeHintConverters.IsInt}}"
                             Classes.badge-float="{Binding TypeHint,  Converter={x:Static vm:TypeHintConverters.IsFloat}}"
                             Classes.badge-bool="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsBool}}"
                             Classes.badge-string="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsString}}"
                             Classes.badge-byte="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsByte}}"
-                            Classes.badge-name="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsName}}"
                             Classes.badge-struct="{Binding IsStruct}"
                             Classes.badge-array="{Binding IsArray}"
                             Classes.badge-enum="{Binding IsEnum}">
                       <TextBlock Text="{Binding TypeHint}" FontSize="9" FontWeight="Bold"/>
                     </Border>
-                    <TextBlock Grid.Column="4" IsVisible="{Binding HasChildren}"
-                               Text="{Binding Children.Count, StringFormat='({0} items)'}"
-                               Foreground="#415A77" FontSize="11" VerticalAlignment="Center"/>
-                    <!-- Duplicate item -->
+                    <!-- FName badge alternative -->
+                    <Border Grid.Column="0" Classes="badge badge-fname" VerticalAlignment="Center"
+                            IsVisible="{Binding ShowBadgeIni}">
+                      <TextBlock Text="fname" FontSize="9" FontWeight="Bold"/>
+                    </Border>
+                    <!-- Entry label -->
+                    <TextBlock Grid.Column="2" Classes="prop-label"
+                               Text="{Binding DisplayName}" VerticalAlignment="Center"/>
+                    <!-- Inline value preview for primitive array items -->
+                    <TextBlock Grid.Column="4" VerticalAlignment="Center"
+                               IsVisible="{Binding IsPrimitive}"
+                               Text="{Binding EditValue}"
+                               Foreground="#778DA9" FontSize="12"
+                               TextTrimming="CharacterEllipsis"/>
+
                     <Button Grid.Column="6" Classes="array-remove-btn" Content="⧉"
                             Tag="{Binding}" Click="OnDuplicateItemClick" Foreground="#415A77"/>
-                    <!-- Remove item -->
                     <Button Grid.Column="8" Classes="array-remove-btn" Content="✕"
                             Tag="{Binding}" Click="OnRemoveItemClick"/>
                   </Grid>

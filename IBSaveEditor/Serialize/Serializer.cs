@@ -63,7 +63,7 @@ class Serializer : IDisposable
         {
             switch (info.game)
             {
-                case Game.IB1:
+                case Game.IB1 or Game.IB3:
                     _writer.Write(PackageConstants.NO_MAGIC);
                     break;
                 case Game.IB2 or Game.VOTE:

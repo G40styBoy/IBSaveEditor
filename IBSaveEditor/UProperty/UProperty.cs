@@ -1,9 +1,11 @@
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Newtonsoft.Json;
 using IBSaveEditor.Wrappers;
 using IBSaveEditor.Package;
 using IBSaveEditor.UProperties.UArray;
+using IBSaveEditor.Enums;
 
 namespace IBSaveEditor.UProperties;
 /// <summary>
@@ -28,6 +30,7 @@ public abstract class UProperty
         size = tag.size;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private protected bool ShouldTrackFullSize(TagContainer tag) => tag.bShouldTrackMetadataSize;
 
     /// <summary>
@@ -338,7 +341,7 @@ public class UStructProperty : UProperty
             "CurrentTotalTrackingStats" => "BattleTrackingStats",
             "GameOptions" => "PersistGameOptions",
             "SocialChallengeSaveEvents" => "SocialChallengeSave",
-            _ => throw new NotSupportedException($"{name} does not have a matching alternate name.")
+            _ => ""
         };
     }
 
@@ -424,11 +427,12 @@ public class UArrayProperty : UProperty
             return;
         }
 
-        if (arrayInfo.valueType is PropertyType.IntProperty)
+        // this will hit NumConsumable and ShowConsumableBadge  
+        if (arrayInfo.valueType is PropertyType.IntProperty || arrayInfo.valueType is PropertyType.ByteProperty)
         {
-            WriteStaticIntArrayAsJson(writer);
+            WriteStaticNumArrayAsJson(writer);
             return;
-        }
+        } 
 
         WriteStaticPropertyArrayAsJson(writer);
     }
@@ -454,7 +458,7 @@ public class UArrayProperty : UProperty
         }
     }
 
-    private void WriteStaticIntArrayAsJson(Utf8JsonWriter writer)
+    private void WriteStaticNumArrayAsJson(Utf8JsonWriter writer)
     {
         writer.WriteStartObject();
 

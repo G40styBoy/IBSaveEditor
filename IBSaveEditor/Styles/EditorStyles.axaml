@@ -84,104 +84,35 @@
   </Style>
 
   <!-- ── Type badges ────────────────────────────────────────────────────── -->
-  <Style Selector="Border.badge">
-    <Setter Property="Padding"            Value="4,1"/>
-    <Setter Property="CornerRadius"       Value="3"/>
-    <Setter Property="VerticalAlignment"  Value="Center"/>
-  </Style>
-  <Style Selector="Border.badge TextBlock">
-    <Setter Property="FontSize"   Value="9"/>
-    <Setter Property="FontWeight" Value="Bold"/>
-  </Style>
-
-  <!-- Palette-matched badge colors
-       int    : slate tint   #415A77 bg, #E0E1DD text
-       float  : mid-slate    #415A77 bg, #778DA9 text (italic feel)
-       bool   : deep navy+   #1B263B bg, #778DA9 text
-       string : dark steel   #1B263B bg, #E0E1DD text
-       byte   : like int but dimmer
-       name   : like string
-       struct : accent navy  #0D1B2A bg, #778DA9 border+text
-       array  : like struct but brighter border
-       enum   : mid-steel    #415A77 bg, #0D1B2A text
-  -->
-  <Style Selector="Border.badge-int">    <Setter Property="Background" Value="#415A77"/> </Style>
-  <Style Selector="Border.badge-int TextBlock">    <Setter Property="Foreground" Value="#E0E1DD"/> </Style>
-  <Style Selector="Border.badge-float">  <Setter Property="Background" Value="#2d4259"/> </Style>
-  <Style Selector="Border.badge-float TextBlock">  <Setter Property="Foreground" Value="#aec4d6"/> </Style>
-  <Style Selector="Border.badge-bool">   <Setter Property="Background" Value="#1B263B"/> <Setter Property="BorderBrush" Value="#415A77"/> <Setter Property="BorderThickness" Value="1"/> </Style>
-  <Style Selector="Border.badge-bool TextBlock">   <Setter Property="Foreground" Value="#778DA9"/> </Style>
-  <Style Selector="Border.badge-string"> <Setter Property="Background" Value="#1B263B"/> </Style>
-  <Style Selector="Border.badge-string TextBlock"> <Setter Property="Foreground" Value="#E0E1DD"/> </Style>
-  <Style Selector="Border.badge-byte">   <Setter Property="Background" Value="#263445"/> </Style>
-  <Style Selector="Border.badge-byte TextBlock">   <Setter Property="Foreground" Value="#9db8cc"/> </Style>
-  <Style Selector="Border.badge-name">   <Setter Property="Background" Value="#1e2e3e"/> </Style>
-  <Style Selector="Border.badge-name TextBlock">   <Setter Property="Foreground" Value="#c0d4e0"/> </Style>
-  <Style Selector="Border.badge-struct"> <Setter Property="Background" Value="#0D1B2A"/> <Setter Property="BorderBrush" Value="#415A77"/> <Setter Property="BorderThickness" Value="1"/> </Style>
-  <Style Selector="Border.badge-struct TextBlock"> <Setter Property="Foreground" Value="#778DA9"/> </Style>
-  <Style Selector="Border.badge-array">  <Setter Property="Background" Value="#0D1B2A"/> <Setter Property="BorderBrush" Value="#778DA9"/> <Setter Property="BorderThickness" Value="1"/> </Style>
-  <Style Selector="Border.badge-array TextBlock">  <Setter Property="Foreground" Value="#778DA9"/> </Style>
-  <Style Selector="Border.badge-enum">   <Setter Property="Background" Value="#415A77"/> </Style>
-  <Style Selector="Border.badge-enum TextBlock">   <Setter Property="Foreground" Value="#0D1B2A"/> </Style>
-
-  <!-- ── Property editor inputs ─────────────────────────────────────────── -->
-  <Style Selector="TextBox.prop-input">
-    <Setter Property="Background"      Value="#1B263B"/>
-    <Setter Property="Foreground"      Value="#E0E1DD"/>
-    <Setter Property="BorderBrush"     Value="#415A77"/>
-    <Setter Property="BorderThickness" Value="1"/>
-    <Setter Property="CornerRadius"    Value="3"/>
-    <Setter Property="Padding"         Value="10,8"/>
-    <Setter Property="FontSize"        Value="15"/>
-  </Style>
-  <Style Selector="TextBox.prop-input:focus /template/ Border#PART_BorderElement">
-    <Setter Property="BorderBrush" Value="#778DA9"/>
-  </Style>
-  <Style Selector="NumericUpDown.prop-input">
-    <Setter Property="Background"      Value="#1B263B"/>
-    <Setter Property="Foreground"      Value="#E0E1DD"/>
-    <Setter Property="BorderBrush"     Value="#415A77"/>
-    <Setter Property="BorderThickness" Value="1"/>
-    <Setter Property="FontSize"        Value="12"/>
-  </Style>
-
-  <Style Selector="TextBlock.prop-label">
-    <Setter Property="Foreground" Value="#778DA9"/>
-    <Setter Property="FontSize"   Value="11"/>
+<Style Selector="Border.badge">
+    <Setter Property="Padding"           Value="5,2"/>
+    <Setter Property="CornerRadius"      Value="3"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
-  </Style>
-  <Style Selector="TextBlock.field-label">
-    <Setter Property="Foreground" Value="#415A77"/>
-    <Setter Property="FontSize"   Value="10"/>
-    <Setter Property="FontWeight" Value="Bold"/>
-    <Setter Property="LetterSpacing" Value="1"/>
-    <Setter Property="Margin"     Value="0,0,0,4"/>
-  </Style>
+    <Setter Property="Background"        Value="#243447"/>
+</Style>
+<Style Selector="Border.badge TextBlock">
+    <Setter Property="FontSize"           Value="11"/>
+    <Setter Property="FontWeight"         Value="Bold"/>
+    <Setter Property="VerticalAlignment"  Value="Center"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="TextAlignment"      Value="Center"/>
+    <Setter Property="LineHeight"         Value="15"/>
+</Style>
 
-  <!-- ── Dividers ───────────────────────────────────────────────────────── -->
-  <Style Selector="Border.divider">
-    <Setter Property="Background" Value="#1B263B"/>
-    <Setter Property="Height"     Value="1"/>
-  </Style>
-  <Style Selector="Border.v-divider">
-    <Setter Property="Background" Value="#1B263B"/>
-    <Setter Property="Width"      Value="1"/>
-  </Style>
+  <!-- Uniform badge colors — every badge variant uses identical background. -->
+  <Style Selector="Border.badge-int"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-float"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-bool"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-string"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-byte"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-name"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-struct"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-array"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-enum"><Setter Property="Background" Value="#243447"/></Style>
+  <Style Selector="Border.badge-fname"><Setter Property="Background" Value="#243447"/></Style>
 
-  <!-- ── Status bar ─────────────────────────────────────────────────────── -->
-  <Style Selector="Border.statusbar">
-    <Setter Property="Background" Value="#0D1B2A"/>
-    <Setter Property="Padding"    Value="12,4"/>
-  </Style>
-  <Style Selector="TextBlock.status-text">
-    <Setter Property="Foreground" Value="#415A77"/>
-    <Setter Property="FontSize"   Value="11"/>
-  </Style>
-
-  <!-- ── ScrollBar ──────────────────────────────────────────────────────── -->
-  <Style Selector="ScrollBar">
-    <Setter Property="Background" Value="Transparent"/>
-  </Style>
+  <!-- All badge text uses identical color -->
+  <Style Selector="Border.badge TextBlock"><Setter Property="Foreground" Value="#A0BAD0"/></Style>
 
   <!-- ── Expander glyph ────────────────────────────────────────────────────── -->
   <Style Selector="TextBlock.expander-glyph">
@@ -294,6 +225,49 @@
   </Style>
   <Style Selector="Button.about-link-btn:pointerover /template/ ContentPresenter">
     <Setter Property="Foreground" Value="#E0E1DD"/>
+  </Style>
+
+
+  <!-- ── Search bar ────────────────────────────────────────────────────────── -->
+  <Style Selector="Border.search-bar">
+    <Setter Property="Background"      Value="#0a1520"/>
+    <Setter Property="BorderBrush"     Value="#1B263B"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius"    Value="4"/>
+    <Setter Property="Padding"         Value="8,3"/>
+    <Setter Property="Height"          Value="28"/>
+  </Style>
+  <Style Selector="TextBlock.search-icon">
+    <Setter Property="Foreground"        Value="#415A77"/>
+    <Setter Property="FontSize"          Value="12"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Margin"            Value="0,0,8,0"/>
+  </Style>
+  <Style Selector="TextBox.search-input">
+    <Setter Property="Background"        Value="Transparent"/>
+    <Setter Property="BorderThickness"   Value="0"/>
+    <Setter Property="Foreground"        Value="#E0E1DD"/>
+    <Setter Property="FontSize"          Value="12"/>
+    <Setter Property="Padding"           Value="0"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="MinHeight"         Value="0"/>
+  </Style>
+  <!-- Remove the default focus border from the search box -->
+  <Style Selector="TextBox.search-input:focus /template/ Border#PART_BorderElement">
+    <Setter Property="Background"      Value="Transparent"/>
+    <Setter Property="BorderBrush"     Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0"/>
+  </Style>
+  <Style Selector="TextBox.search-input /template/ Border#PART_BorderElement">
+    <Setter Property="Background"      Value="Transparent"/>
+    <Setter Property="BorderBrush"     Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0"/>
+  </Style>
+  <Style Selector="TextBox.search-input:pointerover /template/ Border#PART_BorderElement">
+    <Setter Property="Background"      Value="Transparent"/>
+    <Setter Property="BorderBrush"     Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0"/>
   </Style>
 
 </Styles>

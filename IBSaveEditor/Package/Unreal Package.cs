@@ -1,6 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using IBSaveEditor.UProperties;
 using IBSaveEditor.Serialize;
+using System.Text;
 
 namespace IBSaveEditor.Package;
 /// <summary>
@@ -62,19 +64,19 @@ public class UnrealPackage : IDisposable
         Game game;
         try
         {
-            if (PackageCrypto.IsPackageEncrypted(this))
+            if (IsPackageEncrypted())
             {
                 info.SetIsEncrypted(true);
 
                 if (info.saveMagic == PackageConstants.IB1_SAVE_MAGIC)
                     game = Game.IB1;
-
                 else if (info.saveVersion == PackageConstants.IB2_SAVE_MAGIC)
                 {
                     SetStreamPosition(sizeof(int));
                     game = PackageCrypto.TryDecryptHalfBlock(Game.IB2, _stream) ? Game.IB2 : Game.VOTE;
-                }
-
+                }  
+                else if (info.saveVersion == PackageConstants.IB3_SAVE_MAGIC)
+                    game = Game.IB3;
                 else
                     throw new InvalidDataException("Could not decipher encrypted package type when attempting to resolve package info.");
             }
@@ -102,6 +104,14 @@ public class UnrealPackage : IDisposable
             throw new InvalidOperationException($"Package Data population failed. Reason: {exception.Message}", exception);
         }
     }
+
+    /// <summary>
+    /// Checks the first 8 bytes to determine the package's encryption state
+    /// </summary>
+    /// <returns>Returns if the package is encrypted or not</returns>
+    public bool IsPackageEncrypted() =>
+         !(info.saveVersion == PackageConstants.SAVE_FILE_VERSION_IB3 || info.saveVersion == PackageConstants.SAVE_FILE_VERSION_PC)
+         || info.saveMagic != PackageConstants.NO_MAGIC;
 
     /// <summary>
     /// Verifies if an unencrypted package is a IB3 save.
@@ -289,7 +299,7 @@ public class UnrealPackage : IDisposable
     /// <returns>A list of all UProperties inside of a <see cref="UnrealPackage"/></returns>
     public List<UProperty> DeserializeUPK()
     {
-        const int ENCRYPTED_IB1_HEADER = 4;
+        const int ENCRYPTED_HEADER = 4;
         const int HEADER_SIZE = 8;
 
         // replaces existing stream data with the newly decrypted data
@@ -301,8 +311,8 @@ public class UnrealPackage : IDisposable
             
         try
         {
-            if (info.game == Game.IB1 && info.isEncrypted)
-                SetStreamPosition(ENCRYPTED_IB1_HEADER);
+            if (info.isEncrypted && (info.game == Game.IB1 || info.game == Game.IB3))
+                SetStreamPosition(ENCRYPTED_HEADER);
             else
                 SetStreamPosition(HEADER_SIZE);
 
@@ -312,7 +322,7 @@ public class UnrealPackage : IDisposable
         }
         catch (Exception ex)
         {
-            throw new InvalidOperationException("Failed to deserialize package contents.", ex);
+            throw new InvalidOperationException($"{ex.Message}");
         }
     }
 
@@ -344,6 +354,7 @@ public class UnrealPackage : IDisposable
         return copyStream.ToArray();
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool IsEndFile() => _stream.Position >= _stream.Length;
 
     public void SetStreamPosition(long position)
@@ -353,8 +364,9 @@ public class UnrealPackage : IDisposable
         _stream.Position = position;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public long GetStreamPosition() => _stream.Position;
-
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void ResetStreamPosition() => _stream.Position = 0;
 
     public void Dispose()

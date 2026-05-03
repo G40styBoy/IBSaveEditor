@@ -5,24 +5,36 @@
         x:Class="IBSaveEditor.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="{Binding WindowTitle}"
-        Width="700" Height="1080"
-        MinWidth="700" MinHeight="520"
-        MaxWidth="700"
+        Height="1000"
+        MinWidth="800" MinHeight="520"
+        MaxWidth="800" MaxHeight="1440" 
         Background="#0D1B2A">
 
   <DockPanel>
 
     <!-- Toolbar -->
     <Border DockPanel.Dock="Top" Classes="toolbar" Padding="8,6">
-      <StackPanel Orientation="Horizontal" Spacing="6">
-        <Button Classes="toolbar-btn accent" Click="OnOpenClick"  Content="Open"/>
-        <Button Classes="toolbar-btn"        Click="OnSaveClick" Content="Save"/>
-        <Border Width="1" Margin="4,0" Background="#415A77"/>
-        <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
-        <Border Width="1" Margin="4,0" Background="#415A77"/>
-        <Button Classes="toolbar-btn"        Click="OnDeserializeClick" Content="Deserialize .bin"/>
-        <Button Classes="toolbar-btn"        Click="OnSerializeClick"   Content="Serialize .json"/>
-      </StackPanel>
+      <DockPanel>
+        <StackPanel Orientation="Horizontal" Spacing="6" DockPanel.Dock="Left">
+          <Button Classes="toolbar-btn accent" Click="OnOpenClick"  Content="Open"/>
+          <Button Classes="toolbar-btn"        Click="OnSaveClick"  Content="Save"/>
+          <Button Classes="toolbar-btn"        Click="OnExportClick" Content="Export .bin"/>
+          <Border Width="1" Margin="4,0" Background="#415A77"/>
+          <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
+        </StackPanel>
+
+        <!-- Search bar — filters the property tree as you type -->
+        <Border Classes="search-bar" DockPanel.Dock="Right"
+                HorizontalAlignment="Right" VerticalAlignment="Center"
+                Width="220" Margin="12,0,0,0">
+          <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Grid.Column="0" Classes="search-icon" Text="🔍"/>
+            <TextBox  Grid.Column="1" Classes="search-input"
+                      Text="{Binding SearchText, Mode=TwoWay}"
+                      Watermark="Search properties..."/>
+          </Grid>
+        </Border>
+      </DockPanel>
     </Border>
 
     <!-- Status bar -->
@@ -39,7 +51,7 @@
       </DockPanel>
     </Border>
 
-    <!-- Log panel — docked below main content, above status bar -->
+    <!-- Log panel -->
     <Border DockPanel.Dock="Bottom" Classes="log-panel" Height="140">
       <DockPanel>
         <Border DockPanel.Dock="Top" Classes="log-header">

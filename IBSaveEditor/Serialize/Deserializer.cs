@@ -28,7 +28,7 @@ public class Deserializer
             }
             catch (Exception ex)
             {
-                throw new InvalidDataException($"Failed to deserialize package at stream position {startPos}.", ex);
+                throw new InvalidDataException($"Failed to deserialize package at stream position {startPos}.\n{ex.Message}");
             }
         }
         return propertyCollection;
@@ -150,7 +150,7 @@ public class Deserializer
             tag.arrayEntryCount++;
             loopCount++;
         }
-
+    
         return new UArrayProperty(tag, elements);
     }
 

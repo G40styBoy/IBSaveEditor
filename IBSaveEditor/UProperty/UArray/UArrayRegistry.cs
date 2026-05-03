@@ -6,8 +6,7 @@ namespace IBSaveEditor.UProperties.UArray;
 /// </summary>
 public static class UArrayRegistry
 {
-    private static readonly IReadOnlyDictionary<ArrayName, ArrayMetadata> Common =
-        new Dictionary<ArrayName, ArrayMetadata>
+    private static readonly IReadOnlyDictionary<ArrayName, ArrayMetadata> Common = new Dictionary<ArrayName, ArrayMetadata>
         {
             #region IB3 Static Arrays
             [ArrayName.Currency] = new(ArrayName.Currency, AlternateName.CurrencyStruct, PropertyType.StructProperty, ArrayType.Static),
@@ -20,6 +19,7 @@ public static class UArrayRegistry
             [ArrayName.SavedCheevo] = new(ArrayName.SavedCheevo, AlternateName.SavedCheevoData, PropertyType.StructProperty, ArrayType.Static),
             [ArrayName.LastEquippedWeaponOfType] = new(ArrayName.LastEquippedWeaponOfType, AlternateName.LastEquippedWeaponOfType, PropertyType.NameProperty, ArrayType.Static),
             [ArrayName.CharacterEquippedList] = new(ArrayName.CharacterEquippedList, AlternateName.PlayerEquippedItemList, PropertyType.StructProperty, ArrayType.Static),
+            [ArrayName.SaveFiles] = new(ArrayName.SaveFiles, AlternateName.SaveFileMetaData, PropertyType.StructProperty, ArrayType.Static),
             #endregion
 
             #region IB3 Dynamic Arrays
@@ -58,6 +58,8 @@ public static class UArrayRegistry
             [ArrayName.SavedItems] = new(ArrayName.SavedItems, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             [ArrayName.Quests] = new(ArrayName.Quests, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
             [ArrayName.PendingAction] = new(ArrayName.PendingAction, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
+            [ArrayName.CustomCharacterValues] = new(ArrayName.CustomCharacterValues, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
+            [ArrayName.OwnedFeatures] = new(ArrayName.OwnedFeatures, AlternateName.None, PropertyType.NameProperty, ArrayType.Dynamic),
             #endregion
 
             #region IB2
@@ -80,8 +82,7 @@ public static class UArrayRegistry
             #endregion
         };
 
-    private static readonly IReadOnlyDictionary<Game, IReadOnlyDictionary<ArrayName, ArrayMetadata>> PerGame =
-    new Dictionary<Game, IReadOnlyDictionary<ArrayName, ArrayMetadata>>
+    private static readonly IReadOnlyDictionary<Game, IReadOnlyDictionary<ArrayName, ArrayMetadata>> PerGame = new Dictionary<Game, IReadOnlyDictionary<ArrayName, ArrayMetadata>>
     {
         [Game.IB1] = new Dictionary<ArrayName, ArrayMetadata>
         {

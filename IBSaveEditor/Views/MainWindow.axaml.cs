@@ -45,32 +45,51 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         }
     }
 
+    /// <summary>
+    /// // Open .bin or .json file
+    /// </summary>
     private async void OnOpenClick(object? sender, RoutedEventArgs e)
     {
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Open JSON Save",
+            Title = "Open Save File",
             AllowMultiple = false,
             FileTypeFilter = new[]
             {
-                new FilePickerFileType("JSON Save Files") { Patterns = new[] { "*.json" } },
-                new FilePickerFileType("All Files")       { Patterns = new[] { "*" } }
+                new FilePickerFileType("Save Files") { Patterns = new[] { "*.bin", "*.json" } },
+                new FilePickerFileType("Binary Save") { Patterns = new[] { "*.bin" } },
+                new FilePickerFileType("JSON Save")   { Patterns = new[] { "*.json" } },
+                new FilePickerFileType("All Files")   { Patterns = new[] { "*" } }
             }
         });
+
         var path = files.FirstOrDefault()?.TryGetLocalPath();
-        if (path != null) ViewModel?.LoadFromPath(path);
+        if (path == null) return;
+
+        if (Path.GetExtension(path).Equals(".bin", StringComparison.OrdinalIgnoreCase))
+            ViewModel?.LoadFromBin(path);
+        else
+            ViewModel?.LoadFromPath(path);
     }
 
+    /// <summary>
+    /// Save JSON state
+    /// </summary>
     private async void OnSaveClick(object? sender, RoutedEventArgs e)
     {
-        if (ViewModel?.FilePath != null)
+        if (ViewModel?.FilePath != null &&
+            !Path.GetExtension(ViewModel.FilePath).Equals(".bin", StringComparison.OrdinalIgnoreCase))
         {
+            // Already have a .json path — save in place
             ViewModel.SaveToPath(ViewModel.FilePath);
             return;
         }
+
+        // Opened from .bin or no file — prompt for a .json save location
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
             Title = "Save JSON",
+            SuggestedFileName = Path.GetFileNameWithoutExtension(ViewModel?.FilePath ?? "save") + ".json",
             FileTypeChoices = new[]
             {
                 new FilePickerFileType("JSON Files") { Patterns = new[] { "*.json" } }
@@ -80,37 +99,8 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         if (path != null) ViewModel?.SaveToPath(path);
     }
 
-    private async void OnDeserializeClick(object? sender, RoutedEventArgs e)
-    {
-        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
-        {
-            Title = "Select .bin save to deserialize",
-            AllowMultiple = false,
-            FileTypeFilter = new[]
-            {
-                new FilePickerFileType("Binary Save Files") { Patterns = new[] { "*.bin" } },
-                new FilePickerFileType("All Files")         { Patterns = new[] { "*" } }
-            }
-        });
-        var binPath = files.FirstOrDefault()?.TryGetLocalPath();
-        if (binPath != null) ViewModel?.RunDeserialize(binPath);
-    }
-
-    private async void OnSerializeClick(object? sender, RoutedEventArgs e)
-    {
-        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
-        {
-            Title = "Select .json save to serialize",
-            AllowMultiple = false,
-            FileTypeFilter = new[]
-            {
-                new FilePickerFileType("JSON Save Files") { Patterns = new[] { "*.json" } },
-                new FilePickerFileType("All Files")       { Patterns = new[] { "*" } }
-            }
-        });
-        var jsonPath = files.FirstOrDefault()?.TryGetLocalPath();
-        if (jsonPath != null) ViewModel?.RunSerialize(jsonPath);
-    }
+    private void OnExportClick(object? sender, RoutedEventArgs e)
+        => ViewModel?.ExportToBin();
 
     private void OnClearLogClick(object? sender, RoutedEventArgs e)
         => ViewModel?.ClearLog();

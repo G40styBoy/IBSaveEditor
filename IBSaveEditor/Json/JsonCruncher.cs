@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using IBSaveEditor.UProperties;
 using IBSaveEditor.UProperties.UArray;
 using IBSaveEditor.Package;
+using IBSaveEditor.Enums;
 
 
 namespace IBSaveEditor.Json;
@@ -243,6 +244,7 @@ internal sealed class JsonDataCruncher
             switch (tag.arrayInfo.valueType)
             {
                 case PropertyType.IntProperty: ReconstructIntProperty(tag); break;
+                case PropertyType.ByteProperty: ReconstructByteProperty(tag); break;
                 case PropertyType.NameProperty: ReconstructFNameProperty(tag); break;
                 case PropertyType.StructProperty: ReconstructStructProperty(tag); break;
                 default: throw BuildReaderStateException($"Unsupported static array type: {tag.arrayInfo.valueType}");
@@ -267,62 +269,56 @@ internal sealed class JsonDataCruncher
         if (text.StartsWith(prefix, StringComparison.Ordinal) && !specialCase.Contains(text))
             text = text[prefix.Length..];
     }
-    private void ReconstructIntProperty(TagContainer parentTag)
+
+    private void ReconstructIntProperty(TagContainer parentTag) =>
+        ReconstructStaticIndexedArray(parentTag, UType.INT_PROPERTY, sizeof(int),
+            tag => new UIntProperty(_reader, tag));
+
+    private void ReconstructByteProperty(TagContainer parentTag) =>
+        ReconstructStaticIndexedArray(parentTag, UType.BYTE_PROPERTY, sizeof(byte),
+            tag => UByteProperty.InstantiateProperty(_reader, tag),
+            name => name.StartsWith(BYTE_PREFIX, StringComparison.Ordinal) ? name[BYTE_PREFIX.Length..] : name);
+
+    private void ReconstructStaticIndexedArray(
+        TagContainer parentTag,
+        string uType,
+        int elementSize,
+        Func<TagContainer, UProperty> buildElement,
+        Func<string, string>? transformName = null)
     {
-        var reconstructedIntPropertyList = new List<UProperty>();
-
+        var list = new List<UProperty>();
         string parentName = parentTag.arrayInfo.arrayName.ToString();
+
         Type enumType;
+        try { enumType = IBEnum.GetArrayIndexEnum(parentName); }
+        catch (Exception ex) { throw BuildReaderStateException($"Failed to resolve array index enum for '{parentName}'.", ex); }
 
-        try
-        {
-            enumType = IBEnum.GetArrayIndexEnum(parentName);
-        }
-        catch (Exception ex)
-        {
-            throw BuildReaderStateException($"Failed to resolve array index enum for '{parentName}'.", ex);
-        }
-
-        // skip over "{"
-        ExpectRead("entering static int array object");
+        ExpectRead("entering static array object");
 
         while (ReadJsonList())
         {
             ReadPropertyName(out TagContainer tag);
 
-            string? rawKey = UPropertyHelper.ReaderValueToString(_reader);
-            if (string.IsNullOrEmpty(rawKey))
-                throw BuildReaderStateException($"Static int array '{parentName}' has null/empty index key.");
+            if (transformName != null)
+            {
+                tag.name = transformName(tag.name);
+                if (string.IsNullOrEmpty(tag.name))
+                    throw BuildReaderStateException($"Static array '{parentName}' has null/empty index key.");
+            }
 
             int arrayIndex;
-            try
-            {
-                arrayIndex = IBEnum.GetArrayIndexUsingReflection(enumType, rawKey);
-            }
-            catch (Exception ex)
-            {
-                throw BuildReaderStateException($"Failed to map array index '{rawKey}' for '{parentName}'.", ex);
-            }
+            try { arrayIndex = IBEnum.GetArrayIndexUsingReflection(enumType, tag.name); }
+            catch (Exception ex) { throw BuildReaderStateException($"Failed to map array index '{tag.name}' for '{parentName}'.", ex); }
 
-            PopulateUPropertyMetadata(ref tag, UType.INT_PROPERTY, sizeof(int), arrayIndex);
-
+            PopulateUPropertyMetadata(ref tag, uType, elementSize, arrayIndex);
             tag.name = parentName;
+            ExpectRead("reading static array value");
 
-            ExpectRead("reading static int array value");
-
-            try
-            {
-                reconstructedIntPropertyList.Add(new UIntProperty(_reader, tag));
-            }
-            catch (Exception ex)
-            {
-                throw BuildReaderStateException($"Failed to build static int element '{parentName}[{arrayIndex}]'.", ex);
-            }
+            try { list.Add(buildElement(tag)); }
+            catch (Exception ex) { throw BuildReaderStateException($"Failed to build static element '{parentName}[{arrayIndex}]'.", ex); }
         }
 
-        AddPropertyListToCollection(reconstructedIntPropertyList);
-
-        // skip over "]" / end token progression
+        AddPropertyListToCollection(list);
         _reader.Read();
     }
 

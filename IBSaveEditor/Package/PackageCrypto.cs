@@ -3,6 +3,12 @@ namespace IBSaveEditor.Package;
 
 class PackageCrypto
 {
+    // Credits to hox for the keys and the idea to initialize the keys in UTF8. Thanks!
+    private readonly static byte[] IB1AES = "NoBwPWDkRqFMTaHeVCJkXmLSZoNoBIPm"u8.ToArray();
+    private readonly static byte[] IB2AES = "|FK}S];v]!!cw@E4l-gMXa9yDPvRfF*B"u8.ToArray();
+    private readonly static byte[] IB3AES = "6nHmjd:hbWNf=9|UO2:?;K0y+gZL-jP5"u8.ToArray();
+    private readonly static byte[] VOTEAES = "DKksEKHkldF#(WDJ#FMS7jla5f(@J12|"u8.ToArray();
+
     private const int BLOCK_SIZE = 16;
 
     public static bool TryDecryptHalfBlock(Game game, Stream stream)
@@ -18,32 +24,19 @@ class PackageCrypto
     /// <summary>
     /// gets the first 8 bytes of a block to see if its encrypted or not
     /// </summary>
-    /// <param name="block"></param>
-    /// <returns></returns>
+    /// <param name="block">block of bytes to check encryption</param>
+    /// <returns>if block is encrypted</returns>
     private static bool IsHalfBlockUnencrypted(byte[] block)
-    {
-        uint first = BitConverter.ToUInt32(block, 0);
-        uint last = BitConverter.ToUInt32(block, block.Length - 12);
-
-        // check here to see if our expected decrypted header values are present
-        return first is PackageConstants.NO_MAGIC or 0 || last is PackageConstants.NO_MAGIC;
-    }
-
-    /// <summary>
-    /// Checks the first 8 bytes to determine the package's encryption state
-    /// </summary>
-    /// <returns>Returns if the package is encrypted or not</returns>
-    public static bool IsPackageEncrypted(UnrealPackage upk) =>
-         !(upk.info.saveVersion == PackageConstants.SAVE_FILE_VERSION_IB3 || upk.info.saveVersion == PackageConstants.SAVE_FILE_VERSION_PC)
-         || upk.info.saveMagic != PackageConstants.NO_MAGIC;
+        => BitConverter.ToUInt32(block, block.Length - 12) is PackageConstants.NO_MAGIC;
 
     public static byte[] GetPackageAESKey(Game game)
     {
         return game switch
         {
-            Game.IB1 => PackageConstants.IB1AES,
-            Game.IB2 => PackageConstants.IB2AES,
-            Game.VOTE => PackageConstants.VOTEAES,
+            Game.IB1 => IB1AES,
+            Game.IB2 => IB2AES,
+            Game.IB3 => IB3AES,
+            Game.VOTE => VOTEAES,
             _ => throw new NotImplementedException($"AES Key for {game} not supported!")
         };
     }
@@ -91,9 +84,6 @@ class PackageCrypto
     /// <summary>
     /// Encrypts a stream depending on the package type, and appends the necessary header info.
     /// </summary>
-    /// <param name="stream"></param>
-    /// <param name="data"></param>
-    /// <exception cref="InvalidDataException"></exception>
     public static void EncryptPackage(ref Stream stream, PackageInfo info)
     {
         stream.Position = 0;
@@ -110,17 +100,14 @@ class PackageCrypto
             byte[] encryptedData = encryptor.TransformFinalBlock(decryptedData, 0, decryptedData.Length);
 
             // calculate header size here to append correct amount of data
+            // then copy header data into the new array
             int headerSize = 0;
             if (info.game is Game.IB1)
                 headerSize = sizeof(uint) * 2;
-            else if (info.game is Game.IB2 or Game.VOTE)
-                headerSize = sizeof(uint);
             else
-                throw new InvalidDataException("Package is encrypted but isn't supported for appending header info.");
+                headerSize = sizeof(uint);
 
             byte[] finalData = new byte[headerSize + encryptedData.Length];
-
-            // copy header data into the new array first
             int offset = 4;
             if (info.game is Game.IB1)
             {
@@ -128,8 +115,15 @@ class PackageCrypto
                 Array.Copy(BitConverter.GetBytes(info.saveMagic), 0, finalData, sizeof(int), sizeof(uint));
                 offset *= 2;
             }
-            else if (info.game is Game.IB2 or Game.VOTE)
-                Array.Copy(BitConverter.GetBytes(PackageConstants.IB2_SAVE_MAGIC), 0, finalData, 0, sizeof(uint));
+            else
+            {
+                uint packageConstant;
+                if (info.game is Game.IB2 or Game.VOTE)
+                    packageConstant = PackageConstants.IB2_SAVE_MAGIC;
+                else
+                    packageConstant = PackageConstants.IB3_SAVE_MAGIC;
+                Array.Copy(BitConverter.GetBytes(packageConstant), 0, finalData, 0, sizeof(uint));
+            }
 
             Array.Copy(encryptedData, 0, finalData, offset, encryptedData.Length);
             stream.Position = 0;

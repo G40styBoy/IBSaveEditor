@@ -4,7 +4,7 @@
              x:Class="IBSaveEditor.Views.NodeTreeCell"
              x:DataType="vm:NodeViewModel">
 
-  <Grid ColumnDefinitions="Auto,24,Auto,8,Auto,8,Auto"
+  <Grid ColumnDefinitions="Auto,24,Auto,8,*"
         Margin="4,2" Height="26">
 
     <!-- Indentation -->
@@ -15,34 +15,36 @@
                Classes="expander-glyph"
                Text="{Binding ExpanderGlyph}"/>
 
-    <!-- Type badge -->
+    <!-- Type badge — hidden when IsIni (fname badge takes over) -->
     <Border Grid.Column="2"
             Classes="badge"
+            IsVisible="{Binding ShowBadgeNonIni}"
             Classes.badge-int="{Binding TypeHint,    Converter={x:Static vm:TypeHintConverters.IsInt}}"
             Classes.badge-float="{Binding TypeHint,  Converter={x:Static vm:TypeHintConverters.IsFloat}}"
             Classes.badge-bool="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsBool}}"
             Classes.badge-string="{Binding TypeHint, Converter={x:Static vm:TypeHintConverters.IsString}}"
             Classes.badge-byte="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsByte}}"
-            Classes.badge-name="{Binding TypeHint,   Converter={x:Static vm:TypeHintConverters.IsName}}"
             Classes.badge-struct="{Binding IsStruct}"
             Classes.badge-array="{Binding IsArray}"
             Classes.badge-enum="{Binding IsEnum}">
       <TextBlock Text="{Binding TypeHint}" FontSize="9" FontWeight="Bold"/>
     </Border>
 
+    <!-- FName badge — replaces type badge for ini_ properties and name-typed values -->
+    <Border Grid.Column="2"
+            Classes="badge badge-fname"
+            IsVisible="{Binding ShowBadgeIni}">
+      <TextBlock Text="fname" FontSize="9" FontWeight="Bold"/>
+    </Border>
+
     <!-- Property name -->
     <TextBlock Grid.Column="4"
-               Text="{Binding Name}"
+               Text="{Binding DisplayName}"
                Foreground="#E0E1DD"
-               FontSize="12"
-               VerticalAlignment="Center"/>
+               FontSize="14"
+               VerticalAlignment="Center"
+               TextTrimming="CharacterEllipsis"
+               MaxWidth="220"/>
 
-    <!-- Child count -->
-    <TextBlock Grid.Column="6"
-               IsVisible="{Binding HasChildren}"
-               Text="{Binding Children.Count, StringFormat='({0})'}"
-               Foreground="#415A77"
-               FontSize="10"
-               VerticalAlignment="Center"/>
   </Grid>
 </UserControl>

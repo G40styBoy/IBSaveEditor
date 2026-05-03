@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Newtonsoft.Json;
 using IBSaveEditor.Wrappers;
@@ -9,6 +10,7 @@ namespace IBSaveEditor.UProperties;
 /// </summary>
 public static class UPropertyHelper
 {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int GetLittleEndianStringLength(string str)
     {
         if (str == string.Empty)
