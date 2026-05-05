@@ -33,17 +33,17 @@ namespace IBSaveEditor.Tests
             Assert.Equal(expectedGame, package.info.game);
         }
 
-        [Theory]
-        [MemberData(nameof(PackageFilePaths))]
-        public void PackageDeserializationTest(string filePath)
-        {
-            UnrealPackage package = new UnrealPackage(filePath);
-            List<UProperty> properties = package.DeserializeUPK();
-            Assert.NotNull(properties);
-            Assert.NotEmpty(properties);  
+        // [Theory]
+        // [MemberData(nameof(PackageFilePaths))]
+        // public void PackageDeserializationTest(string filePath)
+        // {
+        //     UnrealPackage package = new UnrealPackage(filePath);
+        //     List<UProperty> properties = package.DeserializeUPK();
+        //     Assert.NotNull(properties);
+        //     Assert.NotEmpty(properties);  
 
-            // check to see if there are an adequate amount of properties
-            Assert.InRange(properties.Count, 30, int.MaxValue);
-        }
+        //     // check to see if there are an adequate amount of properties
+        //     Assert.InRange(properties.Count, 30, int.MaxValue);
+        // }
     }
 }

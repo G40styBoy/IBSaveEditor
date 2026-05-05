@@ -80,12 +80,12 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         if (ViewModel?.FilePath != null &&
             !Path.GetExtension(ViewModel.FilePath).Equals(".bin", StringComparison.OrdinalIgnoreCase))
         {
-            // Already have a .json path — save in place
+            // Already have a .json path : save in place
             ViewModel.SaveToPath(ViewModel.FilePath);
             return;
         }
 
-        // Opened from .bin or no file — prompt for a .json save location
+        // Opened from .bin or no file : prompt for a .json save location
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
             Title = "Save JSON",

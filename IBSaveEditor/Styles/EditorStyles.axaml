@@ -10,7 +10,7 @@
       #E0E1DD  off-white      (primary text)
   -->
 
-  <!-- ── Global font ────────────────────────────────────────────────────── -->
+  <!--  Global font ──────────────────────────────────────────────────── -->
   <Style Selector="TextBlock">
     <Setter Property="FontFamily" Value="'Cascadia Code','Consolas','Courier New',monospace"/>
     <Setter Property="Foreground"  Value="#E0E1DD"/>
@@ -19,12 +19,12 @@
     <Setter Property="FontFamily" Value="'Cascadia Code','Consolas','Courier New',monospace"/>
   </Style>
 
-  <!-- ── Window ─────────────────────────────────────────────────────────── -->
+  <!--  Window ───────────────────────────────────────────────────────── -->
   <Style Selector="Window">
     <Setter Property="Background" Value="#0D1B2A"/>
   </Style>
 
-  <!-- ── Toolbar ────────────────────────────────────────────────────────── -->
+  <!--  Toolbar ──────────────────────────────────────────────────────── -->
   <Style Selector="Border.toolbar">
     <Setter Property="Background" Value="#1B263B"/>
   </Style>
@@ -54,7 +54,7 @@
     <Setter Property="Background" Value="#778DA9"/>
   </Style>
 
-  <!-- ── Panel headers ──────────────────────────────────────────────────── -->
+  <!--  Panel headers ────────────────────────────────────────────────── -->
   <Style Selector="Border.panel-header">
     <Setter Property="Background" Value="#0D1B2A"/>
     <Setter Property="Padding"    Value="12,7"/>
@@ -66,7 +66,7 @@
     <Setter Property="LetterSpacing" Value="2"/>
   </Style>
 
-  <!-- ── TreeView ───────────────────────────────────────────────────────── -->
+  <!--  TreeView ─────────────────────────────────────────────────────── -->
   <Style Selector="TreeView">
     <Setter Property="Background"      Value="#0D1B2A"/>
     <Setter Property="BorderThickness" Value="0"/>
@@ -83,7 +83,7 @@
     <Setter Property="Background" Value="#1B263B"/>
   </Style>
 
-  <!-- ── Type badges ────────────────────────────────────────────────────── -->
+  <!--  Type badges ──────────────────────────────────────────────────── -->
 <Style Selector="Border.badge">
     <Setter Property="Padding"           Value="5,2"/>
     <Setter Property="CornerRadius"      Value="3"/>
@@ -99,7 +99,7 @@
     <Setter Property="LineHeight"         Value="15"/>
 </Style>
 
-  <!-- Uniform badge colors — every badge variant uses identical background. -->
+  <!-- Uniform badge colors : every badge variant uses identical background. -->
   <Style Selector="Border.badge-int"><Setter Property="Background" Value="#243447"/></Style>
   <Style Selector="Border.badge-float"><Setter Property="Background" Value="#243447"/></Style>
   <Style Selector="Border.badge-bool"><Setter Property="Background" Value="#243447"/></Style>
@@ -114,7 +114,7 @@
   <!-- All badge text uses identical color -->
   <Style Selector="Border.badge TextBlock"><Setter Property="Foreground" Value="#A0BAD0"/></Style>
 
-  <!-- ── Expander glyph ────────────────────────────────────────────────────── -->
+  <!--  Expander glyph ──────────────────────────────────────────────────── -->
   <Style Selector="TextBlock.expander-glyph">
     <Setter Property="FontSize"   Value="30"/>
     <Setter Property="Foreground" Value="#415A77"/>
@@ -127,7 +127,7 @@
     <Setter Property="Foreground" Value="#778DA9"/>
   </Style>
 
-  <!-- ── Log panel ──────────────────────────────────────────────────────────── -->
+  <!--  Log panel ────────────────────────────────────────────────────────── -->
   <Style Selector="Border.log-panel">
     <Setter Property="Background"      Value="#0D1B2A"/>
     <Setter Property="BorderBrush"     Value="#1B263B"/>
@@ -159,7 +159,7 @@
     <Setter Property="Foreground" Value="#778DA9"/>
   </Style>
 
-  <!-- ── Array buttons ──────────────────────────────────────────────────────── -->
+  <!--  Array buttons ────────────────────────────────────────────────────── -->
   <Style Selector="Button.array-remove-btn">
     <Setter Property="Background"      Value="Transparent"/>
     <Setter Property="Foreground"      Value="#415A77"/>
@@ -188,7 +188,7 @@
     <Setter Property="Foreground" Value="#E0E1DD"/>
   </Style>
 
-  <!-- ── Add item dialog ────────────────────────────────────────────────── -->
+  <!--  Add item dialog ──────────────────────────────────────────────── -->
   <Style Selector="Border.type-picker">
     <Setter Property="Background"      Value="#1B263B"/>
     <Setter Property="BorderBrush"     Value="#415A77"/>
@@ -213,7 +213,7 @@
     <Setter Property="Foreground" Value="#E0E1DD"/>
   </Style>
 
-  <!-- ── About dialog link button ──────────────────────────────────────────── -->
+  <!--  About dialog link button ────────────────────────────────────────── -->
   <Style Selector="Button.about-link-btn">
     <Setter Property="Background"      Value="Transparent"/>
     <Setter Property="Foreground"      Value="#778DA9"/>
@@ -228,7 +228,7 @@
   </Style>
 
 
-  <!-- ── Search bar ────────────────────────────────────────────────────────── -->
+  <!--  Search bar ──────────────────────────────────────────────────────── -->
   <Style Selector="Border.search-bar">
     <Setter Property="Background"      Value="#0a1520"/>
     <Setter Property="BorderBrush"     Value="#1B263B"/>

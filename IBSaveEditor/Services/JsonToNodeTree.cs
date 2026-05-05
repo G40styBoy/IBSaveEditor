@@ -12,7 +12,7 @@ namespace IBSaveEditor.Services;
 /// Converts a parsed JSON envelope into a tree of <see cref="SaveNode"/>
 /// objects ready for display in the editor.
 /// <para>
-/// The conversion is game-aware — arrays are resolved against the
+/// The conversion is game-aware : arrays are resolved against the
 /// <see cref="UArrayRegistry"/> via <see cref="ArrayTypeResolver"/> so that
 /// each array's <see cref="ArrayNode.ItemTypeHint"/> reflects the actual item
 /// type (int, name, struct, etc.) and its registry metadata is attached for
@@ -110,7 +110,7 @@ public static class JsonToNodeTree
             UnwrapForDisplay = ArrayTypeResolver.ShouldUnwrapForDisplay(meta)
         };
 
-        // Build child nodes WITHOUT mutating the wrapper structure —
+        // Build child nodes WITHOUT mutating the wrapper structure :
         // backing data stays exactly as JSON-parsed, the view layer looks
         // through wrappers when rendering.
         int i = 0;

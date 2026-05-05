@@ -2,10 +2,17 @@ using System.Diagnostics;
 
 namespace IBSaveEditor.Util;
 /// <summary>
-/// Utility class for methods in which do not need an isolated file. These are used everywhere in the codebase.
+/// General utility methods used across the codebase.
+/// Console methods are retained for test/debug use.
 /// </summary>
 public static class Util
 {
+    // Console ───────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Writes a message to the console in the specified color.
+    /// </summary>
+    /// <param name="resetColor">If true, resets the console color after writing.</param>
     public static void PrintColored(string message, ConsoleColor color, bool resetColor = true)
     {
         Console.ForegroundColor = color;
@@ -14,65 +21,24 @@ public static class Util
             Console.ResetColor();
     }
 
-    public static void PrintColoredLine(string message, ConsoleColor color, bool resetColor = true) =>
-        PrintColored(message + Environment.NewLine, color, resetColor);
+    /// <summary>Writes a message to the console in the specified color, followed by a newline.</summary>
+    public static void PrintColoredLine(string message, ConsoleColor color, bool resetColor = true)
+        => PrintColored(message + Environment.NewLine, color, resetColor);
 
-    public static void PrintBanner(string BANNER_NAME)
-    {
-        PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        PrintColoredLine($"            {BANNER_NAME}            ", ConsoleColor.Cyan, true);
-        PrintColoredLine("========================================", ConsoleColor.Cyan, true);
-        PrintColoredLine("© 2026 G40sty. All rights reserved.\n", ConsoleColor.DarkGray, true);
-    }
-
-    public static void PrintStep(string label, string status)
-    {
-        PrintColored(label, ConsoleColor.White, false);
-        PrintColored(": ", ConsoleColor.White, false);
-        PrintColoredLine(status, ConsoleColor.Green, true);
-    }
-
-    public static void PrintStep(string label, string status, ConsoleColor color)
-    {
-        PrintColored(label, ConsoleColor.White, false);
-        PrintColored(": ", ConsoleColor.White, false);
-        PrintColoredLine(status, color, true);
-    }
-
-    public static void PrintSuccess(string message)
-    {
-        Console.WriteLine();
-        PrintColoredLine(message, ConsoleColor.Green, true);
-    }
-
-    public static void PrintFailure(Exception ex)
-    {
-        Console.WriteLine();
-        PrintColoredLine("FAILED", ConsoleColor.Red, true);
-        Console.WriteLine();
-
-        PrintColoredLine(ex.GetType().FullName ?? "Exception", ConsoleColor.Red, true);
-        PrintColoredLine(ex.Message, ConsoleColor.Red, true);
-
-        Console.WriteLine();
-        Console.WriteLine(ex.ToString());
-    }
-
-    public static void PrintInlineError(string message) => PrintColoredLine(message, ConsoleColor.Red, true);
-    
+    /// <summary>Waits for a keypress then returns : used to pause between test runs.</summary>
     public static void Restart()
     {
         Console.WriteLine();
-        PrintColoredLine("Press any key to restart...", ConsoleColor.DarkGray, true);
+        PrintColoredLine("Press any key to restart...", ConsoleColor.DarkGray);
         Console.ReadKey(true);
     }
 
-    public static void RefreshConsole(string BANNER_NAME)
-    {
-        Console.Clear();
-        PrintBanner(BANNER_NAME);
-    }
+    // Debug ─────────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Triggers a debugger breakpoint if one is attached.
+    /// Only executes in <c>DEBUG</c> builds.
+    /// </summary>
     [DebuggerHidden]
     [Conditional("DEBUG")]
     public static void DebugBreak()

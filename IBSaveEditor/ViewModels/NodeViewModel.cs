@@ -59,7 +59,7 @@ public class NodeViewModel : ReactiveObject
 
         if (node is ArrayNode a && a.UnwrapForDisplay)
         {
-            // Static non-struct array — promote every key inside the wrapper
+            // Static non-struct array : promote every key inside the wrapper
             // struct(s) to its own VM. Each key becomes a virtual array entry.
             Children = BuildUnwrappedChildren(a, depth + 1, onChildrenChanged);
         }
@@ -70,7 +70,7 @@ public class NodeViewModel : ReactiveObject
         }
         else if (node is ArrayNode arr)
         {
-            // Regular array — items map 1:1 to children. Mark them as array items
+            // Regular array : items map 1:1 to children. Mark them as array items
             // so they don't redundantly show the same type badge as the container.
             Children = new ObservableCollection<NodeViewModel>(
                 arr.Items.Select(i =>
@@ -99,7 +99,7 @@ public class NodeViewModel : ReactiveObject
 
         foreach (var item in array.Items)
         {
-            // Each array item should be a wrapper struct — walk its keys
+            // Each array item should be a wrapper struct : walk its keys
             if (item is not StructNode wrapper) continue;
 
             foreach (var entry in wrapper.Children)
@@ -206,7 +206,7 @@ public class NodeViewModel : ReactiveObject
             if (BackingNode is ArrayNode arr)
                 return arr.ItemTypeHint == "name";
 
-            // Other primitives — check the value
+            // Other primitives : check the value
             var v = (_unwrappedTarget?.Value
                   ?? (BackingNode as PrimitiveNode)?.Value)?.ToString();
 
@@ -262,7 +262,7 @@ public class NodeViewModel : ReactiveObject
         set { this.RaiseAndSetIfChanged(ref _enumValue, value); if (BackingNode is EnumNode e) e.EnumValue = value; }
     }
 
-    // ── Mutation ──────────────────────────────────────────────────────────────
+    //  Mutation ──────────────────────────────────────────────────────────────
 
     public void AddItem(string? typeHintOverride = null)
     {
@@ -285,7 +285,7 @@ public class NodeViewModel : ReactiveObject
     {
         if (BackingNode is not ArrayNode a || a.IsFixed) return;
 
-        // Wrapper-style arrays — remove the underlying wrapper key, not an Items entry
+        // Wrapper-style arrays : remove the underlying wrapper key, not an Items entry
         if (a.UnwrapForDisplay && item._unwrappedTarget != null && item._unwrappedParentWrapper != null)
         {
             item._unwrappedParentWrapper.Children.Remove(item._unwrappedTarget);
@@ -296,7 +296,7 @@ public class NodeViewModel : ReactiveObject
             return;
         }
 
-        // Normal array — items map 1:1 to children
+        // Normal array : items map 1:1 to children
         var idx = Children.IndexOf(item);
         if (idx < 0) return;
         a.Items.RemoveAt(idx);
@@ -336,7 +336,7 @@ public class NodeViewModel : ReactiveObject
     {
         if (BackingNode is not ArrayNode a || a.IsFixed) return;
 
-        // Wrapper-style arrays — duplicate the underlying wrapper key
+        // Wrapper-style arrays : duplicate the underlying wrapper key
         if (a.UnwrapForDisplay && item._unwrappedTarget != null && item._unwrappedParentWrapper != null)
         {
             var clonedTarget = (PrimitiveNode)CloneNode(item._unwrappedTarget, item._unwrappedTarget.Name);
@@ -356,7 +356,7 @@ public class NodeViewModel : ReactiveObject
             return;
         }
 
-        // Normal array — clone the matching item
+        // Normal array : clone the matching item
         var idx = Children.IndexOf(item);
         if (idx < 0) return;
         var cloned = CloneNode(a.Items[idx], $"[{a.Items.Count}]");

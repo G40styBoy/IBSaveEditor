@@ -23,7 +23,7 @@
           <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
         </StackPanel>
 
-        <!-- Search bar — filters the property tree as you type -->
+        <!-- Search bar : filters the property tree as you type -->
         <Border Classes="search-bar" DockPanel.Dock="Right"
                 HorizontalAlignment="Right" VerticalAlignment="Center"
                 Width="220" Margin="12,0,0,0">

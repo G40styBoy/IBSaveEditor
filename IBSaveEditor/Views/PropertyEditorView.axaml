@@ -151,7 +151,7 @@
               <DataTemplate DataType="vm:NodeViewModel">
                 <Border Padding="0,6" BorderBrush="#1B263B" BorderThickness="0,0,0,1">
                   <Grid ColumnDefinitions="Auto,8,*,8,Auto,4,Auto">
-                    <!-- Type badge (hidden when IsIni — fname badge takes over) -->
+                    <!-- Type badge (hidden when IsIni : fname badge takes over) -->
                     <Border Grid.Column="0" Classes="badge"
                             IsVisible="{Binding ShowBadgeNonIni}"
                             Classes.badge-int="{Binding TypeHint,    Converter={x:Static vm:TypeHintConverters.IsInt}}"

@@ -15,7 +15,7 @@ public partial class PropertyEditorView : UserControl
     private const long BYTE_MAX = 255L;
     private const long BYTE_MIN = 0L;
 
-    // Max box width before we stop expanding — slightly less than the right panel width
+    // Max box width before we stop expanding : slightly less than the right panel width
     private const int BOX_MAX_WIDTH = 480;
 
     private static readonly Regex NonNumericRegex = new(@"[^0-9\-]");

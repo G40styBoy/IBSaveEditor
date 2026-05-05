@@ -1,32 +1,31 @@
 namespace IBSaveEditor.Util;
+
 /// <summary>
-/// Helps keep file locations, names, etc. organized.
-/// All file path data needed is stored here
+/// Centralizes all file path constants and output directory management for the tool.
 /// </summary>
 public static class ToolPaths
 {
-    public static DirectoryInfo parentDirectory = Directory.GetParent(Directory.GetCurrentDirectory())!;
-    // If DEBUG build, we want our tool output stored to the root directory. Else store outside of EXE 
-    #if DEBUG
-        public static string OutputDir = $@"{parentDirectory}\OUTPUT";
-    #else
-        public static string OutputDir = Path.Combine(
-            AppContext.BaseDirectory, "OUTPUT");
-    #endif
-    public static string Localization = $@"{parentDirectory}\IBSaveEditor\Localization";
+    private static readonly DirectoryInfo ParentDirectory =
+        Directory.GetParent(Directory.GetCurrentDirectory())!;
 
-    public static string baseLocation = $@"{parentDirectory}\SAVE STORAGE LOCATION";
+    /// <summary>
+    /// The output directory for all generated files.
+    /// In DEBUG builds this sits next to the project root for easy access.
+    /// In Release builds it sits beside the executable.
+    /// </summary>
+#if DEBUG
+    public static readonly string OutputDir = Path.Combine(ParentDirectory.FullName, "OUTPUT");
+#else
+    public static readonly string OutputDir = Path.Combine(AppContext.BaseDirectory, "OUTPUT");
+#endif
 
-    public static string IB3SAVES = Path.Combine(baseLocation, @"IB3 Backup");
-    public static string IB2SAVES = Path.Combine(baseLocation, @"IB2 Backup");
-    public static string IB1SAVES = Path.Combine(baseLocation, @"IB1 Backup");
-    public static string VOTESAVES = Path.Combine(baseLocation, @"VOTE!!! Backup");
-
+    /// <summary>Creates the OUTPUT directory if it does not already exist.</summary>
     public static void ValidateOutputDirectory()
     {
         if (!Directory.Exists(OutputDir))
             Directory.CreateDirectory(OutputDir);
     }
 
+    /// <summary>Returns whether the OUTPUT directory currently exists on disk.</summary>
     public static bool DoesOutputExist() => Directory.Exists(OutputDir);
-};
+}

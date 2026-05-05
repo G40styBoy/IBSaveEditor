@@ -38,7 +38,7 @@ public class ArrayNode : SaveNode
     public bool IsFixed { get; set; }
     public int? FixedLength { get; set; }
 
-    /// <summary>The TypeHint of the items inside this array — inferred from the registry.</summary>
+    /// <summary>The TypeHint of the items inside this array : inferred from the registry.</summary>
     public string ItemTypeHint { get; set; } = "string";
 
     /// <summary>
@@ -46,7 +46,7 @@ public class ArrayNode : SaveNode
     /// hidden from the user. Set by the registry-aware <c>JsonToNodeTree</c>
     /// for static arrays of non-struct types (e.g. NumConsumable, ShowConsumableBadge).
     /// <para>
-    /// The wrapper is preserved in the data layer for round-trip integrity —
+    /// The wrapper is preserved in the data layer for round-trip integrity :
     /// only the UI looks through it.
     /// </para>
     /// </summary>

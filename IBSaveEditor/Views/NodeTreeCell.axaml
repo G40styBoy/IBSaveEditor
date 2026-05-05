@@ -15,7 +15,7 @@
                Classes="expander-glyph"
                Text="{Binding ExpanderGlyph}"/>
 
-    <!-- Type badge — hidden when IsIni (fname badge takes over) -->
+    <!-- Type badge : hidden when IsIni (fname badge takes over) -->
     <Border Grid.Column="2"
             Classes="badge"
             IsVisible="{Binding ShowBadgeNonIni}"
@@ -30,7 +30,7 @@
       <TextBlock Text="{Binding TypeHint}" FontSize="9" FontWeight="Bold"/>
     </Border>
 
-    <!-- FName badge — replaces type badge for ini_ properties and name-typed values -->
+    <!-- FName badge : replaces type badge for ini_ properties and name-typed values -->
     <Border Grid.Column="2"
             Classes="badge badge-fname"
             IsVisible="{Binding ShowBadgeIni}">

@@ -108,20 +108,20 @@ public class MainWindowViewModel : ReactiveObject
     {
         try
         {
-            Log($"Opening: {Path.GetFileName(binPath)}");
+            Log($"Loading file: {Path.GetFileName(binPath)}");
             StatusMessage = "Deserializing...";
 
             using var upk = new UnrealPackage(binPath);
-            var properties = upk.DeserializeUPK();
+            var properties = upk.ReadProperties();
             if (properties == null || properties.Count == 0)
                 throw new InvalidOperationException("Deserialization produced no properties.");
-            Log($"Deserialized {properties.Count} properties.");
 
-            // Get JSON as string directly — no disk write
+            // Get JSON as string directly : no disk write
             var parser = new JsonDataParser(properties, upk.info);
             var json = parser.ReturnDataAsString();
 
             LoadFromJsonString(json, binPath);
+            Log($"File loaded successfully!");
         }
         catch (Exception ex)
         {
@@ -135,8 +135,10 @@ public class MainWindowViewModel : ReactiveObject
     {
         try
         {
+            Log($"Loading file: {Path.GetFileName(path)}");
             var json = File.ReadAllText(path);
             LoadFromJsonString(json, path);
+            Log($"File loaded successfully!");
         }
         catch (Exception ex)
         {
@@ -153,11 +155,9 @@ public class MainWindowViewModel : ReactiveObject
     {
         var jobj = JObject.Parse(json);
 
-        // Extract game from metadata — must succeed before we try to build the tree
+        // Extract game from metadata : must succeed before we try to build the tree
         _currentGame = GameMetadataExtractor.Extract(jobj);
-        Log($"Game: {_currentGame}");
-
-        // Store raw string — re-parsed fresh on every save to avoid mutation issues
+        // Store raw string : re-parsed fresh on every save to avoid mutation issues
         _originalJson = json;
 
         // Detect envelope and remember the exact key casing
@@ -177,7 +177,6 @@ public class MainWindowViewModel : ReactiveObject
         IsDirty  = false;
         RebuildVisibleList();
         StatusMessage = $"Loaded  {_rootNodes.Count} properties.";
-        Log($"Opened {Path.GetFileName(sourcePath)}");
     }
 
     /// <summary>Saves the current node tree to disk as JSON, preserving metadata.</summary>
@@ -192,7 +191,7 @@ public class MainWindowViewModel : ReactiveObject
             JObject outputRoot;
             if (_hasDataWrapper && _originalJson != null)
             {
-                // Re-parse original from stored raw string — guaranteed unmodified
+                // Re-parse original from stored raw string : guaranteed unmodified
                 outputRoot = JObject.Parse(_originalJson);
                 // Replace only the data section, metadata stays untouched
                 outputRoot[_dataKey] = dataObj;
@@ -251,7 +250,6 @@ public class MainWindowViewModel : ReactiveObject
 
             var currentJson = outputRoot.ToString(Formatting.Indented);
 
-            Log($"Serializing: {Path.GetFileName(FilePath ?? "save")}");
             StatusMessage = "Serializing...";
 
             using var tempFile = new TempJsonFile(currentJson);
@@ -262,20 +260,18 @@ public class MainWindowViewModel : ReactiveObject
             info.SetIsEncrypted(meta.IsEncrypted);
             info.SetSaveVersion(meta.SaveVersion);
             info.SetSaveMagic(meta.SaveMagic);
-            Log($"Metadata: {meta.PackageName} / {meta.Game}");
 
             string dataJson  = JsonUtils.ExtractDataObjectJson(tempFile.Path, "data");
             var cruncher     = new JsonDataCruncher(dataJson, info.game);
             var crunchedData = cruncher.ReadJsonFile();
             if (crunchedData == null)
                 throw new InvalidOperationException("JSON could not be parsed into save data.");
-            Log("JSON crunched successfully.");
 
             using var serializer = new Serializer(info, crunchedData);
             serializer.SerializeAndOutputData();
 
             StatusMessage = "Exported. .bin written to OUTPUT.";
-            Log(".bin written to OUTPUT. Done.");
+            Log(".bin successfully written to OUTPUT!");
         }
         catch (Exception ex)
         {
@@ -304,13 +300,13 @@ public class MainWindowViewModel : ReactiveObject
 
         if (string.IsNullOrWhiteSpace(_searchText))
         {
-            // No filter — show full tree based on expanded state
+            // No filter : show full tree based on expanded state
             foreach (var root in _rootNodes)
                 AppendVisible(root);
         }
         else
         {
-            // Filter active — show all matches plus their ancestor path
+            // Filter active : show all matches plus their ancestor path
             var filter = _searchText.Trim();
             foreach (var root in _rootNodes)
                 AppendFiltered(root, filter);
@@ -347,7 +343,7 @@ public class MainWindowViewModel : ReactiveObject
             return true;
         }
 
-        // Otherwise, only show this node if any descendant matches —
+        // Otherwise, only show this node if any descendant matches :
         // and only the path of matching descendants, not their full subtrees
         var pathDescendants = new List<NodeViewModel>();
         foreach (var child in node.Children)
@@ -388,7 +384,7 @@ public class MainWindowViewModel : ReactiveObject
             return true;
         }
 
-        // Self doesn't match — keep walking, only include if descendants match
+        // Self doesn't match : keep walking, only include if descendants match
         var subDescendants = new List<NodeViewModel>();
         foreach (var child in node.Children)
             CollectMatchingPath(child, filter, subDescendants);
@@ -419,7 +415,7 @@ public class MainWindowViewModel : ReactiveObject
 
     public void ClearLog() => LogEntries.Clear();
 
-    // ── Command stubs ─────────────────────────────────────────────────────────
+    //  Command stubs ─────────────────────────────────────────────────────────
     private Task OpenFileAsync()  => Task.CompletedTask;
     private Task SaveFileAsync()  { if (FilePath != null) SaveToPath(FilePath); return Task.CompletedTask; }
     private Task ReloadAsync()

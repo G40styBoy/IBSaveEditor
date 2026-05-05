@@ -11,7 +11,7 @@ namespace IBSaveEditor.Services;
 /// <para>
 /// Translates the backend's <see cref="PropertyType"/> enum into UI-friendly
 /// type hint strings. Also determines whether an array's items should be
-/// "unwrapped" for display — meaning the JSON wrapper struct around each
+/// "unwrapped" for display : meaning the JSON wrapper struct around each
 /// primitive item should be looked through so the user sees the raw value.
 /// </para>
 /// </summary>
