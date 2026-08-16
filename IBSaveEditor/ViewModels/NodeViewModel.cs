@@ -262,7 +262,7 @@ public class NodeViewModel : ReactiveObject
         set { this.RaiseAndSetIfChanged(ref _enumValue, value); if (BackingNode is EnumNode e) e.EnumValue = value; }
     }
 
-    //  Mutation ──────────────────────────────────────────────────────────────
+    #region Mutation
 
     public void AddItem(string? typeHintOverride = null)
     {
@@ -444,4 +444,6 @@ public class NodeViewModel : ReactiveObject
         else
             foreach (var child in Children) child.CommitToNode();
     }
+
+    #endregion
 }

@@ -42,7 +42,7 @@ public sealed class JsonDataParser
         IBEnum.SetGame(info.game);
     }
 
-    //  Public output methods ─────────────────────────────────────────────────
+    #region Public Output Methods
 
     /// <summary>
     /// Writes the full JSON envelope to a file in the OUTPUT directory.
@@ -84,7 +84,9 @@ public sealed class JsonDataParser
         }
     }
 
-    //  Private write steps ───────────────────────────────────────────────────
+    #endregion
+
+    #region Private Write Steps
 
     /// <summary>
     /// Writes the complete envelope: opens the root object, writes metadata and data
@@ -131,4 +133,6 @@ public sealed class JsonDataParser
 
         writer.WriteEndObject();
     }
+
+    #endregion
 }

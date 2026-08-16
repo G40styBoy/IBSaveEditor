@@ -13,7 +13,7 @@ namespace IBSaveEditor.Json;
 /// </summary>
 public static class JsonUtils
 {
-    //  Envelope-level reads ──────────────────────────────────────────────────
+    #region Envelope-Level Reads
 
     /// <summary>
     /// Reads the "metadata" section of a save JSON file and returns a populated
@@ -72,7 +72,9 @@ public static class JsonUtils
         }
     }
 
-    //  Element-level reads ───────────────────────────────────────────────────
+    #endregion
+
+    #region Element-Level Reads
 
     /// <summary>
     /// Reads a child property from a <see cref="JsonElement"/> by name.
@@ -152,7 +154,9 @@ public static class JsonUtils
         return value;
     }
 
-    //  Guard helpers ─────────────────────────────────────────────────────────
+    #endregion
+
+    #region Guard Helpers
 
     /// <summary>
     /// Asserts that a string value is non-null and non-empty.
@@ -180,4 +184,6 @@ public static class JsonUtils
         if (!File.Exists(path))
             throw new FileNotFoundException("The specified file does not exist.", path);
     }
+
+    #endregion
 }

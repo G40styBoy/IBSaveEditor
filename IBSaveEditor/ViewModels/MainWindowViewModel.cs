@@ -415,7 +415,8 @@ public class MainWindowViewModel : ReactiveObject
 
     public void ClearLog() => LogEntries.Clear();
 
-    //  Command stubs ─────────────────────────────────────────────────────────
+    #region Command Stubs
+
     private Task OpenFileAsync()  => Task.CompletedTask;
     private Task SaveFileAsync()  { if (FilePath != null) SaveToPath(FilePath); return Task.CompletedTask; }
     private Task ReloadAsync()
@@ -427,4 +428,6 @@ public class MainWindowViewModel : ReactiveObject
             LoadFromPath(FilePath);
         return Task.CompletedTask;
     }
+
+    #endregion
 }

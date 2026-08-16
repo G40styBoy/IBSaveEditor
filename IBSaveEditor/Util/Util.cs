@@ -7,7 +7,7 @@ namespace IBSaveEditor.Util;
 /// </summary>
 public static class Util
 {
-    // Console ───────────────────────────────────────────────────────────────
+    #region Console
 
     /// <summary>
     /// Writes a message to the console in the specified color.
@@ -33,7 +33,9 @@ public static class Util
         Console.ReadKey(true);
     }
 
-    // Debug ─────────────────────────────────────────────────────────────────
+    #endregion
+
+    #region Debug
 
     /// <summary>
     /// Triggers a debugger breakpoint if one is attached.
@@ -46,4 +48,6 @@ public static class Util
         if (Debugger.IsAttached)
             Debugger.Break();
     }
+
+    #endregion
 }

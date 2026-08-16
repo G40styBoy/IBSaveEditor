@@ -98,7 +98,11 @@ public static class UArrayRegistry
         },
         [Game.VOTE] = new Dictionary<ArrayName, ArrayMetadata>
         {
-            [ArrayName.TouchTreasureAwards] = new(ArrayName.TouchTreasureAwards, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic)
+            [ArrayName.TouchTreasureAwards] = new(ArrayName.TouchTreasureAwards, AlternateName.None, PropertyType.StructProperty, ArrayType.Dynamic),
+            // Fixed-size int array keyed by CharacterFilterEnum (IBEnum already maps this) :
+            // was previously unregistered, so repeated "LastVoteCount" properties collapsed
+            // into one value the moment the save's JSON was parsed into a JObject.
+            [ArrayName.LastVoteCount] = new(ArrayName.LastVoteCount, AlternateName.None, PropertyType.IntProperty, ArrayType.Static)
         },
     };
 

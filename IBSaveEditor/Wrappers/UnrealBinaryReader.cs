@@ -68,6 +68,15 @@ public class UnrealBinaryReader : BinaryReader
         }
     }
 
+    /// <summary>
+    /// Reads a signed Int32 used for property METADATA (tag size, array index, array
+    /// entry count) : never for a property's actual value. Clamps any negative value
+    /// other than the -1 sentinel to <see cref="int.MaxValue"/> as a guard against
+    /// corrupted/malformed metadata producing an unreasonable size or count that could
+    /// crash or hang downstream reads. Use <see cref="DeserializeIntValue"/> for real
+    /// IntProperty game data, where negative numbers are legitimate and must round-trip
+    /// exactly.
+    /// </summary>
     public int DeserializeInt()
     {
         try
@@ -78,6 +87,27 @@ public class UnrealBinaryReader : BinaryReader
                 return int.MaxValue;
 
             return value;
+        }
+        catch (Exception ex) when (
+            ex is EndOfStreamException
+            or IOException
+            or ObjectDisposedException)
+        {
+            throw new InvalidDataException(
+                "Failed to read Int32 from package stream.", ex);
+        }
+    }
+
+    /// <summary>
+    /// Reads a signed Int32 property VALUE from the stream, unmodified. Unlike
+    /// <see cref="DeserializeInt"/>, this does not clamp negative values : real
+    /// IntProperty game data can legitimately be negative and must be preserved exactly.
+    /// </summary>
+    public int DeserializeIntValue()
+    {
+        try
+        {
+            return ReadInt32();
         }
         catch (Exception ex) when (
             ex is EndOfStreamException

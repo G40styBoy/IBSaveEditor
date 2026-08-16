@@ -26,7 +26,7 @@ namespace IBSaveEditor.Json;
 /// </summary>
 internal sealed class JsonDataCruncher
 {
-    // Prefix/depth constants ────────────────────────────────────────────────
+    #region Prefix/Depth Constants
 
     private const string ENUM_PREFIX  = "e";
     private const string FNAME_PREFIX = "ini_";
@@ -39,7 +39,9 @@ internal sealed class JsonDataCruncher
     /// </summary>
     private const int NORMAL_READER_DEPTH = 1;
 
-    //  Edge-case name sets ───────────────────────────────────────────────────
+    #endregion
+
+    #region Edge-Case Name Sets
 
     /// <summary>
     /// Names that start with "e" but are NOT enum properties.
@@ -59,7 +61,9 @@ internal sealed class JsonDataCruncher
     /// </summary>
     private readonly HashSet<string> SpecialStructNames = new() { "SavedCheevo" };
 
-    //  State ─────────────────────────────────────────────────────────────────
+    #endregion
+
+    #region State
 
     private readonly JsonTextReader  _reader;
     private readonly List<UProperty> _crunchedList = new();
@@ -83,7 +87,9 @@ internal sealed class JsonDataCruncher
         };
     }
 
-    //  Public entry point ────────────────────────────────────────────────────
+    #endregion
+
+    #region Public Entry Point
 
     /// <summary>
     /// Reads all properties from the JSON text and returns the completed list.
@@ -117,7 +123,9 @@ internal sealed class JsonDataCruncher
         }
     }
 
-    //  Property classification ───────────────────────────────────────────────
+    #endregion
+
+    #region Property Classification
 
     /// <summary>
     /// Returns true when a property name should be treated as a ByteProperty.
@@ -144,7 +152,9 @@ internal sealed class JsonDataCruncher
     /// </summary>
     private bool IsNestedProperty() => _reader.Depth > NORMAL_READER_DEPTH;
 
-    //  Reader navigation helpers ─────────────────────────────────────────────
+    #endregion
+
+    #region Reader Navigation Helpers
 
     /// <summary>
     /// Advances the reader and returns true while there are more entries in a JSON object.
@@ -170,7 +180,9 @@ internal sealed class JsonDataCruncher
             throw BuildReaderStateException($"Unexpected end of JSON while {context}.");
     }
 
-    //  Collection helpers ────────────────────────────────────────────────────
+    #endregion
+
+    #region Collection Helpers
 
     /// <summary>Adds a single property to the top-level crunched list.</summary>
     private void AddPropertyToCollection(UProperty property) =>
@@ -180,7 +192,9 @@ internal sealed class JsonDataCruncher
     private void AddPropertyListToCollection(List<UProperty> propertyList) =>
         _crunchedList.AddRange(propertyList);
 
-    //  Core property reading ─────────────────────────────────────────────────
+    #endregion
+
+    #region Core Property Reading
 
     /// <summary>
     /// Reads the current property name token and dispatches to the appropriate type
@@ -239,7 +253,9 @@ internal sealed class JsonDataCruncher
         };
     }
 
-    //  Type builders ─────────────────────────────────────────────────────────
+    #endregion
+
+    #region Type Builders
 
     /// <summary>
     /// Builds an integer-valued property. If the name is "b"-prefixed it becomes
@@ -357,7 +373,9 @@ internal sealed class JsonDataCruncher
         return null;
     }
 
-    // Dynamic array builders ────────────────────────────────────────────────
+    #endregion
+
+    #region Dynamic Array Builders
 
     /// <summary>
     /// Builds a dynamic array property by dispatching to the correct element reader
@@ -413,7 +431,9 @@ internal sealed class JsonDataCruncher
         { throw BuildReaderStateException($"Failed to build ArrayProperty '{tag.name}'.", ex); }
     }
 
-    // Static array builders ─────────────────────────────────────────────────
+    #endregion
+
+    #region Static Array Builders
 
     /// <summary>
     /// Routes static array reconstruction to the correct path based on the array's value type.
@@ -592,7 +612,9 @@ internal sealed class JsonDataCruncher
         AddPropertyListToCollection(list);
     }
 
-    //  Struct element reader ─────────────────────────────────────────────────
+    #endregion
+
+    #region Struct Element Reader
 
     /// <summary>
     /// Reads a self-terminating list of named properties from a JSON object and
@@ -617,7 +639,9 @@ internal sealed class JsonDataCruncher
         return elements;
     }
 
-    //  Shared helpers ────────────────────────────────────────────────────────
+    #endregion
+
+    #region Shared Helpers
 
     /// <summary>
     /// Fills the type, size, and arrayIndex fields of a tag container.
@@ -653,4 +677,6 @@ internal sealed class JsonDataCruncher
             ? new InvalidOperationException($"{message} {state}")
             : new InvalidOperationException($"{message} {state}", inner);
     }
+
+    #endregion
 }

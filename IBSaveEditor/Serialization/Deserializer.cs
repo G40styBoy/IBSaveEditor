@@ -36,7 +36,7 @@ internal sealed class Deserializer
         _reader = upk.Reader;
     }
 
-    // Public entry point ────────────────────────────────────────────────────
+    #region Public Entry Point
 
     /// <summary>
     /// Reads all properties from the stream sequentially until a "None" sentinel
@@ -70,7 +70,9 @@ internal sealed class Deserializer
         return _propertyCollection;
     }
 
-    // Tag construction ──────────────────────────────────────────────────────
+    #endregion
+
+    #region Tag Construction
 
     /// <summary>
     /// Reads the next property tag from the stream and constructs the appropriate
@@ -141,7 +143,9 @@ internal sealed class Deserializer
         tag.arrayIndex = arrayIndex;
     }
 
-    //  Property construction ─────────────────────────────────────────────────
+    #endregion
+
+    #region Property Construction
 
     /// <summary>
     /// Dispatches to the correct <see cref="UProperty"/> subtype constructor based on the tag type.
@@ -182,7 +186,7 @@ internal sealed class Deserializer
 
         return tag.arrayInfo.valueType switch
         {
-            PropertyType.IntProperty                                  => BuildDynamicArrayProperty(tag, _ => _reader.DeserializeInt()),
+            PropertyType.IntProperty                                  => BuildDynamicArrayProperty(tag, _ => _reader.DeserializeIntValue()),
             PropertyType.FloatProperty                                => BuildDynamicArrayProperty(tag, _ => _reader.DeserializeFloat()),
             PropertyType.StrProperty or PropertyType.NameProperty    => BuildDynamicArrayProperty(tag, _ => _reader.DeserializeString()),
             PropertyType.StructProperty                               => BuildDynamicArrayProperty(tag, _ => ReadPropertyList()),
@@ -190,7 +194,9 @@ internal sealed class Deserializer
         };
     }
 
-    // Array builders ────────────────────────────────────────────────────────
+    #endregion
+
+    #region Array Builders
 
     /// <summary>
     /// Builds a dynamic array by reading exactly <see cref="TagContainer.arrayEntryCount"/>
@@ -240,7 +246,9 @@ internal sealed class Deserializer
         return new UArrayProperty(tag, elements);
     }
 
-    // Struct helpers ────────────────────────────────────────────────────────
+    #endregion
+
+    #region Struct Helpers
 
     /// <summary>
     /// Reads a self-terminating list of properties from the stream until a "None"
@@ -256,4 +264,6 @@ internal sealed class Deserializer
 
         return elements;
     }
+
+    #endregion
 }

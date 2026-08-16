@@ -20,6 +20,7 @@ public enum ArrayName
 #region VOTE
     EquippedListO,
     EquippedListR,
+    LastVoteCount,
 #endregion
 
 #region Static Arrays

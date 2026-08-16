@@ -54,7 +54,7 @@ public class UIntProperty : UProperty
 
     /// <summary>Deserializes an int from the binary stream.</summary>
     public UIntProperty(UnrealBinaryReader reader, TagContainer tag)
-        : base(tag) => value = reader.DeserializeInt();
+        : base(tag) => value = reader.DeserializeIntValue();
 
     /// <summary>Reads an int from JSON.</summary>
     public UIntProperty(JsonTextReader reader, TagContainer tag) : base(tag)
@@ -445,7 +445,7 @@ public class UArrayProperty : UProperty
         SerializeArrayContents(writer);
     }
 
-    // JSON writing ──────────────────────────────────────────────────────────
+    #region JSON Writing
 
     private void WriteArrayContentsAsJson(Utf8JsonWriter writer)
     {
@@ -546,7 +546,9 @@ public class UArrayProperty : UProperty
         }
     }
 
-    // Binary serialization ──────────────────────────────────────────────────
+    #endregion
+
+    #region Binary Serialization
 
     /// <summary>
     /// Serializes dynamic array contents. Dispatches on the first element's type.
@@ -577,6 +579,8 @@ public class UArrayProperty : UProperty
                 throw new NotImplementedException("Dynamic array type not implemented.");
         }
     }
+
+    #endregion
 }
 
 #endregion

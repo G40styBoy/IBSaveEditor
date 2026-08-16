@@ -57,7 +57,7 @@ internal sealed class Serializer : IDisposable
         }
     }
 
-    // Write steps ───────────────────────────────────────────────────────────
+    #region Write Steps
 
     /// <summary>
     /// Writes the package header to the stream.
@@ -125,6 +125,8 @@ internal sealed class Serializer : IDisposable
         // Every UE3 property list ends with a "None".
         _writer.WriteUnrealString(UType.NONE);
     }
+
+    #endregion
 
     public void Dispose()
     {

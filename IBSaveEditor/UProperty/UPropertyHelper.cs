@@ -12,7 +12,7 @@ namespace IBSaveEditor.UProperties;
 /// </summary>
 public static class UPropertyHelper
 {
-    // Size calculation ──────────────────────────────────────────────────────
+    #region Size Calculation
 
     /// <summary>
     /// Returns the byte length a string occupies in the Unreal binary format.
@@ -78,7 +78,9 @@ public static class UPropertyHelper
         };
     }
 
-    // JSON reading ──────────────────────────────────────────────────────────
+    #endregion
+
+    #region JSON Reading
 
     /// <summary>Delegate matching the signature of the standard TryParse methods (e.g. <c>int.TryParse</c>).</summary>
     internal protected delegate bool TryParseDelegate<T>(string input, out T result);
@@ -123,7 +125,9 @@ public static class UPropertyHelper
     public static object? GetFirstOrNull(List<object> elements)
         => elements.Count > 0 ? elements[0] : null;
 
-    // JSON writing ──────────────────────────────────────────────────────────
+    #endregion
+
+    #region JSON Writing
 
     /// <summary>
     /// Writes every property in the list as a named JSON value using each property's own name as the key.
@@ -149,7 +153,9 @@ public static class UPropertyHelper
         }
     }
 
-    // Binary serialization ──────────────────────────────────────────────────
+    #endregion
+
+    #region Binary Serialization
 
     /// <summary>
     /// Serializes a list of properties into binary format : each property's metadata header
@@ -178,7 +184,9 @@ public static class UPropertyHelper
             SerializePropertyList(writer, list);
     }
 
-    // Private size helpers ──────────────────────────────────────────────────
+    #endregion
+
+    #region Private Size Helpers
 
     /// <summary>
     /// Sums the binary lengths of a sequence of strings, using Unreal's
@@ -216,4 +224,6 @@ public static class UPropertyHelper
         total += GetLittleEndianStringLength(UType.NONE);
         return total;
     }
+
+    #endregion
 }

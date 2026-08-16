@@ -62,7 +62,7 @@ public static class IBEnum
         };
     }
 
-    // Alias → enum type ─────────────────────────────────────────────────────
+    #region Alias to Enum Type
 
     /// <summary>
     /// Returns the <see cref="Type"/> of the enum that provides index keys for the
@@ -91,7 +91,9 @@ public static class IBEnum
         };
     }
 
-    // String → index ────────────────────────────────────────────────────────
+    #endregion
+
+    #region String to Index
 
     /// <summary>
     /// Returns the zero-based index of a named enum value within the given enum type.
@@ -137,7 +139,9 @@ public static class IBEnum
         }
     }
 
-    // ── Private helpers ───────────────────────────────────────────────────────
+    #endregion
+
+    #region Private Helpers
 
     /// <summary>
     /// Converts an integer index to the string name of the corresponding enum value.
@@ -146,4 +150,6 @@ public static class IBEnum
     /// </summary>
     private static string EnumToString<T>(int idx) where T : Enum
         => ((T)(object)idx).ToString();
+
+    #endregion
 }
