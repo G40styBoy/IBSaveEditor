@@ -16,6 +16,10 @@
     <PackageReference Include="ReactiveUI" Version="20.1.1" />
   </ItemGroup>
   <PropertyGroup>
-  <ApplicationIcon>tool.ico</ApplicationIcon>
+    <ApplicationIcon>tool.ico</ApplicationIcon>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
   </PropertyGroup>
 </Project>

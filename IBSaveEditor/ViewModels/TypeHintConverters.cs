@@ -71,12 +71,25 @@ public class ObjectToBoolConverter : IValueConverter
         => value is bool b ? b : (object?)null;
 }
 
+public class TypeHintInequalityConverter : IValueConverter
+{
+    private readonly string _target;
+    public TypeHintInequalityConverter(string target) => _target = target;
+
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+        => !(value is string s && s.Equals(_target, StringComparison.OrdinalIgnoreCase));
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+        => throw new NotSupportedException();
+}
+
 public static class TypeHintConverters
 {
-    public static readonly TypeHintEqualityConverter IsInt    = new("int");
-    public static readonly TypeHintEqualityConverter IsFloat  = new("float");
-    public static readonly TypeHintEqualityConverter IsBool   = new("bool");
-    public static readonly TypeHintEqualityConverter IsString = new("string");
-    public static readonly TypeHintEqualityConverter IsByte   = new("byte");
-    public static readonly TypeHintEqualityConverter IsName   = new("name");
+    public static readonly TypeHintEqualityConverter   IsInt    = new("int");
+    public static readonly TypeHintEqualityConverter   IsFloat  = new("float");
+    public static readonly TypeHintEqualityConverter   IsBool   = new("bool");
+    public static readonly TypeHintEqualityConverter   IsString = new("string");
+    public static readonly TypeHintEqualityConverter   IsByte   = new("byte");
+    public static readonly TypeHintEqualityConverter   IsName   = new("name");
+    public static readonly TypeHintInequalityConverter IsNotBool = new("bool");
 }

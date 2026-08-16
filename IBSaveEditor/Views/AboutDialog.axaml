@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="IBSaveEditor.Views.AboutDialog"
         Title="About"
-        Width="360" Height="260"
+        Width="360" Height="300"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
         Background="#0D1B2A"
@@ -11,7 +11,6 @@
   <Border Padding="32">
     <StackPanel Spacing="0">
 
-      <!-- Title -->
       <TextBlock Text="Infinity Blade Save Editor"
                  Foreground="#E0E1DD"
                  FontSize="16"
@@ -22,13 +21,13 @@
 
       <!-- Author -->
       <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
-        <TextBlock Text="Author" Foreground="#415A77" FontSize="11" Width="60" VerticalAlignment="Center"/>
-        <TextBlock Text="G40sty" Foreground="#E0E1DD" FontSize="12" VerticalAlignment="Center"/>
+        <TextBlock Text="Author"  Foreground="#415A77" FontSize="11" Width="70" VerticalAlignment="Center"/>
+        <TextBlock Text="G40sty"  Foreground="#E0E1DD" FontSize="12" VerticalAlignment="Center"/>
       </StackPanel>
 
       <!-- YouTube -->
       <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
-        <TextBlock Text="YouTube" Foreground="#415A77" FontSize="11" Width="60" VerticalAlignment="Center"/>
+        <TextBlock Text="YouTube" Foreground="#415A77" FontSize="11" Width="70" VerticalAlignment="Center"/>
         <Button Classes="about-link-btn"
                 Content="@g40styboi42"
                 Tag="https://www.youtube.com/@g40styboi42"
@@ -36,12 +35,22 @@
       </StackPanel>
 
       <!-- GitHub -->
-      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,24">
-        <TextBlock Text="GitHub" Foreground="#415A77" FontSize="11" Width="60" VerticalAlignment="Center"/>
+      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,12">
+        <TextBlock Text="GitHub"  Foreground="#415A77" FontSize="11" Width="70" VerticalAlignment="Center"/>
         <Button Classes="about-link-btn"
                 Content="G40styBoy"
                 Tag="https://github.com/G40styBoy"
                 Click="OnLinkClick"/>
+      </StackPanel>
+
+      <!-- Ko-fi -->
+      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,24">
+        <TextBlock Text="Donate"  Foreground="#415A77" FontSize="11" Width="70" VerticalAlignment="Center"/>
+        <Button Classes="about-link-btn"
+                Content="ko-fi.com/g40sty"
+                Tag="https://ko-fi.com/g40sty"
+                Click="OnLinkClick"
+                Foreground="#778DA9"/>
       </StackPanel>
 
       <!-- Close -->

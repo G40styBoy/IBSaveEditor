@@ -36,7 +36,7 @@ public static class UPropertyLayout
 /// <summary>
 /// String representation of all UProperty types discoverable inside of a Save Package.
 /// </summary>
-public static class UType
+public class UType
 {
     public const string INT_PROPERTY = "IntProperty";
     public const string FLOAT_PROPERTY = "FloatProperty";
@@ -62,96 +62,4 @@ public enum PropertyType
     FloatProperty,
     BoolProperty,
     ByteProperty
-}
-
-public enum ArrayType : byte
-{
-    Static,
-    Dynamic
-}
-
-public enum AlternateName
-{
-    None,
-    CurrencyStruct,
-    PlayerSavedStats,
-    PlayerEquippedItemList,
-    NumConsumable,
-    GemCookerData,
-    ItemForgeData,
-    PotionCauldronData,
-    SavedCheevoData,
-    ShowConsumableBadge,
-    LastEquippedWeaponOfType,
-    SocialChallengeSave
-}
-
-public enum ArrayName
-{
-    // IB1 //
-    PlaythroughItemsGiven,
-    // and TouchTreasureAwards
-
-    // IB2 //
-    PlayerCookerGems,
-    SuperBoss,
-    ActiveBattlePotions,
-    SocialChallengeSaveEvents,
-        // SUBSET //
-        GiftedTo,
-        GiftedFrom,
-
-    // VOTE //
-    EquippedListO,
-    EquippedListR,
-
-    // IB3 //
-    // Static Arrays
-    Currency,
-    Stats,
-    NumConsumable,
-    ShowConsumableBadge,
-    GemCooker,
-    ItemForge,
-    PotionCauldron,
-    SavedCheevo,
-    LastEquippedWeaponOfType,
-    CharacterEquippedList,
-
-    // Dynamic Arrays
-    EquippedItemNames,
-    EquippedItems,
-    LinkNotificationBadges,
-    CurrentKeyItemList,
-    UsedKeyItemList,
-    PlayerInventory,
-    PlayerUnequippedGems,
-    CurrentStoreGems,
-    InActivePotionList,
-    ActivePotions,
-    PurchasedPerks,
-    GameFlagList,
-    BossFixedWorldInfo,
-    TouchTreasureAwards,
-    WorldItemOrderList,
-    TreasureChestOpened,
-    BossesGeneratedThisBloodline,
-    PotentialBossElementalAttacks,
-    PerLevelData,
-    CurrentBattleChallengeList,
-    SavedPersistentBossData,
-    HardCoreCurrentQuestData,
-    LoggedAnalyticsAchievements,
-    McpAuthorizedServices,
-
-    // Subset Arrays
-    SocketedGemData,
-    Gems,
-    Reagents,
-    BossElementalRandList,
-    PersistActorCounts,
-    DontClearPersistActorCounts,
-    SavedItems,
-    Quests,
-    PendingAction
 }

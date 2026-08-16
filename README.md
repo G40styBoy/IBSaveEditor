@@ -32,11 +32,11 @@ Click **Save** to write your changes, then click **Serialize .json** to rebuild 
 
 ## Features
 
-- **Deserialize and serialize** — Convert between `.bin` save packages and editable JSON
-- **Full property editing** — Edit integers, floats, booleans, strings, bytes, enums, structs, and arrays
-- **Add and remove entries** — Add new members to structs and arrays with type selection, or remove existing ones
-- **Duplicate entries** — Clone any struct member or array item with a single click
-- **Encrypted save support** — Detects and handles encrypted save packages automatically
+- **Deserialize and serialize** : Convert between `.bin` save packages and editable JSON
+- **Full property editing** : Edit integers, floats, booleans, strings, bytes, enums, structs, and arrays
+- **Add and remove entries** : Add new members to structs and arrays with type selection, or remove existing ones
+- **Duplicate entries** : Clone any struct member or array item with a single click
+- **Encrypted save support** : Detects and handles encrypted save packages automatically
 
 ---
 

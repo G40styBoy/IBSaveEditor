@@ -1,11 +1,13 @@
 using IBSaveEditor.UProperties;
+using System.Text;
+
 namespace IBSaveEditor.Wrappers;
 /// <summary>
 /// Wrapper for <see cref="BinaryWriter"/> that includes methods tailoring to Unreal Packages.
 /// </summary>
 public class UnrealBinaryWriter : BinaryWriter
 {
-    public UnrealBinaryWriter(Stream stream) : base(stream) { }
+    public UnrealBinaryWriter(UnrealStream stream) : base(stream.BaseStream) { }
 
     /// <summary>
     /// Overwrite method for BinaryWriter.write(string) so it does not append the size to the beginning of the string

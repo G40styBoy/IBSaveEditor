@@ -293,5 +293,9 @@ __pycache__/
 OUTPUT/
 SAVE STORAGE LOCATION/
 OLD LOGIC STORAGE/
+Claude.md
 
+IBSaveEditor/Catalog/src
 IBSaveEditor/tool.ico
+IBSaveEditor/build.ps1
+IBSaveEditor/
