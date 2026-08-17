@@ -1,0 +1,109 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:IBSaveEditor.ViewModels.Fields"
+             x:Class="IBSaveEditor.Views.Fields.FieldRowView"
+             x:DataType="vm:FieldViewModel">
+
+  <Border BorderBrush="#1B263B" BorderThickness="0,0,0,1" Padding="0,10">
+    <StackPanel Spacing="8">
+
+      <Grid ColumnDefinitions="*,Auto">
+
+        <!-- Label + optional description -->
+        <StackPanel Grid.Column="0" Spacing="2" VerticalAlignment="Center" Margin="0,0,16,0">
+          <TextBlock Text="{Binding Label}" Foreground="#E0E1DD" FontSize="13"/>
+          <TextBlock Text="{Binding Description}" Foreground="#778DA9" FontSize="11"
+                     IsVisible="{Binding HasDescription}" TextWrapping="Wrap"/>
+          <TextBlock Text="not found in catalog" Foreground="#c9a227" FontSize="10" FontStyle="Italic"
+                     IsVisible="{Binding HasUnresolvedCatalogValue}"/>
+          <TextBlock Text="not from an authoritative list - may be incomplete" Foreground="#c9a227" FontSize="10" FontStyle="Italic"
+                     IsVisible="{Binding ShowsUnverifiedEnumChoiceWarning}"/>
+        </StackPanel>
+
+        <!-- Not present in this save : the field's path didn't resolve -->
+        <TextBlock Grid.Column="1"
+                   Text="not present in this save"
+                   Foreground="#415A77" FontSize="11" FontStyle="Italic"
+                   VerticalAlignment="Center"
+                   IsVisible="{Binding !IsResolved}"/>
+
+        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"
+                    IsVisible="{Binding IsResolved}">
+
+          <!-- Unsupported kind (nothing left unmapped currently, kept as a safety net) -->
+          <TextBlock Text="control not implemented yet" Foreground="#415A77" FontSize="11" FontStyle="Italic"
+                     IsVisible="{Binding IsUnsupportedControl}"/>
+
+          <!-- EnumChoice : dropdown when we have a candidate source (authoritative enum or
+               observed corpus values, see FieldViewModel), else plain read-only text for
+               the rare mismatch where the path didn't actually resolve to an enum. -->
+          <ComboBox IsVisible="{Binding HasEnumChoiceCandidates}"
+                    ItemsSource="{Binding EnumChoiceCandidates}"
+                    SelectedItem="{Binding SelectedEnumChoice, Mode=TwoWay}"
+                    MinWidth="160"/>
+          <TextBlock IsVisible="{Binding IsEnumChoiceMismatch}" Text="{Binding EnumChoiceDisplayValue}"
+                     Foreground="#E0E1DD" FontSize="13"
+                     VerticalAlignment="Center" TextTrimming="CharacterEllipsis" MaxWidth="220"/>
+
+          <!-- Toggle -->
+          <ToggleSwitch IsVisible="{Binding IsToggleControl}"
+                        IsChecked="{Binding ToggleEditValue, Mode=TwoWay}"
+                        OnContent="on" OffContent="off"/>
+
+          <!-- Text -->
+          <TextBox IsVisible="{Binding IsTextControl}"
+                   Text="{Binding TextEditValue, Mode=TwoWay}"
+                   MinWidth="140" MaxWidth="380"
+                   Background="#0D1B2A" BorderBrush="#415A77" BorderThickness="1"
+                   Foreground="#E0E1DD" Padding="8,4" CornerRadius="3"/>
+
+          <!-- Number : int-backed -->
+          <TextBox IsVisible="{Binding IsIntegerNumberControl}"
+                   Text="{Binding IntEditValue, Mode=TwoWay}"
+                   MinWidth="100"
+                   Background="#0D1B2A" BorderBrush="#415A77" BorderThickness="1"
+                   Foreground="#E0E1DD" Padding="8,4" CornerRadius="3"/>
+
+          <!-- Number : float-backed -->
+          <TextBox IsVisible="{Binding IsFloatNumberControl}"
+                   Text="{Binding FloatEditValue, Mode=TwoWay}"
+                   MinWidth="100"
+                   Background="#0D1B2A" BorderBrush="#415A77" BorderThickness="1"
+                   Foreground="#E0E1DD" Padding="8,4" CornerRadius="3"/>
+
+          <!-- ItemRef / GemRef : catalog-backed picker, see the expandable panel below -->
+          <StackPanel IsVisible="{Binding IsCatalogPickerControl}" Orientation="Horizontal" Spacing="8">
+            <TextBlock Text="{Binding CatalogPickerDisplayLabel}" Foreground="#E0E1DD" FontSize="13"
+                       VerticalAlignment="Center" TextTrimming="CharacterEllipsis" MaxWidth="220"/>
+            <Button Classes="type-choice-btn" Content="change" Padding="8,3" FontSize="11"
+                    Click="OnOpenCatalogPicker"/>
+          </StackPanel>
+
+        </StackPanel>
+      </Grid>
+
+      <!-- Catalog picker panel : mirrors the raw tree editor's array/struct type-picker pattern -->
+      <Border Classes="type-picker" IsVisible="{Binding IsCatalogPickerOpen}">
+        <StackPanel Spacing="8">
+          <DockPanel>
+            <TextBlock Classes="field-label" Text="SEARCH CATALOG" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <Button Classes="array-remove-btn" Content="✕" HorizontalAlignment="Right"
+                    Click="OnCancelCatalogPicker" Foreground="#415A77"/>
+          </DockPanel>
+          <TextBox Classes="prop-input" Watermark="type to filter…"
+                   Text="{Binding CatalogPickerSearchText, Mode=TwoWay}"/>
+
+          <ItemsControl ItemsSource="{Binding FilteredCatalogPickerCandidates}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate DataType="vm:CatalogPickerItem">
+                <Button Classes="type-choice-btn" Content="{Binding Label}" Tag="{Binding}"
+                        Click="OnCatalogPickerCandidateClick" Margin="0,0,0,6"/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+
+    </StackPanel>
+  </Border>
+</UserControl>

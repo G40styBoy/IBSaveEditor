@@ -30,7 +30,6 @@ namespace IBSaveEditor.ViewModels;
 public class NodeViewModel : ReactiveObject
 {
     private bool    _isExpanded;
-    private object? _editValue;
     private string  _enumType  = string.Empty;
     private string  _enumValue = string.Empty;
 
@@ -83,8 +82,7 @@ public class NodeViewModel : ReactiveObject
         else
             Children = new ObservableCollection<NodeViewModel>();
 
-        if (node is PrimitiveNode p)   _editValue = p.Value;
-        else if (node is EnumNode e) { _enumType = e.EnumType; _enumValue = e.EnumValue; }
+        if (node is EnumNode e) { _enumType = e.EnumType; _enumValue = e.EnumValue; }
     }
 
     /// <summary>
@@ -236,17 +234,25 @@ public class NodeViewModel : ReactiveObject
     /// <summary>
     /// The edit value shown in the property editor. Routes to the inner primitive
     /// when this node is a promoted wrapper key.
+    /// <para>
+    /// Reads and writes the backing <see cref="PrimitiveNode"/> directly rather than
+    /// through a locally cached field : a cache here previously went stale whenever
+    /// something other than this exact VM instance wrote to the same backing node
+    /// (e.g. a manifest-driven <c>FieldViewModel</c> editing the same save), and the
+    /// stale value would then overwrite the real one at export via <c>CommitToNode</c>.
+    /// Reading live makes that class of bug impossible instead of papering over it.
+    /// </para>
     /// </summary>
     public object? EditValue
     {
-        get => _editValue;
+        get => _unwrappedTarget?.Value ?? (BackingNode as PrimitiveNode)?.Value;
         set
         {
-            this.RaiseAndSetIfChanged(ref _editValue, value);
             if (_unwrappedTarget != null)
                 _unwrappedTarget.Value = value;
             else if (BackingNode is PrimitiveNode p)
                 p.Value = value;
+            this.RaisePropertyChanged(nameof(EditValue));
         }
     }
 
@@ -433,17 +439,6 @@ public class NodeViewModel : ReactiveObject
         "byte"  => (long)0,
         _       => string.Empty
     };
-
-    /// <summary>Pushes any in-flight edit value back to the backing node.</summary>
-    public void CommitToNode()
-    {
-        if (_unwrappedTarget != null)
-            _unwrappedTarget.Value = _editValue;
-        else if (BackingNode is PrimitiveNode p)
-            p.Value = _editValue;
-        else
-            foreach (var child in Children) child.CommitToNode();
-    }
 
     #endregion
 }

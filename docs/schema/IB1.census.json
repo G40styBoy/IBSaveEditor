@@ -1,0 +1,1229 @@
+{
+  "Game": "IB1",
+  "GeneratedUtc": "2026-08-17T15:34:42.5384468Z",
+  "SourceFileCount": 3,
+  "SuccessfulFileCount": 3,
+  "FailedFiles": [],
+  "Paths": [
+    {
+      "Path": "data",
+      "Types": [
+        "Object"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo",
+      "Types": [
+        "Array"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[]",
+      "Types": [
+        "Object"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossArchetype",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 5,
+      "DistinctSamples": [
+        "4",
+        "0",
+        "2",
+        "1",
+        "3",
+        "5"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossClass",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 0,
+      "DistinctSamples": [
+        "0"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossElementalRandList",
+      "Types": [
+        "Array"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossElementalRandList[]",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0.008304715,
+      "Max": 0.9968871,
+      "DistinctSamples": [
+        "0.78237784",
+        "0.39349794",
+        "0.48000705",
+        "0.8885982",
+        "0.57017434",
+        "0.9597006",
+        "0.07712591",
+        "0.21997952",
+        "0.889732",
+        "0.4826827",
+        "0.3757447",
+        "0.3167951",
+        "0.8319932",
+        "0.9073906",
+        "0.08301675",
+        "0.78317094",
+        "0.04063475",
+        "0.47369242",
+        "0.53695476",
+        "0.65877986"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossForceItemDrop",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 0,
+      "DistinctSamples": [
+        "0"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 0,
+      "DistinctSamples": [
+        "0"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossRefightCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 2,
+      "DistinctSamples": [
+        "0",
+        "2"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossXpLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 3,
+      "Max": 1050,
+      "DistinctSamples": [
+        "1003",
+        "1010",
+        "1007",
+        "1005",
+        "1001",
+        "1002",
+        "1050",
+        "1004",
+        "1014",
+        "15",
+        "8",
+        "13",
+        "9",
+        "6",
+        "7",
+        "10",
+        "4",
+        "55",
+        "3"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage1",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 19,
+      "Max": 936,
+      "DistinctSamples": [
+        "124",
+        "501",
+        "781",
+        "291",
+        "373",
+        "294",
+        "936",
+        "164",
+        "774",
+        "819",
+        "378",
+        "535",
+        "712",
+        "826",
+        "441",
+        "201",
+        "842",
+        "332",
+        "198",
+        "586"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage2",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 54,
+      "Max": 994,
+      "DistinctSamples": [
+        "720",
+        "443",
+        "615",
+        "187",
+        "545",
+        "561",
+        "774",
+        "189",
+        "429",
+        "835",
+        "551",
+        "694",
+        "160",
+        "54",
+        "377",
+        "313",
+        "555",
+        "247",
+        "438",
+        "873"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage3",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 3,
+      "Max": 955,
+      "DistinctSamples": [
+        "755",
+        "631",
+        "484",
+        "335",
+        "406",
+        "3",
+        "562",
+        "790",
+        "808",
+        "901",
+        "315",
+        "674",
+        "789",
+        "4",
+        "77",
+        "571",
+        "171",
+        "45",
+        "110",
+        "604"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ini_BossSpawnPointName",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "SwordBossSpawnPoint_2",
+        "SwordBossSpawnPoint_19",
+        "SwordBossSpawnPoint_8",
+        "SwordBossSpawnPoint_6",
+        "SwordBossSpawnPoint_21",
+        "SwordBossSpawnPoint_11",
+        "SwordBossSpawnPoint_13",
+        "SwordBossSpawnPoint_1",
+        "SwordBossSpawnPoint_10",
+        "SwordBossSpawnPoint_3",
+        "SwordBossSpawnPoint_7",
+        "SwordBossSpawnPoint_12",
+        "SwordBossSpawnPoint_17",
+        "SwordBossSpawnPoint_9",
+        "SwordBossSpawnPoint_20",
+        "SwordBossSpawnPoint_15",
+        "SwordBossSpawnPoint_5",
+        "SwordBossSpawnPoint_16",
+        "SwordBossSpawnPoint_0",
+        "SwordBossSpawnPoint_14"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.CurrentGold",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 2066,
+      "Max": 1569548,
+      "DistinctSamples": [
+        "1569548",
+        "2066"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.CurrentHealthPotions",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 5,
+      "DistinctSamples": [
+        "5",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.CurrentMagicLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0.3050199,
+      "Max": 2.681711,
+      "DistinctSamples": [
+        "2.681711",
+        "0.3050199"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.CurrentSuperLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0.02666667,
+      "Max": 0.2666667,
+      "DistinctSamples": [
+        "0.02666667",
+        "0.2666667"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.CurrentXP",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1207,
+      "Max": 349705,
+      "DistinctSamples": [
+        "349705",
+        "1207"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.DefeatedByGodKing",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 22,
+      "DistinctSamples": [
+        "22",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.EquippedItemNames",
+      "Types": [
+        "Array"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.EquippedItemNames[]",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "Sword_52",
+        "Shield_27",
+        "Armor_9",
+        "Helmet_39",
+        "Magic_22",
+        "Sword_28",
+        "Shield_3",
+        "Armor_2",
+        "Helmet_15",
+        "Magic_9"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.FightFinishedCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 10,
+      "Max": 1611,
+      "DistinctSamples": [
+        "1611",
+        "10"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.GameOptions",
+      "Types": [
+        "Object"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.GameOptions.DodgeScale",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 1,
+      "DistinctSamples": [
+        "1.0",
+        "0.0"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.GameOptions.MusicScale",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 1,
+      "PresenceRate": 0.3333,
+      "Min": 0.1,
+      "Max": 0.1,
+      "DistinctSamples": [
+        "0.1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.GameOptions.SFXScale",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 1,
+      "PresenceRate": 0.3333,
+      "Min": 0.1,
+      "Max": 0.1,
+      "DistinctSamples": [
+        "0.1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.GenerationCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 2,
+      "Max": 201,
+      "DistinctSamples": [
+        "201",
+        "2"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.GodKingDefeated",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 96,
+      "DistinctSamples": [
+        "96",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.HasCheckedIB2",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 1,
+      "Max": 1,
+      "DistinctSamples": [
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.HasDoneLookTutorial",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 1,
+      "DistinctSamples": [
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.HasReadMPTutorial",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 1,
+      "Max": 1,
+      "DistinctSamples": [
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.Health",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1260,
+      "Max": 3060,
+      "DistinctSamples": [
+        "3060",
+        "1260"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MaxGeneration",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 2,
+      "Max": 201,
+      "DistinctSamples": [
+        "201",
+        "2"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MaxGodKingDefeatedLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 50,
+      "Max": 5300,
+      "DistinctSamples": [
+        "5300",
+        "50"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MaxMasteryCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 10,
+      "Max": 10,
+      "DistinctSamples": [
+        "10"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MinusWorldMaxGeneration",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 44,
+      "Max": 44,
+      "DistinctSamples": [
+        "44"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MultiBossMatches",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 24,
+      "Max": 24,
+      "DistinctSamples": [
+        "24"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MultiBossWins",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 17,
+      "Max": 17,
+      "DistinctSamples": [
+        "17"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MultiKnightMatches",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 2,
+      "Max": 2,
+      "DistinctSamples": [
+        "2"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.MultiKnightWins",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 2,
+      "Max": 2,
+      "DistinctSamples": [
+        "2"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.NewSurvivalFightMaxRound",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 27,
+      "Max": 27,
+      "DistinctSamples": [
+        "27"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PawnLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 8,
+      "Max": 512,
+      "DistinctSamples": [
+        "512",
+        "8"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PawnStatDamage",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 13,
+      "Max": 2543,
+      "DistinctSamples": [
+        "2543",
+        "13"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PawnStatHealth",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 9,
+      "DistinctSamples": [
+        "1",
+        "9"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PawnStatMagic",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 25,
+      "DistinctSamples": [
+        "25",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PawnStatShield",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 51,
+      "DistinctSamples": [
+        "51",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PlayThroughFightFinishedCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 6,
+      "DistinctSamples": [
+        "6",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PlayerInventory",
+      "Types": [
+        "Array"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PlayerInventory[]",
+      "Types": [
+        "Object"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PlayerInventory[].Mastered",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 11,
+      "DistinctSamples": [
+        "6",
+        "11",
+        "10",
+        "0",
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PlayerInventory[].NumberPlayerHas",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 2,
+      "DistinctSamples": [
+        "1",
+        "0",
+        "2"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.PlayerInventory[].XpGainedFromItem",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 0,
+      "Max": 1056000,
+      "DistinctSamples": [
+        "95077",
+        "275000",
+        "950597",
+        "524625",
+        "149280",
+        "20900",
+        "11000",
+        "28600",
+        "46200",
+        "68200",
+        "48400",
+        "9900",
+        "33000",
+        "35200",
+        "156200",
+        "39600",
+        "91850",
+        "61600",
+        "37400",
+        "176000"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.PlayerInventory[].ini_ItemName",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "Sword_52",
+        "Shield_27",
+        "Armor_9",
+        "Helmet_39",
+        "Magic_22",
+        "Sword_11",
+        "Sword_9",
+        "Helmet_15",
+        "Sword_27",
+        "Shield_9",
+        "Shield_14",
+        "Magic_10",
+        "Shield_6",
+        "Sword_39",
+        "Shield_7",
+        "Magic_6",
+        "Helmet_9",
+        "Sword_44",
+        "Sword_31",
+        "Sword_23"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.RebalanceStatsCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 5,
+      "Max": 5,
+      "DistinctSamples": [
+        "5"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.SaveFileFixupVersion",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 1,
+      "DistinctSamples": [
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.SuperBoss",
+      "Types": [
+        "Array"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.SuperBoss[]",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 1,
+      "Max": 1,
+      "DistinctSamples": [
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.TotalGoldAquired",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 15666,
+      "Max": 668456187,
+      "DistinctSamples": [
+        "668456187",
+        "15666"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.TotalGoldFoundInWorld",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 858,
+      "Max": 20367094,
+      "DistinctSamples": [
+        "20367094",
+        "858"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.TotalGoldFromBattle",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 14808,
+      "Max": 32512673,
+      "DistinctSamples": [
+        "32512673",
+        "14808"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.TotalTreasureChest",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 4,
+      "Max": 793,
+      "DistinctSamples": [
+        "793",
+        "4"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.TouchTreasureAwards",
+      "Types": [
+        "Array"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.TouchTreasureAwards[]",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "SwordTouchRewardActor_33",
+        "SwordTouchRewardActor_24",
+        "SwordTouchRewardActor_1",
+        "SwordTouchRewardActor_38",
+        "SwordTouchRewardActor_11",
+        "SwordTouchRewardActor_9",
+        "SwordTouchRewardActor_17",
+        "SwordTouchRewardActor_34",
+        "SwordTouchRewardActor_18",
+        "SwordTouchRewardActor_20",
+        "SwordTouchRewardActor_42",
+        "SwordTouchRewardActor_19",
+        "SwordTouchRewardActor_25",
+        "SwordTouchRewardActor_43",
+        "SwordTouchRewardActor_28",
+        "SwordTouchRewardActor_47",
+        "SwordTouchRewardActor_44",
+        "SwordTouchRewardActor_49",
+        "SwordTouchRewardActor_30",
+        "SwordTouchRewardActor_35"
+      ],
+      "SamplesTruncated": true
+    },
+    {
+      "Path": "data.UberBossKillCount",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 10,
+      "Max": 10,
+      "DistinctSamples": [
+        "10"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.ValidSave",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 1,
+      "Max": 1,
+      "DistinctSamples": [
+        "1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.WorldLevel",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 5,
+      "Max": 1000,
+      "DistinctSamples": [
+        "1000",
+        "5"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.WorldLevelAdjustment",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 2,
+      "PresenceRate": 0.6667,
+      "Min": 500,
+      "Max": 500,
+      "DistinctSamples": [
+        "500"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.YearsLater",
+      "Types": [
+        "Number"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": 20,
+      "Max": 22,
+      "DistinctSamples": [
+        "22",
+        "20"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.ini_BossPrecacheSaveName",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "SeqAct_LoadBossBattle_5",
+        "SeqAct_LoadBossBattle_1"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.ini_ChoicePointSaveName",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "SeqAct_StartChoiceMode_35",
+        "SeqAct_StartChoiceMode_7"
+      ],
+      "SamplesTruncated": false
+    },
+    {
+      "Path": "data.ini_MapSaveName",
+      "Types": [
+        "String"
+      ],
+      "PresentInFiles": 3,
+      "PresenceRate": 1,
+      "Min": null,
+      "Max": null,
+      "DistinctSamples": [
+        "Birthright_P"
+      ],
+      "SamplesTruncated": false
+    }
+  ]
+}

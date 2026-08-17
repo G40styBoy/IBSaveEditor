@@ -1,0 +1,165 @@
+{
+  "Game": "IB3",
+  "GeneratedUtc": "2026-08-17T15:34:39.592622Z",
+  "SavesScanned": 25,
+  "EnumTypes": [
+    {
+      "EnumType": "ArenaDifficultyLevel",
+      "Occurrences": 925,
+      "DistinctValueCount": 2,
+      "DistinctValues": [
+        "ADL_Easy",
+        "None"
+      ],
+      "Paths": [
+        "data.GameOptions.Quests[].eArenaDifficulty"
+      ]
+    },
+    {
+      "EnumType": "BossMapVariation",
+      "Occurrences": 264,
+      "DistinctValueCount": 6,
+      "DistinctValues": [
+        "BMV_CustomMap",
+        "BMV_VariationA",
+        "BMV_VariationB",
+        "BMV_VariationC",
+        "BMV_VariationD",
+        "BMV_VariationE"
+      ],
+      "Paths": [
+        "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedDeath",
+        "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedStage1",
+        "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedStage2",
+        "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedStage3"
+      ]
+    },
+    {
+      "EnumType": "ItemEnhancementType",
+      "Occurrences": 14,
+      "DistinctValueCount": 2,
+      "DistinctValues": [
+        "IET_GemCooker",
+        "IET_PotionCauldron"
+      ],
+      "Paths": [
+        "data.GemCooker[].Data.eType",
+        "data.PotionCauldron[].Data.eType"
+      ]
+    },
+    {
+      "EnumType": "QuestActionEnum",
+      "Occurrences": 6,
+      "DistinctValueCount": 2,
+      "DistinctValues": [
+        "QAE_CompleteQuest",
+        "QAE_HideoutSubLevels"
+      ],
+      "Paths": [
+        "data.GameOptions.Quests[].PendingAction[].eAction"
+      ]
+    },
+    {
+      "EnumType": "QuestEventEnum",
+      "Occurrences": 6,
+      "DistinctValueCount": 1,
+      "DistinctValues": [
+        "QEE_QuestStart"
+      ],
+      "Paths": [
+        "data.GameOptions.Quests[].PendingAction[].eTrigger"
+      ]
+    },
+    {
+      "EnumType": "ShowQuestType",
+      "Occurrences": 25,
+      "DistinctValueCount": 1,
+      "DistinctValues": [
+        "SQT_ClashMobSolo"
+      ],
+      "Paths": [
+        "data.GameOptions.eShowQuests"
+      ]
+    },
+    {
+      "EnumType": "SwordItemState",
+      "Occurrences": 10154,
+      "DistinctValueCount": 1,
+      "DistinctValues": [
+        "SIS_ItemNormal"
+      ],
+      "Paths": [
+        "data.PlayerInventory[].eItemState"
+      ]
+    },
+    {
+      "EnumType": "eBossAttackClass",
+      "Occurrences": 66,
+      "DistinctValueCount": 14,
+      "DistinctValues": [
+        "BAC_06ftF_Claw",
+        "BAC_06ftF_Sword",
+        "BAC_06ft_2H",
+        "BAC_06ft_2W",
+        "BAC_06ft_SnS",
+        "BAC_08ft_2S",
+        "BAC_10ft_Claw",
+        "BAC_10ft_SnS",
+        "BAC_12ftF_Staff",
+        "BAC_12ft_2SB",
+        "BAC_12ft_Staff",
+        "BAC_15ft_2H",
+        "BAC_15ft_Log",
+        "BAC_Random"
+      ],
+      "Paths": [
+        "data.BossFixedWorldInfo[].eBossAttackClass"
+      ]
+    },
+    {
+      "EnumType": "eNewWorldType",
+      "Occurrences": 3,
+      "DistinctValueCount": 1,
+      "DistinctValues": [
+        "NWT_NoSave"
+      ],
+      "Paths": [
+        "data.eStartNewWorld"
+      ]
+    },
+    {
+      "EnumType": "ePlayerCharacterType",
+      "Occurrences": 951,
+      "DistinctValueCount": 3,
+      "DistinctValues": [
+        "EPCT_AllValid",
+        "EPCT_Isa",
+        "EPCT_Siris"
+      ],
+      "Paths": [
+        "data.GameOptions.Quests[].ePlayerType",
+        "data.eCurrentPlayerType",
+        "data.eLastHardCorePlayerType",
+        "data.eLastPlayerType"
+      ]
+    },
+    {
+      "EnumType": "eTouchRewardActor",
+      "Occurrences": 66,
+      "DistinctValueCount": 8,
+      "DistinctValues": [
+        "TRA_Gold_Large",
+        "TRA_Gold_Medium",
+        "TRA_GrabBag_Large",
+        "TRA_GrabBag_MediumGem",
+        "TRA_Item_Fixed",
+        "TRA_Key_Large",
+        "TRA_None",
+        "TRA_Random"
+      ],
+      "Paths": [
+        "data.BossFixedWorldInfo[].eBossForceDropType"
+      ]
+    }
+  ]
+}

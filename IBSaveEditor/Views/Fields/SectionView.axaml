@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:IBSaveEditor.ViewModels.Fields"
+             xmlns:fields="using:IBSaveEditor.Views.Fields"
+             x:Class="IBSaveEditor.Views.Fields.SectionView"
+             x:DataType="vm:SectionViewModel">
+
+  <StackPanel Spacing="0" Margin="0,0,0,24">
+    <TextBlock Text="{Binding Title}" Foreground="#778DA9" FontSize="11" FontWeight="Bold"
+               LetterSpacing="1" Margin="0,0,0,8"/>
+
+    <ItemsControl ItemsSource="{Binding Fields}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate DataType="vm:FieldViewModel">
+          <fields:FieldRowView/>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,28 @@
+{
+  "Game": "IB2",
+  "GeneratedUtc": "2026-08-17T15:34:39.5902252Z",
+  "SavesScanned": 131,
+  "EnumTypes": [
+    {
+      "EnumType": "eTouchRewardActor",
+      "Occurrences": 193,
+      "DistinctValueCount": 11,
+      "DistinctValues": [
+        "TRA_Gem_Fixed",
+        "TRA_Gold_Large",
+        "TRA_Gold_Small",
+        "TRA_GrabBag_Medium",
+        "TRA_GrabBag_Small",
+        "TRA_Item_Fixed",
+        "TRA_Key_Large",
+        "TRA_Key_Medium",
+        "TRA_Random",
+        "TRA_Random_Gem",
+        "TRA_Random_Potion"
+      ],
+      "Paths": [
+        "data.BossFixedWorldInfo[].eBossForceDropType"
+      ]
+    }
+  ]
+}

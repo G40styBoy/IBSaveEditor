@@ -1,0 +1,19 @@
+{
+  "Game": "VOTE",
+  "GeneratedUtc": "2026-08-17T15:34:38.7744Z",
+  "SavesScanned": 2,
+  "DistinctReferences": 14,
+  "DistinctResolved": 8,
+  "DistinctCoveragePercent": 57.14,
+  "TotalOccurrences": 29,
+  "ResolvedOccurrences": 23,
+  "OccurrenceCoveragePercent": 79.31,
+  "Unresolved": [
+    "ITEM_Sword_100",
+    "SeqAct_StartChoiceMode_0",
+    "VOTE_Score1",
+    "VoteObama",
+    "VoteRomney",
+    "obamavsromney_title"
+  ]
+}

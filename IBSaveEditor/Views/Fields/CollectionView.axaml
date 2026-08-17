@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:IBSaveEditor.ViewModels.Fields"
+             xmlns:fields="using:IBSaveEditor.Views.Fields"
+             x:Class="IBSaveEditor.Views.Fields.CollectionView"
+             x:DataType="vm:CollectionViewModel">
+
+  <StackPanel Spacing="0" Margin="0,0,0,24">
+    <TextBlock Text="{Binding Label}" Foreground="#778DA9" FontSize="11" FontWeight="Bold"
+               LetterSpacing="1" Margin="0,0,0,8"/>
+
+    <TextBlock Text="no rows" Foreground="#415A77" FontSize="12" FontStyle="Italic"
+               IsVisible="{Binding !HasRows}"/>
+
+    <ItemsControl ItemsSource="{Binding Rows}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate DataType="vm:CollectionRowViewModel">
+          <Border Classes="type-picker" Margin="0,0,0,8">
+            <StackPanel Spacing="0">
+              <TextBlock Text="{Binding Title}" Foreground="#E0E1DD" FontSize="13" FontWeight="SemiBold"
+                         Margin="0,0,0,4" TextTrimming="CharacterEllipsis"/>
+              <ItemsControl ItemsSource="{Binding Columns}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate DataType="vm:FieldViewModel">
+                    <fields:FieldRowView/>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </StackPanel>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>

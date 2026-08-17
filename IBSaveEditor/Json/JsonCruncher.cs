@@ -44,8 +44,9 @@ internal sealed class JsonDataCruncher
     #region Edge-Case Name Sets
 
     /// <summary>
-    /// Names that start with "e" but are NOT enum properties.
-    /// These are treated as their actual type (e.g. int) instead.
+    /// Enum properties whose binary field name already starts with "e" natively,
+    /// rather than "e" being a JSON-only marker prefix. The name must be left
+    /// unstripped when rebuilding the property : see <see cref="RemovePrefix"/>.
     /// </summary>
     private readonly HashSet<string> SpecialEnumNames = new() { "eCurrentPlayerType" };
 
@@ -137,11 +138,11 @@ internal sealed class JsonDataCruncher
 
     /// <summary>
     /// Returns true when a property name should be treated as an EnumByteProperty.
-    /// Properties starting with "e" are enum-typed unless they are in the
-    /// <see cref="SpecialEnumNames"/> exception set.
+    /// All "e"-prefixed properties are enum-typed, including names in the
+    /// <see cref="SpecialEnumNames"/> set : those only skip prefix stripping.
     /// </summary>
     private bool ShouldTreatAsEnumProperty(string name) =>
-        name.StartsWith(ENUM_PREFIX, StringComparison.Ordinal) && !SpecialEnumNames.Contains(name);
+        name.StartsWith(ENUM_PREFIX, StringComparison.Ordinal);
 
     /// <summary>Returns true when this array uses enum-keyed entries (e.g. SavedCheevo).</summary>
     private bool IsSpecialStruct(string name) => SpecialStructNames.Contains(name);

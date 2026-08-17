@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:IBSaveEditor.ViewModels.Fields"
+        xmlns:fields="using:IBSaveEditor.Views.Fields"
+        x:Class="IBSaveEditor.Views.PreviewTabsWindow"
+        x:DataType="vm:ManifestPreviewViewModel"
+        Title="Manifest Preview"
+        Width="640" Height="720"
+        MinWidth="420" MinHeight="360"
+        Background="#0D1B2A"
+        FontFamily="'Cascadia Code','Consolas',monospace">
+
+  <!--
+    Ad-hoc preview shell : a plain TabControl over every tab in the loaded game's
+    manifest. Not the production tab host (see ManifestPreviewViewModel) - just
+    enough to see and exercise the Number/Toggle/Text/CatalogPicker/EnumChoice
+    controls against a real loaded save before Phase 6 builds the real shell.
+  -->
+  <TabControl Background="#0D1B2A" ItemsSource="{Binding Tabs}">
+    <TabControl.ItemTemplate>
+      <DataTemplate DataType="vm:TabViewModel">
+        <TextBlock Text="{Binding Title}"/>
+      </DataTemplate>
+    </TabControl.ItemTemplate>
+    <TabControl.ContentTemplate>
+      <DataTemplate DataType="vm:TabViewModel">
+        <ScrollViewer Padding="20">
+          <StackPanel Spacing="0">
+            <ItemsControl ItemsSource="{Binding Sections}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="vm:SectionViewModel">
+                  <fields:SectionView/>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <ItemsControl ItemsSource="{Binding Collections}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="vm:CollectionViewModel">
+                  <fields:CollectionView/>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </ScrollViewer>
+      </DataTemplate>
+    </TabControl.ContentTemplate>
+  </TabControl>
+</Window>
