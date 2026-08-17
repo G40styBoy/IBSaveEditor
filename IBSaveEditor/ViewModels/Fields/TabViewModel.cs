@@ -5,7 +5,7 @@ using IBSaveEditor.Package;
 namespace IBSaveEditor.ViewModels.Fields;
 
 /// <summary>Renders one <see cref="TabSpec"/> as its bound <see cref="SectionViewModel"/>s and <see cref="CollectionViewModel"/>s.</summary>
-public sealed class TabViewModel
+public sealed class TabViewModel : IShellTab
 {
     public TabViewModel(TabSpec spec, Game game, IReadOnlyList<SaveNode> root, Action? onEdited = null)
     {

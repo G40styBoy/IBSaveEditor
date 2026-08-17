@@ -14,7 +14,7 @@ namespace IBSaveEditor.ViewModels;
 /// after mutating the root collection.
 /// </para>
 /// </summary>
-public class AdvancedTreeViewModel : ReactiveObject
+public class AdvancedTreeViewModel : ReactiveObject, IShellTab
 {
     private readonly ObservableCollection<NodeViewModel> _rootNodes;
 
@@ -25,6 +25,13 @@ public class AdvancedTreeViewModel : ReactiveObject
     {
         _rootNodes = rootNodes;
     }
+
+    /// <summary>
+    /// The shell's escape hatch : always present as a tab regardless of how many
+    /// manifest tabs a game has, since it's the only surface that can reach a save
+    /// path the manifest doesn't cover.
+    /// </summary>
+    public string Title => "Advanced";
 
     public ObservableCollection<NodeViewModel> VisibleNodes { get; } = new();
 

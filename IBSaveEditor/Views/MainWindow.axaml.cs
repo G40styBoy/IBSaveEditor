@@ -18,9 +18,6 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
     protected override void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
-        var listBox = this.FindControl<ListBox>("NodeListBox");
-        if (listBox != null)
-            listBox.AddHandler(TappedEvent, OnNodeTapped, handledEventsToo: true);
 
         // Auto-scroll log when entries are added
         if (ViewModel != null)
@@ -29,6 +26,22 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
                 var scroller = this.FindControl<ScrollViewer>("LogScroller");
                 scroller?.ScrollToEnd();
             };
+    }
+
+    /// <summary>
+    /// NodeListBox lives inside the Advanced tab's DataTemplate now, so it isn't part of
+    /// the window's own compiled visual tree at Window.OnLoaded time - it's only realized
+    /// once the Advanced tab is actually selected. Wiring the tapped handler from the
+    /// control's own Loaded event (rather than a Window-level FindControl lookup) means
+    /// it gets attached whenever that happens. RemoveHandler first so switching to the
+    /// Advanced tab repeatedly doesn't stack duplicate handlers if Avalonia re-fires
+    /// Loaded on tab reselection.
+    /// </summary>
+    private void OnNodeListBoxLoaded(object? sender, RoutedEventArgs e)
+    {
+        if (sender is not ListBox listBox) return;
+        listBox.RemoveHandler(TappedEvent, (EventHandler<TappedEventArgs>)OnNodeTapped);
+        listBox.AddHandler(TappedEvent, OnNodeTapped, handledEventsToo: true);
     }
 
     private void OnNodeTapped(object? sender, TappedEventArgs e)
@@ -101,20 +114,6 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
 
     private void OnExportClick(object? sender, RoutedEventArgs e)
         => ViewModel?.ExportToBin();
-
-    /// <summary>
-    /// Opens the manifest tabs for the currently loaded save in a separate,
-    /// non-modal window (see PreviewTabsWindow) - a stand-in for the real
-    /// in-shell tab host Phase 6 builds, so manifest-driven fields can actually
-    /// be seen and exercised before then.
-    /// </summary>
-    private void OnPreviewTabsClick(object? sender, RoutedEventArgs e)
-    {
-        var tabs = ViewModel?.ManifestTabs;
-        if (tabs == null) return;
-
-        new PreviewTabsWindow(tabs).Show(this);
-    }
 
     private void OnClearLogClick(object? sender, RoutedEventArgs e)
         => ViewModel?.ClearLog();

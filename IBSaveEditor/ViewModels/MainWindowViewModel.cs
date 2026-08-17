@@ -20,6 +20,8 @@ public class MainWindowViewModel : ReactiveObject
     private string         _statusMessage = "No file loaded.";
     private bool           _isDirty;
     private Fields.ManifestTabsViewModel? _manifestTabs;
+    private IReadOnlyList<IShellTab> _shellTabs = Array.Empty<IShellTab>();
+    private IShellTab? _selectedShellTab;
 
     private readonly ObservableCollection<NodeViewModel> _rootNodes = new();
 
@@ -49,7 +51,7 @@ public class MainWindowViewModel : ReactiveObject
     public Game CurrentGame => _currentGame;
 
     /// <summary>True once a save is loaded and its game has at least one manifest tab worth previewing.</summary>
-    public bool HasManifestTabs => FilePath != null && ManifestRegistry.Get(_currentGame).Tabs.Count > 0;
+    private bool HasManifestTabs => FilePath != null && ManifestRegistry.Get(_currentGame).Tabs.Count > 0;
 
     /// <summary>
     /// The manifest tabs for whatever save is currently loaded, or null if
@@ -67,9 +69,38 @@ public class MainWindowViewModel : ReactiveObject
         private set => this.RaiseAndSetIfChanged(ref _manifestTabs, value);
     }
 
+    /// <summary>
+    /// The main shell's tabs: every manifest tab for the currently loaded save (if any),
+    /// followed by <see cref="AdvancedTree"/> - always present, even for a game whose
+    /// manifest has zero tabs, since it's the only surface that can reach a save path
+    /// the manifest doesn't cover.
+    /// </summary>
+    public IReadOnlyList<IShellTab> ShellTabs
+    {
+        get => _shellTabs;
+        private set => this.RaiseAndSetIfChanged(ref _shellTabs, value);
+    }
+
+    /// <summary>
+    /// The shell's active tab. Set explicitly (rather than left to TabControl's default
+    /// selection) every time <see cref="ShellTabs"/> is rebuilt : <see cref="AdvancedTree"/>
+    /// is the one stable instance across every rebuild, so if the control were left to
+    /// preserve selection by reference on its own, loading a save while Advanced happened
+    /// to be selected - including the very first load, before any manifest tab has ever
+    /// existed - would keep landing on the escape hatch instead of the manifest tabs it's
+    /// meant to be secondary to.
+    /// </summary>
+    public IShellTab? SelectedShellTab
+    {
+        get => _selectedShellTab;
+        set => this.RaiseAndSetIfChanged(ref _selectedShellTab, value);
+    }
+
     public MainWindowViewModel()
     {
         AdvancedTree = new AdvancedTreeViewModel(_rootNodes);
+        ShellTabs    = new List<IShellTab> { AdvancedTree };
+        SelectedShellTab = AdvancedTree;
 
         OpenCommand   = ReactiveCommand.CreateFromTask(OpenFileAsync);
         SaveCommand   = ReactiveCommand.CreateFromTask(SaveFileAsync,
@@ -182,11 +213,22 @@ public class MainWindowViewModel : ReactiveObject
         FilePath = sourcePath;
         IsDirty  = false;
         AdvancedTree.RebuildVisibleList();
-        this.RaisePropertyChanged(nameof(HasManifestTabs));
         ManifestTabs = HasManifestTabs
             ? new Fields.ManifestTabsViewModel(ManifestRegistry.Get(_currentGame), RootNodes, MarkDirty)
             : null;
+        ShellTabs = BuildShellTabs();
+        SelectedShellTab = ShellTabs[0];
         StatusMessage = $"Loaded  {_rootNodes.Count} properties.";
+    }
+
+    /// <summary>Every manifest tab (if any) followed by the always-present Advanced tab.</summary>
+    private List<IShellTab> BuildShellTabs()
+    {
+        var tabs = new List<IShellTab>();
+        if (ManifestTabs != null)
+            tabs.AddRange(ManifestTabs.Tabs);
+        tabs.Add(AdvancedTree);
+        return tabs;
     }
 
     /// <summary>Saves the current node tree to disk as JSON, preserving metadata.</summary>

@@ -1,14 +1,103 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:IBSaveEditor.ViewModels"
+        xmlns:fieldsvm="using:IBSaveEditor.ViewModels.Fields"
         xmlns:views="using:IBSaveEditor.Views"
+        xmlns:fields="using:IBSaveEditor.Views.Fields"
         x:Class="IBSaveEditor.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="{Binding WindowTitle}"
         Height="1000"
         MinWidth="800" MinHeight="520"
-        MaxWidth="2000" MaxHeight="1440" 
+        MaxWidth="2000" MaxHeight="1440"
         Background="#0D1B2A">
+
+  <!--
+    Implicit (type-keyed) content templates for the shell TabControl below: it binds
+    ItemsSource to a heterogeneous list of IShellTab (manifest TabViewModels plus the
+    always-present AdvancedTreeViewModel), and TabControl.ContentTemplate can only ever
+    be ONE template. Leaving ContentTemplate unset and registering one DataTemplate per
+    concrete type here lets Avalonia's content presenter resolve the right one by the
+    selected tab's actual runtime type. TabControl.ItemTemplate (set below, on the
+    control itself) still governs the header uniformly via the shared IShellTab.Title.
+  -->
+  <Window.DataTemplates>
+
+    <!-- A manifest tab: its sections, then its collections (owned items, quests, ...) -->
+    <DataTemplate DataType="fieldsvm:TabViewModel">
+      <ScrollViewer Padding="20">
+        <StackPanel Spacing="0">
+          <ItemsControl ItemsSource="{Binding Sections}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate DataType="fieldsvm:SectionViewModel">
+                <fields:SectionView/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+
+          <ItemsControl ItemsSource="{Binding Collections}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate DataType="fieldsvm:CollectionViewModel">
+                <fields:CollectionView/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </ScrollViewer>
+    </DataTemplate>
+
+    <!-- The Advanced tab: the raw property tree, unchanged from before the shell swap -->
+    <DataTemplate DataType="vm:AdvancedTreeViewModel">
+      <Grid ColumnDefinitions="300,1,*">
+
+        <!-- Left: flat property list -->
+        <DockPanel Grid.Column="0">
+          <Border DockPanel.Dock="Top" Classes="panel-header">
+            <TextBlock Classes="panel-label" Text="PROPERTIES"/>
+          </Border>
+          <ListBox x:Name="NodeListBox"
+                   Loaded="OnNodeListBoxLoaded"
+                   ItemsSource="{Binding VisibleNodes}"
+                   SelectedItem="{Binding SelectedNode}"
+                   Background="#0D1B2A"
+                   BorderThickness="0"
+                   Padding="0"
+                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <ListBox.ItemContainerTheme>
+              <ControlTheme TargetType="ListBoxItem" x:DataType="vm:NodeViewModel">
+                <Setter Property="Padding"    Value="0"/>
+                <Setter Property="Margin"     Value="0"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Style Selector="^:selected /template/ ContentPresenter">
+                  <Setter Property="Background" Value="#1B263B"/>
+                </Style>
+                <Style Selector="^:pointerover /template/ ContentPresenter">
+                  <Setter Property="Background" Value="#1B263B"/>
+                </Style>
+              </ControlTheme>
+            </ListBox.ItemContainerTheme>
+            <ListBox.ItemTemplate>
+              <DataTemplate DataType="vm:NodeViewModel">
+                <views:NodeTreeCell/>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </DockPanel>
+
+        <Border Grid.Column="1" Classes="v-divider"/>
+
+        <!-- Right: property editor -->
+        <DockPanel Grid.Column="2">
+          <Border DockPanel.Dock="Top" Classes="panel-header">
+            <TextBlock Classes="panel-label" Text="EDIT"/>
+          </Border>
+          <views:PropertyEditorView DataContext="{Binding SelectedNode}"/>
+        </DockPanel>
+
+      </Grid>
+    </DataTemplate>
+
+  </Window.DataTemplates>
 
   <DockPanel>
 
@@ -21,9 +110,6 @@
           <Button Classes="toolbar-btn"        Click="OnExportClick" Content="Export .bin"/>
           <Border Width="1" Margin="4,0" Background="#415A77"/>
           <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
-          <Border Width="1" Margin="4,0" Background="#415A77"/>
-          <Button Classes="toolbar-btn"        Click="OnPreviewTabsClick" Content="Preview Tabs"
-                  IsEnabled="{Binding HasManifestTabs}"/>
         </StackPanel>
 
         <!-- Search bar : filters the property tree as you type -->
@@ -80,52 +166,15 @@
       </DockPanel>
     </Border>
 
-    <!-- Main split -->
-    <Grid ColumnDefinitions="300,1,*">
+    <!-- Main shell: every manifest tab for the loaded save, plus the always-present Advanced tab -->
+    <TabControl Background="#0D1B2A" ItemsSource="{Binding ShellTabs}"
+                SelectedItem="{Binding SelectedShellTab}">
+      <TabControl.ItemTemplate>
+        <DataTemplate DataType="vm:IShellTab">
+          <TextBlock Text="{Binding Title}"/>
+        </DataTemplate>
+      </TabControl.ItemTemplate>
+    </TabControl>
 
-      <!-- Left: flat property list -->
-      <DockPanel Grid.Column="0">
-        <Border DockPanel.Dock="Top" Classes="panel-header">
-          <TextBlock Classes="panel-label" Text="PROPERTIES"/>
-        </Border>
-        <ListBox x:Name="NodeListBox"
-                 ItemsSource="{Binding AdvancedTree.VisibleNodes}"
-                 SelectedItem="{Binding AdvancedTree.SelectedNode}"
-                 Background="#0D1B2A"
-                 BorderThickness="0"
-                 Padding="0"
-                 ScrollViewer.HorizontalScrollBarVisibility="Auto">
-          <ListBox.ItemContainerTheme>
-            <ControlTheme TargetType="ListBoxItem" x:DataType="vm:NodeViewModel">
-              <Setter Property="Padding"    Value="0"/>
-              <Setter Property="Margin"     Value="0"/>
-              <Setter Property="Background" Value="Transparent"/>
-              <Style Selector="^:selected /template/ ContentPresenter">
-                <Setter Property="Background" Value="#1B263B"/>
-              </Style>
-              <Style Selector="^:pointerover /template/ ContentPresenter">
-                <Setter Property="Background" Value="#1B263B"/>
-              </Style>
-            </ControlTheme>
-          </ListBox.ItemContainerTheme>
-          <ListBox.ItemTemplate>
-            <DataTemplate DataType="vm:NodeViewModel">
-              <views:NodeTreeCell/>
-            </DataTemplate>
-          </ListBox.ItemTemplate>
-        </ListBox>
-      </DockPanel>
-
-      <Border Grid.Column="1" Classes="v-divider"/>
-
-      <!-- Right: property editor -->
-      <DockPanel Grid.Column="2">
-        <Border DockPanel.Dock="Top" Classes="panel-header">
-          <TextBlock Classes="panel-label" Text="EDIT"/>
-        </Border>
-        <views:PropertyEditorView DataContext="{Binding AdvancedTree.SelectedNode}"/>
-      </DockPanel>
-
-    </Grid>
   </DockPanel>
 </Window>
