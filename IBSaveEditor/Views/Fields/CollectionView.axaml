@@ -6,19 +6,64 @@
              x:DataType="vm:CollectionViewModel">
 
   <StackPanel Spacing="0" Margin="0,0,0,24">
-    <TextBlock Text="{Binding Label}" Foreground="#778DA9" FontSize="11" FontWeight="Bold"
-               LetterSpacing="1" Margin="0,0,0,8"/>
+    <DockPanel Margin="0,0,0,8">
+      <TextBlock Text="{Binding Label}" Foreground="#778DA9" FontSize="11" FontWeight="Bold"
+                 LetterSpacing="1" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+
+      <!-- Owned-toggle collections (e.g. Owned Items) : pick from what's currently hidden -->
+      <Button Classes="type-choice-btn" Content="+ Add Item" FontSize="11" Padding="8,3"
+              HorizontalAlignment="Right"
+              IsVisible="{Binding SupportsOwnedToggle}"
+              Click="OnOpenAddPickerClick"/>
+
+      <!-- Structural collections (e.g. Spare Gems) : append a new element -->
+      <Button Classes="type-choice-btn" Content="+ Add Row" FontSize="11" Padding="8,3"
+              HorizontalAlignment="Right"
+              IsVisible="{Binding SupportsStructuralAddRemove}"
+              IsEnabled="{Binding CanAddRow}"
+              Click="OnAddRowClick"/>
+    </DockPanel>
 
     <TextBlock Text="no rows" Foreground="#415A77" FontSize="12" FontStyle="Italic"
                IsVisible="{Binding !HasRows}"/>
+
+    <!-- Add-item picker : mirrors FieldRowView's catalog picker panel -->
+    <Border Classes="type-picker" IsVisible="{Binding IsAddPickerOpen}" Margin="0,0,0,8">
+      <StackPanel Spacing="8">
+        <DockPanel>
+          <TextBlock Classes="field-label" Text="ADD ITEM" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+          <Button Classes="array-remove-btn" Content="✕" HorizontalAlignment="Right"
+                  Click="OnCancelAddPickerClick" Foreground="#415A77"/>
+        </DockPanel>
+        <TextBox Classes="prop-input" Watermark="type to filter…"
+                 Text="{Binding AddPickerSearchText, Mode=TwoWay}"/>
+
+        <TextBlock Text="nothing left to add" Foreground="#415A77" FontSize="12" FontStyle="Italic"
+                   IsVisible="{Binding !HasAddableCandidates}"/>
+
+        <ItemsControl ItemsSource="{Binding FilteredAddableCandidates}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="vm:CollectionAddableRowViewModel">
+              <Button Classes="type-choice-btn" Content="{Binding Title}" Tag="{Binding}"
+                      Click="OnAddableCandidateClick" Margin="0,0,0,6"/>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </Border>
 
     <ItemsControl ItemsSource="{Binding Rows}">
       <ItemsControl.ItemTemplate>
         <DataTemplate DataType="vm:CollectionRowViewModel">
           <Border Classes="type-picker" Margin="0,0,0,8">
             <StackPanel Spacing="0">
-              <TextBlock Text="{Binding Title}" Foreground="#E0E1DD" FontSize="13" FontWeight="SemiBold"
-                         Margin="0,0,0,4" TextTrimming="CharacterEllipsis"/>
+              <DockPanel Margin="0,0,0,4">
+                <TextBlock Text="{Binding Title}" Foreground="#E0E1DD" FontSize="13" FontWeight="SemiBold"
+                           DockPanel.Dock="Left" TextTrimming="CharacterEllipsis"/>
+                <Button Classes="array-remove-btn" Content="✕" HorizontalAlignment="Right"
+                        Tag="{Binding}" Click="OnRemoveRowClick"
+                        IsVisible="{Binding CanBeRemoved}"/>
+              </DockPanel>
               <ItemsControl ItemsSource="{Binding Columns}">
                 <ItemsControl.ItemTemplate>
                   <DataTemplate DataType="vm:FieldViewModel">

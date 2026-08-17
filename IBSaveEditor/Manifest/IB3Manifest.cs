@@ -119,12 +119,15 @@ public static class IB3Manifest
                 ).Title("ini_ItemName").WhereOwned("NumberPlayerHas"),
 
                 // Spare gems sitting in inventory, not socketed into anything - naturally
-                // small (a handful to a few dozen), no filter needed.
+                // small (a handful to a few dozen), no filter needed. A genuine variable-
+                // length array (unlike PlayerInventory's fixed per-catalog-item table), so
+                // it's the one collection so far that makes sense to grow or shrink freely -
+                // AddRemovable() opts it into structural add/remove.
                 Collection("PlayerUnequippedGems", "Spare Gems",
                     Column("ini_GemName", FieldKind.GemRef, "Gem").Category("gem"),
                     Column("bGemTier", FieldKind.Number, "Tier"),
                     Column("RandomAddPct", FieldKind.Number, "Bonus %")
-                ).Title("ini_GemName").Optional() // Absent entirely on saves with no spare gems yet.
+                ).Title("ini_GemName").Optional().AddRemovable() // Absent entirely on saves with no spare gems yet.
             ),
             Tab("Quests",
                 Section("Overview",

@@ -406,8 +406,13 @@ public class NodeViewModel : ReactiveObject
         OnChildrenChanged?.Invoke();
     }
 
-    /// <summary>Deep-clones a SaveNode with a new name.</summary>
-    private static SaveNode CloneNode(SaveNode source, string newName)
+    /// <summary>
+    /// Deep-clones a SaveNode with a new name. Internal (not private) so
+    /// <c>Fields.CollectionViewModel</c> can reuse it for adding a new collection row -
+    /// cloning a real existing element is the only way to seed one with a structurally
+    /// correct shape without knowing the full UProperty schema.
+    /// </summary>
+    internal static SaveNode CloneNode(SaveNode source, string newName)
     {
         switch (source)
         {

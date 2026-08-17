@@ -94,12 +94,31 @@ public sealed record CollectionSpec
     /// are shown - e.g. an inventory tracked per-catalog-item filtered down to what's
     /// actually owned. Kept as a plain column-name string rather than an embedded
     /// predicate so <see cref="CollectionSpec"/> stays a pure data record.
+    /// <para>
+    /// Also selects the UI's add/remove model: a collection with this set gets the
+    /// "owned-toggle" model (picking a hidden entry sets its own column above zero;
+    /// nothing is ever inserted or deleted, since the array already has one element per
+    /// possible entry) - see <see cref="IsStructurallyEditable"/> for the other model.
+    /// </para>
     /// </summary>
     public string? OwnedOnlyColumnPath { get; init; }
+
+    /// <summary>
+    /// Opts a genuine variable-length array into structural add/remove (insert a new
+    /// element cloned from the last one; delete an element outright). Defaults false
+    /// deliberately: most collections without <see cref="OwnedOnlyColumnPath"/> set (e.g.
+    /// IB3's "All Quests") are a fixed, complete roster the game expects to always be
+    /// there in full, not something a player should be able to insert into or delete
+    /// from. Whether a given array is actually safe to grow or shrink is a per-collection
+    /// judgment call, not something the shape of the array alone can answer - see
+    /// <see cref="AddRemovable"/>.
+    /// </summary>
+    public bool IsStructurallyEditable { get; init; }
 
     public CollectionSpec Title(string relativeColumnPath) => this with { TitleColumnPath = relativeColumnPath };
     public CollectionSpec Optional() => this with { IsOptional = true };
     public CollectionSpec WhereOwned(string relativeColumnPath) => this with { OwnedOnlyColumnPath = relativeColumnPath };
+    public CollectionSpec AddRemovable() => this with { IsStructurallyEditable = true };
 }
 
 /// <summary>One tab in the editor shell, made up of one or more sections and, optionally, collections.</summary>
