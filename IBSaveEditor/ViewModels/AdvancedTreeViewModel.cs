@@ -24,6 +24,7 @@ public class AdvancedTreeViewModel : ReactiveObject, IShellTab
     public AdvancedTreeViewModel(ObservableCollection<NodeViewModel> rootNodes)
     {
         _rootNodes = rootNodes;
+        _rootNodes.CollectionChanged += (_, _) => this.RaisePropertyChanged(nameof(IsEmpty));
     }
 
     /// <summary>
@@ -32,6 +33,13 @@ public class AdvancedTreeViewModel : ReactiveObject, IShellTab
     /// path the manifest doesn't cover.
     /// </summary>
     public string Title => "Advanced";
+
+    /// <summary>
+    /// True before any file is loaded (root nodes are only ever cleared and left
+    /// empty between loads, never left empty by a search filter - that only ever
+    /// touches <see cref="VisibleNodes"/>). Drives the "no file loaded" empty state.
+    /// </summary>
+    public bool IsEmpty => _rootNodes.Count == 0;
 
     public ObservableCollection<NodeViewModel> VisibleNodes { get; } = new();
 

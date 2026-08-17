@@ -53,8 +53,30 @@
         <!-- Left: flat property list -->
         <DockPanel Grid.Column="0">
           <Border DockPanel.Dock="Top" Classes="panel-header">
-            <TextBlock Classes="panel-label" Text="PROPERTIES"/>
+            <DockPanel>
+              <TextBlock Classes="panel-label" Text="PROPERTIES" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+
+              <!-- Search bar : filters the property tree as you type. Lives here rather
+                   than the global toolbar because it only ever does anything on this tab. -->
+              <Border Classes="search-bar" DockPanel.Dock="Right"
+                      HorizontalAlignment="Right" VerticalAlignment="Center"
+                      Width="180">
+                <Grid ColumnDefinitions="Auto,*">
+                  <TextBlock Grid.Column="0" Classes="search-icon" Text="🔍"/>
+                  <TextBox  Grid.Column="1" Classes="search-input"
+                            Text="{Binding SearchText, Mode=TwoWay}"
+                            Watermark="Search properties..."/>
+                </Grid>
+              </Border>
+            </DockPanel>
           </Border>
+
+          <!-- Empty state : shown before any file has been loaded -->
+          <TextBlock DockPanel.Dock="Top" IsVisible="{Binding IsEmpty}"
+                     Text="No file loaded. Click Open in the toolbar to get started."
+                     Foreground="#415A77" FontSize="13" TextWrapping="Wrap"
+                     Margin="16"/>
+
           <ListBox x:Name="NodeListBox"
                    Loaded="OnNodeListBoxLoaded"
                    ItemsSource="{Binding VisibleNodes}"
@@ -103,27 +125,13 @@
 
     <!-- Toolbar -->
     <Border DockPanel.Dock="Top" Classes="toolbar" Padding="8,6">
-      <DockPanel>
-        <StackPanel Orientation="Horizontal" Spacing="6" DockPanel.Dock="Left">
-          <Button Classes="toolbar-btn accent" Click="OnOpenClick"  Content="Open"/>
-          <Button Classes="toolbar-btn"        Click="OnSaveClick"  Content="Save"/>
-          <Button Classes="toolbar-btn"        Click="OnExportClick" Content="Export .bin"/>
-          <Border Width="1" Margin="4,0" Background="#415A77"/>
-          <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
-        </StackPanel>
-
-        <!-- Search bar : filters the property tree as you type -->
-        <Border Classes="search-bar" DockPanel.Dock="Right"
-                HorizontalAlignment="Right" VerticalAlignment="Center"
-                Width="220" Margin="12,0,0,0">
-          <Grid ColumnDefinitions="Auto,*">
-            <TextBlock Grid.Column="0" Classes="search-icon" Text="🔍"/>
-            <TextBox  Grid.Column="1" Classes="search-input"
-                      Text="{Binding AdvancedTree.SearchText, Mode=TwoWay}"
-                      Watermark="Search properties..."/>
-          </Grid>
-        </Border>
-      </DockPanel>
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <Button Classes="toolbar-btn accent" Click="OnOpenClick"  Content="Open"/>
+        <Button Classes="toolbar-btn"        Click="OnSaveClick"  Content="Save"/>
+        <Button Classes="toolbar-btn"        Click="OnExportClick" Content="Export .bin"/>
+        <Border Width="1" Margin="4,0" Background="#415A77"/>
+        <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
+      </StackPanel>
     </Border>
 
     <!-- Status bar -->
