@@ -19,6 +19,7 @@ public class MainWindowViewModel : ReactiveObject
     private string?        _filePath;
     private string         _statusMessage = "No file loaded.";
     private bool           _isDirty;
+    private Fields.ManifestTabsViewModel? _manifestTabs;
 
     private readonly ObservableCollection<NodeViewModel> _rootNodes = new();
 
@@ -50,9 +51,21 @@ public class MainWindowViewModel : ReactiveObject
     /// <summary>True once a save is loaded and its game has at least one manifest tab worth previewing.</summary>
     public bool HasManifestTabs => FilePath != null && ManifestRegistry.Get(_currentGame).Tabs.Count > 0;
 
-    /// <summary>Builds the manifest tabs for whatever save is currently loaded. Null if <see cref="HasManifestTabs"/> is false.</summary>
-    public Fields.ManifestTabsViewModel? BuildManifestPreview() =>
-        HasManifestTabs ? new Fields.ManifestTabsViewModel(ManifestRegistry.Get(_currentGame), RootNodes) : null;
+    /// <summary>
+    /// The manifest tabs for whatever save is currently loaded, or null if
+    /// <see cref="HasManifestTabs"/> is false. Rebuilt from scratch inside
+    /// <see cref="LoadFromJsonString"/> on every load : <see cref="Fields.FieldViewModel"/>
+    /// resolves its backing node once, in its constructor, so a tab set built against a
+    /// previous save's <see cref="SaveNode"/> instances would silently keep pointing at
+    /// them after <see cref="_rootNodes"/> is cleared and repopulated - edits would appear
+    /// to work while export wrote nothing. Rebuilding here rather than caching keeps that
+    /// impossible instead of relying on callers to remember to refresh it.
+    /// </summary>
+    public Fields.ManifestTabsViewModel? ManifestTabs
+    {
+        get => _manifestTabs;
+        private set => this.RaiseAndSetIfChanged(ref _manifestTabs, value);
+    }
 
     public MainWindowViewModel()
     {
@@ -170,6 +183,9 @@ public class MainWindowViewModel : ReactiveObject
         IsDirty  = false;
         AdvancedTree.RebuildVisibleList();
         this.RaisePropertyChanged(nameof(HasManifestTabs));
+        ManifestTabs = HasManifestTabs
+            ? new Fields.ManifestTabsViewModel(ManifestRegistry.Get(_currentGame), RootNodes)
+            : null;
         StatusMessage = $"Loaded  {_rootNodes.Count} properties.";
     }
 

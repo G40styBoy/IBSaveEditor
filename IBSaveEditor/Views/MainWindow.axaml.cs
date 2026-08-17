@@ -110,10 +110,10 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
     /// </summary>
     private void OnPreviewTabsClick(object? sender, RoutedEventArgs e)
     {
-        var preview = ViewModel?.BuildManifestPreview();
-        if (preview == null) return;
+        var tabs = ViewModel?.ManifestTabs;
+        if (tabs == null) return;
 
-        new PreviewTabsWindow(preview).Show(this);
+        new PreviewTabsWindow(tabs).Show(this);
     }
 
     private void OnClearLogClick(object? sender, RoutedEventArgs e)
