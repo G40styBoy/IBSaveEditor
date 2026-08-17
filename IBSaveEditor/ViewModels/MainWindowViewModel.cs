@@ -4,6 +4,8 @@ using System.Reactive.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ReactiveUI;
+using IBSaveEditor.Manifest;
+using IBSaveEditor.Models;
 using IBSaveEditor.Services;
 using IBSaveEditor.Package;
 using IBSaveEditor.Json;
@@ -15,10 +17,8 @@ namespace IBSaveEditor.ViewModels;
 public class MainWindowViewModel : ReactiveObject
 {
     private string?        _filePath;
-    private NodeViewModel? _selectedNode;
     private string         _statusMessage = "No file loaded.";
     private bool           _isDirty;
-    private string         _searchText    = string.Empty;
 
     private readonly ObservableCollection<NodeViewModel> _rootNodes = new();
 
@@ -30,11 +30,34 @@ public class MainWindowViewModel : ReactiveObject
     /// <summary>The game this save belongs to. Set during load.</summary>
     private Game _currentGame;
 
-    public ObservableCollection<NodeViewModel> VisibleNodes { get; } = new();
-    public ObservableCollection<string>        LogEntries   { get; } = new();
+    public ObservableCollection<string> LogEntries { get; } = new();
+
+    /// <summary>Owns the raw property-tree editing surface (search, expand state, selection).</summary>
+    public AdvancedTreeViewModel AdvancedTree { get; }
+
+    /// <summary>
+    /// The root save-data node tree, independent of expansion state (unlike
+    /// <see cref="AdvancedTreeViewModel.VisibleNodes"/>, which only lists what's currently expanded).
+    /// This is the seam manifest-driven field editing (<c>Fields.FieldViewModel</c>)
+    /// binds against : both surfaces mutate the same backing <see cref="SaveNode"/>
+    /// objects, so edits made through either one stay in sync.
+    /// </summary>
+    public IReadOnlyList<SaveNode> RootNodes => _rootNodes.Select(v => v.BackingNode).ToList();
+
+    /// <summary>The game the currently loaded save belongs to.</summary>
+    public Game CurrentGame => _currentGame;
+
+    /// <summary>True once a save is loaded and its game has at least one manifest tab worth previewing.</summary>
+    public bool HasManifestTabs => FilePath != null && ManifestRegistry.Get(_currentGame).Tabs.Count > 0;
+
+    /// <summary>Builds the manifest preview for whatever save is currently loaded. Null if <see cref="HasManifestTabs"/> is false.</summary>
+    public Fields.ManifestPreviewViewModel? BuildManifestPreview() =>
+        HasManifestTabs ? new Fields.ManifestPreviewViewModel(ManifestRegistry.Get(_currentGame), RootNodes) : null;
 
     public MainWindowViewModel()
     {
+        AdvancedTree = new AdvancedTreeViewModel(_rootNodes);
+
         OpenCommand   = ReactiveCommand.CreateFromTask(OpenFileAsync);
         SaveCommand   = ReactiveCommand.CreateFromTask(SaveFileAsync,
             this.WhenAnyValue(x => x.FilePath).Select(p => p != null));
@@ -54,12 +77,6 @@ public class MainWindowViewModel : ReactiveObject
 
     public string WindowTitle => "Infinity Blade Save Editor";
 
-    public NodeViewModel? SelectedNode
-    {
-        get => _selectedNode;
-        set => this.RaiseAndSetIfChanged(ref _selectedNode, value);
-    }
-
     public string StatusMessage
     {
         get => _statusMessage;
@@ -74,30 +91,6 @@ public class MainWindowViewModel : ReactiveObject
             this.RaiseAndSetIfChanged(ref _isDirty, value);
             this.RaisePropertyChanged(nameof(WindowTitle));
         }
-    }
-
-    /// <summary>
-    /// Search filter text. When non-empty, the property tree shows only
-    /// matching nodes plus the path to each match (parents stay visible).
-    /// </summary>
-    public string SearchText
-    {
-        get => _searchText;
-        set
-        {
-            this.RaiseAndSetIfChanged(ref _searchText, value);
-            RebuildVisibleList();
-        }
-    }
-
-    /// <summary>Toggles the expanded state of a node and rebuilds the visible list.</summary>
-    public void ToggleExpand(NodeViewModel node)
-    {
-        if (!node.HasChildren) return;
-        var previousSelection = SelectedNode;
-        node.IsExpanded = !node.IsExpanded;
-        RebuildVisibleList();
-        SelectedNode = previousSelection;
     }
 
     /// <summary>
@@ -169,13 +162,14 @@ public class MainWindowViewModel : ReactiveObject
         var nodes = JsonToNodeTree.Convert(jobj, _currentGame);
 
         _rootNodes.Clear();
-        SelectedNode = null;
+        AdvancedTree.SelectedNode = null;
         foreach (var n in nodes)
             _rootNodes.Add(new NodeViewModel(n, 0, OnChildrenChanged));
 
         FilePath = sourcePath;
         IsDirty  = false;
-        RebuildVisibleList();
+        AdvancedTree.RebuildVisibleList();
+        this.RaisePropertyChanged(nameof(HasManifestTabs));
         StatusMessage = $"Loaded  {_rootNodes.Count} properties.";
     }
 
@@ -184,8 +178,6 @@ public class MainWindowViewModel : ReactiveObject
     {
         try
         {
-            foreach (var n in _rootNodes) n.CommitToNode();
-
             var dataObj = NodeTreeToJson.Convert(_rootNodes.Select(v => v.BackingNode));
 
             JObject outputRoot;
@@ -233,9 +225,6 @@ public class MainWindowViewModel : ReactiveObject
         ToolPaths.ValidateOutputDirectory();
         try
         {
-            // Commit any pending edits to the node tree first
-            foreach (var n in _rootNodes) n.CommitToNode();
-
             var dataObj = NodeTreeToJson.Convert(_rootNodes.Select(v => v.BackingNode));
             JObject outputRoot;
             if (_hasDataWrapper)
@@ -283,129 +272,7 @@ public class MainWindowViewModel : ReactiveObject
     public void MarkDirty() => IsDirty = true;
 
     /// <summary>Called by NodeViewModel when its children collection changes.</summary>
-    private void OnChildrenChanged()
-    {
-        var previousSelection = SelectedNode;
-        RebuildVisibleList();
-        SelectedNode = previousSelection;
-    }
-
-    /// <summary>
-    /// Rebuilds the flat <see cref="VisibleNodes"/> list from the root tree,
-    /// honoring the current expanded state and search filter.
-    /// </summary>
-    private void RebuildVisibleList()
-    {
-        VisibleNodes.Clear();
-
-        if (string.IsNullOrWhiteSpace(_searchText))
-        {
-            // No filter : show full tree based on expanded state
-            foreach (var root in _rootNodes)
-                AppendVisible(root);
-        }
-        else
-        {
-            // Filter active : show all matches plus their ancestor path
-            var filter = _searchText.Trim();
-            foreach (var root in _rootNodes)
-                AppendFiltered(root, filter);
-        }
-    }
-
-    /// <summary>Recursively appends a node and its expanded children to VisibleNodes.</summary>
-    private void AppendVisible(NodeViewModel node)
-    {
-        VisibleNodes.Add(node);
-        if (node.IsExpanded)
-            foreach (var child in node.Children)
-                AppendVisible(child);
-    }
-
-    /// <summary>
-    /// Recursively walks a subtree and appends matching nodes to <see cref="VisibleNodes"/>.
-    /// <para>
-    /// A node is included when either it matches the filter directly, OR any
-    /// descendant matches. When a node matches directly, its entire subtree is
-    /// shown so the user can see the children of matched containers.
-    /// </para>
-    /// </summary>
-    /// <returns>True if this node or any descendant matched the filter.</returns>
-    private bool AppendFiltered(NodeViewModel node, string filter)
-    {
-        bool selfMatches = node.DisplayName.Contains(filter, StringComparison.OrdinalIgnoreCase)
-                        || node.Name.Contains(filter, StringComparison.OrdinalIgnoreCase);
-
-        // If self matches, show the whole subtree under this node
-        if (selfMatches)
-        {
-            AppendSubtree(node);
-            return true;
-        }
-
-        // Otherwise, only show this node if any descendant matches :
-        // and only the path of matching descendants, not their full subtrees
-        var pathDescendants = new List<NodeViewModel>();
-        foreach (var child in node.Children)
-            CollectMatchingPath(child, filter, pathDescendants);
-
-        if (pathDescendants.Count > 0)
-        {
-            VisibleNodes.Add(node);
-            foreach (var d in pathDescendants)
-                VisibleNodes.Add(d);
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>Appends a node and every descendant unconditionally.</summary>
-    private void AppendSubtree(NodeViewModel node)
-    {
-        VisibleNodes.Add(node);
-        foreach (var child in node.Children)
-            AppendSubtree(child);
-    }
-
-    /// <summary>
-    /// Walks a subtree to find matching nodes plus their ancestor path.
-    /// Used when a parent did NOT match but we still need to show child matches.
-    /// </summary>
-    private bool CollectMatchingPath(NodeViewModel node, string filter, List<NodeViewModel> output)
-    {
-        bool selfMatches = node.DisplayName.Contains(filter, StringComparison.OrdinalIgnoreCase)
-                        || node.Name.Contains(filter, StringComparison.OrdinalIgnoreCase);
-
-        if (selfMatches)
-        {
-            // Self matches → include the full subtree below
-            AppendToList(node, output);
-            return true;
-        }
-
-        // Self doesn't match : keep walking, only include if descendants match
-        var subDescendants = new List<NodeViewModel>();
-        foreach (var child in node.Children)
-            CollectMatchingPath(child, filter, subDescendants);
-
-        if (subDescendants.Count > 0)
-        {
-            output.Add(node);
-            foreach (var d in subDescendants)
-                output.Add(d);
-            return true;
-        }
-        return false;
-    }
-
-    /// <summary>Appends a node and every descendant to a flat list.</summary>
-    private void AppendToList(NodeViewModel node, List<NodeViewModel> output)
-    {
-        output.Add(node);
-        foreach (var child in node.Children)
-            AppendToList(child, output);
-    }
+    private void OnChildrenChanged() => AdvancedTree.OnChildrenChanged();
 
     public void Log(string message)
     {

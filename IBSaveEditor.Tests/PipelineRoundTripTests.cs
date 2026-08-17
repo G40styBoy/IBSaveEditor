@@ -169,7 +169,7 @@ namespace IBSaveEditor.Tests
             var vm = new MainWindowViewModel();
             vm.LoadFromBin(sourcePath);
             Assert.Equal(sourcePath, vm.FilePath);
-            var firstCount = vm.VisibleNodes.Count;
+            var firstCount = vm.AdvancedTree.VisibleNodes.Count;
 
             var jsonPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.json");
             try
@@ -181,7 +181,7 @@ namespace IBSaveEditor.Tests
                 vm2.LoadFromPath(jsonPath);
                 Assert.Equal(jsonPath, vm2.FilePath);
 
-                Assert.Equal(firstCount, vm2.VisibleNodes.Count);
+                Assert.Equal(firstCount, vm2.AdvancedTree.VisibleNodes.Count);
             }
             finally
             {

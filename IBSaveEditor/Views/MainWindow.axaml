@@ -7,7 +7,7 @@
         Title="{Binding WindowTitle}"
         Height="1000"
         MinWidth="800" MinHeight="520"
-        MaxWidth="800" MaxHeight="1440" 
+        MaxWidth="2000" MaxHeight="1440" 
         Background="#0D1B2A">
 
   <DockPanel>
@@ -21,6 +21,9 @@
           <Button Classes="toolbar-btn"        Click="OnExportClick" Content="Export .bin"/>
           <Border Width="1" Margin="4,0" Background="#415A77"/>
           <Button Classes="toolbar-btn"        Command="{Binding ReloadCommand}" Content="Reload"/>
+          <Border Width="1" Margin="4,0" Background="#415A77"/>
+          <Button Classes="toolbar-btn"        Click="OnPreviewTabsClick" Content="Preview Tabs"
+                  IsEnabled="{Binding HasManifestTabs}"/>
         </StackPanel>
 
         <!-- Search bar : filters the property tree as you type -->
@@ -30,7 +33,7 @@
           <Grid ColumnDefinitions="Auto,*">
             <TextBlock Grid.Column="0" Classes="search-icon" Text="🔍"/>
             <TextBox  Grid.Column="1" Classes="search-input"
-                      Text="{Binding SearchText, Mode=TwoWay}"
+                      Text="{Binding AdvancedTree.SearchText, Mode=TwoWay}"
                       Watermark="Search properties..."/>
           </Grid>
         </Border>
@@ -86,8 +89,8 @@
           <TextBlock Classes="panel-label" Text="PROPERTIES"/>
         </Border>
         <ListBox x:Name="NodeListBox"
-                 ItemsSource="{Binding VisibleNodes}"
-                 SelectedItem="{Binding SelectedNode}"
+                 ItemsSource="{Binding AdvancedTree.VisibleNodes}"
+                 SelectedItem="{Binding AdvancedTree.SelectedNode}"
                  Background="#0D1B2A"
                  BorderThickness="0"
                  Padding="0"
@@ -120,7 +123,7 @@
         <Border DockPanel.Dock="Top" Classes="panel-header">
           <TextBlock Classes="panel-label" Text="EDIT"/>
         </Border>
-        <views:PropertyEditorView DataContext="{Binding SelectedNode}"/>
+        <views:PropertyEditorView DataContext="{Binding AdvancedTree.SelectedNode}"/>
       </DockPanel>
 
     </Grid>

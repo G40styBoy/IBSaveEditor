@@ -40,7 +40,7 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         if (item?.DataContext is not NodeViewModel vm) return;
         if (tappedGlyph && vm.HasChildren)
         {
-            ViewModel?.ToggleExpand(vm);
+            ViewModel?.AdvancedTree.ToggleExpand(vm);
             e.Handled = true;
         }
     }
@@ -101,6 +101,20 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
 
     private void OnExportClick(object? sender, RoutedEventArgs e)
         => ViewModel?.ExportToBin();
+
+    /// <summary>
+    /// Opens the manifest tabs for the currently loaded save in a separate,
+    /// non-modal window (see PreviewTabsWindow) - a stand-in for the real
+    /// in-shell tab host Phase 6 builds, so manifest-driven fields can actually
+    /// be seen and exercised before then.
+    /// </summary>
+    private void OnPreviewTabsClick(object? sender, RoutedEventArgs e)
+    {
+        var preview = ViewModel?.BuildManifestPreview();
+        if (preview == null) return;
+
+        new PreviewTabsWindow(preview).Show(this);
+    }
 
     private void OnClearLogClick(object? sender, RoutedEventArgs e)
         => ViewModel?.ClearLog();
