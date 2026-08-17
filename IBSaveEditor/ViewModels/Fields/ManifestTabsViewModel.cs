@@ -11,10 +11,10 @@ namespace IBSaveEditor.ViewModels.Fields;
 /// </summary>
 public sealed class ManifestTabsViewModel
 {
-    public ManifestTabsViewModel(GameManifest manifest, IReadOnlyList<SaveNode> root)
+    public ManifestTabsViewModel(GameManifest manifest, IReadOnlyList<SaveNode> root, Action? onEdited = null)
     {
         Game = manifest.Game;
-        Tabs = manifest.Tabs.Select(t => new TabViewModel(t, manifest.Game, root)).ToList();
+        Tabs = manifest.Tabs.Select(t => new TabViewModel(t, manifest.Game, root, onEdited)).ToList();
     }
 
     public Game Game { get; }

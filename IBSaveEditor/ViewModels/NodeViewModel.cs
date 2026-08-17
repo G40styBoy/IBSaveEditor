@@ -49,23 +49,27 @@ public class NodeViewModel : ReactiveObject
     /// <summary>Called whenever children are added/removed so the main VM can refresh VisibleNodes.</summary>
     public Action? OnChildrenChanged { get; set; }
 
-    public NodeViewModel(SaveNode node, int depth = 0, Action? onChildrenChanged = null)
+    /// <summary>Called whenever this node's value is edited, so the main VM can mark itself dirty.</summary>
+    public Action? OnEdited { get; set; }
+
+    public NodeViewModel(SaveNode node, int depth = 0, Action? onChildrenChanged = null, Action? onEdited = null)
     {
         BackingNode       = node;
         Depth             = depth;
         Indent            = depth * 16;
         OnChildrenChanged = onChildrenChanged;
+        OnEdited          = onEdited;
 
         if (node is ArrayNode a && a.UnwrapForDisplay)
         {
             // Static non-struct array : promote every key inside the wrapper
             // struct(s) to its own VM. Each key becomes a virtual array entry.
-            Children = BuildUnwrappedChildren(a, depth + 1, onChildrenChanged);
+            Children = BuildUnwrappedChildren(a, depth + 1, onChildrenChanged, onEdited);
         }
         else if (node is StructNode s)
         {
             Children = new ObservableCollection<NodeViewModel>(
-                s.Children.Select(c => new NodeViewModel(c, depth + 1, onChildrenChanged)));
+                s.Children.Select(c => new NodeViewModel(c, depth + 1, onChildrenChanged, onEdited)));
         }
         else if (node is ArrayNode arr)
         {
@@ -74,7 +78,7 @@ public class NodeViewModel : ReactiveObject
             Children = new ObservableCollection<NodeViewModel>(
                 arr.Items.Select(i =>
                 {
-                    var childVm = new NodeViewModel(i, depth + 1, onChildrenChanged);
+                    var childVm = new NodeViewModel(i, depth + 1, onChildrenChanged, onEdited);
                     childVm.IsArrayItem = true;
                     return childVm;
                 }));
@@ -91,7 +95,7 @@ public class NodeViewModel : ReactiveObject
     /// display as primitives with the key name and the inner value.
     /// </summary>
     private static ObservableCollection<NodeViewModel> BuildUnwrappedChildren(
-        ArrayNode array, int depth, Action? onChildrenChanged)
+        ArrayNode array, int depth, Action? onChildrenChanged, Action? onEdited)
     {
         var children = new ObservableCollection<NodeViewModel>();
 
@@ -104,7 +108,7 @@ public class NodeViewModel : ReactiveObject
             {
                 if (entry is not PrimitiveNode prim) continue;
 
-                var vm = new NodeViewModel(prim, depth, onChildrenChanged)
+                var vm = new NodeViewModel(prim, depth, onChildrenChanged, onEdited)
                 {
                     _unwrappedTarget        = prim,
                     _unwrappedParentWrapper = wrapper,
@@ -253,19 +257,30 @@ public class NodeViewModel : ReactiveObject
             else if (BackingNode is PrimitiveNode p)
                 p.Value = value;
             this.RaisePropertyChanged(nameof(EditValue));
+            OnEdited?.Invoke();
         }
     }
 
     public string EnumType
     {
         get => _enumType;
-        set { this.RaiseAndSetIfChanged(ref _enumType, value); if (BackingNode is EnumNode e) e.EnumType = value; }
+        set
+        {
+            this.RaiseAndSetIfChanged(ref _enumType, value);
+            if (BackingNode is EnumNode e) e.EnumType = value;
+            OnEdited?.Invoke();
+        }
     }
 
     public string EnumValue
     {
         get => _enumValue;
-        set { this.RaiseAndSetIfChanged(ref _enumValue, value); if (BackingNode is EnumNode e) e.EnumValue = value; }
+        set
+        {
+            this.RaiseAndSetIfChanged(ref _enumValue, value);
+            if (BackingNode is EnumNode e) e.EnumValue = value;
+            OnEdited?.Invoke();
+        }
     }
 
     #region Mutation
@@ -279,7 +294,7 @@ public class NodeViewModel : ReactiveObject
         a.Items.Add(newNode);
         if (idx == 0) a.ItemTypeHint = typeHint;
         IsExpanded = true;
-        var newVm = new NodeViewModel(newNode, Depth + 1, OnChildrenChanged);
+        var newVm = new NodeViewModel(newNode, Depth + 1, OnChildrenChanged, OnEdited);
         newVm.IsArrayItem = true;
         Children.Add(newVm);
         this.RaisePropertyChanged(nameof(HasChildren));
@@ -320,7 +335,7 @@ public class NodeViewModel : ReactiveObject
         var newNode = MakeNode(name, typeHint);
         s.Children.Add(newNode);
         IsExpanded = true;
-        Children.Add(new NodeViewModel(newNode, Depth + 1, OnChildrenChanged));
+        Children.Add(new NodeViewModel(newNode, Depth + 1, OnChildrenChanged, OnEdited));
         this.RaisePropertyChanged(nameof(HasChildren));
         this.RaisePropertyChanged(nameof(ExpanderGlyph));
         OnChildrenChanged?.Invoke();
@@ -348,7 +363,7 @@ public class NodeViewModel : ReactiveObject
             var clonedTarget = (PrimitiveNode)CloneNode(item._unwrappedTarget, item._unwrappedTarget.Name);
             item._unwrappedParentWrapper.Children.Add(clonedTarget);
 
-            var _clonedVm = new NodeViewModel(clonedTarget, Depth + 1, OnChildrenChanged)
+            var _clonedVm = new NodeViewModel(clonedTarget, Depth + 1, OnChildrenChanged, OnEdited)
             {
                 _unwrappedTarget        = clonedTarget,
                 _unwrappedParentWrapper = item._unwrappedParentWrapper
@@ -368,7 +383,7 @@ public class NodeViewModel : ReactiveObject
         var cloned = CloneNode(a.Items[idx], $"[{a.Items.Count}]");
         a.Items.Add(cloned);
         IsExpanded = true;
-        var clonedVm = new NodeViewModel(cloned, Depth + 1, OnChildrenChanged);
+        var clonedVm = new NodeViewModel(cloned, Depth + 1, OnChildrenChanged, OnEdited);
         clonedVm.IsArrayItem = true;
         Children.Add(clonedVm);
         this.RaisePropertyChanged(nameof(HasChildren));
@@ -385,7 +400,7 @@ public class NodeViewModel : ReactiveObject
         var cloned = CloneNode(s.Children[idx], newName);
         s.Children.Add(cloned);
         IsExpanded = true;
-        Children.Add(new NodeViewModel(cloned, Depth + 1, OnChildrenChanged));
+        Children.Add(new NodeViewModel(cloned, Depth + 1, OnChildrenChanged, OnEdited));
         this.RaisePropertyChanged(nameof(HasChildren));
         this.RaisePropertyChanged(nameof(ExpanderGlyph));
         OnChildrenChanged?.Invoke();

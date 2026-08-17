@@ -177,14 +177,14 @@ public class MainWindowViewModel : ReactiveObject
         _rootNodes.Clear();
         AdvancedTree.SelectedNode = null;
         foreach (var n in nodes)
-            _rootNodes.Add(new NodeViewModel(n, 0, OnChildrenChanged));
+            _rootNodes.Add(new NodeViewModel(n, 0, OnChildrenChanged, MarkDirty));
 
         FilePath = sourcePath;
         IsDirty  = false;
         AdvancedTree.RebuildVisibleList();
         this.RaisePropertyChanged(nameof(HasManifestTabs));
         ManifestTabs = HasManifestTabs
-            ? new Fields.ManifestTabsViewModel(ManifestRegistry.Get(_currentGame), RootNodes)
+            ? new Fields.ManifestTabsViewModel(ManifestRegistry.Get(_currentGame), RootNodes, MarkDirty)
             : null;
         StatusMessage = $"Loaded  {_rootNodes.Count} properties.";
     }

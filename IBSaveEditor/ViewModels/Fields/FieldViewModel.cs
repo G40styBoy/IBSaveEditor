@@ -54,15 +54,17 @@ public sealed class FieldViewModel : ReactiveObject
     private readonly SaveNode? _resolvedNode;
     private readonly PrimitiveNode? _primitiveNode;
     private readonly EnumNode? _enumNode;
+    private readonly Action? _onEdited;
     private object? _value;
 
-    public FieldViewModel(FieldSpec spec, Game game, IReadOnlyList<SaveNode> root)
+    public FieldViewModel(FieldSpec spec, Game game, IReadOnlyList<SaveNode> root, Action? onEdited = null)
     {
         Spec  = spec;
         _game = game;
         _resolvedNode  = SavePathResolver.Resolve(spec.Path, root);
         _primitiveNode = _resolvedNode as PrimitiveNode;
         _enumNode      = _resolvedNode as EnumNode;
+        _onEdited      = onEdited;
         _value = _primitiveNode?.Value;
 
         if (ControlKind == FieldControlKind.CatalogPicker)
@@ -157,6 +159,7 @@ public sealed class FieldViewModel : ReactiveObject
             this.RaisePropertyChanged(nameof(IntEditValue));
             this.RaisePropertyChanged(nameof(FloatEditValue));
             this.RaisePropertyChanged(nameof(ToggleEditValue));
+            _onEdited?.Invoke();
         }
     }
 
@@ -340,6 +343,7 @@ public sealed class FieldViewModel : ReactiveObject
             _enumNode.EnumValue = value;
             this.RaisePropertyChanged(nameof(SelectedEnumChoice));
             this.RaisePropertyChanged(nameof(EnumChoiceDisplayValue));
+            _onEdited?.Invoke();
         }
     }
 

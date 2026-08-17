@@ -11,13 +11,13 @@ namespace IBSaveEditor.ViewModels.Fields;
 /// </summary>
 public sealed class CollectionRowViewModel
 {
-    public CollectionRowViewModel(CollectionSpec spec, Game game, IReadOnlyList<SaveNode> elementChildren, int arrayIndex)
+    public CollectionRowViewModel(CollectionSpec spec, Game game, IReadOnlyList<SaveNode> elementChildren, int arrayIndex, Action? onEdited = null)
     {
         ArrayIndex = arrayIndex;
         Columns = spec.Columns
             .Select(c => new FieldViewModel(
                 new FieldSpec { Path = c.RelativePath, Kind = c.Kind, Label = c.Label, CatalogCategory = c.CatalogCategory },
-                game, elementChildren))
+                game, elementChildren, onEdited))
             .ToList();
 
         Title = spec.TitleColumnPath is { } titlePath
@@ -42,10 +42,10 @@ public sealed class CollectionRowViewModel
 /// </summary>
 public sealed class CollectionViewModel
 {
-    public CollectionViewModel(CollectionSpec spec, Game game, IReadOnlyList<SaveNode> root)
+    public CollectionViewModel(CollectionSpec spec, Game game, IReadOnlyList<SaveNode> root, Action? onEdited = null)
     {
         Spec = spec;
-        Rows = BuildRows(spec, game, root);
+        Rows = BuildRows(spec, game, root, onEdited);
     }
 
     public CollectionSpec Spec { get; }
@@ -53,7 +53,7 @@ public sealed class CollectionViewModel
     public IReadOnlyList<CollectionRowViewModel> Rows { get; }
     public bool HasRows => Rows.Count > 0;
 
-    private static List<CollectionRowViewModel> BuildRows(CollectionSpec spec, Game game, IReadOnlyList<SaveNode> root)
+    private static List<CollectionRowViewModel> BuildRows(CollectionSpec spec, Game game, IReadOnlyList<SaveNode> root, Action? onEdited)
     {
         var rows = new List<CollectionRowViewModel>();
 
@@ -69,7 +69,7 @@ public sealed class CollectionViewModel
             if (spec.OwnedOnlyColumnPath is { } ownedPath && !IsOwned(ownedPath, elementChildren))
                 continue;
 
-            rows.Add(new CollectionRowViewModel(spec, game, elementChildren, thisIndex));
+            rows.Add(new CollectionRowViewModel(spec, game, elementChildren, thisIndex, onEdited));
         }
 
         return rows;
