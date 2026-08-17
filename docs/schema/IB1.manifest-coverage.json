@@ -1,0 +1,181 @@
+{
+  "Game": "IB1",
+  "GeneratedUtc": "2026-08-17T16:27:06.4260959Z",
+  "EditableLeafPathCount": 63,
+  "CoveredCount": 20,
+  "CoveragePercent": 31.75,
+  "Missing": [
+    {
+      "Path": "data.BossFixedWorldInfo[].BossArchetype",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossClass",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossElementalRandList[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossForceItemDrop",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossLevel",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossRefightCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossXpLevel",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage1",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage2",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage3",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ini_BossSpawnPointName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.DodgeScale",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.HasDoneLookTutorial",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatDamage",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatHealth",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatMagic",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatShield",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].Mastered",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].NumberPlayerHas",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].XpGainedFromItem",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].ini_ItemName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SaveFileFixupVersion",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.TouchTreasureAwards[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.ValidSave",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.YearsLater",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.ini_BossPrecacheSaveName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.ini_ChoicePointSaveName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.ini_MapSaveName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.HasCheckedIB2",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.HasReadMPTutorial",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.MaxMasteryCount",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.MinusWorldMaxGeneration",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.MultiBossMatches",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.MultiBossWins",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.MultiKnightMatches",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.MultiKnightWins",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.NewSurvivalFightMaxRound",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.RebalanceStatsCount",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.SuperBoss[]",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.UberBossKillCount",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.WorldLevelAdjustment",
+      "PresenceRate": 0.6667
+    },
+    {
+      "Path": "data.GameOptions.MusicScale",
+      "PresenceRate": 0.3333
+    },
+    {
+      "Path": "data.GameOptions.SFXScale",
+      "PresenceRate": 0.3333
+    }
+  ]
+}

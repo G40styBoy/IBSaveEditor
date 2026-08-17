@@ -1,0 +1,1501 @@
+{
+  "Game": "IB3",
+  "GeneratedUtc": "2026-08-17T16:27:06.4448677Z",
+  "EditableLeafPathCount": 417,
+  "CoveredCount": 44,
+  "CoveragePercent": 10.55,
+  "Missing": [
+    {
+      "Path": "data.BloodlineResetCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossArchetype",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossClass",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossInstanceKillCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossSpawnFixedListIndex",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossXpLevel",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedDeath",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedStage1",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedStage2",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ForcedMapVariation.eForcedStage3",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage1",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage2",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandSeedStage3",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].RandomPersistentBoss",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].eBossAttackClass",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].eBossForceDropType",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ini_BossFixedDrop",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ini_BossForceDefense",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ini_BossForceWeapon",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].ini_BossSpawnPointName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossesGeneratedThisBloodline[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CharacterEquippedList[].EquippedItems[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentBattleChallengeList[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentEngineVersion",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentMapIndex",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentStoreGems[].RandomAddPct",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentStoreGems[].bBoost",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentStoreGems[].bCookedGemVar",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentStoreGems[].bGemTier",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentStoreGems[].bShowBadge",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.CurrentStoreGems[].ini_GemName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].MaxCompletions",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].NumFailures",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].NumStarts",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].PreReqValue",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].bCompletedLastStart",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].bForceAvailable",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].bForceHidden",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].bShowNewlyVisible",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.GameOptions.Quests[].bShownLastTime",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.HasBonusStuff",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.HasDoneGemTutorial",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.LastEquippedWeaponOfType[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.LoggedAnalyticsAchievements[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_1_Cactus",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_3_PinkPlant",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatDamage",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatHealth",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatMagic",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PawnStatShield",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PerLevelData[].GenKeys",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PerLevelData[].GenPotions",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PerLevelData[].PersistActorCounts[].Value",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PerLevelData[].PersistActorCounts[].ini_ObjName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PerLevelData[].TimesGenerated",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PerLevelData[].bGeneratedThisBloodline",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].XpGainedFromItem",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].bBeingForged",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].bShowBadge",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PlayerInventory[].eItemState",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.PotentialBossElementalAttacks[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SaveCreatedVersion",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SaveFileFixupVersion",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SaveFileOriginallyUnencrypted",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SaveFileVersionInternal",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SaveTag",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Gold.SavedTotalCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story1.SavedTotalCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_IsaLevel.SavedTotalCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_SirisLevel.SavedTotalCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SavedPersistentBossData[].CurrentHealth",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.SavedPersistentBossData[].NumBattleAttempts",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].GenerationCount",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].Health",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].HealthMax",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].MaxGeneration",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].PawnLevel",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].PawnStatDamage",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].PawnStatHealth",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].PawnStatMagic",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.Stats[].PawnStatShield",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.ValidSave",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.WorldItemOrderList[]",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.bHideoutStartType",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.bWasEncrypted",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.ini_MapSaveName",
+      "PresenceRate": 1
+    },
+    {
+      "Path": "data.BossFixedWorldInfo[].BossElementalRandList[]",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.Currency[].TotalFoundInWorld",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.Currency[].TotalFromBattle",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.CurrentKeyItemList[]",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.GameFlagList[]",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.GemCarryUpgradeCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.InActivePotionList[].RandomAddPct",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.InActivePotionList[].bBoost",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.InActivePotionList[].bCookedGemVar",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.InActivePotionList[].bGemTier",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.InActivePotionList[].bShowBadge",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.InActivePotionList[].ini_GemName",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.MaxGeneration",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_10_Cocoon",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_11_Bones",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_2_Berries",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_4_Reeds",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_5_DesertBulb",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_6_Mushroom",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_7_Root",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_8_Butterfly",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerInventory[].SocketedGemData[].RandomAddPct",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerInventory[].SocketedGemData[].bBoost",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerInventory[].SocketedGemData[].bCookedGemVar",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerInventory[].SocketedGemData[].bGemTier",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerInventory[].SocketedGemData[].bShowBadge",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerInventory[].SocketedGemData[].ini_GemName",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerUnequippedGems[].bBoost",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerUnequippedGems[].bCookedGemVar",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.PlayerUnequippedGems[].bShowBadge",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat1.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat1.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm10.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm10.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story1.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_IsaLevel.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_MasteredItem.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_MasteredItem.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Parry.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PerfectParry.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PerfectParry.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_RealPerfectParry.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_SirisLevel.ChipsRewardedLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_TitanKill.SavedTotalCount",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.Stats[].CurrentMagicLevel",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.Stats[].CurrentXP",
+      "PresenceRate": 0.96
+    },
+    {
+      "Path": "data.GameOptions.bSeenTraderHelp",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.HasRatedGame",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.MerchantShowupCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.MerchantVisitCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat3.ChipsRewardedLevel",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat3.SavedTotalCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat6.ChipsRewardedLevel",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat6.SavedTotalCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story11.ChipsRewardedLevel",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story11.SavedTotalCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story2.ChipsRewardedLevel",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story2.SavedTotalCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_BossPerkKils.ChipsRewardedLevel",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_BossPerkKils.SavedTotalCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.Stats[].RebalanceStatsCount",
+      "PresenceRate": 0.92
+    },
+    {
+      "Path": "data.HasCheckedIB1",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_World_9_Skullfly",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.RebalanceStatsCount",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story3.ChipsRewardedLevel",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story3.SavedTotalCount",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Combo.SavedTotalCount",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Dodge.SavedTotalCount",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.TotalTouchTreasureAwards",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.ini_ChoicePointSaveName",
+      "PresenceRate": 0.88
+    },
+    {
+      "Path": "data.MerchantAvailable",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.PerLevelData[].DontClearPersistActorCounts[].Value",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.PerLevelData[].DontClearPersistActorCounts[].ini_ObjName",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story4.ChipsRewardedLevel",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story4.SavedTotalCount",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.Stats[].AwakeningDifficultyAdjust",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.Stats[].CurrentSuperLevel",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.TouchTreasureAwards[].Value",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.TouchTreasureAwards[].ini_ObjName",
+      "PresenceRate": 0.84
+    },
+    {
+      "Path": "data.AwakeningDifficultyAdjust",
+      "PresenceRate": 0.8
+    },
+    {
+      "Path": "data.CurrentSuperLevel",
+      "PresenceRate": 0.8
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Gold.ChipsRewardedLevel",
+      "PresenceRate": 0.68
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story5.ChipsRewardedLevel",
+      "PresenceRate": 0.68
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story5.SavedTotalCount",
+      "PresenceRate": 0.68
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story10.ChipsRewardedLevel",
+      "PresenceRate": 0.6
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story10.SavedTotalCount",
+      "PresenceRate": 0.6
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_Key_Small",
+      "PresenceRate": 0.56
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story7.ChipsRewardedLevel",
+      "PresenceRate": 0.56
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story7.SavedTotalCount",
+      "PresenceRate": 0.56
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story6.ChipsRewardedLevel",
+      "PresenceRate": 0.52
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story6.SavedTotalCount",
+      "PresenceRate": 0.52
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat4.ChipsRewardedLevel",
+      "PresenceRate": 0.48
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat4.SavedTotalCount",
+      "PresenceRate": 0.48
+    },
+    {
+      "Path": "data.eCurrentPlayerType",
+      "PresenceRate": 0.48
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Parry.ChipsRewardedLevel",
+      "PresenceRate": 0.44
+    },
+    {
+      "Path": "data.eLastPlayerType",
+      "PresenceRate": 0.44
+    },
+    {
+      "Path": "data.GodKingDefeated",
+      "PresenceRate": 0.36
+    },
+    {
+      "Path": "data.RandomBossFightsThisBloodline",
+      "PresenceRate": 0.36
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_GrabBag_MediumGem",
+      "PresenceRate": 0.28
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_TitanKill.ChipsRewardedLevel",
+      "PresenceRate": 0.28
+    },
+    {
+      "Path": "data.SecondsLater",
+      "PresenceRate": 0.24
+    },
+    {
+      "Path": "data.TreasureChestOpened[]",
+      "PresenceRate": 0.24
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalScratch",
+      "PresenceRate": 0.2
+    },
+    {
+      "Path": "data.bShowGoalsNotificationBadge",
+      "PresenceRate": 0.2
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat2.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat5.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Block.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_BonusCombo.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_FinishingHit.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PerfectBlock.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Slash.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Stab.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_SuperMove.SavedTotalCount",
+      "PresenceRate": 0.16
+    },
+    {
+      "Path": "data.CauldronSlotsPurchased",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalBlockFailedCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalDodgeFailedCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalMissCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalParryFailedCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalPerfectSlashCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalSlashCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalStabCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalSuperAttackCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.DodgeScale",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.Quests[].PendingAction[].Data",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.Quests[].PendingAction[].Priority",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.Quests[].PendingAction[].eAction",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.Quests[].PendingAction[].eTrigger",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.SoundFXScale",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.bSeenCollectorHelp",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.bSeenForgeHelp",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.bSeenGemHelp",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.bSeenHardcoreHelp",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.GameOptions.bSeenPotionHelp",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.HardcoreCompleteCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.MainGameFinishedCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_GrabBag_Large",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_GrabBag_LargeGem",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_GrabBag_Medium",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_Key_Large",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.NumConsumable[].TRA_Key_Medium",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.PurchasedPerks[]",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Collector1.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Collector1.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Collector2.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Collector2.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat2.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_Combat5.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm1.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm1.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm2.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm2.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm3.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm3.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm4.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm4.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm5.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm5.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm6.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm6.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm7.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm7.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm8.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm8.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm9.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelm9.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelmAll.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_HolidayHelmAll.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_InfinityBlade.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].GOAL_InfinityBlade.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story12.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story12.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story8.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story8.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story9.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_Story9.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_ArenaMode.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_ArenaMode.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Block.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_BonusCombo.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Combo.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_DeathlessQuest.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_DeathlessQuest.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Dodge.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_FinishingHit.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Forge.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Forge.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_GemCook.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_GemCook.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Ingredients.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Ingredients.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_ItemLevel.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_ItemLevel.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Magic.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Magic.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Merchant.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Merchant.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PerfectBlock.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PotionCraft.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PotionCraft.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PotionUse.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_PotionUse.SavedTotalCount",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_RealPerfectParry.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Slash.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_Stab.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_SuperMove.ChipsRewardedLevel",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.ShowConsumableBadge[].bTRA_Key_Small",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.UsedKeyItemList[]",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.eLastHardCorePlayerType",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.eStartNewWorld",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.ini_CurrentHardCoreQuest",
+      "PresenceRate": 0.12
+    },
+    {
+      "Path": "data.ArenaModeFlag",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalMagicFailedCount",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.CurrentTotalTrackingStats.TotalMagicSpellCount",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ForgeSlotsPurchased",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GameOptions.bSeenArenaHelp",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCookerSlotsPurchased",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.ClientStartTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.CurrencyRequired",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.GameTimePassed",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.KnownSecondsPassed",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.LastGameTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.NotifyKeyValue",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.RealTimeRequired",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.ServerStartTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.bInUse",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.bRequireServerTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Data.eType",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Gems[].RandomAddPct",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Gems[].bBoost",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Gems[].bCookedGemVar",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Gems[].bGemTier",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Gems[].bShowBadge",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.GemCooker[].Gems[].ini_GemName",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.IsaCollectorItems",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.ClientStartTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.CurrencyRequired",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.GameTimePassed",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.KnownSecondsPassed",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.LastGameTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.NotifyKeyValue",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.RealTimeRequired",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.ServerStartTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.bInUse",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].Data.bRequireServerTime",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ItemForge[].ini_ItemName",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.SirisCollectorItems",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ini_SavedArenaReward",
+      "PresenceRate": 0.08
+    },
+    {
+      "Path": "data.ActivePotions[].RandomAddPct",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.ActivePotions[].bBoost",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.ActivePotions[].bCookedGemVar",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.ActivePotions[].bGemTier",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.ActivePotions[].bShowBadge",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.ActivePotions[].ini_GemName",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.GameOptions.DodgePos",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.GameOptions.bSeenCustomCharAnimHelp",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.GameOptions.bSeenCustomCharColorHelp",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.GameOptions.bSeenCustomCharPictureHelp",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.GameOptions.bSeenTrainerHelp",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotentiallyManipulatedData",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.ClientStartTime",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.CurrencyRequired",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.GameTimePassed",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.KnownSecondsPassed",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.LastGameTime",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.NotifyKeyValue",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.RealTimeRequired",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.ServerStartTime",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.bInUse",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.bRequireServerTime",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Data.eType",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.PotionCauldron[].Reagents[]",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_NewGamePlus.ChipsRewardedLevel",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].PROG_NewGamePlus.SavedTotalCount",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_AvatarEquipmentCost.SavedTotalCount",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_ClashMob.ChipsRewardedLevel",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_ClashMob.SavedTotalCount",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_GrabBags.ChipsRewardedLevel",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_GrabBags.SavedTotalCount",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.SavedCheevo[].TRACK_SuperDodge.SavedTotalCount",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.ShowConsumableBadge[].bTRA_Key_Item",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].ActivePotions[].RandomAddPct",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].ActivePotions[].bBoost",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].ActivePotions[].bCookedGemVar",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].ActivePotions[].bGemTier",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].ActivePotions[].bShowBadge",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].ActivePotions[].ini_GemName",
+      "PresenceRate": 0.04
+    },
+    {
+      "Path": "data.Stats[].AvailableStatPoints",
+      "PresenceRate": 0.04
+    }
+  ]
+}

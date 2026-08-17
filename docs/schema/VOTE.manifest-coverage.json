@@ -1,0 +1,173 @@
+{
+  "Game": "VOTE",
+  "GeneratedUtc": "2026-08-17T16:27:06.4455915Z",
+  "EditableLeafPathCount": 60,
+  "CoveredCount": 19,
+  "CoveragePercent": 31.67,
+  "Missing": [
+    {
+      "Path": "data.BloodlineResetCount",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.CloudDocIndex",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.EquippedListO[]",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.EquippedListR[]",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].bHasPreRegistered",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].bIgnoreExpired",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].bPurge",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].bRemoveFromAll",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].bSeenAvail",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].bSeenReward",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.SocialChallengeSaveEvents[].ini_EventID",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.GameOptions.bHasBeenLoaded",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.HasReadMPTutorial",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.HasSeenObjectives",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.HighScore",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.LastVoteCount[].CFE_Obama",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.LoggedAnalyticsAchievements[]",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PawnStatShield",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PerLevelData[].GenKeys",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PerLevelData[].GenPotions",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PerLevelData[].TimesGenerated",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PerLevelData[].bGeneratedThisBloodline",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PlayerInventory[].Mastered",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PlayerInventory[].NumberPlayerHas",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PlayerInventory[].XpGainedFromItem",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.PlayerInventory[].ini_ItemName",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveCreatedVersion",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFileFixupVersion",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFileVersionInternal",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFiles[].CloudDocIndex",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFiles[].CurrentGold",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFiles[].CurrentMap",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFiles[].GenerationCount",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.SaveFiles[].PawnLevel",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.TotalClashMobParticipation",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.UpdateSaveCount",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.ValidSave",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.bWasEncrypted",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.ini_ChoicePointSaveName",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.ini_LastEquippedSnS",
+      "PresenceRate": 0.5
+    },
+    {
+      "Path": "data.ini_MapSaveName",
+      "PresenceRate": 0.5
+    }
+  ]
+}
