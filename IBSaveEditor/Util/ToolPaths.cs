@@ -28,4 +28,27 @@ public static class ToolPaths
 
     /// <summary>Returns whether the OUTPUT directory currently exists on disk.</summary>
     public static bool DoesOutputExist() => Directory.Exists(OutputDir);
+
+    /// <summary>
+    /// If a file already exists at <paramref name="path"/>, copies it aside to a
+    /// timestamped "*.bak" file in the same directory before anything overwrites it.
+    /// <para>
+    /// Export always writes to the same fixed <c>OUTPUT/{packageName}.bin</c> path, so
+    /// without this, exporting twice - or exporting after a mistake - silently destroys
+    /// the previous export with no way back. Timestamping rather than a single ".bak"
+    /// keeps every prior export recoverable, not just the first one.
+    /// </para>
+    /// </summary>
+    public static void BackupIfExists(string path)
+    {
+        if (!File.Exists(path))
+            return;
+
+        var dir      = Path.GetDirectoryName(path)!;
+        var name     = Path.GetFileNameWithoutExtension(path);
+        var ext      = Path.GetExtension(path);
+        var backupPath = Path.Combine(dir, $"{name}.{DateTime.Now:yyyyMMdd_HHmmss}.bak{ext}");
+
+        File.Copy(path, backupPath, overwrite: true);
+    }
 }

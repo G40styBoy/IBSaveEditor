@@ -27,6 +27,10 @@ internal sealed class Serializer : IDisposable
         _crunchedData = crunchedData;
         _outputPath   = Path.Combine(ToolPaths.OutputDir, $"{info.packageName}{EXTENSION}");
 
+        // FileMode.Create below overwrites whatever's already at _outputPath unconditionally -
+        // back it up first so a repeat or mistaken export never destroys the previous one.
+        ToolPaths.BackupIfExists(_outputPath);
+
         _stream = new UnrealStream(_outputPath, FileMode.Create, FileAccess.ReadWrite);
         _writer = new UnrealBinaryWriter(_stream);
     }
