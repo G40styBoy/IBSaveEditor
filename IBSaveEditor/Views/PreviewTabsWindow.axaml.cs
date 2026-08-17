@@ -10,7 +10,7 @@ public partial class PreviewTabsWindow : Window
         InitializeComponent();
     }
 
-    public PreviewTabsWindow(ManifestPreviewViewModel vm) : this()
+    public PreviewTabsWindow(ManifestTabsViewModel vm) : this()
     {
         DataContext = vm;
         Title = $"{vm.Game} – Manifest Preview";

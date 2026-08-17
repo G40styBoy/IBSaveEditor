@@ -50,9 +50,9 @@ public class MainWindowViewModel : ReactiveObject
     /// <summary>True once a save is loaded and its game has at least one manifest tab worth previewing.</summary>
     public bool HasManifestTabs => FilePath != null && ManifestRegistry.Get(_currentGame).Tabs.Count > 0;
 
-    /// <summary>Builds the manifest preview for whatever save is currently loaded. Null if <see cref="HasManifestTabs"/> is false.</summary>
-    public Fields.ManifestPreviewViewModel? BuildManifestPreview() =>
-        HasManifestTabs ? new Fields.ManifestPreviewViewModel(ManifestRegistry.Get(_currentGame), RootNodes) : null;
+    /// <summary>Builds the manifest tabs for whatever save is currently loaded. Null if <see cref="HasManifestTabs"/> is false.</summary>
+    public Fields.ManifestTabsViewModel? BuildManifestPreview() =>
+        HasManifestTabs ? new Fields.ManifestTabsViewModel(ManifestRegistry.Get(_currentGame), RootNodes) : null;
 
     public MainWindowViewModel()
     {

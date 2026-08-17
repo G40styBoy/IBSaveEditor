@@ -3,7 +3,7 @@
         xmlns:vm="using:IBSaveEditor.ViewModels.Fields"
         xmlns:fields="using:IBSaveEditor.Views.Fields"
         x:Class="IBSaveEditor.Views.PreviewTabsWindow"
-        x:DataType="vm:ManifestPreviewViewModel"
+        x:DataType="vm:ManifestTabsViewModel"
         Title="Manifest Preview"
         Width="640" Height="720"
         MinWidth="420" MinHeight="360"
@@ -11,10 +11,8 @@
         FontFamily="'Cascadia Code','Consolas',monospace">
 
   <!--
-    Ad-hoc preview shell : a plain TabControl over every tab in the loaded game's
-    manifest. Not the production tab host (see ManifestPreviewViewModel) - just
-    enough to see and exercise the Number/Toggle/Text/CatalogPicker/EnumChoice
-    controls against a real loaded save before Phase 6 builds the real shell.
+    Stand-in window for the manifest tabs, to be deleted once Phase 6 step 5
+    lifts this TabControl markup into the real shell (MainWindow).
   -->
   <TabControl Background="#0D1B2A" ItemsSource="{Binding Tabs}">
     <TabControl.ItemTemplate>
