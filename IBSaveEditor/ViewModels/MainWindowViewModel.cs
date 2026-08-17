@@ -102,15 +102,10 @@ public class MainWindowViewModel : ReactiveObject
         ShellTabs    = new List<IShellTab> { AdvancedTree };
         SelectedShellTab = AdvancedTree;
 
-        OpenCommand   = ReactiveCommand.CreateFromTask(OpenFileAsync);
-        SaveCommand   = ReactiveCommand.CreateFromTask(SaveFileAsync,
-            this.WhenAnyValue(x => x.FilePath).Select(p => p != null));
         ReloadCommand = ReactiveCommand.CreateFromTask(ReloadAsync,
             this.WhenAnyValue(x => x.FilePath).Select(p => p != null));
     }
 
-    public ReactiveCommand<Unit, Unit> OpenCommand   { get; }
-    public ReactiveCommand<Unit, Unit> SaveCommand   { get; }
     public ReactiveCommand<Unit, Unit> ReloadCommand { get; }
 
     public string? FilePath
@@ -342,8 +337,6 @@ public class MainWindowViewModel : ReactiveObject
 
     #region Command Stubs
 
-    private Task OpenFileAsync()  => Task.CompletedTask;
-    private Task SaveFileAsync()  { if (FilePath != null) SaveToPath(FilePath); return Task.CompletedTask; }
     private Task ReloadAsync()
     {
         if (FilePath == null) return Task.CompletedTask;
