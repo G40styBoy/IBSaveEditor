@@ -1,0 +1,1599 @@
+{
+  "game": "VOTE",
+  "catalogVersion": 2,
+  "entryCount": 94,
+  "withDisplayName": 45,
+  "withDefinition": 51,
+  "categoryCounts": {
+    "ability": 22,
+    "armor": 7,
+    "challenge": 21,
+    "helmet": 2,
+    "key": 3,
+    "magic": 1,
+    "potion": 5,
+    "shield": 22,
+    "weapon": 11
+  },
+  "socketTypes": {
+    "1": "Stats",
+    "2": "Elemental Damage",
+    "3": "General",
+    "4": "Combat",
+    "5": "Uber",
+    "6": "Light",
+    "7": "Heavy",
+    "8": "Dual"
+  },
+  "items": [
+    {
+      "internalName": "All_HealthRechargeRate",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleEffect": "BE_PlayerGetHealth",
+        "battleEffectValue": 100,
+        "battleEffectRetriggerTime": 10.0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "All_PerfectBlockHitWindowBoost",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnPerfectBlock",
+        "battleEffect": "BE_BossHitWindow1Off",
+        "battleEffectValue": 1
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "All_PerfectParryHitWindowBoost",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnPerfectParry",
+        "battleEffect": "BE_BossHitWindow1Off",
+        "battleEffectValue": 1
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "All_ShowStabDuringTransition",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnTransitionStart",
+        "battleEffect": "BE_BossShowStabPoint",
+        "battleEffectValue": 1.0,
+        "battleEffectRetriggerTime": 1.25
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Gold_GloryComboModeHit",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnGloryModeComboHit",
+        "battleEffect": "BE_PlayerGetGold",
+        "battleEffectValue": 20
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Gold_GloryModeHit",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnGloryModeHit",
+        "battleEffect": "BE_PlayerGetGold",
+        "battleEffectValue": 5
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Block",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnBlock",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 10
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Combo3",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnCombo3",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 50
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Combo4",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnCombo4",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 100
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Combo5",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnCombo5",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 150
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_GoodDodge",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnGoodDodge",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 150
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Hit",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnHit",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 100
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Parry",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnParry",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 100
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_PerfectBlock",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnPerfectBlock",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 100
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_PerfectParry",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnPerfectParry",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 250
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Scratch",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnScratch",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 5
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Point_Stab",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 0,
+      "gem": {
+        "battleTrigger": "BT_OnStab",
+        "battleEffect": "BE_PlayerGetPoints",
+        "battleEffectValue": 100
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "SnS_DodgeRecharge",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "itemSubType": 1,
+      "gem": {
+        "battleEffect": "BE_Time_DodgeRechargeRate",
+        "battleEffectValue": 4.125
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "VOTE_BattleCombo",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "gem": {
+        "battleTrigger": "BT_OnCombo5",
+        "battleEffect": "BE_UnlockCheevo"
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "VOTE_BattleHits",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "gem": {
+        "battleTrigger": "BT_OnHit",
+        "battleEffect": "BE_UnlockCheevo",
+        "battleTriggerRequiredCount": 5
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "VOTE_BattlePParry",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "gem": {
+        "battleTrigger": "BT_OnPerfectParry",
+        "battleEffect": "BE_UnlockCheevo",
+        "battleTriggerRequiredCount": 3
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "VOTE_BattleParry",
+      "displayName": null,
+      "category": "ability",
+      "class": "SwordInventoryPlayerAbility",
+      "itemType": "SIT_PlayerAbility",
+      "gem": {
+        "battleTrigger": "BT_OnParry",
+        "battleEffect": "BE_UnlockCheevo",
+        "battleTriggerRequiredCount": 10
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PotionHealth"
+      }
+    },
+    {
+      "internalName": "Armor_100",
+      "displayName": "Nice Suit",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 100,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.V_T_Costumes_02",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_GreySuit.GreySuit"
+      }
+    },
+    {
+      "internalName": "Armor_101",
+      "displayName": "The Champ",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 2500,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_Costumes_01",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_FreedomFighter.FreedomFighter"
+      }
+    },
+    {
+      "internalName": "Armor_102",
+      "displayName": "Groovy Threads",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 10000,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_Costumes_01",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_Elvis.Elvis"
+      }
+    },
+    {
+      "internalName": "Armor_103",
+      "displayName": "Macho Muscles",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 5000,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.V_T_Costumes_03",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_SleeveLess.SleeveLess"
+      }
+    },
+    {
+      "internalName": "Armor_104",
+      "displayName": "Uncle Sam I Am",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 1000,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.V_T_Costumes_04",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_UncleSam.UncleSam"
+      }
+    },
+    {
+      "internalName": "Armor_105",
+      "displayName": "Karate Chop",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 500,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.V_T_Costumes_02",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_Karate.Karate"
+      }
+    },
+    {
+      "internalName": "Armor_106",
+      "displayName": "Super Prez",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": "SIT_Armor",
+      "cost": 25000,
+      "stats": {
+        "health": 10,
+        "stamina": 8
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.V_T_Costumes_03",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "V_Cstm_SuperHero.SuperHero"
+      }
+    },
+    {
+      "internalName": "BC_Blocking",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnBlock",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 10
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_ComboTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnCombo",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleEffectValue": 0,
+        "battleTriggerRequiredCount": 2
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      },
+      "upgradeTiers": [
+        3,
+        5
+      ]
+    },
+    {
+      "internalName": "BC_DodgeTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnGoodDodge",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 5
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_HorizontalSwipesTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnHorizontalAttack",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 6
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_MagicKillBoss",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnEndOfBattle",
+        "battleEffect": "BE_BC_SpecialCase"
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoBlocking",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnBlock",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoDamageTaken",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnTakeDamage",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoDodging",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnDodge",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoHorizontalSwipes",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnHorizontalAttack",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleEffectValue": 5,
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoMagic",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnMagic",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoParry",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnParry",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoSameDodgeDir",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BC_OnSameDodgeDir",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleEffectValue": 5,
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_NoVerticalSwipes",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnVerticalAttack",
+        "battleEffect": "BE_BC_LessThanEndOfBattle",
+        "battleEffectValue": 3,
+        "battleTriggerRequiredCount": 0
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_ParryTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnParry",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 5
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_PerfectBlockTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnPerfectBlock",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 5
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_PerfectParryTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnPerfectParry",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 3
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_ScratchKillBoss",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 2,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnEndOfBattle",
+        "battleEffect": "BE_BC_SpecialCase"
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_ScratchTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnScratch",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 10
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_SlashTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 3,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_On2HSlash",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleEffectValue": 5,
+        "battleTriggerRequiredCount": 6
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_StabTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 3,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnStab",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleEffectValue": 3,
+        "battleTriggerRequiredCount": 10
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "BC_VerticalSwipesTarget",
+      "displayName": null,
+      "category": "challenge",
+      "class": "SwordInventoryBattleChallenges",
+      "itemType": "SIT_BattleChallenge",
+      "itemSubType": 1,
+      "itemRare": 100,
+      "gem": {
+        "battleTrigger": "BT_OnVerticalAttack",
+        "battleEffect": "BE_BC_GreaterThan",
+        "battleTriggerRequiredCount": 6
+      },
+      "visual": {
+        "iconPath": "SwordIcon::GrabBag"
+      }
+    },
+    {
+      "internalName": "Helmet_100",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": "SIT_Helmet",
+      "cost": 100,
+      "visual": {
+        "meshPath": "V_Head_Mitt.MittHead"
+      }
+    },
+    {
+      "internalName": "Helmet_200",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": "SIT_Helmet",
+      "cost": 100,
+      "visual": {
+        "meshPath": "V_Head_Obama.ObamaHead"
+      }
+    },
+    {
+      "internalName": "TRA_Key_Large",
+      "displayName": null,
+      "category": "key",
+      "class": "SwordInventoryItemKey",
+      "itemType": "SIT_Key",
+      "cost": 190000,
+      "gem": {
+        "battleEffectRewardType": "TRA_Key_Large",
+        "perBloodlineCost": 10000
+      },
+      "visual": {
+        "iconPath": "SwordIcon::Key3"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "TRA_Key_Medium",
+      "displayName": null,
+      "category": "key",
+      "class": "SwordInventoryItemKey",
+      "itemType": "SIT_Key",
+      "cost": 18000,
+      "gem": {
+        "battleEffectRewardType": "TRA_Key_Medium",
+        "perBloodlineCost": 2000
+      },
+      "visual": {
+        "iconPath": "SwordIcon::Key2"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "TRA_Key_Small",
+      "displayName": null,
+      "category": "key",
+      "class": "SwordInventoryItemKey",
+      "itemType": "SIT_Key",
+      "cost": 4000,
+      "gem": {
+        "battleEffectRewardType": "TRA_Key_Small",
+        "perBloodlineCost": 1000
+      },
+      "visual": {
+        "iconPath": "SwordIcon::Key1"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "Magic_100",
+      "displayName": null,
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": "SIT_Magic",
+      "cost": 100
+    },
+    {
+      "internalName": "VotePerk_DoublePointsBoost",
+      "displayName": "SUPER PAC",
+      "category": "potion",
+      "class": "SwordInventoryItemPotion",
+      "description": "DOUBLE YOUR POINTS!",
+      "itemType": "SIT_Potion",
+      "cost": 500,
+      "gem": {
+        "battleTrigger": "BT_Passive",
+        "battleEffect": "BE_PlayerGetScoreMultiplier",
+        "battleEffectValue": 1
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PerkDebate"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "VotePerk_FreeHitBoost",
+      "displayName": "GOOD PRESS",
+      "category": "potion",
+      "class": "SwordInventoryItemPotion",
+      "description": "TAKE ONE HIT WITHOUT BOOSTER RESET!",
+      "itemType": "SIT_Potion",
+      "cost": 150,
+      "gem": {
+        "battleTrigger": "BT_Passive",
+        "battleEffect": "BE_PlayerGetTakeFreeHit",
+        "battleEffectValue": 1
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PerkParry"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "VotePerk_HealthBoost",
+      "displayName": "HEALTH CARE",
+      "category": "potion",
+      "class": "SwordInventoryItemPotion",
+      "description": "CAN'T BE KNOCKED DOWN!",
+      "itemType": "SIT_Potion",
+      "cost": 25,
+      "gem": {
+        "battleTrigger": "BT_Passive",
+        "battleEffect": "BE_PlayerGetHealth",
+        "battleEffectValue": 10000
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PerkHealth"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "VotePerk_MoneyBoost",
+      "displayName": "FUNDRAISER",
+      "category": "potion",
+      "class": "SwordInventoryItemPotion",
+      "description": "COINS ARE ALL $20s!",
+      "itemType": "SIT_Potion",
+      "cost": 100,
+      "gem": {
+        "battleTrigger": "BT_Passive",
+        "battleEffect": "BE_Time_BigMoney",
+        "battleEffectValue": 1
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PerkMoney"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "VotePerk_TimeBoost",
+      "displayName": "FILIBUSTER",
+      "category": "potion",
+      "class": "SwordInventoryItemPotion",
+      "description": "ADD AN EXTRA 30 SECONDS!",
+      "itemType": "SIT_Potion",
+      "cost": 400,
+      "gem": {
+        "battleTrigger": "BT_Passive",
+        "battleEffect": "BE_Time_TimeBonus",
+        "battleEffectValue": 30
+      },
+      "visual": {
+        "iconPath": "SwordIcon::PerkTime"
+      },
+      "flags": {
+        "unique": true
+      }
+    },
+    {
+      "internalName": "Shield_100",
+      "displayName": "American Flag Pin",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 100,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_AmericaPin",
+        "meshPath": "V_Acc_AmericanPin.AmericanPin"
+      }
+    },
+    {
+      "internalName": "Shield_101",
+      "displayName": "Baseball Cap",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 200,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_BaseballCap",
+        "meshPath": "V_Acc_M_BaseballCap.M_BaseballCap"
+      }
+    },
+    {
+      "internalName": "Shield_102",
+      "displayName": "Clown Nose",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 300,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_ClownNose",
+        "meshPath": "V_Acc_M_ClownNose.M_ClownNose"
+      }
+    },
+    {
+      "internalName": "Shield_103",
+      "displayName": "Eye Patch",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 400,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_EyePatch",
+        "meshPath": "V_Acc_M_EyePatch.M_EyePatch"
+      }
+    },
+    {
+      "internalName": "Shield_104",
+      "displayName": "Funky Glasses",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 500,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_HypnoticGlasses",
+        "meshPath": "V_Acc_M_HypnoticGlasses.M_HypnoticGlasses"
+      }
+    },
+    {
+      "internalName": "Shield_105",
+      "displayName": "Sweet Mustache",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 600,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_Mustache12",
+        "iconUV": "(U=0,V=0,UL=256,VL=128)",
+        "meshPath": "V_Acc_M_Mustache1.M_Mustache1"
+      }
+    },
+    {
+      "internalName": "Shield_106",
+      "displayName": "Cool Shades",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 700,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_Sunglasses",
+        "meshPath": "V_Acc_M_Sunglasses.M_Sunglasses"
+      }
+    },
+    {
+      "internalName": "Shield_107",
+      "displayName": "Top Hat",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 800,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_BlackTopHot",
+        "meshPath": "V_Acc_M_TopHat.M_TopHat"
+      }
+    },
+    {
+      "internalName": "Shield_108",
+      "displayName": "Hero Mask",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 5000,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_SuperHeroMask",
+        "meshPath": "V_Acc_M_SuperHeroMask.M_SuperHeroMask"
+      }
+    },
+    {
+      "internalName": "Shield_109",
+      "displayName": "Ye Olde Wig",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 900,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_PowderedWig",
+        "meshPath": "V_Acc_M_PowderedWig.M_PowderedWig"
+      }
+    },
+    {
+      "internalName": "Shield_110",
+      "displayName": "Shield of Freedom",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 1000,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_AmericaShield",
+        "meshPath": "V_Acc_AmericaShield.AmericaShield"
+      }
+    },
+    {
+      "internalName": "Shield_111",
+      "displayName": "Uncle Sam Hat",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 2500,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_UncleSamHat",
+        "meshPath": "V_Acc_M_UncleSameHat.M_UncleSamHat"
+      }
+    },
+    {
+      "internalName": "Shield_200",
+      "displayName": "American Flag Pin",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 100,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_AmericaPin",
+        "meshPath": "V_Acc_AmericanPin.AmericanPin"
+      }
+    },
+    {
+      "internalName": "Shield_201",
+      "displayName": "Baseball Cap",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 200,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_BaseballCap",
+        "meshPath": "V_Acc_O_BaseballCap.O_BaseballCap"
+      }
+    },
+    {
+      "internalName": "Shield_203",
+      "displayName": "Eye Patch",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 400,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_EyePatch",
+        "meshPath": "V_Acc_O_EyePatch.O_EyePatch"
+      }
+    },
+    {
+      "internalName": "Shield_204",
+      "displayName": "Funky Glasses",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 500,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_HypnoticGlasses",
+        "meshPath": "V_Acc_O_HypnoticGlasses.O_HypnoticGlasses"
+      }
+    },
+    {
+      "internalName": "Shield_205",
+      "displayName": "Sweet Mustache",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 600,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_Mustache12",
+        "iconUV": "(U=0,V=0,UL=256,VL=128)",
+        "meshPath": "V_Acc_O_Mustache1.O_Mustache1"
+      }
+    },
+    {
+      "internalName": "Shield_206",
+      "displayName": "Cool Shades",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 700,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_Sunglasses",
+        "meshPath": "V_Acc_O_Sunglasses.O_Sunglasses"
+      }
+    },
+    {
+      "internalName": "Shield_207",
+      "displayName": "Top Hat",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 800,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_BlackTopHot",
+        "meshPath": "V_Acc_O_TopHat.O_TopHat"
+      }
+    },
+    {
+      "internalName": "Shield_208",
+      "displayName": "Hero Mask",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 5000,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_SuperHeroMask",
+        "meshPath": "V_Acc_O_SuperHeroMask.O_SuperHeroMask"
+      }
+    },
+    {
+      "internalName": "Shield_209",
+      "displayName": "Ye Olde Wig",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 900,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_PowderedWig",
+        "meshPath": "V_Acc_O_PowderedWig.O_PowderedWig"
+      }
+    },
+    {
+      "internalName": "Shield_211",
+      "displayName": "Uncle Sam Hat",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": "SIT_Shield",
+      "cost": 2500,
+      "stats": {
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.Materials.T_V_UncleSamHat",
+        "meshPath": "V_Acc_O_UncleSameHat.O_UncleSamHat"
+      }
+    },
+    {
+      "internalName": "Sword_100",
+      "displayName": "Mic",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 100,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_04",
+        "iconUV": "(U=128,V=0,UL=128,VL=256)",
+        "meshPath": "V_Wp_MicroPhone.MicroPhone"
+      }
+    },
+    {
+      "internalName": "Sword_101",
+      "displayName": "Rubber Chicken",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 500,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_05",
+        "iconUV": "(U=0,V=0,UL=256,VL=64)",
+        "meshPath": "V_Wp_RubberChicken.RubberChicken"
+      }
+    },
+    {
+      "internalName": "Sword_102",
+      "displayName": "Hot Doggin'",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 250,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_03",
+        "iconUV": "(U=0,V=192,UL=256,VL=64)",
+        "meshPath": "V_Wp_HotDog.HotDog"
+      }
+    },
+    {
+      "internalName": "Sword_103",
+      "displayName": "The Constitution",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 1500,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_03",
+        "iconUV": "(U=0,V=64,UL=256,VL=64)",
+        "meshPath": "V_Wp_Constitution.Constitution"
+      }
+    },
+    {
+      "internalName": "Sword_104",
+      "displayName": "Ameripop",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 750,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_02",
+        "iconUV": "(U=128,V=0,UL=128,VL=256)",
+        "meshPath": "V_Wp_RocketPop.RocketPop"
+      }
+    },
+    {
+      "internalName": "Sword_105",
+      "displayName": "Campaign Sign",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 2500,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_01",
+        "iconUV": "(U=128,V=0,UL=128,VL=256)",
+        "meshPath": "V_Wp_CampaignSign.CampaignSign"
+      }
+    },
+    {
+      "internalName": "Sword_106",
+      "displayName": "Foam Hand",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 2000,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_02",
+        "iconUV": "(U=0,V=0,UL=128,VL=256)",
+        "meshPath": "V_Wp_FoamHand.FoamHand"
+      }
+    },
+    {
+      "internalName": "Sword_107",
+      "displayName": "Sparkler",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 5000,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_04",
+        "iconUV": "(U=0,V=0,UL=128,VL=256)",
+        "meshPath": "V_Wp_Sparkler.Sparkler"
+      }
+    },
+    {
+      "internalName": "Sword_108",
+      "displayName": "Balloon of Justice",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 3000,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_03",
+        "iconUV": "(U=0,V=0,UL=256,VL=64)",
+        "meshPath": "V_Wp_BaloonSword.BaloonSword"
+      }
+    },
+    {
+      "internalName": "Sword_109",
+      "displayName": "Ice Cream Cone",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 7500,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_01",
+        "iconUV": "(U=0,V=0,UL=128,VL=256)",
+        "meshPath": "V_Wp_IceCreamCone.IceCreamCone"
+      }
+    },
+    {
+      "internalName": "Sword_110",
+      "displayName": "Saber Of Liberty",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": "SIT_Weapon",
+      "cost": 15000,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "V_ItemIcons.T_V_Weapons_03",
+        "iconUV": "(U=0,V=128,UL=256,VL=64)",
+        "meshPath": "V_Wp_SaberOfLiberty.SaberOfLiberty"
+      },
+      "flags": {
+        "isSaber": 10
+      }
+    }
+  ]
+}

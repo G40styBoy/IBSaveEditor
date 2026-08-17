@@ -1,0 +1,5712 @@
+{
+  "game": "IB1",
+  "catalogVersion": 2,
+  "entryCount": 321,
+  "withDisplayName": 194,
+  "withDefinition": 290,
+  "categoryCounts": {
+    "armor": 9,
+    "bossItem": 63,
+    "helmet": 40,
+    "item": 102,
+    "magic": 23,
+    "shield": 29,
+    "weapon": 55
+  },
+  "socketTypes": {
+    "1": "Stats",
+    "2": "Elemental Damage",
+    "3": "General",
+    "4": "Combat",
+    "5": "Uber",
+    "6": "Light",
+    "7": "Heavy",
+    "8": "Dual"
+  },
+  "items": [
+    {
+      "internalName": "Armor_1",
+      "displayName": "Leather Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 1900,
+      "stats": {
+        "health": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_01",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_LeatherArmor.Mesh.SK_LeatherArmor"
+      }
+    },
+    {
+      "internalName": "Armor_2",
+      "displayName": "Bronze Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 6400,
+      "stats": {
+        "health": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_01",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_BronzeArmor.Mesh.SK_BronzeArmor"
+      }
+    },
+    {
+      "internalName": "Armor_3",
+      "displayName": "Iron Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 20750,
+      "stats": {
+        "health": 15
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_02",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_IronArmor.Mesh.SK_IronArmor"
+      }
+    },
+    {
+      "internalName": "Armor_4",
+      "displayName": "Plate Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 40850,
+      "stats": {
+        "health": 21
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_02",
+        "iconUV": "(U=245,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_PlateArmor.Mesh.SK_PlateArmor"
+      }
+    },
+    {
+      "internalName": "Armor_5",
+      "displayName": "Adamant Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 96000,
+      "stats": {
+        "health": 28
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_03",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_AdamantArmor.Mesh.SK_AdamantArmor"
+      }
+    },
+    {
+      "internalName": "Armor_6",
+      "displayName": "Omega Armor XOS-7",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 1250600,
+      "hiddenLevel": 1,
+      "stats": {
+        "health": 60
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_04",
+        "iconUV": "(U=245,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_OmegaArmor.Mesh.SK_OmegaArmor"
+      }
+    },
+    {
+      "internalName": "Armor_7",
+      "displayName": "Helio Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 204000,
+      "stats": {
+        "health": 34
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_03",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_HelioArmor.Mesh.SK_HelioArmor"
+      }
+    },
+    {
+      "internalName": "Armor_8",
+      "displayName": "Night Armor",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 740000,
+      "stats": {
+        "health": 52
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_04",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_NightArmor.Mesh.SK_NightArmor"
+      }
+    },
+    {
+      "internalName": "Armor_9",
+      "displayName": "Dark Omega XOS-7",
+      "category": "armor",
+      "class": "SwordInventoryItem",
+      "nameBase": "Armor",
+      "itemType": 3,
+      "cost": 1350600,
+      "hiddenLevel": -2,
+      "stats": {
+        "damage": 50,
+        "health": 50
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_05",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_DarkOmega.Mesh.SK_DarkOmega"
+      }
+    },
+    {
+      "internalName": "10ft_2W_Kuero",
+      "displayName": "KUERO",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 11,
+      "stats": {
+        "damage": 40,
+        "ice": 15
+      },
+      "gem": {
+        "mpParent": "10ft_2W_PlatedSorok"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_2W_Kuero"
+      }
+    },
+    {
+      "internalName": "10ft_2W_PlatedSorok",
+      "displayName": "PLATED SOROK",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 8,
+      "stats": {
+        "damage": 35,
+        "ice": 10
+      },
+      "gem": {
+        "mpParent": "10ft_2W_WoodJester"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_2W_PlatedSorok"
+      }
+    },
+    {
+      "internalName": "10ft_2W_WoodJester",
+      "displayName": "WOOD JESTER",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 5,
+      "stats": {
+        "damage": 30,
+        "ice": 5
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_Brute"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_2W_WoodJester"
+      }
+    },
+    {
+      "internalName": "10ft_SnS_Brute",
+      "displayName": "BRUTE",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 3,
+      "stats": {
+        "damage": 35
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_MarrowFiend"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_SnS_Brute"
+      }
+    },
+    {
+      "internalName": "10ft_SnS_DarkKnight",
+      "displayName": "THE DARK KNIGHT",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 4,
+      "stats": {
+        "damage": 40,
+        "fire": 5
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_Brute"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_SnS_DarkKnight"
+      }
+    },
+    {
+      "internalName": "10ft_SnS_Ealoseum",
+      "displayName": "EALOSEUM",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 6,
+      "stats": {
+        "damage": 45,
+        "fire": 10
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_DarkKnight"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_SnS_Ealoseum"
+      }
+    },
+    {
+      "internalName": "10ft_SnS_FrozenPaladin",
+      "displayName": "FROZEN PALADIN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "10ft_SnS_HornedGuardian",
+      "displayName": "HORNED GUARDIAN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 1,
+      "stats": {
+        "damage": 25
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_SnS_HornedGuardian"
+      }
+    },
+    {
+      "internalName": "10ft_SnS_InfernoPaladin",
+      "displayName": "INFERNO PALADIN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "10ft_SnS_MarrowFiend",
+      "displayName": "MARROW FIEND",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 3,
+      "stats": {
+        "damage": 30
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_HornedGuardian"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_SnS_MarrowFiend"
+      }
+    },
+    {
+      "internalName": "10ft_SnS_Rookbane",
+      "displayName": "ROOKBANE",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "10ft_SnS_StormPaladin",
+      "displayName": "STORM PALADIN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "10ft_SnS_VenomPaladin",
+      "displayName": "VENOM PALADIN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "10ft_SnS_ZeroMech",
+      "displayName": "ZERO MECH",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 8,
+      "stats": {
+        "damage": 50,
+        "fire": 15
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_Ealoseum"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.10ft_SnS_ZeroMech"
+      }
+    },
+    {
+      "internalName": "15ft_2H_Executioner",
+      "displayName": "EXECUTIONER",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 8,
+      "stats": {
+        "damage": 80,
+        "poison": 10
+      },
+      "gem": {
+        "mpParent": "15ft_2H_Warden"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.15ft_2H_Executioner"
+      }
+    },
+    {
+      "internalName": "15ft_2H_FeralTroll",
+      "displayName": "FERAL TROLL",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 3,
+      "stats": {
+        "damage": 35
+      },
+      "gem": {
+        "mpParent": "10ft_SnS_HornedGuardian"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.15ft_2H_FeralTroll"
+      }
+    },
+    {
+      "internalName": "15ft_2H_Gortoel",
+      "displayName": "GORTOEL",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 10,
+      "stats": {
+        "damage": 95,
+        "poison": 15
+      },
+      "gem": {
+        "mpParent": "15ft_2H_Executioner"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.15ft_2H_Gortoel"
+      }
+    },
+    {
+      "internalName": "15ft_2H_IronGolem",
+      "displayName": "IRON GOLEM",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 4,
+      "stats": {
+        "damage": 50
+      },
+      "gem": {
+        "mpParent": "15ft_2H_FeralTroll"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.15ft_2H_IronGolem"
+      }
+    },
+    {
+      "internalName": "15ft_2H_PlatedGolem",
+      "displayName": "PLATED GOLEM",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "15ft_2H_Warden",
+      "displayName": "WARDEN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 6,
+      "stats": {
+        "damage": 65,
+        "poison": 5
+      },
+      "gem": {
+        "mpParent": "15ft_2H_IronGolem"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.15ft_2H_Warden"
+      }
+    },
+    {
+      "internalName": "6ft_SnS_Assassin",
+      "displayName": "ASSASSIN",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 5,
+      "stats": {
+        "damage": 40,
+        "elec": 5
+      },
+      "gem": {
+        "mpParent": "15ft_2H_IronGolem"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.6ft_SnS_Assassin"
+      }
+    },
+    {
+      "internalName": "6ft_SnS_Cavalier",
+      "displayName": "CAVALIER",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "6ft_SnS_GodKing",
+      "displayName": "THE GOD KING",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 9,
+      "stats": {
+        "damage": 60,
+        "elec": 15
+      },
+      "gem": {
+        "mpParent": "6ft_SnS_IronGuard"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.6ft_SnS_GodKing"
+      }
+    },
+    {
+      "internalName": "6ft_SnS_HedgeKnight",
+      "displayName": "HEDGE KNIGHT",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "6ft_SnS_IronGuard",
+      "displayName": "IRON GUARD",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": "",
+      "itemType": 7,
+      "cost": 7,
+      "stats": {
+        "damage": 50,
+        "elec": 10
+      },
+      "gem": {
+        "mpParent": "6ft_SnS_Assassin"
+      },
+      "visual": {
+        "iconPath": "B_UI_Boss.6ft_SnS_IronGuard"
+      }
+    },
+    {
+      "internalName": "6ft_SnS_KnightTemplar",
+      "displayName": "KNIGHT TEMPLAR",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "6ft_SnS_RogueKnight",
+      "displayName": "ROGUE KNIGHT",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "6ft_SnS_Zero",
+      "displayName": "THE BLOOD SLAVE",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "description": ""
+    },
+    {
+      "internalName": "BossRing_1",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 1,
+      "stats": {
+        "health": 4
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_BronzeRingRusty"
+      }
+    },
+    {
+      "internalName": "BossRing_10",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 6,
+      "stats": {
+        "health": 12,
+        "fire": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_7"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_ZombieRing"
+      }
+    },
+    {
+      "internalName": "BossRing_11",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 8,
+      "stats": {
+        "health": 15
+      },
+      "gem": {
+        "mpParent": "BossRing_7"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_TreeRing"
+      }
+    },
+    {
+      "internalName": "BossRing_12",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 6,
+      "stats": {
+        "health": 10,
+        "fire": 1,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_6"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_InkaRing"
+      }
+    },
+    {
+      "internalName": "BossRing_13",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 4,
+      "stats": {
+        "health": 10,
+        "elec": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_4"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Skull_Platnum"
+      }
+    },
+    {
+      "internalName": "BossRing_14",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 4,
+      "stats": {
+        "health": 10,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_4"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_SnakeSkull"
+      }
+    },
+    {
+      "internalName": "BossRing_15",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 4,
+      "stats": {
+        "health": 8,
+        "elec": 1,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_4"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_SpikeRing"
+      }
+    },
+    {
+      "internalName": "BossRing_16",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 6,
+      "stats": {
+        "health": 10,
+        "elec": 1,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_15"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_JadeRing"
+      }
+    },
+    {
+      "internalName": "BossRing_17",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 6,
+      "stats": {
+        "health": 12,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_14"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_VenomRing"
+      }
+    },
+    {
+      "internalName": "BossRing_18",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 8,
+      "stats": {
+        "health": 15
+      },
+      "gem": {
+        "mpParent": "BossRing_14"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_PlaneRing"
+      }
+    },
+    {
+      "internalName": "BossRing_19",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 6,
+      "stats": {
+        "health": 12,
+        "elec": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_13"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_GreekRing"
+      }
+    },
+    {
+      "internalName": "BossRing_2",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 1,
+      "stats": {
+        "health": 6
+      },
+      "gem": {
+        "mpParent": "BossRing_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Rusty"
+      }
+    },
+    {
+      "internalName": "BossRing_20",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 8,
+      "stats": {
+        "health": 15
+      },
+      "gem": {
+        "mpParent": "BossRing_13"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_PowerRing"
+      }
+    },
+    {
+      "internalName": "BossRing_3",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 2,
+      "stats": {
+        "health": 8,
+        "fire": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_FireRing"
+      }
+    },
+    {
+      "internalName": "BossRing_4",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 2,
+      "stats": {
+        "health": 8,
+        "elec": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_ElectroRing"
+      }
+    },
+    {
+      "internalName": "BossRing_5",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 4,
+      "stats": {
+        "health": 10,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_3"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_IceRing"
+      }
+    },
+    {
+      "internalName": "BossRing_6",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 4,
+      "stats": {
+        "health": 8,
+        "fire": 1,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_3"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Decorative"
+      }
+    },
+    {
+      "internalName": "BossRing_7",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 4,
+      "stats": {
+        "health": 10,
+        "fire": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_3"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_DragonRing"
+      }
+    },
+    {
+      "internalName": "BossRing_8",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 6,
+      "stats": {
+        "health": 12,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "BossRing_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_FaceRing"
+      }
+    },
+    {
+      "internalName": "BossRing_9",
+      "displayName": null,
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem",
+      "nameBase": "BossRing",
+      "itemType": 8,
+      "cost": 8,
+      "stats": {
+        "health": 15
+      },
+      "gem": {
+        "mpParent": "BossRing_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_CogRing"
+      }
+    },
+    {
+      "internalName": "Boss_Attack",
+      "displayName": "Attack",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_Defense",
+      "displayName": "Defense",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_Faster",
+      "displayName": "Attack Speed",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_FireA",
+      "displayName": "Fire Attack",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_FireD",
+      "displayName": "Fire Defense",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_Health",
+      "displayName": "Health",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_IceA",
+      "displayName": "Ice Attack",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_IceD",
+      "displayName": "Ice Defense",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_LifeDrainA",
+      "displayName": "Life Drain Attack",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_LifeDrainD",
+      "displayName": "Life Drain Defense",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_PoisonA",
+      "displayName": "Poison Attack",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_PoisonD",
+      "displayName": "Poison Defense",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_Rage",
+      "displayName": "Rage",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_StormA",
+      "displayName": "Storm Attack",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Boss_StormD",
+      "displayName": "Storm Defense",
+      "category": "bossItem",
+      "class": "SwordInventoryBossItem"
+    },
+    {
+      "internalName": "Helmet_1",
+      "displayName": "Steel Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 210,
+      "stats": {
+        "health": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero00",
+        "meshPath": "B_Wp_Helmet_SteelHelm.Mesh.SK_SteelHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_10",
+      "displayName": "Iron Skull",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 11800,
+      "stats": {
+        "health": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero06",
+        "meshPath": "B_Wp_Helmet_IronSkull.Mesh.SK_IronSkull"
+      }
+    },
+    {
+      "internalName": "Helmet_11",
+      "displayName": "Odin's Wisdom",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 14350,
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Mohawk",
+        "meshPath": "B_Wp_Helmet_OdinsWisdom.Mesh.SK_OdinsWisdom"
+      }
+    },
+    {
+      "internalName": "Helmet_12",
+      "displayName": "Adamantine",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 28200,
+      "stats": {
+        "damage": 4,
+        "health": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero05",
+        "meshPath": "B_Wp_Helmet_Adamantine.Mesh.SK_Adamantine"
+      }
+    },
+    {
+      "internalName": "Helmet_13",
+      "displayName": "Fusion Helmet",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 980750,
+      "hiddenLevel": 1,
+      "stats": {
+        "health": 6,
+        "shield": 15
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Fusion",
+        "meshPath": "B_Wp_Helmet_FusionHelmet.Mesh.SK_FusionHelmet"
+      }
+    },
+    {
+      "internalName": "Helmet_14",
+      "displayName": "Raulum",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 900,
+      "stats": {
+        "health": 1,
+        "shield": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Executioner",
+        "meshPath": "B_Wp_Helmet_Raulum.Mesh.SK_Raulum"
+      }
+    },
+    {
+      "internalName": "Helmet_15",
+      "displayName": "Blue Steel",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 1500,
+      "stats": {
+        "health": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero01",
+        "meshPath": "B_Wp_Helmet_BlueSteel.Mesh.SK_BlueSteel"
+      }
+    },
+    {
+      "internalName": "Helmet_16",
+      "displayName": "Legion",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 10500,
+      "stats": {
+        "shield": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero10",
+        "meshPath": "B_Wp_Helmet_Legion.Mesh.SK_Legion"
+      }
+    },
+    {
+      "internalName": "Helmet_17",
+      "displayName": "Mana Crown",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 19500,
+      "stats": {
+        "magic": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero12",
+        "meshPath": "B_Wp_Helmet_ManaCrown.Mesh.SK_ManaCrown"
+      }
+    },
+    {
+      "internalName": "Helmet_18",
+      "displayName": "Trajan",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 37900,
+      "stats": {
+        "damage": 4,
+        "shield": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero11",
+        "meshPath": "B_Wp_Helmet_Trajan.Mesh.SK_Trajan"
+      }
+    },
+    {
+      "internalName": "Helmet_19",
+      "displayName": "Kaldan",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 62100,
+      "stats": {
+        "damage": 9
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero10A",
+        "meshPath": "B_Wp_Helmet_Kaldan.Mesh.SK_Kaldan"
+      }
+    },
+    {
+      "internalName": "Helmet_2",
+      "displayName": "Gold Fury",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 360,
+      "stats": {
+        "damage": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero02",
+        "meshPath": "B_Wp_Helmet_GoldFury.Mesh.SK_GoldFury"
+      }
+    },
+    {
+      "internalName": "Helmet_20",
+      "displayName": "Oroku",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 124900,
+      "stats": {
+        "health": 8,
+        "magic": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero09A",
+        "meshPath": "B_Wp_Helmet_Oroku.Mesh.SK_Oroku"
+      }
+    },
+    {
+      "internalName": "Helmet_21",
+      "displayName": "Holiday Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "stats": {
+        "magic": 2
+      },
+      "gem": {
+        "mpParent": "HolidayHelm"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Valentines",
+        "meshPath": "B_Wp_Helmet_Valentine.Mesh.SK_ValentineHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_22",
+      "displayName": "The Snake",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 23000,
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_COBRAAAA",
+        "meshPath": "B_Wp_Helmet_TheSnake.Mesh.SK_TheSnake"
+      }
+    },
+    {
+      "internalName": "Helmet_23",
+      "displayName": "Vim",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 495200,
+      "stats": {
+        "shield": 16
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Geometric",
+        "meshPath": "B_Wp_Helmet_Vim.Mesh.SK_Vim"
+      }
+    },
+    {
+      "internalName": "Helmet_24",
+      "displayName": "Royal Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 475800,
+      "stats": {
+        "health": 10,
+        "shield": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_NeoRoman",
+        "meshPath": "B_Wp_Helmet_RoyalHelm.Mesh.SK_RoyalHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_25",
+      "displayName": "Libertine",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 98100,
+      "stats": {
+        "damage": 8,
+        "shield": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Gladiator",
+        "meshPath": "B_Wp_Helmet_Libertine.Mesh.SK_Libertine"
+      }
+    },
+    {
+      "internalName": "Helmet_26",
+      "displayName": "Devil's Crown",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 192400,
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_GoatSkull",
+        "meshPath": "B_Wp_Helmet_DevilsCrown.Mesh.SK_DevilsCrown"
+      }
+    },
+    {
+      "internalName": "Helmet_27",
+      "displayName": "Conqueror",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 675000,
+      "stats": {
+        "health": 16,
+        "shield": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_EagleFace",
+        "meshPath": "B_Wp_Helmet_Conqueror.Mesh.SK_Conqueror"
+      }
+    },
+    {
+      "internalName": "Helmet_28",
+      "displayName": "Shadow",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 152350,
+      "stats": {
+        "damage": 12
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_MeshFace",
+        "meshPath": "B_Wp_Helmet_Shadow.Mesh.SK_Shadow"
+      }
+    },
+    {
+      "internalName": "Helmet_29",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "shield": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Easter",
+        "meshPath": "B_Wp_Helmet_Easter.Meshes.SK_EasterHelm"
+      },
+      "magicSpellLevels": [
+        3,
+        23,
+        4,
+        30
+      ]
+    },
+    {
+      "internalName": "Helmet_3",
+      "displayName": "Plated Crown",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 420,
+      "stats": {
+        "shield": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero03",
+        "meshPath": "B_Wp_Helmet_PlatedCrown.Mesh.SK_PlatedCrown"
+      }
+    },
+    {
+      "internalName": "Helmet_30",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "damage": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_StPaties",
+        "meshPath": "B_Wp_Helmet_StPatricks.Mesh.SK_StPatricksHelm"
+      },
+      "magicSpellLevels": [
+        2,
+        22,
+        3,
+        22
+      ]
+    },
+    {
+      "internalName": "Helmet_31",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "shield": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Fall",
+        "meshPath": "B_Wp_Helmet_Fall.Meshes.SK_FallHelm"
+      },
+      "magicSpellLevels": [
+        9,
+        1,
+        9,
+        30
+      ]
+    },
+    {
+      "internalName": "Helmet_32",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "damage": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Halloween",
+        "meshPath": "B_Wp_Helmet_Halloween.Meshes.SK_HalloweenHelm"
+      },
+      "magicSpellLevels": [
+        10,
+        1,
+        10,
+        31
+      ]
+    },
+    {
+      "internalName": "Helmet_33",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "damage": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_SnowMan",
+        "meshPath": "B_Wp_Helmet_Winter.Meshes.SK_WinterHelm"
+      },
+      "magicSpellLevels": [
+        1,
+        1,
+        1,
+        31
+      ]
+    },
+    {
+      "internalName": "Helmet_34",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "health": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Spring",
+        "meshPath": "B_Wp_Helmet_Spring.Meshes.SpringHelm"
+      },
+      "magicSpellLevels": [
+        5,
+        1,
+        6,
+        14
+      ]
+    },
+    {
+      "internalName": "Helmet_35",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "health": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Summer",
+        "meshPath": "B_Wp_Helmet_Summer.Meshes.SK_SummerHelm"
+      },
+      "magicSpellLevels": [
+        6,
+        15,
+        8,
+        31
+      ]
+    },
+    {
+      "internalName": "Helmet_36",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "health": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm_Thanksgiving",
+        "meshPath": "B_Wp_Helmet_Thanksgiving.Meshes.SK_ThanksgivingHelm"
+      },
+      "magicSpellLevels": [
+        11,
+        1,
+        11,
+        30
+      ]
+    },
+    {
+      "internalName": "Helmet_37",
+      "displayName": null,
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 3000,
+      "hiddenLevel": -1,
+      "stats": {
+        "magic": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_HolidayHelm",
+        "meshPath": "B_Wp_Helmet_Christmas.Mesh.SK_ChristmasHelm"
+      },
+      "magicSpellLevels": [
+        12,
+        1,
+        12,
+        31
+      ]
+    },
+    {
+      "internalName": "Helmet_38",
+      "displayName": "Helio Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 148100,
+      "stats": {
+        "damage": 10,
+        "shield": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_GodKing",
+        "meshPath": "B_Wp_Helmet_HelioHelm.Mesh.SK_HelioHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_39",
+      "displayName": "Dark Fusion",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 1075000,
+      "hiddenLevel": -2,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Minus",
+        "meshPath": "B_Wp_Helmet_DarkFusion.Mesh.SK_DarkFusion"
+      }
+    },
+    {
+      "internalName": "Helmet_4",
+      "displayName": "Titanium Horn",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 1350,
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Antler",
+        "meshPath": "B_Wp_Helmet_TitaniumHorn.Mesh.SK_TitaniumHorn"
+      }
+    },
+    {
+      "internalName": "Helmet_40",
+      "displayName": "Colossal Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 620000,
+      "stats": {
+        "damage": 20
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Bert",
+        "meshPath": "B_Wp_Helmet_ColossalHelm.Mesh.SK_ColossalHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_5",
+      "displayName": "Phoenix Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 1800,
+      "stats": {
+        "health": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hawkman",
+        "meshPath": "B_Wp_Helmet_PhoenixHelm.Mesh.SK_PhoenixHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_6",
+      "displayName": "Mighty Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 2700,
+      "stats": {
+        "health": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero04",
+        "meshPath": "B_Wp_Helmet_MightyHelm.Mesh.SK_MightyHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_7",
+      "displayName": "Midas Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 4500,
+      "stats": {
+        "damage": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero07",
+        "meshPath": "B_Wp_Helmet_MidasHelm.Mesh.SK_MidasHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_8",
+      "displayName": "Dark Helm",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 4550,
+      "stats": {
+        "shield": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero09",
+        "meshPath": "B_Wp_Helmet_DarkHelm.Mesh.SK_DarkHelm"
+      }
+    },
+    {
+      "internalName": "Helmet_9",
+      "displayName": "Gladius",
+      "category": "helmet",
+      "class": "SwordInventoryItem",
+      "nameBase": "Helmet",
+      "itemType": 4,
+      "cost": 4620,
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero08",
+        "meshPath": "B_Wp_Helmet_Gladius.Mesh.SK_Gladius"
+      }
+    },
+    {
+      "internalName": "Boss_DarkA",
+      "displayName": "Dark Attack",
+      "category": "item",
+      "class": "SwordInventoryItem"
+    },
+    {
+      "internalName": "Boss_DarkD",
+      "displayName": "Dark Defense",
+      "category": "item",
+      "class": "SwordInventoryItem"
+    },
+    {
+      "internalName": "Boss_LightA",
+      "displayName": "Light Attack",
+      "category": "item",
+      "class": "SwordInventoryItem"
+    },
+    {
+      "internalName": "Boss_LightD",
+      "displayName": "Light Defense",
+      "category": "item",
+      "class": "SwordInventoryItem"
+    },
+    {
+      "internalName": "MPArmor_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPArmor",
+      "itemType": 3,
+      "cost": 1,
+      "stats": {
+        "health": 2
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_01",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_LeatherArmor.Mesh.SK_LeatherArmor"
+      }
+    },
+    {
+      "internalName": "MPArmor_2",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPArmor",
+      "itemType": 3,
+      "cost": 2,
+      "stats": {
+        "health": 3
+      },
+      "gem": {
+        "mpParent": "MPArmor_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_01",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_BronzeArmor.Mesh.SK_BronzeArmor"
+      }
+    },
+    {
+      "internalName": "MPArmor_4",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPArmor",
+      "itemType": 3,
+      "cost": 4,
+      "stats": {
+        "health": 4
+      },
+      "gem": {
+        "mpParent": "MPArmor_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_02",
+        "iconUV": "(U=245,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_PlateArmor.Mesh.SK_PlateArmor"
+      }
+    },
+    {
+      "internalName": "MPArmor_5",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPArmor",
+      "itemType": 3,
+      "cost": 6,
+      "stats": {
+        "health": 5
+      },
+      "gem": {
+        "mpParent": "MPArmor_4"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_03",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_AdamantArmor.Mesh.SK_AdamantArmor"
+      }
+    },
+    {
+      "internalName": "MPArmor_8",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPArmor",
+      "itemType": 3,
+      "cost": 8,
+      "stats": {
+        "health": 6
+      },
+      "gem": {
+        "mpParent": "MPArmor_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_04",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_NightArmor.Mesh.SK_NightArmor"
+      }
+    },
+    {
+      "internalName": "MPHelmet_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 1,
+      "stats": {
+        "shield": 1
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero00",
+        "meshPath": "B_Wp_Helmet_SteelHelm.Mesh.SK_SteelHelm"
+      }
+    },
+    {
+      "internalName": "MPHelmet_12",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 3,
+      "stats": {
+        "health": 3
+      },
+      "gem": {
+        "mpParent": "MPHelmet_6"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero05",
+        "meshPath": "B_Wp_Helmet_Adamantine.Mesh.SK_Adamantine"
+      }
+    },
+    {
+      "internalName": "MPHelmet_14",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "shield": 2
+      },
+      "gem": {
+        "mpParent": "MPHelmet_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Executioner",
+        "meshPath": "B_Wp_Helmet_Raulum.Mesh.SK_Raulum"
+      }
+    },
+    {
+      "internalName": "MPHelmet_16",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 3,
+      "stats": {
+        "shield": 3
+      },
+      "gem": {
+        "mpParent": "MPHelmet_14"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero10",
+        "meshPath": "B_Wp_HeroHelmet_07b.Mesh.Player_Helmet_07b"
+      }
+    },
+    {
+      "internalName": "MPHelmet_18",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 4,
+      "stats": {
+        "damage": 8
+      },
+      "gem": {
+        "mpParent": "MPHelmet_19"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero11",
+        "meshPath": "B_Wp_Helmet_Trajan.Mesh.SK_Trajan"
+      }
+    },
+    {
+      "internalName": "MPHelmet_19",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 3,
+      "stats": {
+        "damage": 6
+      },
+      "gem": {
+        "mpParent": "MPHelmet_7"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero10A",
+        "meshPath": "B_Wp_Helmet_Kaldan.Mesh.SK_Kaldan"
+      }
+    },
+    {
+      "internalName": "MPHelmet_2",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 1,
+      "stats": {
+        "damage": 2,
+        "shield": 1
+      },
+      "gem": {
+        "mpParent": "MPHelmet_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero02",
+        "meshPath": "B_Wp_Helmet_GoldFury.Mesh.SK_GoldFury"
+      }
+    },
+    {
+      "internalName": "MPHelmet_23",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 5,
+      "stats": {
+        "shield": 5
+      },
+      "gem": {
+        "mpParent": "MPHelmet_25"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Geometric",
+        "meshPath": "B_Wp_Helmet_Vim.Mesh.SK_Vim"
+      }
+    },
+    {
+      "internalName": "MPHelmet_24",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 4,
+      "stats": {
+        "health": 4
+      },
+      "gem": {
+        "mpParent": "MPHelmet_12"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_NeoRoman",
+        "meshPath": "B_Wp_Helmet_Libertine.Mesh.SK_Libertine"
+      }
+    },
+    {
+      "internalName": "MPHelmet_25",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 4,
+      "stats": {
+        "shield": 4
+      },
+      "gem": {
+        "mpParent": "MPHelmet_16"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Gladiator",
+        "meshPath": "B_Wp_Helmet_Libertine.Mesh.SK_Libertine"
+      }
+    },
+    {
+      "internalName": "MPHelmet_27",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 5,
+      "stats": {
+        "health": 5
+      },
+      "gem": {
+        "mpParent": "MPHelmet_24"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_EagleFace",
+        "meshPath": "B_Wp_Helmet_Conqueror.Mesh.SK_Conqueror"
+      }
+    },
+    {
+      "internalName": "MPHelmet_28",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 5,
+      "stats": {
+        "damage": 10
+      },
+      "gem": {
+        "mpParent": "MPHelmet_18"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_MeshFace",
+        "meshPath": "B_Wp_Helmet_Shadow.Mesh.SK_Shadow"
+      }
+    },
+    {
+      "internalName": "MPHelmet_6",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "health": 2
+      },
+      "gem": {
+        "mpParent": "MPHelmet_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero04",
+        "meshPath": "B_Wp_Helmet_MightyHelm.Mesh.SK_MightyHelm"
+      }
+    },
+    {
+      "internalName": "MPHelmet_7",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "damage": 4
+      },
+      "gem": {
+        "mpParent": "MPHelmet_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero07",
+        "meshPath": "B_Wp_Helmet_MidasHelm.Mesh.SK_MidasHelm"
+      }
+    },
+    {
+      "internalName": "MPMagic_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPMagic",
+      "itemType": 5,
+      "cost": 1,
+      "hiddenLevel": -1,
+      "stats": {
+        "magic": 4
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_BronzeRingRusty"
+      }
+    },
+    {
+      "internalName": "MPShield_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 1,
+      "stats": {
+        "shield": 2
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero00",
+        "meshPath": "B_Wp_Shield_WoodenShield.Mesh.SK_WoodenShield"
+      }
+    },
+    {
+      "internalName": "MPShield_10",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 8
+      },
+      "gem": {
+        "mpParent": "MPShield_15"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Wall",
+        "meshPath": "B_Wp_Shield_TheWall.Mesh.SK_TheWall"
+      }
+    },
+    {
+      "internalName": "MPShield_13",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 5,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_6"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero09",
+        "meshPath": "B_Wp_Shield_Dorn.Mesh.SK_Dorn"
+      }
+    },
+    {
+      "internalName": "MPShield_15",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 5,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero10",
+        "meshPath": "B_Wp_Shield_Hailstone.Mesh.SK_Hailstone"
+      }
+    },
+    {
+      "internalName": "MPShield_16",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 5,
+        "elec": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_6"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero07",
+        "meshPath": "B_Wp_Shield_Norsal.Mesh.SK_Norsal"
+      }
+    },
+    {
+      "internalName": "MPShield_17",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 5,
+        "fire": 1,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_8"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero05",
+        "meshPath": "B_Wp_Shield_ThePatriot.Mesh.SK_ThePatriot"
+      }
+    },
+    {
+      "internalName": "MPShield_19",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 8
+      },
+      "gem": {
+        "mpParent": "MPShield_13"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Infinity_Shield",
+        "meshPath": "B_Wp_Shield_Hexan.Mesh.SK_Hexan"
+      }
+    },
+    {
+      "internalName": "MPShield_2",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 8
+      },
+      "gem": {
+        "mpParent": "MPShield_16"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Mohawk",
+        "meshPath": "B_Wp_Shield_IronGuard.Mesh.SK_IronGuard"
+      }
+    },
+    {
+      "internalName": "MPShield_20",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 5,
+        "fire": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Spike_Shield",
+        "meshPath": "B_Wp_Shield_TheMaiden.Mesh.SK_TheMaiden"
+      }
+    },
+    {
+      "internalName": "MPShield_22",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 6,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_13"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_AntlerBones_Shield",
+        "meshPath": "B_Wp_Shield_Gnash.Mesh.SK_Gnash"
+      }
+    },
+    {
+      "internalName": "MPShield_23",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 6,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_15"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Ram_Shield",
+        "meshPath": "B_Wp_Shield_Cloven.Mesh.SK_Cloven"
+      }
+    },
+    {
+      "internalName": "MPShield_24",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 6,
+        "elec": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_16"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_HourGlass_Shield",
+        "meshPath": "B_Wp_Shield_Vulcanis.Mesh.SK_Vulcanis"
+      }
+    },
+    {
+      "internalName": "MPShield_25",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 8
+      },
+      "gem": {
+        "mpParent": "MPShield_20"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Turtle_Shield",
+        "meshPath": "B_Wp_Shield_Terrapin.Mesh.SK_Terrapin"
+      }
+    },
+    {
+      "internalName": "MPShield_26",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 6,
+        "fire": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_20"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_EagleCrest_Shield",
+        "meshPath": "B_Wp_Shield_PhoenixGuard.Mesh.SK_PhoenixGuard"
+      }
+    },
+    {
+      "internalName": "MPShield_3",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 1,
+      "stats": {
+        "shield": 3
+      },
+      "gem": {
+        "mpParent": "MPShield_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Antler",
+        "meshPath": "B_Wp_Shield_Grummun.Mesh.SK_Grummun"
+      }
+    },
+    {
+      "internalName": "MPShield_5",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 2,
+      "stats": {
+        "shield": 4,
+        "fire": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_3"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Bone",
+        "meshPath": "B_Wp_Shield_Osseous.Mesh.SK_Osseous"
+      }
+    },
+    {
+      "internalName": "MPShield_6",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 2,
+      "stats": {
+        "shield": 4,
+        "elec": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_3"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_ElementalKnight",
+        "meshPath": "B_Wp_Shield_OdinGuard.Mesh.SK_OdinGuard"
+      }
+    },
+    {
+      "internalName": "MPShield_7",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 4,
+        "elec": 1,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_6"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Fencer",
+        "meshPath": "B_Wp_Shield_SupremeShield.Mesh.SK_SupremeShield"
+      }
+    },
+    {
+      "internalName": "MPShield_8",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 4,
+        "fire": 1,
+        "ice": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_EnemyKnight",
+        "meshPath": "B_Wp_Shield_Silverlight.Mesh.SK_Silverlight"
+      }
+    },
+    {
+      "internalName": "MPShield_9",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 5,
+        "elec": 1,
+        "poison": 1
+      },
+      "gem": {
+        "mpParent": "MPShield_7"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_GodKing",
+        "meshPath": "B_Wp_Shield_Sunstorm.Mesh.SK_Sunstorm"
+      }
+    },
+    {
+      "internalName": "MPSword_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 1,
+      "stats": {
+        "damage": 10
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_01",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_SteelSword.Mesh.SK_SteelSword"
+      }
+    },
+    {
+      "internalName": "MPSword_11",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 3,
+      "stats": {
+        "damage": 15,
+        "fire": 5
+      },
+      "gem": {
+        "mpParent": "MPSword_9"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_04",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_FireBrand.Mesh.SK_FireBrand"
+      }
+    },
+    {
+      "internalName": "MPSword_12",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 3,
+      "stats": {
+        "damage": 15,
+        "elec": 5
+      },
+      "gem": {
+        "mpParent": "MPSword_9"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_04",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Kludd.Mesh.SK_Kludd"
+      }
+    },
+    {
+      "internalName": "MPSword_15",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 4,
+      "stats": {
+        "damage": 20,
+        "ice": 10
+      },
+      "gem": {
+        "mpParent": "MPSword_11"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_05",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Incubus.Mesh.SK_Incubus"
+      }
+    },
+    {
+      "internalName": "MPSword_16",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 4,
+      "stats": {
+        "damage": 20,
+        "fire": 10
+      },
+      "gem": {
+        "mpParent": "MPSword_11"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_05",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Fang.Mesh.SK_Fang"
+      }
+    },
+    {
+      "internalName": "MPSword_18",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 4,
+      "stats": {
+        "damage": 20,
+        "poison": 10
+      },
+      "gem": {
+        "mpParent": "MPSword_12"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Glimmer.Mesh.SK_Glimmer"
+      }
+    },
+    {
+      "internalName": "MPSword_19",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 40
+      },
+      "gem": {
+        "mpParent": "MPSword_29"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_IronClaw.Mesh.SK_IronClaw"
+      }
+    },
+    {
+      "internalName": "MPSword_21",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 40
+      },
+      "gem": {
+        "mpParent": "MPSword_15"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ellorium.Mesh.SK_Ellorium"
+      }
+    },
+    {
+      "internalName": "MPSword_25",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 30,
+        "elec": 15
+      },
+      "gem": {
+        "mpParent": "MPSword_29"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Nerrix.Mesh.SK_Nerrix"
+      }
+    },
+    {
+      "internalName": "MPSword_26",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 50
+      },
+      "gem": {
+        "mpParent": "MPSword_19"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_InfinityBlade.Mesh.SK_InfinityBlade"
+      }
+    },
+    {
+      "internalName": "MPSword_29",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 4,
+      "stats": {
+        "damage": 20,
+        "elec": 10
+      },
+      "gem": {
+        "mpParent": "MPSword_12"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Bolt.Mesh.SK_Bolt"
+      }
+    },
+    {
+      "internalName": "MPSword_30",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 30,
+        "ice": 15
+      },
+      "gem": {
+        "mpParent": "MPSword_15"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Frostbite.Mesh.SK_Frostbite"
+      }
+    },
+    {
+      "internalName": "MPSword_31",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 30,
+        "fire": 15
+      },
+      "gem": {
+        "mpParent": "MPSword_16"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ember.Mesh.SK_Ember"
+      }
+    },
+    {
+      "internalName": "MPSword_32",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 30,
+        "poison": 15
+      },
+      "gem": {
+        "mpParent": "MPSword_18"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Khill.Mesh.SK_Khill"
+      }
+    },
+    {
+      "internalName": "MPSword_33",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 40
+      },
+      "gem": {
+        "mpParent": "MPSword_16"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Unfaithful.Mesh.SK_Unfaithful"
+      }
+    },
+    {
+      "internalName": "MPSword_36",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 40,
+        "fire": 20
+      },
+      "gem": {
+        "mpParent": "MPSword_31"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_12",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_DragoorBlade.Mesh.SK_DragoorBlade"
+      }
+    },
+    {
+      "internalName": "MPSword_43",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 40
+      },
+      "gem": {
+        "mpParent": "MPSword_18"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_10",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Echo.Mesh.SK_Echo"
+      }
+    },
+    {
+      "internalName": "MPSword_46",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 40,
+        "elec": 20
+      },
+      "gem": {
+        "mpParent": "MPSword_25"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_14",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Obsidian.Mesh.SK_Obsidian"
+      }
+    },
+    {
+      "internalName": "MPSword_49",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 40,
+        "poison": 20
+      },
+      "gem": {
+        "mpParent": "MPSword_32"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_13",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_PoisonScythe.Mesh.SK_PoisonScythe"
+      }
+    },
+    {
+      "internalName": "MPSword_50",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 40,
+        "ice": 20
+      },
+      "gem": {
+        "mpParent": "MPSword_30"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_12",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Shiver.Mesh.SK_Shiver"
+      }
+    },
+    {
+      "internalName": "MPSword_52",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 50
+      },
+      "gem": {
+        "mpParent": "MPSword_33"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_InfinityBlade.Mesh.SK_InfinityBlade"
+      }
+    },
+    {
+      "internalName": "MPSword_53",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 50
+      },
+      "gem": {
+        "mpParent": "MPSword_21"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_InfinityBlade.Mesh.SK_InfinityBlade"
+      }
+    },
+    {
+      "internalName": "MPSword_54",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 50
+      },
+      "gem": {
+        "mpParent": "MPSword_43"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_InfinityBlade.Mesh.SK_InfinityBlade"
+      }
+    },
+    {
+      "internalName": "MPSword_9",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventoryMPItem",
+      "nameBase": "MPSword",
+      "itemType": 1,
+      "cost": 2,
+      "stats": {
+        "damage": 12
+      },
+      "gem": {
+        "mpParent": "MPSword_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_03",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Oathborn.Mesh.SK_Oathborn"
+      }
+    },
+    {
+      "internalName": "SPArmor_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPArmor",
+      "itemType": 3,
+      "cost": 1,
+      "stats": {
+        "health": 10
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_01",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_LeatherArmor.Mesh.SK_LeatherArmor"
+      }
+    },
+    {
+      "internalName": "SPArmor_2",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPArmor",
+      "itemType": 3,
+      "cost": 3,
+      "stats": {
+        "health": 20
+      },
+      "gem": {
+        "mpParent": "SPArmor_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_01",
+        "iconUV": "(U=256,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_BronzeArmor.Mesh.SK_BronzeArmor"
+      }
+    },
+    {
+      "internalName": "SPArmor_4",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPArmor",
+      "itemType": 3,
+      "cost": 5,
+      "stats": {
+        "health": 30
+      },
+      "gem": {
+        "mpParent": "SPArmor_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_02",
+        "iconUV": "(U=245,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_PlateArmor.Mesh.SK_PlateArmor"
+      }
+    },
+    {
+      "internalName": "SPArmor_5",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPArmor",
+      "itemType": 3,
+      "cost": 7,
+      "stats": {
+        "health": 40
+      },
+      "gem": {
+        "mpParent": "SPArmor_4"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_03",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_AdamantArmor.Mesh.SK_AdamantArmor"
+      }
+    },
+    {
+      "internalName": "SPArmor_8",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPArmor",
+      "itemType": 3,
+      "cost": 9,
+      "stats": {
+        "health": 50
+      },
+      "gem": {
+        "mpParent": "SPArmor_5"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewArmor_04",
+        "iconUV": "(U=0,V=0,UL=256,VL=512)",
+        "meshPath": "B_Wp_Armor_NightArmor.Mesh.SK_NightArmor"
+      }
+    },
+    {
+      "internalName": "SPHelmet_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 1,
+      "stats": {
+        "shield": 2
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero00",
+        "meshPath": "B_Wp_Helmet_SteelHelm.Mesh.SK_SteelHelm"
+      }
+    },
+    {
+      "internalName": "SPHelmet_12",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 3,
+      "stats": {
+        "health": 4
+      },
+      "gem": {
+        "mpParent": "SPHelmet_6"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero05",
+        "meshPath": "B_Wp_Helmet_Adamantine.Mesh.SK_Adamantine"
+      }
+    },
+    {
+      "internalName": "SPHelmet_14",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "shield": 4
+      },
+      "gem": {
+        "mpParent": "SPHelmet_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Executioner",
+        "meshPath": "B_Wp_Helmet_Raulum.Mesh.SK_Raulum"
+      }
+    },
+    {
+      "internalName": "SPHelmet_16",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 3,
+      "stats": {
+        "shield": 6
+      },
+      "gem": {
+        "mpParent": "SPHelmet_14"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero10",
+        "meshPath": "B_Wp_Helmet_Legion.Mesh.SK_Legion"
+      }
+    },
+    {
+      "internalName": "SPHelmet_18",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 4,
+      "stats": {
+        "damage": 16
+      },
+      "gem": {
+        "mpParent": "SPHelmet_19"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero11",
+        "meshPath": "B_Wp_Helmet_Trajan.Mesh.SK_Trajan"
+      }
+    },
+    {
+      "internalName": "SPHelmet_19",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 3,
+      "stats": {
+        "damage": 12
+      },
+      "gem": {
+        "mpParent": "SPHelmet_7"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero10A",
+        "meshPath": "B_Wp_Helmet_Kaldan.Mesh.SK_Kaldan"
+      }
+    },
+    {
+      "internalName": "SPHelmet_2",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "damage": 4,
+        "shield": 2
+      },
+      "gem": {
+        "mpParent": "SPHelmet_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero02",
+        "meshPath": "B_Wp_Helmet_GoldFury.Mesh.SK_GoldFury"
+      }
+    },
+    {
+      "internalName": "SPHelmet_23",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 5,
+      "stats": {
+        "shield": 10
+      },
+      "gem": {
+        "mpParent": "SPHelmet_25"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Geometric",
+        "meshPath": "B_Wp_Helmet_Vim.Mesh.SK_Vim"
+      }
+    },
+    {
+      "internalName": "SPHelmet_24",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 4,
+      "stats": {
+        "health": 6
+      },
+      "gem": {
+        "mpParent": "SPHelmet_12"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_NeoRoman",
+        "meshPath": "B_Wp_Helmet_Libertine.Mesh.SK_Libertine"
+      }
+    },
+    {
+      "internalName": "SPHelmet_25",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 4,
+      "stats": {
+        "shield": 8
+      },
+      "gem": {
+        "mpParent": "SPHelmet_16"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Gladiator",
+        "meshPath": "B_Wp_Helmet_Libertine.Mesh.SK_Libertine"
+      }
+    },
+    {
+      "internalName": "SPHelmet_27",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 5,
+      "stats": {
+        "health": 8
+      },
+      "gem": {
+        "mpParent": "SPHelmet_24"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_EagleFace",
+        "meshPath": "B_Wp_Helmet_Conqueror.Mesh.SK_Conqueror"
+      }
+    },
+    {
+      "internalName": "SPHelmet_28",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 5,
+      "stats": {
+        "damage": 20
+      },
+      "gem": {
+        "mpParent": "SPHelmet_18"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_MeshFace",
+        "meshPath": "B_Wp_Helmet_Shadow.Mesh.SK_Shadow"
+      }
+    },
+    {
+      "internalName": "SPHelmet_6",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "health": 2
+      },
+      "gem": {
+        "mpParent": "SPHelmet_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero04",
+        "meshPath": "B_Wp_Helmet_MightyHelm.Mesh.SK_MightyHelm"
+      }
+    },
+    {
+      "internalName": "SPHelmet_7",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPHelmet",
+      "itemType": 4,
+      "cost": 2,
+      "stats": {
+        "damage": 8
+      },
+      "gem": {
+        "mpParent": "SPHelmet_2"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Helmet_Hero07",
+        "meshPath": "B_Wp_Helmet_MidasHelm.Mesh.SK_MidasHelm"
+      }
+    },
+    {
+      "internalName": "SPMagic_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPMagic",
+      "itemType": 5,
+      "cost": 1,
+      "hiddenLevel": -1,
+      "stats": {
+        "magic": 4
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_BronzeRingRusty"
+      }
+    },
+    {
+      "internalName": "SPShield_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 1,
+      "stats": {
+        "shield": 6
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero00",
+        "meshPath": "B_Wp_Shield_WoodenShield.Mesh.SK_WoodenShield"
+      }
+    },
+    {
+      "internalName": "SPShield_10",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 3,
+      "stats": {
+        "shield": 12
+      },
+      "gem": {
+        "mpParent": "SPShield_3"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Wall",
+        "meshPath": "B_Wp_Shield_TheWall.Mesh.SK_TheWall"
+      }
+    },
+    {
+      "internalName": "SPShield_19",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 4,
+      "stats": {
+        "shield": 16
+      },
+      "gem": {
+        "mpParent": "SPShield_10"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Infinity_Shield",
+        "meshPath": "B_Wp_Shield_Hexan.Mesh.SK_Hexan"
+      }
+    },
+    {
+      "internalName": "SPShield_20",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 5,
+      "stats": {
+        "shield": 20
+      },
+      "gem": {
+        "mpParent": "SPShield_19"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Spike_Shield",
+        "meshPath": "B_Wp_Shield_TheMaiden.Mesh.SK_TheMaiden"
+      }
+    },
+    {
+      "internalName": "SPShield_24",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 7,
+      "stats": {
+        "shield": 30
+      },
+      "gem": {
+        "mpParent": "SPShield_26"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_HourGlass_Shield",
+        "meshPath": "B_Wp_Shield_Vulcanis.Mesh.SK_Vulcanis"
+      }
+    },
+    {
+      "internalName": "SPShield_26",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 6,
+      "stats": {
+        "shield": 24
+      },
+      "gem": {
+        "mpParent": "SPShield_20"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_EagleCrest_Shield",
+        "meshPath": "B_Wp_Shield_PhoenixGuard.Mesh.SK_PhoenixGuard"
+      }
+    },
+    {
+      "internalName": "SPShield_3",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPShield",
+      "itemType": 2,
+      "cost": 2,
+      "stats": {
+        "shield": 8
+      },
+      "gem": {
+        "mpParent": "SPShield_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Antler",
+        "meshPath": "B_Wp_Shield_Grummun.Mesh.SK_Grummun"
+      }
+    },
+    {
+      "internalName": "SPSword_1",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 1,
+      "stats": {
+        "damage": 25
+      },
+      "gem": {
+        "mpParent": "Start"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_01",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_SteelSword.Mesh.SK_SteelSword"
+      }
+    },
+    {
+      "internalName": "SPSword_19",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 6,
+      "stats": {
+        "damage": 75
+      },
+      "gem": {
+        "mpParent": "SPSword_9"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_IronClaw.Mesh.SK_IronClaw"
+      }
+    },
+    {
+      "internalName": "SPSword_21",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 7,
+      "stats": {
+        "damage": 100
+      },
+      "gem": {
+        "mpParent": "SPSword_19"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ellorium.Mesh.SK_Ellorium"
+      }
+    },
+    {
+      "internalName": "SPSword_26",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 10,
+      "stats": {
+        "damage": 200
+      },
+      "gem": {
+        "mpParent": "SPSword_43"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_InfinityBlade.Mesh.SK_InfinityBlade"
+      }
+    },
+    {
+      "internalName": "SPSword_33",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 8,
+      "stats": {
+        "damage": 125
+      },
+      "gem": {
+        "mpParent": "SPSword_21"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Unfaithful.Mesh.SK_Unfaithful"
+      }
+    },
+    {
+      "internalName": "SPSword_43",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 9,
+      "stats": {
+        "damage": 150
+      },
+      "gem": {
+        "mpParent": "SPSword_33"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_10",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Echo.Mesh.SK_Echo"
+      }
+    },
+    {
+      "internalName": "SPSword_9",
+      "displayName": null,
+      "category": "item",
+      "class": "SwordInventorySPItem",
+      "nameBase": "SPSword",
+      "itemType": 1,
+      "cost": 5,
+      "stats": {
+        "damage": 50
+      },
+      "gem": {
+        "mpParent": "SPSword_1"
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_03",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Oathborn.Mesh.SK_Oathborn"
+      }
+    },
+    {
+      "internalName": "Magic_1",
+      "displayName": "Rusty Ring",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 590,
+      "stats": {
+        "magic": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_BronzeRingRusty"
+      },
+      "magicSpells": [
+        "HealSelf"
+      ],
+      "magicSpellLevels": [
+        1
+      ]
+    },
+    {
+      "internalName": "Magic_10",
+      "displayName": "Ring of Elements",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 2440,
+      "stats": {
+        "magic": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Rusty"
+      },
+      "magicSpells": [
+        "ElectricSpell",
+        "FireSpell",
+        "IceSpell"
+      ]
+    },
+    {
+      "internalName": "Magic_11",
+      "displayName": "The Conduit",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 14500,
+      "stats": {
+        "magic": 13
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_SnakeSkull"
+      },
+      "magicSpells": [
+        "HealSelf",
+        "FireSpell",
+        "PoisonSpell"
+      ],
+      "magicSpellLevels": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "internalName": "Magic_12",
+      "displayName": "Circle of Life",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 38800,
+      "stats": {
+        "magic": 16
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_TreeRing"
+      },
+      "magicSpells": [
+        "HealSelf",
+        "HealShield"
+      ],
+      "magicSpellLevels": [
+        3,
+        2
+      ]
+    },
+    {
+      "internalName": "Magic_13",
+      "displayName": "The Cog",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 1200000,
+      "hiddenLevel": 1,
+      "stats": {
+        "magic": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_CogRing"
+      },
+      "magicSpells": [
+        "LightSpell"
+      ],
+      "magicSpellLevels": [
+        5
+      ]
+    },
+    {
+      "internalName": "Magic_14",
+      "displayName": "Cryo Loop",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 239500,
+      "stats": {
+        "magic": 16
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_FaceRing"
+      },
+      "magicSpells": [
+        "HealSelf",
+        "IceSpell"
+      ],
+      "magicSpellLevels": [
+        3,
+        4
+      ]
+    },
+    {
+      "internalName": "Magic_15",
+      "displayName": "Kward",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 640000,
+      "stats": {
+        "magic": 20
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_GreekRing"
+      },
+      "magicSpells": [
+        "HealSelf"
+      ],
+      "magicSpellLevels": [
+        5
+      ]
+    },
+    {
+      "internalName": "Magic_16",
+      "displayName": "Illuminatus",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 809200,
+      "stats": {
+        "magic": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_InkaRing"
+      },
+      "magicSpells": [
+        "IceSpell",
+        "HealShield",
+        "FireSpell"
+      ],
+      "magicSpellLevels": [
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "internalName": "Magic_17",
+      "displayName": "Jade Band",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 189000,
+      "stats": {
+        "magic": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_JadeRing"
+      },
+      "magicSpells": [
+        "PoisonSpell"
+      ],
+      "magicSpellLevels": [
+        4
+      ]
+    },
+    {
+      "internalName": "Magic_18",
+      "displayName": "Thorne",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 1454000,
+      "hiddenLevel": 1,
+      "stats": {
+        "magic": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_SpikeRing"
+      },
+      "magicSpells": [
+        "DarkSpell",
+        "ElectricSpell",
+        "HealSelf"
+      ],
+      "magicSpellLevels": [
+        6,
+        6,
+        5
+      ]
+    },
+    {
+      "internalName": "Magic_19",
+      "displayName": "Soulless Circle",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 350000,
+      "stats": {
+        "magic": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_ZombieRing"
+      },
+      "magicSpells": [
+        "DarkSpell",
+        "PoisonSpell",
+        "FireSpell"
+      ],
+      "magicSpellLevels": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "internalName": "Magic_2",
+      "displayName": "Shield Halo",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 4810,
+      "stats": {
+        "magic": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_PlaneRing"
+      },
+      "magicSpells": [
+        "HealSelf",
+        "HealShield"
+      ],
+      "magicSpellLevels": [
+        2
+      ]
+    },
+    {
+      "internalName": "Magic_20",
+      "displayName": "Dragoor Scale",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 405000,
+      "hiddenLevel": 1,
+      "stats": {
+        "magic": 16
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_DragonRing"
+      },
+      "magicSpells": [
+        "HealSelf",
+        "FireSpell"
+      ],
+      "magicSpellLevels": [
+        4,
+        4
+      ]
+    },
+    {
+      "internalName": "Magic_21",
+      "displayName": "Gridiron",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 10500,
+      "stats": {
+        "magic": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_SuperBowlRing"
+      },
+      "magicSpells": [
+        "LightSpell",
+        "HealShield"
+      ],
+      "magicSpellLevels": [
+        2,
+        2
+      ]
+    },
+    {
+      "internalName": "Magic_22",
+      "displayName": "Dark Halo",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 1500000,
+      "hiddenLevel": -2,
+      "stats": {
+        "damage": 50
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Minus"
+      },
+      "magicSpells": [
+        "HealShield"
+      ],
+      "magicSpellLevels": [
+        5
+      ]
+    },
+    {
+      "internalName": "Magic_23",
+      "displayName": "Fire Circle",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 752000,
+      "stats": {
+        "magic": 40
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_SepticRing"
+      },
+      "magicSpells": [
+        "FireSpell",
+        "PoisonSpell",
+        "HealSelf"
+      ],
+      "magicSpellLevels": [
+        6,
+        6,
+        4
+      ]
+    },
+    {
+      "internalName": "Magic_3",
+      "displayName": "Venom Ring",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 5990,
+      "stats": {
+        "magic": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_VenomRing"
+      },
+      "magicSpells": [
+        "PoisonSpell",
+        "FireSpell",
+        "HealShield"
+      ],
+      "magicSpellLevels": [
+        2
+      ]
+    },
+    {
+      "internalName": "Magic_4",
+      "displayName": "Frozen Band",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 6400,
+      "stats": {
+        "magic": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Skull_Platnum"
+      },
+      "magicSpells": [
+        "IceSpell",
+        "HealSelf",
+        "HealShield"
+      ],
+      "magicSpellLevels": [
+        2
+      ]
+    },
+    {
+      "internalName": "Magic_5",
+      "displayName": "Zeus Loop",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 29200,
+      "stats": {
+        "magic": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_PowerRing"
+      },
+      "magicSpells": [
+        "HealShield",
+        "ElectricSpell"
+      ],
+      "magicSpellLevels": [
+        2,
+        3
+      ]
+    },
+    {
+      "internalName": "Magic_6",
+      "displayName": "Ring of Ice and Fire",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 75300,
+      "stats": {
+        "magic": 30
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_Decorative"
+      },
+      "magicSpells": [
+        "HealSelf",
+        "FireSpell",
+        "IceSpell"
+      ],
+      "magicSpellLevels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "internalName": "Magic_7",
+      "displayName": "Ring of Flames",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 520,
+      "stats": {
+        "magic": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_FireRing"
+      },
+      "magicSpells": [
+        "FireSpell"
+      ],
+      "magicSpellLevels": [
+        1
+      ]
+    },
+    {
+      "internalName": "Magic_8",
+      "displayName": "Shattered Circle",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 490,
+      "stats": {
+        "magic": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_IceRing"
+      },
+      "magicSpells": [
+        "IceSpell"
+      ],
+      "magicSpellLevels": [
+        1
+      ]
+    },
+    {
+      "internalName": "Magic_9",
+      "displayName": "Lightning Round",
+      "category": "magic",
+      "class": "SwordInventoryItem",
+      "nameBase": "Magic",
+      "itemType": 5,
+      "cost": 540,
+      "stats": {
+        "magic": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Ring_ElectroRing"
+      },
+      "magicSpells": [
+        "ElectricSpell"
+      ],
+      "magicSpellLevels": [
+        1
+      ]
+    },
+    {
+      "internalName": "Shield_1",
+      "displayName": "Wooden Shield",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 60,
+      "stats": {
+        "shield": 9
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero00",
+        "meshPath": "B_Wp_Shield_WoodenShield.Mesh.SK_WoodenShield"
+      }
+    },
+    {
+      "internalName": "Shield_10",
+      "displayName": "The Wall",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 60100,
+      "stats": {
+        "shield": 50
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Wall",
+        "meshPath": "B_Wp_Shield_TheWall.Mesh.SK_TheWall"
+      }
+    },
+    {
+      "internalName": "Shield_11",
+      "displayName": "Elith",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 82000,
+      "stats": {
+        "shield": 36,
+        "fire": 1,
+        "elec": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero02",
+        "meshPath": "B_Wp_Shield_Elith.Mesh.SK_Elith"
+      }
+    },
+    {
+      "internalName": "Shield_12",
+      "displayName": "Prime",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 11900,
+      "stats": {
+        "shield": 22
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero01",
+        "meshPath": "B_Wp_Shield_Prime.Mesh.SK_Prime"
+      }
+    },
+    {
+      "internalName": "Shield_13",
+      "displayName": "Dorn",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 9700,
+      "stats": {
+        "shield": 15,
+        "poison": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero09",
+        "meshPath": "B_Wp_Shield_Dorn.Mesh.SK_Dorn"
+      }
+    },
+    {
+      "internalName": "Shield_14",
+      "displayName": "Ruby Shield",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 23500,
+      "stats": {
+        "shield": 21,
+        "fire": 1,
+        "ice": 1,
+        "elec": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero11",
+        "meshPath": "B_Wp_Shield_RubyShield.Mesh.SK_RubyShield"
+      }
+    },
+    {
+      "internalName": "Shield_15",
+      "displayName": "Hailstone",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 43000,
+      "stats": {
+        "shield": 28,
+        "ice": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero10",
+        "meshPath": "B_Wp_Shield_Hailstone.Mesh.SK_Hailstone"
+      }
+    },
+    {
+      "internalName": "Shield_16",
+      "displayName": "Norsal",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 71500,
+      "stats": {
+        "shield": 32,
+        "ice": 1,
+        "elec": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero07",
+        "meshPath": "B_Wp_Shield_Norsal.Mesh.SK_Norsal"
+      }
+    },
+    {
+      "internalName": "Shield_17",
+      "displayName": "The Patriot",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 145200,
+      "stats": {
+        "shield": 44,
+        "fire": 1,
+        "ice": 1,
+        "poison": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Hero05",
+        "meshPath": "B_Wp_Shield_ThePatriot.Mesh.SK_ThePatriot"
+      }
+    },
+    {
+      "internalName": "Shield_18",
+      "displayName": "Dragoor Bone",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 610000,
+      "hiddenLevel": 1,
+      "stats": {
+        "shield": 65,
+        "fire": 1,
+        "elec": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Dragon_Shield",
+        "meshPath": "B_Wp_Shield_DragoorBone.Mesh.SK_DragoorBone"
+      }
+    },
+    {
+      "internalName": "Shield_19",
+      "displayName": "Hexan",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 556400,
+      "stats": {
+        "shield": 60,
+        "light": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Infinity_Shield",
+        "meshPath": "B_Wp_Shield_Hexan.Mesh.SK_Hexan"
+      }
+    },
+    {
+      "internalName": "Shield_2",
+      "displayName": "Iron Guard",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 200,
+      "stats": {
+        "shield": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Mohawk",
+        "meshPath": "B_Wp_Shield_IronGuard.Mesh.SK_IronGuard"
+      }
+    },
+    {
+      "internalName": "Shield_20",
+      "displayName": "The Maiden",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 104300,
+      "stats": {
+        "shield": 40,
+        "fire": 1,
+        "dark": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Spike_Shield",
+        "meshPath": "B_Wp_Shield_TheMaiden.Mesh.SK_TheMaiden"
+      }
+    },
+    {
+      "internalName": "Shield_21",
+      "displayName": "Tempest",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 1420600,
+      "hiddenLevel": 1,
+      "stats": {
+        "shield": 80,
+        "elec": 1,
+        "light": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Mech_Shield",
+        "meshPath": "B_Wp_Shield_Tempest.Mesh.SK_Tempest"
+      }
+    },
+    {
+      "internalName": "Shield_22",
+      "displayName": "Gnash",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 172800,
+      "stats": {
+        "shield": 50,
+        "poison": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_AntlerBones_Shield",
+        "meshPath": "B_Wp_Shield_Gnash.Mesh.SK_Gnash"
+      }
+    },
+    {
+      "internalName": "Shield_23",
+      "displayName": "Cloven",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 198400,
+      "stats": {
+        "shield": 48,
+        "fire": 1,
+        "ice": 1,
+        "dark": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Ram_Shield",
+        "meshPath": "B_Wp_Shield_Cloven.Mesh.SK_Cloven"
+      }
+    },
+    {
+      "internalName": "Shield_24",
+      "displayName": "Vulcanis",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 760750,
+      "stats": {
+        "shield": 72,
+        "elec": 1,
+        "light": 1,
+        "dark": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_HourGlass_Shield",
+        "meshPath": "B_Wp_Shield_Vulcanis.Mesh.SK_Vulcanis"
+      }
+    },
+    {
+      "internalName": "Shield_25",
+      "displayName": "Terrapin",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 450000,
+      "stats": {
+        "shield": 60
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Turtle_Shield",
+        "meshPath": "B_Wp_Shield_Terrapin.Mesh.SK_Terrapin"
+      }
+    },
+    {
+      "internalName": "Shield_26",
+      "displayName": "Phoenix Guard",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 502000,
+      "stats": {
+        "shield": 54,
+        "fire": 1,
+        "light": 1,
+        "dark": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_EagleCrest_Shield",
+        "meshPath": "B_Wp_Shield_PhoenixGuard.Mesh.SK_PhoenixGuard"
+      }
+    },
+    {
+      "internalName": "Shield_27",
+      "displayName": "Dark Tempest",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 1450600,
+      "hiddenLevel": -2,
+      "stats": {
+        "damage": 25,
+        "shield": 25
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Minus",
+        "meshPath": "B_Wp_Shield_DarkTempest.Mesh.SK_DarkTempest"
+      }
+    },
+    {
+      "internalName": "Shield_28",
+      "displayName": "Foundry",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 750000,
+      "stats": {
+        "damage": 20,
+        "shield": 70
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_ShieldMtlPit",
+        "meshPath": "B_Wp_Shield_Foundry.Mesh.SK_Foundry"
+      }
+    },
+    {
+      "internalName": "Shield_29",
+      "displayName": "Maximus",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 242000,
+      "stats": {
+        "shield": 52,
+        "elec": 1,
+        "poison": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_RadShield",
+        "meshPath": "B_Wp_Shield_Maximus.Mesh.SK_Maximus"
+      }
+    },
+    {
+      "internalName": "Shield_3",
+      "displayName": "Grummun",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 960,
+      "stats": {
+        "shield": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Antler",
+        "meshPath": "B_Wp_Shield_Grummun.Mesh.SK_Grummun"
+      }
+    },
+    {
+      "internalName": "Shield_4",
+      "displayName": "Aegis",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 1720,
+      "stats": {
+        "shield": 14
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_BlackKnight",
+        "meshPath": "B_Wp_Shield_Aegis.Mesh.SK_Aegis"
+      }
+    },
+    {
+      "internalName": "Shield_5",
+      "displayName": "Osseous",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 4920,
+      "stats": {
+        "shield": 12,
+        "fire": 1,
+        "ice": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Bone",
+        "meshPath": "B_Wp_Shield_Osseous.Mesh.SK_Osseous"
+      }
+    },
+    {
+      "internalName": "Shield_6",
+      "displayName": "Odin Guard",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 7940,
+      "stats": {
+        "shield": 16,
+        "elec": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_ElementalKnight",
+        "meshPath": "B_Wp_Shield_OdinGuard.Mesh.SK_OdinGuard"
+      }
+    },
+    {
+      "internalName": "Shield_7",
+      "displayName": "Supreme Shield",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 14600,
+      "stats": {
+        "shield": 18,
+        "ice": 1,
+        "elec": 1,
+        "poison": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_Fencer",
+        "meshPath": "B_Wp_Shield_SupremeShield.Mesh.SK_SupremeShield"
+      }
+    },
+    {
+      "internalName": "Shield_8",
+      "displayName": "Silverlight",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 16500,
+      "stats": {
+        "shield": 20,
+        "fire": 1,
+        "ice": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_EnemyKnight",
+        "meshPath": "B_Wp_Shield_Silverlight.Mesh.SK_Silverlight"
+      }
+    },
+    {
+      "internalName": "Shield_9",
+      "displayName": "Sunstorm",
+      "category": "shield",
+      "class": "SwordInventoryItem",
+      "nameBase": "Shield",
+      "itemType": 2,
+      "cost": 31200,
+      "stats": {
+        "shield": 25,
+        "elec": 1,
+        "poison": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.T_Shield_GodKing",
+        "meshPath": "B_Wp_Shield_Sunstorm.Mesh.SK_Sunstorm"
+      }
+    },
+    {
+      "internalName": "Sword_1",
+      "displayName": "Steel Sword",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 320,
+      "stats": {
+        "damage": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_01",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_SteelSword.Mesh.SK_SteelSword"
+      }
+    },
+    {
+      "internalName": "Sword_10",
+      "displayName": "Saw Tooth",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 5400,
+      "stats": {
+        "damage": 8,
+        "poison": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_04",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_SawTooth.Mesh.SK_SawTooth"
+      }
+    },
+    {
+      "internalName": "Sword_11",
+      "displayName": "FireBrand",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 5500,
+      "stats": {
+        "damage": 11,
+        "fire": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_04",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_FireBrand.Mesh.SK_FireBrand"
+      }
+    },
+    {
+      "internalName": "Sword_12",
+      "displayName": "Kludd",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 7500,
+      "stats": {
+        "damage": 10,
+        "elec": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_04",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Kludd.Mesh.SK_Kludd"
+      }
+    },
+    {
+      "internalName": "Sword_13",
+      "displayName": "Marrow",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 8200,
+      "stats": {
+        "damage": 15
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_05",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Marrow.Mesh.SK_Marrow"
+      }
+    },
+    {
+      "internalName": "Sword_14",
+      "displayName": "Riptide",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 9600,
+      "stats": {
+        "damage": 13
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_05",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Riptide.Mesh.SK_Riptide"
+      }
+    },
+    {
+      "internalName": "Sword_15",
+      "displayName": "Incubus",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 11400,
+      "stats": {
+        "damage": 14,
+        "ice": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_05",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Incubus.Mesh.SK_Incubus"
+      }
+    },
+    {
+      "internalName": "Sword_16",
+      "displayName": "Fang",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 11420,
+      "stats": {
+        "damage": 12,
+        "fire": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_05",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Fang.Mesh.SK_Fang"
+      }
+    },
+    {
+      "internalName": "Sword_17",
+      "displayName": "Thorneblade",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 13000,
+      "stats": {
+        "damage": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Thorneblade.Mesh.SK_Thorneblade"
+      }
+    },
+    {
+      "internalName": "Sword_18",
+      "displayName": "Glimmer",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 24200,
+      "stats": {
+        "damage": 14,
+        "poison": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Glimmer.Mesh.SK_Glimmer"
+      }
+    },
+    {
+      "internalName": "Sword_19",
+      "displayName": "Iron Claw",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 17500,
+      "stats": {
+        "damage": 20
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_IronClaw.Mesh.SK_IronClaw"
+      }
+    },
+    {
+      "internalName": "Sword_2",
+      "displayName": "Talon",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 450,
+      "stats": {
+        "damage": 5
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_01",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Talon.Mesh.SK_Talon"
+      }
+    },
+    {
+      "internalName": "Sword_20",
+      "displayName": "Ruin",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 19360,
+      "stats": {
+        "damage": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ruin.Mesh.SK_Ruin"
+      }
+    },
+    {
+      "internalName": "Sword_21",
+      "displayName": "Ellorium",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 29200,
+      "stats": {
+        "damage": 24
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ellorium.Mesh.SK_Ellorium"
+      }
+    },
+    {
+      "internalName": "Sword_22",
+      "displayName": "Kraken",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 36600,
+      "stats": {
+        "damage": 18,
+        "elec": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Kraken.Mesh.SK_Kraken"
+      }
+    },
+    {
+      "internalName": "Sword_23",
+      "displayName": "Brunt",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 45200,
+      "stats": {
+        "damage": 30
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_02",
+        "iconUV": "(U=0,V=256,UL=512,VL=256)",
+        "meshPath": "B_Wp_Sword_Brunt.Mesh.SK_Brunt"
+      }
+    },
+    {
+      "internalName": "Sword_24",
+      "displayName": "Aeternum",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 61500,
+      "stats": {
+        "damage": 25
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=0,UL=512,VL=256)",
+        "meshPath": "B_Wp_Sword_Aeternum.Mesh.SK_Aeternum"
+      }
+    },
+    {
+      "internalName": "Sword_25",
+      "displayName": "Nerrix",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 92400,
+      "stats": {
+        "damage": 28,
+        "elec": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_07",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Nerrix.Mesh.SK_Nerrix"
+      }
+    },
+    {
+      "internalName": "Sword_26",
+      "displayName": "The Infinity Blade",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 514900,
+      "stats": {
+        "damage": 200
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_InfinityBlade.Mesh.SK_InfinityBlade"
+      }
+    },
+    {
+      "internalName": "Sword_27",
+      "displayName": "Lady Finger",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 14900,
+      "stats": {
+        "damage": 18
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_06",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_LadyFinger.Mesh.SK_LadyFinger"
+      }
+    },
+    {
+      "internalName": "Sword_28",
+      "displayName": "Claymourn",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 4000,
+      "stats": {
+        "damage": 12
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_04",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Claymourn.Mesh.SK_Claymourn"
+      }
+    },
+    {
+      "internalName": "Sword_29",
+      "displayName": "Bolt",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 15800,
+      "stats": {
+        "damage": 15,
+        "elec": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Bolt.Mesh.SK_Bolt"
+      }
+    },
+    {
+      "internalName": "Sword_3",
+      "displayName": "Bronze Axe",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 570,
+      "stats": {
+        "damage": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_01",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_BronzeAxe.Mesh.SK_BronzeAxe"
+      }
+    },
+    {
+      "internalName": "Sword_30",
+      "displayName": "Frostbite",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 74300,
+      "stats": {
+        "damage": 24,
+        "ice": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Frostbite.Mesh.SK_Frostbite"
+      }
+    },
+    {
+      "internalName": "Sword_31",
+      "displayName": "Ember",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 40000,
+      "stats": {
+        "damage": 20,
+        "fire": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ember.Mesh.SK_Ember"
+      }
+    },
+    {
+      "internalName": "Sword_32",
+      "displayName": "Khill",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 158000,
+      "stats": {
+        "damage": 32,
+        "poison": 12
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_09",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Khill.Mesh.SK_Khill"
+      }
+    },
+    {
+      "internalName": "Sword_33",
+      "displayName": "Unfaithful",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 21540,
+      "stats": {
+        "damage": 22
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_08",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Unfaithful.Mesh.SK_Unfaithful"
+      }
+    },
+    {
+      "internalName": "Sword_34",
+      "displayName": "Touch of Death",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 100500,
+      "stats": {
+        "damage": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_11",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_TouchOfDeath.Mesh.SK_TouchOfDeath"
+      }
+    },
+    {
+      "internalName": "Sword_35",
+      "displayName": "Balloon of War",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 45000,
+      "stats": {
+        "damage": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_12",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_BalloonOfWar.Mesh.SK_BalloonOfWar"
+      }
+    },
+    {
+      "internalName": "Sword_36",
+      "displayName": "Dragoor Blade",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 620000,
+      "hiddenLevel": 1,
+      "stats": {
+        "damage": 160,
+        "fire": 100
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_12",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_DragoorBlade.Mesh.SK_DragoorBlade"
+      }
+    },
+    {
+      "internalName": "Sword_37",
+      "displayName": "X-SC2",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 2490000,
+      "hiddenLevel": 1,
+      "stats": {
+        "damage": 195
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_11",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_XCS2.Mesh.SK_XCS2"
+      }
+    },
+    {
+      "internalName": "Sword_38",
+      "displayName": "Silver",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 645000,
+      "stats": {
+        "damage": 170,
+        "dark": 100
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_11",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Silver.Mesh.SK_Silver"
+      }
+    },
+    {
+      "internalName": "Sword_39",
+      "displayName": "Nexus",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 32100,
+      "stats": {
+        "damage": 26
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_12",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Nexus.Mesh.SK_Nexus"
+      }
+    },
+    {
+      "internalName": "Sword_4",
+      "displayName": "Dawn Blade",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 910,
+      "stats": {
+        "damage": 4,
+        "fire": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_01",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_DawnBlade.Mesh.SK_DawnBlade"
+      }
+    },
+    {
+      "internalName": "Sword_40",
+      "displayName": "Randor",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1004250,
+      "stats": {
+        "damage": 170,
+        "ice": 230
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_11",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Randor.Mesh.SK_Randor"
+      }
+    },
+    {
+      "internalName": "Sword_41",
+      "displayName": "Forge",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 122050,
+      "stats": {
+        "damage": 34,
+        "dark": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_10",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Forge.Mesh.SK_Forge"
+      }
+    },
+    {
+      "internalName": "Sword_42",
+      "displayName": "Shard",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1845000,
+      "hiddenLevel": 2,
+      "stats": {
+        "damage": 190,
+        "elec": 200
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_10",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Shard.Mesh.SK_Shard"
+      }
+    },
+    {
+      "internalName": "Sword_43",
+      "displayName": "Echo",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 199990,
+      "stats": {
+        "damage": 40
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_10",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Echo.Mesh.SK_Echo"
+      }
+    },
+    {
+      "internalName": "Sword_44",
+      "displayName": "Jawbreaker",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 205000,
+      "stats": {
+        "damage": 40,
+        "poison": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_10",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Jawbreaker.Mesh.SK_Jawbreaker"
+      }
+    },
+    {
+      "internalName": "Sword_45",
+      "displayName": "Enslaver",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 791000,
+      "stats": {
+        "damage": 100
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_13",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Enslaver.Mesh.SK_Enslaver"
+      }
+    },
+    {
+      "internalName": "Sword_46",
+      "displayName": "Obsidian",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1338000,
+      "hiddenLevel": 1,
+      "stats": {
+        "damage": 180,
+        "elec": 170
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_14",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Obsidian.Mesh.SK_Obsidian"
+      }
+    },
+    {
+      "internalName": "Sword_47",
+      "displayName": "Bobi",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 265000,
+      "stats": {
+        "damage": 42,
+        "light": 8
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_14",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Bobi.Mesh.SK_Bobi"
+      }
+    },
+    {
+      "internalName": "Sword_48",
+      "displayName": "Gnarl",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1245000,
+      "stats": {
+        "damage": 190,
+        "fire": 190
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_13",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Gnarl.Mesh.SK_Gnarl"
+      }
+    },
+    {
+      "internalName": "Sword_49",
+      "displayName": "Poison Scythe",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 945000,
+      "stats": {
+        "damage": 140,
+        "poison": 160
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_13",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_PoisonScythe.Mesh.SK_PoisonScythe"
+      }
+    },
+    {
+      "internalName": "Sword_5",
+      "displayName": "Wormwood",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1340,
+      "stats": {
+        "damage": 6,
+        "ice": 1
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_02",
+        "iconUV": "(U=0,V=0,UL=512,VL=256)",
+        "meshPath": "B_Wp_Sword_Wormwood.Mesh.SK_Wormwood"
+      }
+    },
+    {
+      "internalName": "Sword_50",
+      "displayName": "Shiver",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 365000,
+      "stats": {
+        "damage": 12,
+        "ice": 48
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_12",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Shiver.Mesh.SK_Shiver"
+      }
+    },
+    {
+      "internalName": "Sword_51",
+      "displayName": "Luminix",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword"
+    },
+    {
+      "internalName": "Sword_52",
+      "displayName": "Dark X-SC2",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 2495000,
+      "hiddenLevel": -2,
+      "stats": {
+        "damage": 199,
+        "dark": 301
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_14",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_DarkXCS2.Mesh.SK_DarkXCS2"
+      }
+    },
+    {
+      "internalName": "Sword_53",
+      "displayName": "Ricochet",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 400000,
+      "stats": {
+        "damage": 80,
+        "health": 10,
+        "shield": 12,
+        "magic": 20
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_15",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Ricochet.Mesh.SK_Ricochet"
+      }
+    },
+    {
+      "internalName": "Sword_54",
+      "displayName": "Grayson",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1250400,
+      "stats": {
+        "damage": 190,
+        "health": 20,
+        "shield": 30,
+        "magic": 16
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_15",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Grayson.Mesh.SK_Grayson"
+      }
+    },
+    {
+      "internalName": "Sword_55",
+      "displayName": "Retribution",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 6600,
+      "stats": {
+        "damage": 12,
+        "health": 5,
+        "shield": 4,
+        "magic": 2
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_15",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Retribution.Mesh.SK_Retribution"
+      }
+    },
+    {
+      "internalName": "Sword_6",
+      "displayName": "Gemini",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 1950,
+      "stats": {
+        "damage": 6
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_03",
+        "iconUV": "(U=0,V=0,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Gemini.Mesh.SK_Gemini"
+      }
+    },
+    {
+      "internalName": "Sword_7",
+      "displayName": "Sword of Storms",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 2400,
+      "stats": {
+        "damage": 5,
+        "elec": 4
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_03",
+        "iconUV": "(U=0,V=128,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_SwordOfStorms.Mesh.SK_SwordOfStorms"
+      }
+    },
+    {
+      "internalName": "Sword_8",
+      "displayName": "Slither",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 2850,
+      "stats": {
+        "damage": 7,
+        "poison": 3
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_03",
+        "iconUV": "(U=0,V=256,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Slither.Mesh.SK_Slither"
+      }
+    },
+    {
+      "internalName": "Sword_9",
+      "displayName": "Oathborn",
+      "category": "weapon",
+      "class": "SwordInventoryItem",
+      "nameBase": "Sword",
+      "itemType": 1,
+      "cost": 3600,
+      "stats": {
+        "damage": 10
+      },
+      "visual": {
+        "iconPath": "B_ItemIcons.Materials.NewSwords_03",
+        "iconUV": "(U=0,V=384,UL=512,VL=128)",
+        "meshPath": "B_Wp_Sword_Oathborn.Mesh.SK_Oathborn"
+      }
+    }
+  ]
+}

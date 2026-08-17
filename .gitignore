@@ -294,8 +294,7 @@ OUTPUT/
 SAVE STORAGE LOCATION/
 OLD LOGIC STORAGE/
 Claude.md
+publish.bat
 
-IBSaveEditor/Catalog/src
-IBSaveEditor/tool.ico
-IBSaveEditor/build.ps1
-IBSaveEditor/
+/IBSaveEditor/tool.ico
+/IBSaveEditor/Catalog/src
