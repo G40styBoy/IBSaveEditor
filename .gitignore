@@ -298,3 +298,6 @@ publish.bat
 
 /IBSaveEditor/tool.ico
 /IBSaveEditor/Catalog/src
+/IBSaveEditor/IBSaveEditor.csproj.user
+*.lscache
+*.bak
